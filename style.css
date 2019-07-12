@@ -96,7 +96,8 @@ ol, ul {
 }
 
 blockquote, q {
-	quotes: none;
+    quotes: none;
+    color: mediumaquamarine;
 }
 
 	blockquote:before, blockquote:after, q:before, q:after {
@@ -217,6 +218,7 @@ input, select, textarea {
 		}
 
 	strong, b {
+        margin: 2px;
 		color: #ffffff;
 		font-weight: 300;
 	}
