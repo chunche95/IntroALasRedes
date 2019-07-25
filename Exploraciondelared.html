@@ -937,7 +937,20 @@
     <p>
     Se espera que Internet esté siempre disponible para los millones de usuarios que confían en ese servicio. Para lograrlo, se requiere 
     una arquitectura de red desarrollada para tener tolerancia a fallas. Una red con tolerancia a fallas es aquella que limita el impacto 
-    de las fallas, de modo que la cantidad de dispositivos afectados sea la menor posible.
+    de las fallas, de modo que la cantidad de dispositivos afectados sea la menor posible. Además, se arma de forma tal que permita una 
+    recuperación rápida cuando se produce una falla. Estas redes dependen de varias rutas entre el origen y el destino del mensaje. Si falla 
+    una ruta, los mensajes se pueden enviar inmediatamente por otro enlace. El hecho de que haya varias rutas que conducen a un destino se 
+    denomina "redundancia". <br>
+    Una de las formas en las que las redes confiables proporcionan redundancia es mediante la implementación de una red conmutada por paquetes. 
+    La conmutación por paquetes divide el tráfico en paquetes que se enrutan a través de una red compartida. Un solo mensaje, como un correo 
+    electrónico o una transmisión de vídeo, se divide en múltiples bloques de mensajes, llamados paquetes. Cada paquete tiene la información  
+    de dirección necesaria del origen y del destino del mensaje. Los routers dentro de la red conmutan los paquetes según la condición de la red
+    en ese momento. Esto significa que todos los paquetes en un mismo mensaje pueden tomar distintas rutas para llegar a destino. En la figura, 
+    el usuario no se da cuenta y no se ve afectado por el  cambio dinámico de rutas que hace el router cuando falla un enlace. <br>
+    Esto no sucede en las redes de conmutación de circuitos que, tradicionalmente, se utilizan para las comunicaciones de voz. Una red de conmutación
+    de circuitos es aquella que establece un circuito dedicado entre el origen y destino antes de que los usuarios se puedan comunicar. Si la llamada 
+    se termina de forma inesperada, los usuarios debian iniciar una nueva conexión. <br>
+    <img src="http://4.bp.blogspot.com/_alf9dj1BkmU/Sb3Tx6qRFEI/AAAAAAAAADk/-s66j--l258/w1200-h630-p-k-no-nu/Dibujo_15.JPG" alt="">
     </p>
     <br><br><br><hr>
         <section>
