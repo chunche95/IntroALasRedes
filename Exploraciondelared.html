@@ -1455,10 +1455,67 @@
                 de consola, las conexiones SSH requeiren servicios de red activos en el dispositivo, incluida una interfaz activa configurada con una dirección.
             </li>
             <li>
-                <strong>Telnet.</strong>Es un método
+                <strong>Telnet.</strong>Es un método inseguro para establecer una sesión CLI de manera remota a través de una interfaz virtual por medio de una red. A diferencia de las conexiones SSH, Telnet no 
+                proporciona una conexión cifrada de manera segura. La autentificación de usuario, las contraseñas y los comandos se envían por la red en texto no cifrado.
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <i>Consola.</i> - La ventaja de utilizar un punto de consola es que es posible acceder al dispositivo incluso si no se configuró ningún servicio de red, por ejemplo, cuando se realiza la configuración inicial 
+                del dispositivo de red.  Al realizar la configuración inicial, una computadora con software de emulación de terminal se conecta al puerto de consola del dispositivo mediante un cable especial. En la 
+                computadora conectada pueden ingresarse los comandos de configuración para iniciar el switch o el router.
+            </li>
+            <li>
+                <i>SSH</i>- Método recomendado para administración remota ya que porporciona una conexión segura. El SSH porporciona autenticación de contraseña y transporte de datos de sesión. De esta manera se mantienen 
+                en privado la ID del usuario, la contraseña y los detalles de la sesión de administración. La mayoría de las versiones de Cisco IOS incluyen un servidor SSH y un cliente SSH que pueden usarse para establecer 
+                sesiones SSH con otros dispositivos.
+            </li>
+            <li>
+                <i>Telnet</i>- Las mejores prácticas aconsejan el uso de SSH en lugar de Telnet para las conexiones de administración remota de la CLI. Cisco IOS incluyen un servidor Telnet y un cliente Telnet que puede usarse 
+                para establecer sesiones Telnet con otros dispositivos.
             </li>
         </ul>
     </p>
+    <h2>Programas de emulación de terminal.</h2>
+    <p>
+        Existen varios programas excelentes de emulación de terminales disponibles para conectarse a un dispositivo de red mediante una conexión serial por un puerto de consola o mediante 
+        una conexión Telnet o SSH. Algunos de estos programas incluyen los siguientes:
+        <ul>
+            <li>PuTTY</li>
+            <li>Tera Term</li>
+            <li>SecureCRT</li>
+            <li>OS X Terminal</li>
+        </ul>
+        Estos programas le permiten aumentar la productividad mediante ajustes del tamaño de la ventana, modificaciones de los tamaños y cambios en los esquemas de colores.
+    </p>
+    <h2>Métodos de acceso.</h2>
+    <p>
+        <img src="images/accesos.PNG" alt="">
+    </p>
+    <h2>Modos de funcionamiento de Cisco IOS.</h2>
+    <p>
+        Para la configuración por primera vez de un dispositivo Cisco, se debe establecer una conexión de consola. Una vez listo este paso, el técnico de red debe navegar a través de diversos modos de comando de la CLI del IOS. Los 
+        modos de Cisco IOS utilizan una estructura jerárquica y son muy similares para switches y routers.
+    </p>
+
+    <h2>
+        Modos del comando primario.
+    </h2>
+    <p>
+        Como característica de seguridad, el software IOS de Cisco divide el acceso de administración en los sigueintes dos modos de comando: 
+        <ul>
+            <li>
+                <strong>Modo de ejecución de usuario.</strong> Este tiene capacidades limitadas pero resulta útil en el caso de algunas operaciones básicas, Permite solo una cantidad limitada de comandos de monitoreo básicos, pero no 
+                permite la ejecución  de ningún comando que podría cambiar la configuración del dispositivo- El modo EXEC del usuario se puede reconocer por la petición de entrada de la CLI que termina con el símbolo >.
+            </li>
+            <li>
+                <strong>Modo de ejecución privilegiado.</strong> Para ejecutar comandos de configuración , un administrador de redes debe acceder al modo de ejecución privilegiado. Solo se puede ingresar al modo de configuración global y a los modos 
+                de configuración más altos por medio del EXEC con privilegios. El modo EXEC privilegiado se puede reconocer por la petición de  entrada que termina con el símbolo #. 
+            </li>
+        </ul>
+        <img src="images/modoDeEjecucion.PNG" alt="">
+    </p>
+
     <br><br><br><hr>
         <section>
             <div>
