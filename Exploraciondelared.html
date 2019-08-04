@@ -1538,6 +1538,128 @@
        <hr>
     </p>
 
+    <h2>
+        Navegación entre los modos de IOS.
+    </h2>
+    <p>
+        Se utilizan varios comandos para pasar dentro o fuera de los comandos de petición de entrada. Para pasar del modo EXEC del usuario al modo EXEC con privilegios,
+        ingrese el comando <code>enable</code>. Use el comando <code>disable</code> del modo EXEC con privilegios para regresar al modo EXEC del usuario. <br>
+        <cite>
+            <strong>Nota.</strong> El modo EXEC con privilegios se suele llamar <i>modo enable.</i> <br>
+        </cite>
+        Existen diversos tipos de mosos de dubconfiguración. Por ejmplo, para introducir un modo de subconfiguración, debe utilizar el comando <code>line</code> seguido 
+        del número y tipo de linea de administración al que desea acceder. Para salir de un modo de subconfiguración y volver al modo de configuración global, use el comando 
+        <code>exit</code>. Observe los cambios en el comando de petición de entrada. <br>
+        <blockquote>
+            <pre>
+                <code>
+Switch (config)# line console 0
+Switch (config-line)# exit 
+Switch (config)#                    
+                </code>
+            </pre>
+        </blockquote>
+        Para pasar de cualquier modo de subconfiguración del modo de configuración global al modo que se encuentra un nivel más arriba en la jerarquía de modos, introduzca el 
+        comando <code>exit.</code> <br>
+        Para pasar de cualquier modo de subconfiguración al modo EXEC con privilegios, introduzca el comando <code>end</code> o presione la combinación de teclas <code>Ctrl+Z</code>. 
+        <br>
+        <blockquote>
+            <pre>
+                <code>
+Switch (config-line)# end
+Switch #                    
+                </code>
+            </pre>
+        </blockquote>
+    </p>
+    <h2>Estructura básica de comandos IOS.</h2>
+    <p>
+        Los dispositivos Cisco IOS admiten muchos comandos. Cada comando de IOS tiene una sintaxis o formato específico y puede ejecutarse solamente en el modo adecuado. 
+        La sintaxis general para un comando es el comando seguido de las palabras clave y los argumentos correspondientes.
+        <ul>
+            <li>
+                <strong>Palabra clave.</strong>Un parámetro específico que se define en el sistema operativo (protocolos IP).
+            </li>
+            <li>
+                <strong>Argumento.</strong> No está predefinido, es un valor o variable definido por el usuario(192.168.10.5).
+            </li>
+        </ul>
+        Después de ingresar cada comando completo, incluso cualquier palabra clave y argumento, presione la tecla 'intro' para enviarl el comando al intérprete de comandos. <br>
+        <img src="https://interpolados.files.wordpress.com/2017/02/captura4.png?w=825" alt="">
+    </p>
+    <h2>Sintaxis de comandos IOS.</h2>
+    <p>
+        Un comando podría requerir uno o más argumentos. Para determinar cuáles son las palabras clave y los argumentos requeridos para un comando, consulte la sintaxis de comandos. 
+        La sintaxis proporciona el patrón o el formato que se debe utilizar cuando se introduce un comando. <br>
+        Como se identifica en la tabla de la figura, el texto en negrita indica comandos y palabras clave que se introducen literalmente como se muestra. El texto en cursiva indica los 
+        argumentos para los cuales el usuario proporciona el valor. <br>
+        Por ejemplo: la sintaxis para usar el comando <b>description</b> es description <i>cadena</i>. El argumento es un valor de cadena proporcionado por el usuario. El comando descripción 
+        suele utilizarse para identificar el propósito de una interfaz. Por ejemplo, cuando se ingresa el comando <code>description</code> se conecta al switch de la oficina de la sede 
+        principal, describe la ubicación del otro dispositivo al otro extremo de la conexión. <br>
+        Los siguientes ejemplos muestran algunas convenciones utilizadas para registrar y usar comandos de IOS.  <br>
+        <img src="https://2.bp.blogspot.com/-jtBEn1b4_Jg/WQlQfF1g9cI/AAAAAAAACus/RuWT3PuRUsYMPMj280zME384FdG_eiKnQCLcB/s1600/Sintaxis%2Bde%2Bcomandos%2BIOS.jpg" alt="">
+        <ul>
+            <li>
+                <strong>Ping</strong> Dirección-ip - El comando <code>ping</code> y el argumento definido por el usuario es la direccion-ip del dispositivo de destino. Por ejemplo. 
+                <code>ping a 10.10.10.5</code>.
+            </li>
+            <li>
+                <strong>Traceroute</strong> Dirección-ip - El comando es <code>traceroute</code> y el argumento definido por el usuario es la direccion-ip del dispositivo de destino. Por ejemplo. 
+                <code>traceroute 192.168.254.254</code>
+            </li>
+        </ul>
+        La referencia de comando de Cisco IOS es la última fuente de información para un comando de IOS en particular.
+    </p>
+    <h2>Funciones de ayuda de IOS.</h2>
+    <p>
+        El IOS tiene dos formas de ayuda disponibles.
+        <ul>
+            <li>Ayuda contextual</li>
+            <li>Verificación de la sintaxis del comando</li>
+        </ul>
+        La ayuda contextual le permite encontrar rápidamente los comandos que están disponibles en cada modo de comando, qué conmandos comienzan con caracteres 
+        o grupo de caracteres específicos y qué argumentos y palabras clave están disponibles para comandos determiandos. Para acceder a la ayuda contextual,
+        ingrese un signo de interrogación, ?, en la CLI. <br>
+        La verificación de la sintaxis del comando comprueba que el usuario haya introducido un comando válido. Cuando se introduce un comando, el intérprete 
+        de línea de comandos analiza el comando de izquierda a derecha. Si el intérprete comprende el comando, la acción requerida se ejecuta y la CLI vuelve a la petición
+        de entrada correspondiente. Sin embargo, si el intérprete no puede comprender el comando que se ingresa, mostrará un comentario que describe el error del 
+        comando.
+    </p>
+    <h2>Teclas de acceso rápido y de método abreviado.</h2>
+    <p>
+        La interfaz de línea de comandos IOS proporciona teclas de acceso rápido y métodos abreviados que facilitan la configuración, el monitoreo
+        y la resolución de problemas, como se muestra en la figura. <br>
+        <img src="images/accesorapido.PNG" alt="">
+        <br>
+        Los comandos y las palabras clave pueden acortarse a la cantidad mínima de caracteres que identifica a una selección única. Por ejemplo, el 
+        comando <code>configure</code> puede acortarse a <code>conf</code>, ya que <b>configure</b> es el único comando que empieza con <i>conf</i>.
+        Una versión más breve, como <code>con</code>, no dará resultado, ya que hay más de un comando que empieza con <b>con</b>. Las palabras clave 
+        también pueden acortarse.
+    </p>
+    <h2>Packet Tracer: Navegación de IOS.</h2>
+    <p>
+        En esta actividad, practicará las habilidades necesarias para navegar dentro de Cisco IOS, incluidos distintos modos de acceso de usuario, 
+        diversos modos de configuración y comandos comunes que utiliza habitualmente. También practicará el acceso a ayuda contextual mediante la configuración 
+        del comando clock. <br>
+        <a href="https://static-course-assets.s3.amazonaws.com/ITN6/es/course/files/2.1.4.6%20Packet%20Tracer%20-%20Navigating%20the%20IOS.pdf">Actividad</a>
+    </p>
+    <h2>Establecimiento de una sesión de consola con Tera Term.</h2>
+    <p>
+        <a target="_blank" href="https://static-course-assets.s3.amazonaws.com/ITN6/es/course/files/2.1.4.7%20Lab%20-%20Establishing%20a%20Console%20Session%20with%20Tera%20Term.pdf">Establecimiento de sesión</a>
+    </p>
+    <h2>Nombres de los dispositivos.</h2>
+    <p>
+        Al configurar un dispositivo de red, uno de los primeros pasos es la configuracióon de un nombre de dispoisitivo único o nombre de host. Los nombres de host aparecen 
+        en las peticiones de entrada de la CLI, pueden utilizarse en varios procesos de autentificación entre dispositivos y deben utilizarse en los diagramas de topologías. <br>
+        Si el nombre del dispositivo no se configura explícitamente, Cisco IOS utiliza un nombre de dispositivo predeterminado de fábrica. El nombre predeterminado de los switches 
+        Cisco IOS es "Switch". Si se dejara el nombre predeterminado. Por ejemplo, al acceder a un dispositivo remoto mediante SSH, es importante tener la configuración de que se está 
+        conectando al dispositivo correcto. <br>
+        Al elegir nombre atinadamente, resulta más fácil recordar, analizar e identificar los dispositivos de red. En la figura se enumeran las pautas para la configuración de nombres de host. <br>
+        <img src="images/pautasNombres.PNG" alt=""> <br>
+        Los nombres de host utilizados en los IOS del dispositivo conservan el  uso de caracteres en mayúsculas y minúsculas. Por lo tanto, es posible escribir un nombre con mayúsculas como 
+        se haría normalmente. Esto 
+    </p>
+
 
     <br><br><br><hr>
         <section>
