@@ -1717,14 +1717,20 @@ Switch #
     <p>
         La contraseña más importante para configurar es la de acceso al modo EXEC privilegiado, como se muestra en la figura 1. Para proteger el acceso a EXEC con privilegios, 
         utilice el comando de configuración global <code><strong>enable secret password</strong></code>. <br>
-        <img src="https://images.slideplayer.es/38/10829648/slides/slide_32.jpg" alt=""> <br>
+        <img src="images/execPrivilegios.PNG" alt=""> <br>
         Para proteger el acceso a EXEC de usuario, el puerto de consola debe estar configurado, como se muestra en la figura. <br>
-        <img src="https://www.learncisco.net/assets/images/icnd1/78-configuring-router-password.jpg" alt="">
+        <img src="images/execUsuario.PNG" alt="">
         <br>
         Ingrese al modo de configuración de consola de línea con el comando de configuración global <code>line console 0</code>. El cero se usa para representar la primera (y en
         la mayoría de los casos la única) interfax de consola. Luego, configure la contraseña del modo EXEC de usuario con el comando de contraseña <code>password <i>password</i></code>
         <br>
         Finalmente, habilite el acceso EXEC de usuario con el comando <code>login</code>. El acceso a la consola ahora requerirá una contraseña antes de poder acceder al modo EXEC del usuario. 
+        Las lineas de terminal virtual (VTY) habilitan el accese remoto al dispositivo. Para proteger las líneas VTY que se utilizan para SSH y Telnet, ingrese al modo de linea VTY con el comando 
+        de configuración global <code>line vty 0 15</code>, como se muestra en la figura. Muchos switches de Cisco admiten hasta 16 lineas VTY que se numeran del 0 al 15. Luego, especifique 
+        la contraseña de VTY con el comando de contraseña <code>password password</code>. Por último, habilite el acceso a VTY con el comando <code>login</code>. <br>
+        <img src="images/contrasenyaVTY.PNG" alt="">
+        <hr>
+        <img src="https://www.learncisco.net/assets/images/icnd1/78-configuring-router-password.jpg" alt="">
         
     </p>
     <br><br><br><hr>
