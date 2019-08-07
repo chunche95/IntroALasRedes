@@ -1731,6 +1731,17 @@ Switch #
         <img src="images/contrasenyaVTY.PNG" alt="">
         <hr>
         <img src="https://www.learncisco.net/assets/images/icnd1/78-configuring-router-password.jpg" alt="">
+    </p>
+    <h2>Cifrado de las contraseñas.</h2>
+    <p>
+        Los archivos <code>startup-config</code> y <code>running-config</code> muestran la mayoria de las contraseñas en texto no cifrado. Esta es una amenaza de seguridad dado que cualquier persona 
+        puede ver la contraseña utilizadas si tiene acceso a estos archivos. <br>
+        Para cifrar las contraseñas, utilice el comando de configuración global <code>service password-encryption</code>. El comando aplica un cifrado débil a todas las contraseñas no cifradas. Este 
+        cifrado solo se aplica a las contraseñas del archivo de configuración, no a las contraseñas mientras se envían a través de los medios. El propósito de este comando es evitar que individuos no 
+        autorizados vean las contraseñas en el archivo de configuración. <br>
+        Utilice el comando <code>show running-config</code> para verificar que las contraseñas se hayan encriptado. Use el verificador de sintaxis de la figura para practicar el cifrado de contraseñas.
+        <br>
+        <img src="images/cifradoContrasenyas.PNG" alt="">
         
     </p>
     <br><br><br><hr>
