@@ -1679,7 +1679,54 @@ Switch #
         ubicación, propósito y dirección. Utilice el verificador de sintaxis de la figura para practicar la introducción de un nombre de host en un switch. <br>
         <img src="https://2.bp.blogspot.com/-YKPvZwEcH9w/VdzUjYDjhAI/AAAAAAAAAJk/uqguThXjbW8/s1600/2.2.1.4%2BConfiguraci%25C3%25B3n%2Bde%2Bnombres%2Bde%2Bhost.jpg" alt="">
     </p>
-
+    <h2>Protección del acceso de los dispositivos.</h2>
+    <p>
+        El uso de contraseñas simples o fáciles de adivinar continúa siendo un problema de seguridad en mucahs facetas del mundo empresarial. Los dispositivos de red, incluso los routers inalámbricos 
+        hogareños, siempre deben tener contraseñas configuradas para limitar el acceso administrativo. <br>
+        Cisco IOS puede configurarse para utilizar contraseñas en modo jerárquico y permitir diferentes privilegios de acceso al dispositivo de red. 
+        Todos los dispositivos de red deben tener acceso limitado como se muestra abajo. 
+        <blockquote>
+            <h5>Protección del acceso administrativo</h5>
+            <ul>
+                <li>Proteja el acceso a EXEC privilediado con una contraseña.</li>
+                <li>Proteja el acceso a EXEC de usuario con una contraseña.</li>
+                <li>Proteja el acceso a Telnet remoto con una contraseña.</li>
+            </ul>
+        </blockquote>
+        <blockquote>
+            <h5>Otras tareas.</h5>
+            <ul>
+                <li>Encripte todas las contraseñas.</li>
+                <li>Proporcione notificación legal.</li>
+            </ul>
+        </blockquote>
+        Utilice contraseñas seguras que no se descubran fácilmente. Tenga en cuenta los puntos claves que se muestran en la parte inferior. 
+        <blockquote>
+            <h5>
+                Cuando seleccione contraseñas.
+            </h5>
+            <ul>
+                <li>Use contraseñas que tengan más de 8 caracteres.</li>
+                <li>Use una combinación de letras mayúsculas y minúsculas, números, caracteres especiales o secuencias numéricas.</li>
+                <li>Evite el uso de la misma contraseña para todos los dispositivos.</li>
+                <li>No use palabras comunes porque se descubren fácilmente.</li>
+            </ul>
+        </blockquote>
+    </p>
+    <h2>Configuración de contraseñas.</h2>
+    <p>
+        La contraseña más importante para configurar es la de acceso al modo EXEC privilegiado, como se muestra en la figura 1. Para proteger el acceso a EXEC con privilegios, 
+        utilice el comando de configuración global <code><strong>enable secret password</strong></code>. <br>
+        <img src="https://images.slideplayer.es/38/10829648/slides/slide_32.jpg" alt=""> <br>
+        Para proteger el acceso a EXEC de usuario, el puerto de consola debe estar configurado, como se muestra en la figura. <br>
+        <img src="https://www.learncisco.net/assets/images/icnd1/78-configuring-router-password.jpg" alt="">
+        <br>
+        Ingrese al modo de configuración de consola de línea con el comando de configuración global <code>line console 0</code>. El cero se usa para representar la primera (y en
+        la mayoría de los casos la única) interfax de consola. Luego, configure la contraseña del modo EXEC de usuario con el comando de contraseña <code>password <i>password</i></code>
+        <br>
+        Finalmente, habilite el acceso EXEC de usuario con el comando <code>login</code>. El acceso a la consola ahora requerirá una contraseña antes de poder acceder al modo EXEC del usuario. 
+        
+    </p>
     <br><br><br><hr>
         <section>
             <div>
