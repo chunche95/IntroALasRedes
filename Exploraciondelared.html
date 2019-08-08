@@ -1649,7 +1649,7 @@ Switch #
     </p>
     <h2>Nombres de los dispositivos.</h2>
     <p>
-        Al configurar un dispositivo de red, uno de los primeros pasos es la configuracióon de un nombre de dispoisitivo único o nombre de host. Los nombres de host aparecen 
+        Al configurar un dispositivo de red, uno de los primeros pasos es la configuracióon de un nombre de dispositivo único o nombre de host. Los nombres de host aparecen 
         en las peticiones de entrada de la CLI, pueden utilizarse en varios procesos de autentificación entre dispositivos y deben utilizarse en los diagramas de topologías. <br>
         Si el nombre del dispositivo no se configura explícitamente, Cisco IOS utiliza un nombre de dispositivo predeterminado de fábrica. El nombre predeterminado de los switches 
         Cisco IOS es "Switch". Si se dejara el nombre predeterminado. Por ejemplo, al acceder a un dispositivo remoto mediante SSH, es importante tener la configuración de que se está 
@@ -1745,7 +1745,15 @@ Switch #
     </p>
     <h2>Mensajes de aviso.</h2>
     <p>
-        Aunque el pedido de contraseña es un modo de impedir el acceso a la red de personas no autorizadas, resulta vital proveer un método para informar que solo el personal autorizado
+        Aunque el pedido de contraseña es un modo de impedir el acceso a la red de personas no autorizadas, resulta vital proveer un método para informar que solo el personal autorizado debe intentar obtener acceso
+        al dispositivo. Para hacerlo, agregue un aviso a la salida del dispositivo. Los avisos pueden ser una parte importante en los procesos legales en el caso de una demanda por el ingreso no autorizado a un 
+        dispositivo. Algunos sistemas legales no permiten la acusación, y ni siquiera el monitoreo de los usuarios, a menos que haya una notificaciñon visible. <br>
+        Para crear un mensaje de aviso del día en un dispositivo de red, utilice el comando de configuración global <code>banner motd #</code> el mensaje del día #. El símbolo "#" en la sintaxis del comando se denomina 
+        carácter delimitador. Se ingresa antes y después del mensaje. El carácter delimitador puede ser cualquier carácter siempre que no aparezca en el mensaje. Por este motivo, a menudo se usan símbolos como '#'. Una 
+        vez que se ha ejecutado el comando, aparecerá el aviso en todos los intentos posteriores de acceso al dispositivo hasta que el aviso se elimine. <br>
+        Ya que cualquier persona que intenta iniciar sesión puede ver los avisos, se debe redactar el mensaje cuidadosamente. El contenido o las palabras exactas de un aviso depende d elas leyes locales y de las políticas 
+        de la empresa. Debe aclarar que solo el personal autorizado tiene permitido el acceso al dispositivo. Es inapropiada toda redacción que implique que 'se acepte' o 'se invita' al usuario a iniciar sesión. 
+        Asimismo, el aviso puede incluir cierres programados del sistema y demás información que afecte a todos los usuarios de la red. 
     </p>
     <br><br><br><hr>
         <section>
