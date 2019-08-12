@@ -1784,6 +1784,22 @@ Switch #
         <br>
         <img src="images/vistaYGuardadoDeLaConfig.PNG" alt="">
     </p>
+    <h2>Modificación de la configuración en ejecución.</h2>
+    <p>
+        Si los cambios realizados en la configuración en ejecución no tiene el efecto deseado y el archivo <i>running-config</i> aún no se ha guardado, 
+        puede restablecer el dispositivo a su configuración anterior eliminando los comandos modificados, o bien volver a cargar el dispositivo con el comando 
+        <code>reload</code> en el modo EXEC con privilegios para restablecer la configuración de inicio. <br>
+        La desventaja de usar el comando reload para eliminar una configuración en ejecución sin guardar es el breve tiempo que el dispositivo estará sin conexión 
+        lo que provocará tiempo de inactividad de la red. <br>
+        Cuando se inicia una recarga, el IOS detectará que la configuración en ejecución tiene cambios que no se guardaron en la configuración de inicio. 
+        Aparecerá una petición de entrada para preguntar si se desea guardar los cambios. Para descartar los cambios, ingrese <strong>n</strong> o <strong>no</strong>. 
+        <br>
+        Como alternativa, si se guardan los cambios no deseados en la configuración de inicio, posiblemente sea necesario eliminar todas las configuraciones. Esto requiere 
+        borrar la configuración de inicio y reiniciar el dispositivo. La configuración de inicio se elimina con el uso del comando <code>erase startup-config</code> en el 
+        modo EXEC privilegiado. Una vez que se elimine el comando, el switch le solicita configuración. Presione <b>Intro</b> para aceptar. <br>
+        Después de eliminar la configuración de inicio de la NVRAM, recargue el dispositivo para eliminar el archivo de configuración actual en ejecución de la memoria RAM. 
+        En la recarga, un switch cargará la configuración de inicio predeterminada que se envió originalmente con el dispositivo.
+    </p>
     <br><br><br><hr>
         <section>
             <div>
