@@ -1825,7 +1825,35 @@ Switch #
                 <img src="images/DeshabilitarInicioSesionPuTTy.PNG" alt="">
             </li>
         </ul>
-        
+        El archivo de texto creado se puede utilizar como un registro del modo en que se implementa actualmente el dispositivo. El archivo puede requerir edición antes de poder utilizarse 
+        para restaurar una configuración guardada a un dispositivo. <br>
+        Para restaurar un archivo de configuración a un dispositivo: 
+        <ul>
+            <li>Ingrese al modo de configuración a un dispositivo.</li>
+            <li>Copie y pegue el archivo de texto global en el dispostivo.</li>
+        </ul>
+        El texto en el archivo estará aplicado como comandos en la CLI y pasará a ser la configuración en ejecución en el dispositivo. Este es un conveniente para configurar manualmente un 
+        dispositivo.
+    </p>
+    <h2>Packet Tracer: Configuración de los parámetros iniciales del switch.</h2>
+    <p>
+        <a href="documentos/2.2.3.4 Packet Tracer - Configuring Initial Switch Settings.pdf">Actividad</a>
+        <a href="documentos/2.2.3.4 Packet Tracer - Configuring Initial Switch Settings.pka">Archivo pka</a>
+    </p>
+    <h2>Direcciones IP.</h2>
+    <p>
+        El uso de direcciones IP es el principal medio para permitir que los dispositivos se ubiquen entre sí y para establecer la comunicación completa en Internet. Cada terminal en una red 
+        se debe configurar con direcciones IP. Algunos ejemplos de terminales se muestran en la figura.  <br>
+        <img src="images/conexionDeTerminales.PNG" alt=""> <br>
+        La estructura de una dirección IPv4 se denomina "notación decimal punteada" y se representa con cuatro números decimales entre 0 y 255. Las direcciones IPv4 son números asignados a los 
+        dispositivos individuales conectados a una red. <br>
+        Con la dirección IPv4, también se necesita una máscara de subred. Una máscara de subred IPv4 es un valor de 32 bits que separa la porción de red de la dirección de la porción de host. 
+        Combinada con la dirección IPv4, la máscara de subred determina la subred particular a la pertenece el dispositivo. <br>
+        El ejemplo de la figura inferior muestra la dirección IPv4 (192.168.1.10), la máscara de subred (255.255.255.0) y el gateway predeterminado (192.168.1.1) asignados a un host. La dirección de 
+        gateway predeterminado es la dirección IP del router que el host utilizará para acceder a las redes remotas, incluso a Internet. <br>
+        <img src="images/configIPHost.PNG" alt="">
+        Las direcciones IP se pueden asignar tanto a los puertos físicos como a las interfaces virtuales de los dispositivos. Una interfaz virtual significa que no hay hardware físico en el 
+        dispositivo asociado a ella.
     </p>
     <br><br><br><hr>
         <section>
