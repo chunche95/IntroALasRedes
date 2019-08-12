@@ -1871,13 +1871,34 @@ Switch #
         </ul>
         Cada enlace de Internet no solo requiere un tipo específico de medio de red, sino que también requiere una determinada tecnología de red. Por ejemplo, Ethernet es la tecnología de red 
         de área local (LAN) de uso más frecuente en la actualidad. Hay puertos Ethernet en los dispositivos para usuarios finales, en los dispositivos de switch y en otros dispositivos de red 
-        que se pueden conectar físicamente a la red mediante un cable.
-        Los switches de la capa 2 de Cisco IOS cuentan con puertos físicos para conectar dispositivos. Estos puertos no son compatibles con las direcciones IP de la capa 3. En consecuencia, los 
-        switches tienen una o más interfaces virtuales de switch (SVI). Son interfaces virtuales porque no hay hardware físico en el dispositivo asociado a ellas. Una SVI se crea en el software.
+        que se pueden conectar físicamente a la red mediante un cable. <br>
+        Los switches de la capa 2 de Cisco IOS cuentan con puertos físicos para conectar dispositivos. Estos puertos no son compatibles con las direcciones IP de la capa 3. <br>
+        En consecuencia, los switches tienen una o más interfaces virtuales de switch (SVI). Son interfaces virtuales porque no hay hardware físico en el dispositivo asociado a ellas. Una SVI se 
+        crea en el software. <br>
         La interfaz virtual proporciona un medio para administrar un switch de manera remota a través de una red usando IPv4. Cada switch viene con una SVI que aparece en la configuración 
-        predeterminada, fácil de instalar. La SVI predeterminada es interfaz VLAN1.
-        Nota: Un switch de capa 2 no necesita una dirección IP. La dirección IP asignada a la SVI se utiliza para acceder al switch de forma remota. No se necesita una dirección IP para que el 
+        predeterminada, fácil de instalar. La SVI predeterminada es interfaz VLAN1. <br>
+        <b>Nota:</b> Un switch de capa 2 no necesita una dirección IP. La dirección IP asignada a la SVI se utiliza para acceder al switch de forma remota. No se necesita una dirección IP para que el 
         switch realice estas operaciones.
+    </p>
+    <h2>Configuración manual de direcciones IP para terminales.</h2>
+    <p>
+        Para que un terminal se comunique a través de la red, se debe configurar con una dirección IPv4 y una máscara de subred únicas. La información de dirección IP se puede introducir en los 
+        terminales en forma manual o automáticamente mediante el Protocolo de configuración dinámica de host (DHCP). <br>
+        <img src="images/propiedadesAdaptadorEthernet.PNG" alt="">
+        <br>
+        Para configurar una dirección IPv4 de forma manual en un host de Windows, abra <strong>Panel de Control > Centro de redes y recursos compartidos > Cambiar configuración del adaptador</strong> y 
+        seleccione el adaptador. Luego, haga clic con el botón secundario y seleccione Propiedades para que aparezcan las Propiedades de conexión de área local, como se muestra en la figura inferior.
+        Resalte el protocolo de Internet versión 4 (TCP/IPv4) y haga clic en <b>Propiedades</b> para abrir la ventana de Propiedades del protocolo de Internet versión 4 (TCP/IPv4), como se muestra en la 
+        siguiente figura. <br>
+        <img src="images/IpFijaIPv4.PNG" alt="">
+        <br>
+        Configure la información de la dirección IPv4 y la máscara de subred, y el gateway predeterminado. <br>
+        <strong>Nota:</strong> La dirección del servidor DNS es la dirección IPv4 del servidor del sistema de nombres de dominio (DNS), que se utiliza para traducir direcciones IP a direcciones web, 
+        como www.cisco.com.
+    </p>
+    <h2>Configuración automática de direcciones IP para terminales.</h2>
+    <p>
+        2.3.2.2
     </p>
     <br><br><br><hr>
         <section>
