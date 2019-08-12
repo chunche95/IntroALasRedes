@@ -1688,7 +1688,7 @@ Switch #
         <blockquote>
             <h5>Protección del acceso administrativo</h5>
             <ul>
-                <li>Proteja el acceso a EXEC privilediado con una contraseña.</li>
+                <li>Proteja el acceso a EXEC privilegiado con una contraseña.</li>
                 <li>Proteja el acceso a EXEC de usuario con una contraseña.</li>
                 <li>Proteja el acceso a Telnet remoto con una contraseña.</li>
             </ul>
@@ -1766,6 +1766,23 @@ Switch #
     <h2>Guardar el archivo de configuración en ejecución.</h2>
     <p>
         Existen dos archivos de sistema que almacenan la configuración de dispositivos. 
+        <ul>
+            <li>
+                <strong>startup-config:</strong> El archivo almacena en la memoria no volátil de acceso aleatorio (NVRAM) que contiene todos los comandos que utilizará el dispositivo dureante el inciio o reinicio. La memoria NVRAM 
+                no pierde su contenido cuando el dispositivo se desconecta.
+            </li>
+            <li>
+                <strong>running-config:</strong> El archivo almacenado en la memoria de acceso aleatorio (RAM) que refleja la configuración actual. La modificación de una configuración en ejecución afecta el funcionamiento de un dispositivo 
+                Cisco de inmediato. La memoria RAM es volátil. Pierde todo el contenido cuando el dispositivo se apaga o reinicia.
+            </li>
+        </ul>
+        
+        Se puede usar el comando <code>show running-config</code> en el modo EXEC privilegiado para ver un archivo de configuración  en ejecución. Para ver el archivo de configuración de inicio, ejecute el comando <code>show startup-config</code>
+        en el modo EXEC privilegiado. <br>
+        Si se corta la energía al dispositivo o se este se reinicia, se prederán todos los cambios de configuración a menos que se hayan guardado. Para guardar los cambios realizados en la configuración en ejecución en el archivo de configuración 
+        de inicio utilice el comando <code>copy running-config startup-config</code> en el modo EXEC privilegiado. 
+        <br>
+        <img src="images/vistaYGuardadoDeLaConfig.PNG" alt="">
     </p>
     <br><br><br><hr>
         <section>
