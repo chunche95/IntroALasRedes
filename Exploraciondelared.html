@@ -1855,6 +1855,30 @@ Switch #
         Las direcciones IP se pueden asignar tanto a los puertos físicos como a las interfaces virtuales de los dispositivos. Una interfaz virtual significa que no hay hardware físico en el 
         dispositivo asociado a ella.
     </p>
+    <h2>Interfaces y puertos.</h2>
+    <p>
+        Las comunicaciones de red dependen de las interfaces de los dispositivos para usuarios finales, las interfaces de los dispositivos de red y los cables que las conectan. Cada interfaz 
+        física tiene especificaciones o estándares que la definen. Los cables que se conectan a la interfaz deben estar diseñados para cumplir con los estándares físicos de la interfaz. Los 
+        tipos de medios de red incluyen los cables de cobre de par trenzado, los cables de fibra óptica, los cables coaxiales o la tecnología inalámbrica, como se muestra en la figura.
+        <img src="images/interfacesYPuertos.PNG" alt="">
+        Los diferentes tipos de medios de red tienen diferentes características y beneficios. No todos los medios de red tienen las mismas características ni son adecuados para el mismo fin. 
+        Algunas de las diferencias entre los distintos tipos de medios incluyen las siguientes:
+        <ul>
+            <li>La distancia a través de la cual los medios pueden transportar una señal correctamente.</li>
+            <li>El ambiente en el cual se instalará el medio.</li>
+            <li>La cantidad de datos y la velocidad a la que se deben transmitir.</li>
+            <li>El costo de los medios y de la instalación.</li>
+        </ul>
+        Cada enlace de Internet no solo requiere un tipo específico de medio de red, sino que también requiere una determinada tecnología de red. Por ejemplo, Ethernet es la tecnología de red 
+        de área local (LAN) de uso más frecuente en la actualidad. Hay puertos Ethernet en los dispositivos para usuarios finales, en los dispositivos de switch y en otros dispositivos de red 
+        que se pueden conectar físicamente a la red mediante un cable.
+        Los switches de la capa 2 de Cisco IOS cuentan con puertos físicos para conectar dispositivos. Estos puertos no son compatibles con las direcciones IP de la capa 3. En consecuencia, los 
+        switches tienen una o más interfaces virtuales de switch (SVI). Son interfaces virtuales porque no hay hardware físico en el dispositivo asociado a ellas. Una SVI se crea en el software.
+        La interfaz virtual proporciona un medio para administrar un switch de manera remota a través de una red usando IPv4. Cada switch viene con una SVI que aparece en la configuración 
+        predeterminada, fácil de instalar. La SVI predeterminada es interfaz VLAN1.
+        Nota: Un switch de capa 2 no necesita una dirección IP. La dirección IP asignada a la SVI se utiliza para acceder al switch de forma remota. No se necesita una dirección IP para que el 
+        switch realice estas operaciones.
+    </p>
     <br><br><br><hr>
         <section>
             <div>
