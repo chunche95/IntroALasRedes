@@ -1898,7 +1898,37 @@ Switch #
     </p>
     <h2>Configuración automática de direcciones IP para terminales.</h2>
     <p>
-        2.3.2.2
+        En general, las PC utilizan DHCP de forma predeterminada para la configuración automática de direcciones IPv4. DHCP es una tecnología que se utiliza en casi todas las redes. Para comprender mejor por qué DHCP es tan popular, tenga en cuenta todo el trabajo adicional que habría que realizar sin este protocolo.
+        En una red, DHCP permite la configuración automática de direcciones IPv4 para cada terminal con DHCP habilitado. Imagine la cantidad de tiempo que le llevaría si cada vez que se conectara a la red tuviera que introducir manualmente la dirección IPv4, la máscara de subred, el gateway predeterminado y el servidor DNS. 
+        Multiplique eso por cada usuario y cada uno de los dispositivos en una organización y se dará cuenta del problema. La configuración manual también aumenta las posibilidades de configuraciones incorrectas provocadas por la duplicación de la dirección IPv4 de otro dispositivo.
+        Como se muestra en la figura para configurar el protocolo DHCP en una PC con Windows, solo debe seleccionar “Obtener una dirección IP automáticamente” y “Obtener la dirección del servidor DNS automáticamente”. Su PC buscará un servidor DHCP y se le asignarán los ajustes de dirección necesarios para comunicarse en la red. <br>
+            <img src="images/configIpAutomatica.PNG" alt=""> <br>
+        Es posible mostrar los ajustes de configuración IP en una PC con Windows usando el comando ipconfig cuando el sistema se lo solicite. El resultado muestra la información de dirección IPv4, máscara de subred y gateway que se recibió del servidor DHCP. 
+        Utilice el verificador de sintaxis de la figura inferior para practicar cómo mostrar la dirección IPv4 en una PC con Windows. <br>
+            <img src="images/IpEquipoWindows.PNG" alt="">
+    </p>
+    <h2>Configuración de la interfaz de switch.</h2>
+    <p>
+        Para acceder al switch de manera remota, se deben configurar una dirección IP y una máscara  de subred en la SVI. Para configurar una SVI en un switch, utilice el comando de configuración global <code>interface vlan 1</code>. La Vlan 1 no es una interfaz fisica real, sino una virtual. A continuación, asigne una dirección IPv4 
+        mediante el comando <code>ip address <i>ip-address subnet-mask</i></code> para la configuración de interfaz. Finalmente, habilite la interfaz virtual con el comando de configuración de interfaz <code>no shutdiwn</code>. <br>
+        Una vez que se configure estos comandos, el switch tiene todos los elementos IPv4 listos para la comunicación a través de la red. 
+    </p>
+    <h2>Verificación de sintaxis. Configuración de una interfaz virtual de switch.</h2>
+    <p>
+        <img src="images/ConfiguracionInterfazVirtualDeSwitch.PNG" alt=""> <br>
+        <img src="images/ConfiguracionInterfazVirtualDeSwitch2.PNG" alt="">
+    </p>
+    <h2>Implementación de conectividad básica.</h2>
+    <p>
+        <a href="documentos/2.3.2.5 Packet Tracer - Implementing Basic Connectivity.pdf">Implementación basica de conectividad.</a>
+        <br>
+        <a href="documentos/2.3.2.5 Packet Tracer - Implementing Basic Connectivity.pka">PKA Conectividad Básica</a>
+    </p>
+    <h2>Verificación de la asignación de direcciones de la interfaz.</h2>
+    <p>
+        Del mimso modo que se usan comandos y utilidades como <code>ipconfig</code> para verificar la configuración de red de un host de PC, se deben usar los comandos para verificar los ajustes de interfaces y dirección de los dispositivos intermediarios, como switches y routers. 
+        <br> > enable <br>
+        <code>> show ip interface brief.</code>
     </p>
     <br><br><br><hr>
         <section>
