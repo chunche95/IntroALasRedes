@@ -1977,6 +1977,81 @@ Switch #
         En lugar de crearsistemas exclusivos e independientes para la prestación de cada servicio nuevo, el sector de redes en su totalidad adoptó un marco de desarrollo que permite que los diseñadores 
         comprendan las plataformas de red actuales y las mantengan. Al mismo tiempo, este marco se utiliza para facilitar el desarrollo de nuevas tecnologías, a fin de satisfacer las necesidades de las 
         comunicaciones y las mejoras tecnológicas futuras. <br>
+        Un aspecto fundamental de este marco de desarrollo es el uso de modelos generalmente aceptados que describen reglas y funciones de red. <br>
+        Este capítulo, obtendrá información sobre estos modelos, sobre los estándares que hacen que las redes funcionen y sobre la forma en que se produce la comunicación a través de una red.
+    </p>
+    <h2>Actividades de clase. Diseño de un sistema de comunicaciones.</h2>
+    <p>
+        <a href="documentos/3.0.1.2 Class Activity - Designing a Communications System.pdf">Designación de un sistema de comunicaciones</a>
+    </p>
+    <h2>Aspectos básicos de la comunicación.</h2>
+    <p>
+        Una red puede ser tan compleja como los dispositivos conectados a través de Internet, otan simple como dos PC conectadas directamente entre sí mediante un único cable, o puede tener cualquier grado 
+        de complejidad intermedia. Las redes pueden variar en lo que respecta al tamaño, la forma y la función. Sin embargo, realizar simplemente la conexión física por cable o inalámbrica entre los terminales 
+        no es suficiente para habilitar la comunicación. Para que se produzca la comunicación, los dispositivos deben saber "como" comunicarse. <br>
+        Las personas intercambian ideas mediante diversos métodos de comunicación. Sin embargo, independientemente del método elegido, todos los métodos de comunicación tienen tres elementos en común. El primero 
+        de estos elementos es el origen del mensaje, o emisor. Los orígenes de los mensajes son las personas o los dispositivos electrónicos que deben enviar un mensaje a otras personas o dispositivos. El segundo 
+        elemento de la comunicación es el destino o receptor del mensaje. El destino recibe el mensaje y lo interpreta. Un tercer elemento, llamado canal, está formado por los medios que proporcionan el camino por 
+        el que el mensaje viaja desde el origen hasta el destino. <br>
+        La comunicación comienza con un mensaje, o información, que se debe enviar desde un origen hasta un destino. El envío de este mensaje, ya sea mediante comunicación cara a cara o a través de una red, está 
+        regido por reglas llamadas “protocolos”. Estos protocolos son específicos del tipo de método de comunicación en cuestión. En nuestra comunicación personal diaria, las reglas que utilizamos para comunicarnos 
+        por un medio, como una llamada telefónica, no son necesariamente las mismas que los protocolos para utilizar otro medio, como enviar una carta.
+    </p>
+    <h2>Establecimiento de reglas.</h2>
+    <p>
+        Antes de comunicarse entre sí, las personas deben usar reglas o acuerdos establecidos que rijan la conversación. Estas reglas o protocolos deben respetarse para que el mensaje se envíe y comprenda conrrectamente. 
+        Los protocolos deben dar cuenta de los siguientes requisitos: 
+        <ul>
+            <li>Un emisor y un receptor identificados.</li>
+            <li>Idioma y gramática común.</li>
+            <li>Velocidad y momento de entrega.</li>
+            <li>Requisitos de confirmación o acuse de recibo.</li>
+        </ul>
+        Los protocolos utilizados en las comunicaciones de red comparten muchos de estos fundamentos. Además de identificar el origen y destino, los protocolos informáticos y de red definen los detalles sobre la 
+        forma en que los mensajes se transmiten a través de una red. <br>
+        <img src="images/protocolos.PNG" alt="">
+    </p>
+    <h2>Codificación de los mensajes.</h2>
+    <p>
+        Uno de los primeros pasos para enviar un mensaje es codificarlo. La codificación es el proceso mediante el cual la información se convierte en otra forma aceptable para la transmisión.La decodificación revierte este 
+        proceso para interpretar la idea. <br>
+        La codificación también tiene lugar en la comunicación por computadora, como se muestra en la figura. <br>
+        <img src="images/comunicacionHost.png" alt="">
+        <br>
+        La codificación entre host debe tener el formato adecuado para el medio. El host emisor, primero convierte en bits los mensajes enviados a través de la red. Cada bit se codifica en un patrón de sonidos, ondas de luz o 
+        impulsos electrónicos, según el medio de red a través del cual se transmitan los bits. El host de destino recibe y decodifica las señales para interpretar el mensaje.
+    </p>
+    <h2>Formato y encapsulamiento del mensaje.</h2>
+    <p>
+        Cuando se envía un mensaje desde el origen hacia el destino, se debe utilizar un formato o estructura específicos. Los formatos de los mensajes dependen del tipo de mensaje y el canal que se utilice para entregar el mensaje.
+        La escritura de cartas es una de las formas más comunes de comunicación humana por escrito. Durante siglos, el formato aceptado para las cartas personales no ha cambiado. En muchas culturas, una carta personal contiene los 
+        siguientes elementos: 
+        <ul>
+            <li>Un identificador del destinatario.</li>
+            <li>Un saludo.</li>
+            <li>El contenido del mensaje.</li>
+            <li>Una frase de cierre.</li>
+            <li>Un identificador del emisor.</li>
+        </ul>
+        Además de tener el formato correcto,la mayoría de las cartas personales también deben colocarse, o encapsularse, en un sobre para la entrega.El sobre tiene la dirección del emisor y la del receptor, cada una escrita en el lugar 
+        adecuado del sobre. Si la dirección de destino y el formato no son correctos, la carta no se entrega. El proceso que consiste en colocar el formato de mensaje (la carta) dentro de otro formato de mensaje (el sobre) se denomina 
+        encapsulamiento. Cuando el destinatario revierte el proceso y quita la carta del sobre se produce el desencapsulamiento del mensaje. <br>
+        Un mensaje que se envía a través de una red de computadoras sigue reglas de formato específicas para que pueda ser entregado y procesado. De la misma manera en la que una carta se encapsula en un sobre para entrega, los mensajes 
+        de las PCs también se encapsulan. Cada mensaje de computadora se encapsula en un formato específico, llamado trama, antes de enviarse a través de la red. Una trama actúa como un sobre. Proporciona la dirección del destino propuesto 
+        y la dirección del host de origen. <br>
+        <img src="images/encapsuladoMensaje.PNG" alt=""> <br>
+        Observe que la trama tiene un origen y un destino tanto en la parte de direccionamiento de trama como en el mensaje encapsulado. La diferencia entre estos dos tipos de direcciones se explicará más adelante en este capítulo. <br>
+        El formato y el contenido de una trama están determinados por el tipo de mensaje que se envía y el canal que se utiliza para enviarlo. Los mensajes que no tienen el formato correcto no se pueden enviar al host de destino o no pueden 
+        ser procesados por éste.
+    </p>
+    <h2>Tamaño del mensaje.</h2>
+    <p>
+        Otra regla de comunicación es el tamaño. Cuando las personas se comunican, los mensajes que envían, normalmente, están divididos en fragmentos más pequeños u oraciones. El tamaño de estas oraciones se limita a lo que la persona 
+        que recibe el mensaje puede procesar por vez. Una conversación individual puede estar compuesta por muchas oraciones más pequeñas para asegurarse de que cada parte del mensaje sea recibida y comprendida. Imagine cómo sería leer este 
+        curso si todo el contenido apareciera como una sola oración larga; no sería fácil de comprender. <br>
+        De manera similar, cuando se envía un mensaje largo de un host a otro a través de una red, es necesario separarlo en partes más pequeñas. Las reglas que controlan el tamaño de las partes, o tramas que se comunican a través de la red, 
+        son muy estrictas. También pueden ser diferentes, de acuerdo con el canal utilizado. Las tramas que son demasiado largas o demasiado cortas no se entregan. <br>
+        Las restricciones de tamaño de las tramas requieren que el host de origen divida un mensaje largo en fragmentos individuales que cumplan los requisitos de tamaño mínimo y máximo. El mensaje
         
     </p>
     <br><br><br><hr>
