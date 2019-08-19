@@ -1364,7 +1364,7 @@
     </p>
 
     <h2>
-        Configuración de un sistema operativo de red.
+        Capítulo 2. Configuración de un sistema operativo de red.
     </h2>
     <p>
         Todas las computadoras requieren un sistema operativo para funcionar, incluso los dispositivos de red basados en PC, como switches, routers, puntos de acceso y firewalls. 
@@ -2051,8 +2051,39 @@ Switch #
         curso si todo el contenido apareciera como una sola oración larga; no sería fácil de comprender. <br>
         De manera similar, cuando se envía un mensaje largo de un host a otro a través de una red, es necesario separarlo en partes más pequeñas. Las reglas que controlan el tamaño de las partes, o tramas que se comunican a través de la red, 
         son muy estrictas. También pueden ser diferentes, de acuerdo con el canal utilizado. Las tramas que son demasiado largas o demasiado cortas no se entregan. <br>
-        Las restricciones de tamaño de las tramas requieren que el host de origen divida un mensaje largo en fragmentos individuales que cumplan los requisitos de tamaño mínimo y máximo. El mensaje
-        
+        Las restricciones de tamaño de las tramas requieren que el host de origen divida un mensaje largo en fragmentos individuales que cumplan los requisitos de tamaño mínimo y máximo. El mensaje largo se enviará  en tramas independientes, 
+        cada trama contendrá una parte del mensaje original. Cada trama tembién tendrá su propia información de direccionamiento. En el host receptor, las partes individuales del mensaje se vuelven a unir para recosntruir el mensaje original.
+    </p>
+    <h2>Sincronización del mensaje.</h2>
+    <p>
+       Estas son las reglas de la participación para la sincronización del mensaje.
+        <h3>Método de acceso</h3>
+        <p>
+            El método de acceso determina en qué momento alguien puede enviar un mensaje. Si dos personas hablan a la vez, se produce una colisión de información y es necesario que ambas se detengan y vuelvan a comenzar. De manera similar, 
+            las computadoras deben definir un método de acceso. Los hosts de una red necesitan un método de acceso para saber cuándo comenzar a enviar mensajes y cómo responder cuando se produce alguna colisión.
+        </p>
+        <h3>Control de flujo</h3>
+        <p>
+            La sincronización también afecta la cantidad de información que se puede enviar y la velocidad con la que puede entregarse. Si una persona habla demasiado rápido, la otra persona tendrá dificultades para escuchar y comprender el mensaje. 
+            En la comunicación de la red, los hosts de origen y destino utilizan métodos de control de flujo para negociar la sincronización correcta a fin de que la comunicación sea exitosa.
+        </p>
+        <h3>Tiempo de espera para la respuesta</h3>
+        <p>
+            Si una persona hace una pregunta y no escucha una respuesta antes de un tiempo aceptable, la persona supone que no habrá ninguna respuesta y reacciona en consecuencia. La persona puede repetir la pregunta o puede continuar la conversación. 
+            Los hosts de las redes también tienen reglas que especifican cuánto tiempo deben esperar una respuesta y qué deben hacer si se agota el tiempo de espera para la respuesta.
+        </p>
+    </p>
+    <h2>Opciones de entrega del mensaje</h2>
+    <p>
+        Un mensaje puede entregarse de distintas maneras. En algunos casos, una persona desea comunicar información a un solo individuo. Otras veces, esa persona puede necesitar enviar información a un grupo de personas simultáneamente o, incluso, a 
+        todas las personas de un área. <br>
+        También puede ocurrir que el emisor de un mensaje necesite asegurarse de que el mensaje se haya entregado correctamente al destino. En estos casos, es necesario que el receptor envíe un acuse de recibo al emisor. Si no se necesita ningún 
+        acuse de recibo, se dice que el envío del mensaje es sin acuse de recibo. <br>
+        Los hosts en una red utilizan opciones de entrega similares para comunicarse. 
+        Una opción de entrega de uno a uno se denomina “unidifusión”, que significa que el mensaje tiene solo un destinatario. <br>
+        Si un host necesita enviar mensajes utilizando una opción de uno a varios, se denomina “multidifusión”. La multidifusión es el envío de un mismo mensaje a un grupo de hosts de destino de manera simultánea.
+        Si es necesario que todos los hosts de la red reciban el mensaje a la vez, se utiliza el método de difusión. La difusión representa una opción de entrega de mensaje de uno a todos. Algunos protocolos utilizan un mensaje especial de multidifusión 
+        que se envía a todos los dispositivos, lo que lo hace similar en esencia a una difusión. Asimismo, puede ser que los hosts deban emitir un acuse de recibo de algunos mensajes y no para otros.
     </p>
     <br><br><br><hr>
         <section>
