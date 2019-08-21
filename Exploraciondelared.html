@@ -2120,6 +2120,40 @@ Switch #
             </li>
         </ul>
     </p>
+    <h2>Interacción de protocolos.</h2>
+    <p>
+        La comunicación entre un servidor web y un cliente web es un ejemplo de interacción entre varios protocolos. Los protocolos que se muestran en la figura son: 
+        <ul>
+            <li>
+                <strong>HTTP.</strong> Es un protocolo de aplicación que rige la forma en que interactúan un servidor web y un cliente web. HTTP define el contenido 
+                y el formato de las solicitudes y respuestas intercambiadas entre el cliente y el servidor. Tanto el cleinte como el software del servidor web implementan 
+                el HTTP como parte de la aplicación. HTTP se basa en otros protocolos para regular la forma en que se transportan los mensajes entre cleinte y el servidor.
+            </li>
+            <li>
+                <strong>TCP.</strong> Es el protocolo de transporte que administra las conversaciones individuales. TCP divide los mensajes HTTP en partes más pequeñas, 
+                llamadas "segmentos". Estos segmentos se envían entre los procesos del servidor y el cliente web que se ejecutan en el host de destino. También es responsable 
+                de controlar el tamaño y los intervalos a los que se intercambian los mensajes entre el servidor y el cliente.
+            </li>
+            <li>
+                <strong>IP.</strong> Es responsable de tomar los segmentos formateados del TCP, encapsulados en paquetes, asginar las direcciones apropiadas y seleccionar la 
+                mejor ruta al host de destino.
+            </li>
+            <li>
+                <strong>Ethernet.</strong> Es el protocolo de acceso a la red que describe dos funciones principales: la comunicación a través de un enlace de datos y la 
+                transmisión física de datos en los medios de red. Los protocolos de acceso a la red son responsables de tomar los paquetes de IP y los formatean para transmitirlos 
+                por los medios.
+            </li>
+        </ul>
+        <img src="images/interaccionProtocolo.PNG" alt="">
+    </p>
+    <h2>Suites de protocolos y estándares del sector.</h2>
+    <p>
+        Una suite de protocolos es un grupo de protocolos que trabajan en forma conjunta para proporcionar servicios integrales de comunicación de red. Las suites de protocolos 
+        pueden estar especificadas por una organización  o pueden ser desarrolladas por un proveedor. Las suites de protocolos pueden resultar un poco abrumadoras, como las cuatro que 
+        se muestran en la figura. <br>
+        La suite de protocolos TCP/IP es un estándar abierto, lo que significa que estos protocolos están disponibles para el público sin cargo, y cualquier proveedor puede implementar estos 
+        protocolos en su hardware o software.
+    </p>
     <br><br><br><hr>
         <section>
             <div>
