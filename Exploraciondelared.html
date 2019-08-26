@@ -2152,7 +2152,81 @@ Switch #
         pueden estar especificadas por una organización  o pueden ser desarrolladas por un proveedor. Las suites de protocolos pueden resultar un poco abrumadoras, como las cuatro que 
         se muestran en la figura. <br>
         La suite de protocolos TCP/IP es un estándar abierto, lo que significa que estos protocolos están disponibles para el público sin cargo, y cualquier proveedor puede implementar estos 
-        protocolos en su hardware o software.
+        protocolos en su hardware o software. <br>
+        Un protocolo basado en estándares es un proceso que recibo el aval del sector de redes y fue aprobado por una organización de estandarización. El uso de estándares  en el desarrollo y 
+        la implementación de protocolos aseguran que productos de destintos fabricantes pueden interoperar correctamente. Si un fabricante en particular no observa un protocolo estrictamente, 
+        es posible que sus equipos o software no puedan comunicarse satisfactoriamente con productos hechos por otros fabricantes. <br>
+        Algunos protocolos son excluidos, lo que significa que una empresa o proveedor controla la definición del protocolo y como funciona AppleTalk y Novell Netware, que son suites de protocolo 
+        antiguas, constituyen ejemplos de protocolos exclusivos. Es común que un proveedor ( o grupo de proveedores) desarrolle un protocolo exclusivo para satisfacer las necesidades de sus clientes 
+        y posteriormente ayude a hacer de ese protocolo exclusivo un estándar abierto. <br>
+        <img src="images/suitesDeProtocolosYEstandaresDelSector.PNG" alt="">
+    </p>
+    <h2>Desarrollo de TCP/IP.</h2>
+    <p>
+        La primera red de conmutación de paquetes, antecesora de Internet actual, fue la red Advanced Research Project Agency Network (ARPANET), que tuvo su origen en 1969 al conectar PC centrales 
+        en cuatro ubicaciones. ARPANET fue fundada por el Departamento de Defensa de los Estados Unidos para que se utilice en universidades y en laboratorios de investigación. <br>
+        <img src="images/tcpip15.PNG" alt=""><img src="images/tcpip14.PNG" alt=""><img src="images/tcpip13.PNG" alt="">
+        <img src="images/tcpip12.PNG" alt=""><img src="images/tcpip11.PNG" alt=""><img src="images/tcpip10.PNG" alt="">
+        <img src="images/tcpip9.PNG" alt=""><img src="images/tcpip8.PNG" alt=""><img src="images/tcpip7.PNG" alt="">
+        <img src="images/tcpip6.PNG" alt=""><img src="images/tcpip5.PNG" alt=""><img src="images/tcpip4.PNG" alt="">
+        <img src="images/tcpip3.PNG" alt=""><img src="images/tcpip2.PNG" alt=""><img src="images/tcpip1.PNG" alt="">
+        <br>
+    </p>
+    <h2>Conjunto del protocolo TCP/IP.</h2>
+    <p>
+        En la actualidad, la suite de protocolos TCP/IP incluye muchos protocolos. Algunos de los más populares se muestran en la figura. Los protocolos de la capa de acceso a la red son responsables de
+        la entrega de los paquetes IP en los medios físicos. Estos protocolos de capa inferior son desarrollados por organizaciones de estandarización, como el IEEE. <br>
+        <img src="images/conjuntodeprotocolosTCPIPyprocesodecomunicacion.PNG" alt=""> <br>
+        <blockquote>
+            <cite>
+                <h5>Sistema de nombres de dominio (o servicio).</h5>
+                <p>
+                    Traduce los nombres de dominio tales como cisco.com a direcciones IP.
+                </p>
+                <h5>Protocolo Bootstrap</h5>
+                <p>
+                    Habilita una estación de trabajo sin disco para descubrir su propia dirección IP, la dirección IP de un servicio BOOTP en la red y un archivo que debe cargarse en la memoria para 
+                    iniciar la máquina.
+                </p>
+                <h5>Protocolo de configuración dinámica de host.</h5>
+                <p>
+                    Asigna direcciones IP de manera dinámica a estaciones de clientes cuando se unicia. <br>
+                    Permite que las direcciones vuelven a utilizarse cuando ya no se necesitan.
+                </p>
+                <h5>Protocolo simple de transferencia de correo.</h5>
+                <p>
+                    Permite los clientes envien un correo electrónico a un servidor de correo. <br>
+                    Permite los servidores envien un correo electrónico a otros servidores.
+                </p>
+                <h5>Protocolo de oficina de correos, version 3 (POP3).</h5>
+                <p>
+                    Permite que los clientes recuperen un correo electrónico de un servidor de correo. <br>
+                    Descarga correo electrónico desde el servidor de correo al escritorio.
+                </p>
+                <h5>Protocolo de acceso a mensajes de Internet.</h5>
+                <p>
+                    Permite que los clientes accedan a correos electrónicos almacenados en un servidor de correo. <br>
+                    Mantiene el correo electrónico en el servidor.
+                </p>
+                <h5>Protocolo de transferencia de archivos.</h5>
+                <p>
+                    Establece las reglas que permiten a un usuario en un host acceder y transferir archivos hacia y desde otro host en una red. <br>
+                    Un protocolo confiable de entrega de archivos, orientado a la conexión y que requiere acuse de recibo.
+                </p>
+                <h5>Protocolo trivial de transferencia de archivos.</h5>
+                <p>
+                    Un protocolo trivial de transferencia de archivos sin conexión. <br>
+                    Un protocolo de entrega de archivos sin acuse de recibo de grandes esfuerzos. <br>
+                    Utiliza menos sobrecarga que FTP.
+                </p>
+                <h5>Protocolo de transferencia de hipertexto.</h5>
+                <p>
+                    Conjunto de reglas para intercambiar texto, imágenes gráficas, sonido, video y otros archivos multimedia en la World Wide Web.
+                </p>
+            </cite>
+        </blockquote>
+        La suite de protocolos TCP/IP se implementa como una pila de TCP/IP tanto en los hosts emisores como en los hosts receptores para proporcionar una entrega completa de las aplicaciones a través de 
+        la red. Los protocolos Ethernet se utilizan para transmitir el paquete IP a través de un medio físico que usa la LAN.
     </p>
     <br><br><br><hr>
         <section>
