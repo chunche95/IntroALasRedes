@@ -2179,6 +2179,9 @@ Switch #
         <img src="images/conjuntodeprotocolosTCPIPyprocesodecomunicacion.PNG" alt=""> <br>
         <blockquote>
             <cite>
+                <h2>Capa de aplicación.</h2>
+                <hr>
+                <!----------------------------------->
                 <h5>Sistema de nombres de dominio (o servicio).</h5>
                 <p>
                     Traduce los nombres de dominio tales como cisco.com a direcciones IP.
@@ -2223,6 +2226,10 @@ Switch #
                 <p>
                     Conjunto de reglas para intercambiar texto, imágenes gráficas, sonido, video y otros archivos multimedia en la World Wide Web.
                 </p>
+                <!----------------------------------->
+                <h2>Capa de transporte.</h2>
+                <hr>
+                <!----------------------------------->
                 <h5>Protocolo de datagramas del usuario.</h5>
                 <p>
                     Habilita un proceso que se ejecuta en un host para enviar paquetes a un proceso que se ejecuta en otro host. <br>
@@ -2233,16 +2240,103 @@ Switch #
                     Permite la comunicación confiable entre los procesos que se ejecutn en hosts independientes. <br>
                     Transmisiones confiables con acuse de recibo que confirman el envío correcto.
                 </p>
+                <!----------------------------------->
+                <h2>Capa de Internet.</h2>
+                <hr>
+                <!----------------------------------->
                 <h5>Protocolo de Internet.</h5>
                 <p>
-                    
+                    Recibe segmentos de mensaje de la capa de transporte. <br>
+                    Dispone mensaje en paquetes <br>
+                    Direcciona paquetes para la entrega compleja a través de una internetwork. 
+                </p>
+                <h5>Traducción de direcciones de redes.</h5>
+                <p>
+                    Traduce las direcciones IP desde una red privada a direcciones IP públicas únicas de forma global.
+                </p>
+                <h5>Protocolo de mensajes de control de Internet.</h5>
+                <p>
+                    Proporciona comentarios desde un host de destino a un host de origen con respecto a los errores en la entrega de paquetes. 
+                </p>
+                <h5>Open Shortest Path first</h5>
+                <p>
+                    Protoolo de enrutamiento de link-state. <br>
+                    Diseño jerárquico basado en áreas. <br>
+                    Protocolo de enrutamiento interior de estándar abierto. 
+                </p>
+                <h5>Protocolo de enrutamiento de gateway interior mejorado.</h5>
+                <p>
+                    Protocolo de enrutamiento exclusivo de Cisco. <br>
+                    Usa la métrica compuesta según el ancho de banda, el retraso, la carga y la confiabilidad.
+                </p>
+                <!----------------------------------->
+                <h2>Capa de acceso de red.</h2>
+                <hr>
+                <!----------------------------------->
+                <h5>Protocolo de resolución de direcciones.</h5>
+                <p>
+                    Proporciona la asignación de direcciones dinámicas entre una dirección IP y una dirección de hardware.
+                </p>
+                <h5>Protocolo punto a punto.</h5>
+                <p>
+                    Proporciona un medio de encapsulamiento de paquetes para transmitirlos a través de un enlace serial. 
+                </p>
+                <h5>Ethernet.</h5>
+                <p>
+                    Define las reglas para conectar y señalizar estándares de la capa de acceso a la red. 
+                </p>
+                <h5>Controlador de interfaz.</h5>
+                <p>
+                    Proporciona instrucciones a la máquina para el control de una interfaz específica en un dispositivo de red.
                 </p>
             </cite>
         </blockquote>
         La suite de protocolos TCP/IP se implementa como una pila de TCP/IP tanto en los hosts emisores como en los hosts receptores para proporcionar una entrega completa de las aplicaciones a través de 
         la red. Los protocolos Ethernet se utilizan para transmitir el paquete IP a través de un medio físico que usa la LAN.
     </p>
-    <br><br><br><hr>
+    <h2>Proceso de comunicación TCP/IP.</h2>
+    <p>
+        <h3>
+            Encapsulamiento. 
+        </h3>
+        <img src="images/encapsulamientoTCPIP.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP2.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP3.png" alt=""> <br>
+        En las figuras superiores, se muestra el proceso de comunicación completo mediante un ejemplo de servidor web que transmite datos a un cliente.
+        Este proceso y estos protocolos se analizarán con más profundidad en capítulos posteriores. <br>
+        <h3>
+            Operación del protocolo para recibir un mensaje.
+        </h3>
+        <img src="images/encapsulamientoTCPIP4.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP5.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP6.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP7.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP8.png" alt=""> <br>
+        1. En la figura 1, la animación comienza con el servidor web preparando la página de lenguaje de marcado de hipertexto (HTML) como los datos que se van a enviar. <br>
+        2. El encabezado HTTP del protocolo de aplicación se agrega al frente de los datos HTML. El encabezado contiene diversos tipos de información, incluida la versión de 
+        HTTP que utiliza el servidor y un código de estado que indica que tiene información para el cliente web. <br>
+        3. El protocolo de capa de aplicación HTTP entrega los datos de la página web con formato HTML a la capa de transporte. El protocolo de la capa de transporte TCP se 
+        utiliza para administrar conversaciones individuales, en este ejemplo entre el servidor web y el cliente web. <br>
+        4. Luego, la información IP se agrega al frente de la información TCP. IP asigna las direcciones IP de origen y de destino que corresponden. Esta información se conoce 
+        como paquete IP. <br>
+        5. El protocolo Ethernet agrega información en ambos extremos del paquete IP, conocidos como la “trama de enlace de datos”. Esta trama se envía al router más cercano a 
+        lo largo de la ruta hacia el cliente web. Este router elimina la información de Ethernet, analiza el paquete IP, determina el mejor camino para el paquete, coloca el 
+        paquete en una trama nueva y lo envía al siguiente router vecino hacia el destino. Cada router elimina y agrega información de enlace de datos nueva antes de reenviar el paquete. <br>
+        6. Estos datos ahora se transportan a través de la internetwork, que consta de medios y dispositivos intermediarios. <br>
+        7. En la figura 2, la animación comienza con el cliente que recibe las tramas de enlace de datos que contienen los datos. Cada encabezado de protocolo se procesa y luego se 
+        elimina en el orden inverso al que se agregó. La información de Ethernet se procesa y se elimina, seguida por la información del protocolo IP, luego la información de TCP y, 
+        finalmente, la información de HTTP. <br>
+        8. A continuación, la información de la página web se transfiere al software de navegador web del cliente.
+    </p>
+    <h2>Actividades: Protocolos y capas.</h2>
+    <p>
+        <img src="images/ActividadProtocolosYCapas.PNG" alt="">
+    </p>
+    <h2>Estándares abiertos.</h2>
+    <p>
+        3.2.3.1
+    </p>
+        <br><br><br><hr>
         <section>
             <div>
                 <footer>
