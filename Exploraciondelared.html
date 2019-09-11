@@ -2490,8 +2490,99 @@ Switch #
     </p>
     <h2>Actividad (parte 1). Funciones de las capas de OSI.</h2>
     <p>
-        
+        Parte 1: <br>
+        <img src="images/funcionesDeLasCapasDeOSI.PNG" alt="">
+        <br> Parte 2: <br>
+        <img src="images/funcionesDeLasCapasDeOSI2.PNG" alt="">
     </p>
+    <h2>Packet Tracer:Investigación de los modelos TCP/IP y OSI en acción.</h2>
+    <p>
+        <a href="documentos/3.2.4.6 Packet Tracer - Investigating the TCP-IP and OSI Models in Action.pdf" target="_blank" rel="noopener noreferrer">Modelos TCP-IP Y OSI en accion (pdf)</a>
+        <br>
+        <a href="documentos/3.2.4.6 Packet Tracer - Investigating the TCP-IP and OSI Models in Action.pka">Investigacion de modelos tcp-ip y osi en accion - PKA</a>
+    </p>
+    <h2>Segmentación del mensaje.</h2>
+    <p>
+        En teoría, una comunicación simple, como un vídeo musical o un correo electrónico puede enviarse a través de la red desde un origen hacia un desino como una transmisión de bits masiva y continua. Si en realidad los mensajes se transmitieron 
+        de esta manera, significará que ningún otro dispositivo podrá enviar o recibir mensajes en la misma red mientras esta transferencia de datos está en progreso. Estas grandes transmisiones de datos originarán retrasos importantes. Además, si falla un enlace 
+        en la infraestructura de la red interconectada durante la transmisión, el mensaje completo se perdería y tendría que retansmitirse completamente. <br>
+        Un método mejor es dividir los datos en partes más pequeñas y manejables para enviarlas por la red. La división del flujo de datos en partes más pequeñas se denomina <i>segmentación</i>. La segmentación de mensajes tiene dos beneficios principales: 
+        <ul>
+            <li>
+                Primero, al enviar partes individuales más pequeñas del origen  al destino, se pueden intercalar diversas conversaciones en la red, llamadas multiplexaxión.
+                <br>
+                <img src="images/segmentacion.PNG" alt=""> <br>
+                <img src="images/multiplexacion.PNG" alt="">
+            </li>
+            <li>
+                La segmentación puede aumentar la eficiencia de las comunicaciones de red. Si parte del mensaje no logra llegar al destino debido a una falla en la red o a congestión, solo se deben retransmitir las partes faltantes. 
+            </li>
+        </ul>
+        La desventaja de usar segmentación y multiplexación para transmitir mensajes a través de la red es el nivel de complejidad que se agrega al proceso. Supongamos que tuviera que enviar una carta de 100 páginas, pero en cada sobre solo cabe una. 
+        El proceso de escribir la dirección, etiquetar, enviar, recibir y abrir los cien sobres requerirá mucho tiempo tanto para el remitente como para el destinatario. <br>
+        En las comunicaciones de red, cada sgmento del mensake debe seguir un proceso similar para asegurar que llegue al destino correcto y que puede volverse a ensamblar en el contenido del mensaje original, como se muestra en la figura. <br>
+        <img src="images/comunicacionDeMensajes.PNG" alt="">
+    </p>
+    <h2>Unidades de datos de protocolo.</h2>
+    <p>
+        Mientras los datos de la aplicación bajan a la pila del protocolo y transmiten por los medios de la red, se agrega diversa información de protocolos en cada nivel. Esto comúnmente se conoce como proceso de encapsulamiento. <br>
+        La forma que adopta una porción de datos en cualquier capa se denomina <i>unidad de datos del protocolo</i>-<strong>PDU</strong>. 
+        Durante el encapsulamiento, cada capa encapsula las PDU que recibe de la capa inferior de acuerdo con el protocolo que se utiliza. En cada etapa del proceso, una PDU tiene un nombre distinto para reflejar sus funciones nuevas. Aunque no existe
+        una conversión universal de nombres para las PDU, en este curso se denominan de acuerdo con los protocolos de la suite TCP/IP, como se muestra en las imagenes. br
+        <div>
+            <img src="images/datos.PNG" alt=""> <br> datos <br>
+            <img src="images/segmento.png" alt=""> <br> Segmento  <br>
+            <img src="images/paquete.png" alt=""> <br> Paquete <br>
+            <img src="images/trama.PNG" alt=""> <br> Marco (Dependiente del medio) - Trama <br>
+            <img src="images/bits.png" alt=""> <br> Bits <br>
+        </div>
+    </p>
+    <h2>Ejemplo de encapsulamiento.</h2>
+    <p>
+        Cuando se envían mensajes en una red, el proceso de encapsulamiento opera desde las capas supeiores hacia las capas inferiores. En cada capa, la información de la capa superior  se considera como datos en el protocolo encapsulado. Por ejemplo,m 
+        el segmento TCP se considera como datos en el paquete IP.  <br>
+        Ejemplo del proceso de encapsulamiento cuando un servidor web envía una página web a un cliente web. <br>
+        <img src="images/ejemploEncapsulado.png" alt=""> <br>
+        Los protocolos que se muestran en la imagen se 'transformarán' en 1's y 0's para ser enviados al cliente web. <br>
+        <img src="images/ejemploEncapsulado2.png" alt="">
+    </p>
+    <h2>Desencapsulamiento.</h2>
+    <p>
+        Este proceso se invierte en el host receptor , y se conoce como desencapsulamiento. El desencapsulamiento es el proceso que utilizan los dispositivos receptores para eliminar uno o más de los encabezados de protocolo. Los datos se desencapsulan mientras suben 
+        por la pila hacia la aplicación del usuario final. <br>
+        <img src="images/desencapsulamiento.PNG" alt=""> <br>
+        <img src="images/desencapsular2.png" alt="">
+    </p>
+    <h2>Actividad: Ilustrar el proceso de encapsulamiento.</h2>
+    <p>
+        <img src="images/actividad-encapsulamiento.PNG" alt="">
+    </p>
+    <h2>Direcciones de red y direcciones de enlace de datos.</h2>
+    <p>
+        La capa de red y la capa de enlace de datos son responsables de enviar los datos desde el dispositivo de origen o emisor hasta el dispositivo de destino o receptor. <br>
+        <img src="images/direccionesderedydireccionesdeenlacededatos.PNG" alt="">
+        Los protocolos de las dos capas contienen las direcciones de origen y de destino, 
+        pero sus direcciones tienen objetivos distintos. 
+        <ul>
+            <li>
+                <strong>Direcciones de origen y de destino de la capa de red.</strong> Son responsables de enviar el paquete IP desde el dispositivo de origen hasta el dispositivo final, ya sea en la misma red o a una red remota. 
+            </li>
+            <li>
+                <strong>Direcciones de origen y de destino de la capa de enlace de datos.</strong> Son responsavles de enviar la trama de enlace de datos desde una tarjeta de interfaz de red (NIC) a otra en la misma red. 
+            </li>
+        </ul>
+        Una dirección lógica de la capa de red, o capa 3, se usa para enviar el paquete IP desde el dispositivo de origen hasta el dispositivo de destino, como se muestra en la imagen. 
+        <br>
+        <img src="images/direccionesdereddecapa3.PNG" alt="">
+        <br>
+        Los paquetes IP contienen dos direcciones IP: 
+        <ul>
+            <li>Dirección IP de origen: La dirección IP del dispositivo emisor, el origen del paquete.</li>
+            <li>Dirección IP de destino: La dirección IP del dispositivo receptor, es decir, el destino final del paquete.</li>
+        </ul>
+    </p>
+    <h2>Direcciones de enlace de datos.</h2>
+    
         <br><br><br><hr>
         <section>
             <div>
