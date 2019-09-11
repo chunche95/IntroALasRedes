@@ -1830,7 +1830,7 @@ Switch #
         Para restaurar un archivo de configuración a un dispositivo: 
         <ul>
             <li>Ingrese al modo de configuración a un dispositivo.</li>
-            <li>Copie y pegue el archivo de texto global en el dispostivo.</li>
+            <li>Copie y pegue el archivo de texto global en el dispositivo.</li>
         </ul>
         El texto en el archivo estará aplicado como comandos en la CLI y pasará a ser la configuración en ejecución en el dispositivo. Este es un conveniente para configurar manualmente un 
         dispositivo.
@@ -2598,6 +2598,48 @@ Switch #
             <li>Dirección de enlace de datos de destino: La dirección física de la NIC que recibe la trama de enlace de datos. Esta dirección es el router del salto siguiente o el dispositivo  de destino final.</li>
         </ul>
         La trama de enlace de datos también contiene un trailer que se analizará en mayor detalle más adelante.
+    </p>
+    <h2>Dispositivos en la misma red.</h2>
+    <p>
+        Para comprender la forma en que los dispositivos se comunican en la red, es importante entender las funciones de las direcciones de la capa de red y de las direccioens del enlace de datos. 
+        <br>
+        <strong>Función de las direcciones de la capa de red.</strong> <br>
+        Las direccionesd de la capa de red, o direcciones IP, indican el origen y el destino final. Un paquete IP contiene dos partes: 
+        <ul>
+            <li>
+                <b>Porción de red:</b> La secciñon más a la izquierda de la dirección que indica la red de la que es miembro la dirección IP. Todos los dispositivos de la misma red tienen la misma porción de red de la dirección.
+            </li>
+            <li>
+                <b>Porción de host:</b> La sección restante de la dirección que identifica a un dispositivo específico en la red. La sección de host es única para cada dispositivo en la red.
+            </li>
+        </ul>
+        <cite>
+            <strong>Nota</strong> La máscara de subred se utiliza para identificar la porción de red de una dirección de la porción del host. La máscara de subred se analiza en capítulos más adelante. 
+        </cite>
+        En este ejemplo, tenemos un equipo cliente, PC1, que se comuica con un servidor FTP, en la misma red IP. 
+        <ul>
+            <li>
+                Dirección IP de origen: La dirección IP del dispositivo emisor, es decir, el equipo cliente PC1: 192.168.1.110 
+            </li>
+            <li>
+                Dirección IP de destino: La dirección del dispositivo receptor, el servidor FTP: 192.168.1.9
+            </li>
+        </ul>
+        <strong>Función de las diecciones de la capa de enlace de datos.</strong><br>
+        Cuando el emisor y el receptor del paquete IP están en lamisma red, la trama de enlace de datos se envía directamente al dispositivo receptor. En una red Ethernet, las direcciones de enlace de datos se conocen como direcciones MAC de Ethernet. 
+        Las direcciones MAC están integradas físicamente a la NIC Ethernet.
+        <ul>
+            <li>
+                Dirección MAC de origen: La dirección de enlace de datos, o la dirección MAC de ethernet, del dispositivo que envía la trama de enlace de datos con el paquete IP encapsulado. La dirección MAC de la NIC Ethernet de PC1 es AA-AA-AA-AA-AA-AA,
+                redactada en notación hexadecimal.
+            </li>
+            <li>
+                Dirección MAC de destino: Cuando el dispositivo receptor etá en la misma red que el dispositivo emisor, la dirección MAC de destino es la dirección de enlace de datos des dispositivo receptor. En este ejemplo, la dirección MAC de destino 
+                es la dirección MAC del servidor FTP: CC-CC-CC-CC-CC-CC, redactada en notación hexadecimal.
+            </li>
+        </ul>
+        La trama con el paquete IP encapsulado ahora se puede transmitir desde PC1 directamente hasta el servidor FTP.
+        <img src="images/comunicacionenmismared.PNG" alt="">
     </p>
         <br><br><br><hr>
         <section>
