@@ -2643,7 +2643,41 @@ Switch #
     </p>
     <h2>Dispositivos en una red remota.</h2>
     <p>
-        
+        Sin embargo, ¿cuáles son las funciones de la dirección de la capa de red y de la direcciñon de la capa de enlace de datos cuando un dispositivo se comunica con un otro en una red remota? En este ejemplo, tenemos un equipo cliente, PC1, que se comunica 
+        con un servidor, en este caso un servidor web, en una red IP diferente. <br>
+        <strong>Función de las direcciones de la capa de red</strong>
+        <br>
+        Cuando el emisor del paquete se encuentra en una red distinta de la del receptor, las direcciones IP de origen y de destino representan los hots en redes diferentes. Esto lo indica la porción de red de la dirección IP del host de destino. 
+        <ul>
+            <li>
+                <b>Dirección IP de origen:</b> la dirección IP del dispositivo receptor, es decir, el equipo cliente PC1: 192.168.1.110.
+            </li>
+            <li>
+                <b>Dirección IP de destino:</b> la dirección IP del dispositivo receptor, es decir, el servidor web: 172.16.1.99.
+            </li>
+        </ul>
+        En la figura, observe que la porción de red de las direcciones IP de origen y destino se encuentran en redes diferentes. <br>
+        <strong>
+            Función de las direcciones de la capa de enlace de datos.
+        </strong>
+        <br>
+        Cuando el emisor y el receptor del paquete IP se encuentran en redes diferentes, la trama de enlace de datos de Ethernet no se puede enviar directamente al host de destino, debido a que en la red del emisor no se puede tener acceso directamente al host. 
+        La trama de Ethernet se debe enviar a otro dispositivo conocido como router o gateway predeterminado. En nuestro ejemplo, el gateway predeterminado es R1. R1 tiene una dirección de enlace de datos de Ethernet que se encuentra en la misma red que PC1. Esto permite 
+        que PC1 alcance el router directamente. <br>
+        <ul>
+            <li>
+                <b>Dirección MAC de origen:</b> la dirección MAC de Ethernet del dispositivo emisor, PC1. La dirección MAC de la interfaz Ethernet de PC1 es AA-AA-AA-AA-AA-AA. 
+            </li>
+            <li>
+                <b>Dirección MAC de destino:</b> cuando el dispositivo  receptor, la dirección IP de destino, está en una red distinta de la del dispositivo emisor, este usa la dirección MAC de Ethernet del gateway  predeterminado o el router. En este ejemplo, la dirección 
+                MAC de destino es la dirección MAC de la interfaz Ethernet de R1, 11-11-11-11-11-11. Esta es la interfaz que se adjunta a la misma red que PC1. 
+            </li>
+        </ul>
+        La trama de Ethernet con el paquete IP encapsulado ahora se puede transmitir a R1. R1 reenvía el paquete al destino, el servidor web. Esto puede significar que R1 reenvía el paquete  a otro router o directamente al servidor web si el destino  se encuentra en una red conectada a R1. 
+        <br>
+        Es importante que en la direcciñon IP del gateway predeterminado esté configurada en cada host de la red local. Todos los paquetes que tienen como destino redes remotas se envían al gateway predeterminado. Las direcciones MAC de Ethernet y el gateway predeterminado se analizan 
+        en capítulos más adelante. <br>
+        <img src="images/comunicacionRedRemota.PNG" alt="">
     </p>
         <br><br><br><hr>
         <section>
