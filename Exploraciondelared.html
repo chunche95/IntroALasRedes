@@ -1830,7 +1830,7 @@ Switch #
         Para restaurar un archivo de configuración a un dispositivo: 
         <ul>
             <li>Ingrese al modo de configuración a un dispositivo.</li>
-            <li>Copie y pegue el archivo de texto global en el dispostivo.</li>
+            <li>Copie y pegue el archivo de texto global en el dispositivo.</li>
         </ul>
         El texto en el archivo estará aplicado como comandos en la CLI y pasará a ser la configuración en ejecución en el dispositivo. Este es un conveniente para configurar manualmente un 
         dispositivo.
@@ -2179,6 +2179,9 @@ Switch #
         <img src="images/conjuntodeprotocolosTCPIPyprocesodecomunicacion.PNG" alt=""> <br>
         <blockquote>
             <cite>
+                <h2>Capa de aplicación.</h2>
+                <hr>
+                <!----------------------------------->
                 <h5>Sistema de nombres de dominio (o servicio).</h5>
                 <p>
                     Traduce los nombres de dominio tales como cisco.com a direcciones IP.
@@ -2223,6 +2226,7 @@ Switch #
                 <p>
                     Conjunto de reglas para intercambiar texto, imágenes gráficas, sonido, video y otros archivos multimedia en la World Wide Web.
                 </p>
+<<<<<<< HEAD
                 <h5>Protocolo de datagramas del usuario.</h5>
                 <p>
                     Habilita un proceso que se ejecuta en un host para enviar paquetes a un proceso que se ejecuta en otro host. <br>
@@ -2268,13 +2272,490 @@ Switch #
                 <h5>Controladores de interfaz.</h5>
                 <p>
                     
+=======
+                <!----------------------------------->
+                <h2>Capa de transporte.</h2>
+                <hr>
+                <!----------------------------------->
+                <h5>Protocolo de datagramas del usuario.</h5>
+                <p>
+                    Habilita un proceso que se ejecuta en un host para enviar paquetes a un proceso que se ejecuta en otro host. <br>
+                    No confirma la transmisión correcta de datagramas. 
+                </p>
+                <h5>Protocolo de control de transmisión.</h5>
+                <p>
+                    Permite la comunicación confiable entre los procesos que se ejecutn en hosts independientes. <br>
+                    Transmisiones confiables con acuse de recibo que confirman el envío correcto.
+                </p>
+                <!----------------------------------->
+                <h2>Capa de Internet.</h2>
+                <hr>
+                <!----------------------------------->
+                <h5>Protocolo de Internet.</h5>
+                <p>
+                    Recibe segmentos de mensaje de la capa de transporte. <br>
+                    Dispone mensaje en paquetes <br>
+                    Direcciona paquetes para la entrega compleja a través de una internetwork. 
+                </p>
+                <h5>Traducción de direcciones de redes.</h5>
+                <p>
+                    Traduce las direcciones IP desde una red privada a direcciones IP públicas únicas de forma global.
+                </p>
+                <h5>Protocolo de mensajes de control de Internet.</h5>
+                <p>
+                    Proporciona comentarios desde un host de destino a un host de origen con respecto a los errores en la entrega de paquetes. 
+                </p>
+                <h5>Open Shortest Path first</h5>
+                <p>
+                    Protoolo de enrutamiento de link-state. <br>
+                    Diseño jerárquico basado en áreas. <br>
+                    Protocolo de enrutamiento interior de estándar abierto. 
+                </p>
+                <h5>Protocolo de enrutamiento de gateway interior mejorado.</h5>
+                <p>
+                    Protocolo de enrutamiento exclusivo de Cisco. <br>
+                    Usa la métrica compuesta según el ancho de banda, el retraso, la carga y la confiabilidad.
+                </p>
+                <!----------------------------------->
+                <h2>Capa de acceso de red.</h2>
+                <hr>
+                <!----------------------------------->
+                <h5>Protocolo de resolución de direcciones.</h5>
+                <p>
+                    Proporciona la asignación de direcciones dinámicas entre una dirección IP y una dirección de hardware.
+                </p>
+                <h5>Protocolo punto a punto.</h5>
+                <p>
+                    Proporciona un medio de encapsulamiento de paquetes para transmitirlos a través de un enlace serial. 
+                </p>
+                <h5>Ethernet.</h5>
+                <p>
+                    Define las reglas para conectar y señalizar estándares de la capa de acceso a la red. 
+                </p>
+                <h5>Controlador de interfaz.</h5>
+                <p>
+                    Proporciona instrucciones a la máquina para el control de una interfaz específica en un dispositivo de red.
+>>>>>>> 1c53b97235fd720fbeaab45f3918241539bf2306
                 </p>
             </cite>
         </blockquote>
         La suite de protocolos TCP/IP se implementa como una pila de TCP/IP tanto en los hosts emisores como en los hosts receptores para proporcionar una entrega completa de las aplicaciones a través de 
         la red. Los protocolos Ethernet se utilizan para transmitir el paquete IP a través de un medio físico que usa la LAN.
     </p>
-    <br><br><br><hr>
+    <h2>Proceso de comunicación TCP/IP.</h2>
+    <p>
+        <h3>
+            Encapsulamiento. 
+        </h3>
+        <img src="images/encapsulamientoTCPIP.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP2.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP3.png" alt=""> <br>
+        En las figuras superiores, se muestra el proceso de comunicación completo mediante un ejemplo de servidor web que transmite datos a un cliente.
+        Este proceso y estos protocolos se analizarán con más profundidad en capítulos posteriores. <br>
+        <h3>
+            Operación del protocolo para recibir un mensaje.
+        </h3>
+        <img src="images/encapsulamientoTCPIP4.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP5.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP6.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP7.png" alt=""> <br>
+        <img src="images/encapsulamientoTCPIP8.png" alt=""> <br>
+        1. En la figura 1, la animación comienza con el servidor web preparando la página de lenguaje de marcado de hipertexto (HTML) como los datos que se van a enviar. <br>
+        2. El encabezado HTTP del protocolo de aplicación se agrega al frente de los datos HTML. El encabezado contiene diversos tipos de información, incluida la versión de 
+        HTTP que utiliza el servidor y un código de estado que indica que tiene información para el cliente web. <br>
+        3. El protocolo de capa de aplicación HTTP entrega los datos de la página web con formato HTML a la capa de transporte. El protocolo de la capa de transporte TCP se 
+        utiliza para administrar conversaciones individuales, en este ejemplo entre el servidor web y el cliente web. <br>
+        4. Luego, la información IP se agrega al frente de la información TCP. IP asigna las direcciones IP de origen y de destino que corresponden. Esta información se conoce 
+        como paquete IP. <br>
+        5. El protocolo Ethernet agrega información en ambos extremos del paquete IP, conocidos como la “trama de enlace de datos”. Esta trama se envía al router más cercano a 
+        lo largo de la ruta hacia el cliente web. Este router elimina la información de Ethernet, analiza el paquete IP, determina el mejor camino para el paquete, coloca el 
+        paquete en una trama nueva y lo envía al siguiente router vecino hacia el destino. Cada router elimina y agrega información de enlace de datos nueva antes de reenviar el paquete. <br>
+        6. Estos datos ahora se transportan a través de la internetwork, que consta de medios y dispositivos intermediarios. <br>
+        7. En la figura 2, la animación comienza con el cliente que recibe las tramas de enlace de datos que contienen los datos. Cada encabezado de protocolo se procesa y luego se 
+        elimina en el orden inverso al que se agregó. La información de Ethernet se procesa y se elimina, seguida por la información del protocolo IP, luego la información de TCP y, 
+        finalmente, la información de HTTP. <br>
+        8. A continuación, la información de la página web se transfiere al software de navegador web del cliente.
+    </p>
+    <h2>Actividades: Protocolos y capas.</h2>
+    <p>
+        <img src="images/ActividadProtocolosYCapas.PNG" alt="">
+    </p>
+    <h2>Estándares abiertos.</h2>
+    <p>
+        Los estándares abiertos fomentan la interoperabilidad, la competencia y la innovación. También garantizan que ningún producto de una sola empresa pueda monopolizar el mercado o tener una ventaja desleal sobre la competencia.
+        La compra de un router inalámbrico para el hogar constituye un buen ejemplo de esto. Existen muchas opciones distintas disponibles de diversos proveedores, y todas ellas incorporan protocolos estándares, como IPv4, DHCP, 802.3 
+        (Ethernet) y 802.11 (LAN inalámbrica). Estos estándares abiertos también permiten que un cliente con el sistema operativo OS X de Apple descargue una página web de un servidor web con el sistema operativo Linux. Esto se debe a 
+        que ambos sistemas operativos implementan los protocolos de estándar abierto, como los de la suite TCP/IP. <br>
+        Las organizaciones de estandarización son importantes para mantener una Internet abierta con especificaciones y protocolos de libre acceso que pueda implementar cualquier proveedor. Las organizaciones de estandarización pueden
+        elaborar un conjunto de reglas en forma totalmente independiente o, en otros casos, pueden seleccionar un protocolo exclusivo como base para el estándar. Si se utiliza un protocolo exclusivo, suele participar el proveedor que 
+        creó el protocolo. <br>
+        Las organizaciones de estandarización generalmente son organizaciones sin fines de lucro y neutrales en lo que respecta a proveedores, que se establecen para desarrollar y promover el concepto de estándares abiertos. <br>
+        <ul>
+            <li>
+                <a href="https://www.tiaonline.org/">TIA</a>    
+            </li>
+            <li>
+                <a href="https://www.itu.int/en/Pages/default.aspx">ITU</a>
+            </li>
+            <li>
+                <a href="https://www.ietf.org/">IETF</a>
+            </li>
+            <li>
+                <a href="https://www.icann.org/">ICANN</a>
+            </li>
+            <li>
+                <a href="http://www.iana.org/">IANA</a>
+            </li>
+            <li>
+                <a href="https://www.ieee.org/">IEEE</a>
+            </li>
+        </ul>
+    </p>
+    <h2>Estándares de Internet.</h2>
+    <p>
+        Las organizaciones de estandarización generalmente son institucionales sin fines de lucro y neutrales 
+        en lo que respecta a proveedores, que se establecen para desarrollar y promover el concepto de estándares abiertos. 
+        Distintas organizaciones tienen diferentes responsabilidades para promover y elaborar estándares para el protocolo TCP/IP. <br>
+        Las organizaciones de estandarización que se muestran en la figura son: <br>
+        <ul>
+            <li>
+                Sociedad de Internet (ISOC): Es responsable de promover el desarrollo, la evolución y el uso abierto de Internet en todo el mundo.
+            </li>
+            <li>
+                Consejo de Arquitectura de Internet (IAB): Es responsable de la administración y el desarrollo general de los estándares de Internet. 
+            </li>
+            <li>
+                Grupo de trabajo de Ingeniería de Internet (IEFT): Desarrolla, actualiza y mantiene las tecnologías de Internet y de TCP/IP. Esto incluye 
+                el proceso y documentación para el desarrollo de nuevos protocolos y la actualización de los protocolos existentes, conocidos como documentos 
+                de petición de comentarios (RFC).
+            </li>
+            <li>
+                Grupo de trabajo de Investigación de Internet (IRFT): Está enfocado en la investigación a largo plazo en relación con los protocolos de Internet y TCP/IP, 
+                como los grupos Anti-Spam Research Group (ASRG), Crypto Forum Group (CFRG) y Peer-To-Peer Research Group (P2PRG).
+            </li>
+        </ul>
+        <img src="images/ISOC,IAB,IETFeIRTF.PNG" alt="">
+        Las organizaciones de estandarización que se muestran en la figura son: 
+        <ul>
+            <strong>Corporación de Internet para la Asignación de Nombres y Números (ICANN):</strong>Con base en los Estados Unidos, coordina la asignación de direcciones IP, 
+            la administración de nombres de dominio y la asignación de otra información por los protocolos TCP/IP. <br>
+            <strong>Autoridad de Números Asignados de Internet (IANA):</strong>Responsable de supervisar y administrar la asignación de direcciones IP, la administración de 
+            nombres de dominio y los identificadores de protocolo para ICANN. 
+        </ul>
+        <img src="images/iana&icann.PNG" alt="">
+    </p>
+    <h2>Organizaciones de estandarización de comunicaciones y electrónica.</h2>
+    <p>
+        Otras organizaciones de estandarización tienen responsabilidades de promoción y creación de estándares de comunicación y electrónica que se utilizan en la entrega de 
+        paquetes IP como señales electrónicas en medios inalámbricos o por cable. <br>
+        Instituto de Ingenieros en Electricidad y Electrónica (IEEE): organización de electrónica e ingeniería eléctrica dedicada a avanzar en innovación tecnológica y a elaborar 
+        estándares en una amplia gama de sectores, que incluyen energía, servicios de salud, telecomunicaciones y redes. En la figura se muestran varios estándares relacionados 
+        con las redes. <br>
+        <img src="images/grupoDeEstudio.PNG" alt=""> <br>
+        Asociación de Industrias Electrónicas (EIA): es conocida principalmente por sus estándares relacionados con el cableado eléctrico, los conectores y los racks de 19 in que 
+        se utilizan para montar equipos de red. <br>
+        Asociación de las Industrias de las Telecomunicaciones (TIA): es responsable de desarrollar estándares de comunicación en diversas áreas, entre las que se incluyen equipos 
+        de radio, torres de telefonía móvil, dispositivos de voz sobre IP (VoIP), comunicaciones satelitales y más. En la figura, se muestra un ejemplo de un cable Ethernet que 
+        cumple los estándares de TIA/EIA. <br>
+        <img src="images/cableCAT5E.PNG" alt="">
+        Sector de Normalización de las Telecomunicaciones de la Unión Internacional de Telecomunicaciones (UIT-T): es uno de los organismos de estandarización de comunicación más 
+        grandes y más antiguos. El UIT-T define estándares para la compresión de vídeos, televisión de protocolo de Internet (IPTV) y comunicaciones de banda ancha, como la línea 
+        de suscriptor digital (DSL).
+    </p>
+    <h2>Práctica de laboratorio: Investigación de estándares de redes.</h2>
+    <p>
+        <a href="documentos/3.2.3.4 Lab - Researching Networking Standards.pdf" target="_blank" rel="noopener noreferrer">Investigación de estándares de redes.</a>
+    </p>
+    <h2>Beneficios del uso de un modelo en capas.</h2>
+    <p>
+        Los beneficios por el uso de un modelo en capas para describir protocolos de red y operaciones incluyen lo siguiente: <br>
+        <ul>
+            <li>
+                Ayuda en el diseño de protocolos, ya que los protocolos que operan en una capa especifica tienen información definida según la cual actúan, y una interfaz definida para 
+                las capas superiores e inferiores.
+            </li>
+            <li>
+                Fomenta la competencia, ya que los productos de distintos proveedores pueden trabajar en conjunto.
+            </li>
+            <li>
+                Evita que los cambios en la tecnología o en las funcionalidades de una capa afecten otras capas superiores e inferiores.
+            </li>
+            <li>
+                Proporciona un lenguaje común para describir las funciones y capacidades de red. 
+            </li>
+        </ul>
+        Como se muestra en la figura, los modelos TCP/IP y OSI son los modelos principales que se utilizan al hablar de funcionalidad de red. Representan el tipo básico de modelos de red en capas: 
+        <ul>
+            <strong>Modelo de protocolo:</strong>Este tipo de modelo concide con precisión con la estructura de una suite de protocolos determinada. El modelo TCP/IP es un protocolo modelo porque  
+            describe las funciones que ocurren en cada capa de protocolos dentro de una suite de TCP/IP. TCP/IP también es un ejemplo de un modelo de refenrecia. <br>
+            <strong>Modelo de refenrecia:</strong>Este tipo de modelo es coherente con todos los tipos de servicios y protocolos de red al describir qué es lo que se debe hacer en una capa determinada, 
+            pero sin regir la forma en que se debe lograr. El modelo OSI en un modelo de referencia de internetwork muy conocido, pero también es un modelo de protocolo para la suite de protocolo OSI.
+        </ul>
+        <img src="images/beneficiosDelUsoDeUnModeloEnCapas.PNG" alt="">
+    </p>
+    <h2>El modelo de referencia OSI</h2>
+    <p>
+        El modelo OSI proporciona una amplia lista de funciones y servicios que se pueden presetar en cada capa. También describe  la iteracción de cada capa con las capas directamente por encima y por debajo 
+        de él. Los protocolos TCP/IP que se analizan en este curso se estructuran en torno a los modelos OSI  y TCP/IP. <br>
+        La funcionalidad de cada capa y la relación entre ellas será más evidente a medida que avance en el curso y que brinden más acerca de los protocolos. <br>
+        <cite>
+            <strong>Nota:</strong> Tenga en cuenta que, mientras las capas del modelo TCP/IP se mencionan solo por el nombre, las siete capas del modelo OSI se mencionan con frecuencia por número y no por nombre. 
+            Por ejemplo, la capa física se conoce como capa 1 del modelo OSI. 
+        </cite> <br>
+        MODELO OSI.  <br>
+        <img src="images/capadeaplicacion.PNG" alt="">
+        <img src="images/capadepresentacion.PNG" alt="">
+        <img src="images/capadesesion.PNG" alt="">
+        <img src="images/capadetransporte.PNG" alt="">
+        <img src="images/capadered.PNG" alt="">
+        <img src="images/capadedatos.PNG" alt="">
+        <img src="images/capafisica.PNG" alt="">
+    </p>
+    <h2>El modelo de protocolo TCP/IP.</h2>
+    <p>
+        El modelo de protocolo TCP-IP para comunicaciones de internetwork se creó a principios de la década de los setenta y se conoce con el nombre de modelo de Internet. Como se muestra en la figura, define cuatro 
+        categorías de funciones que deben ocurrir para que las comunicaciones se lleven a cabo correctamente. La arquitectura de la suite de protocolos TCP-IP sigue la estructura de este modelo. Por esto, es común que 
+        al modelo de Internet se le conozca como modelo TCP-IP. <br>
+        La mayoría de los modelos de protocolos describen una pila de protocolos específicos del proveedor. Las suites de protocolo antiguas, como Novell Netware y AppleTalk, son ejemplos de pilas de protocolos específicos 
+        del proveedor. Puesto que el modelo CP-IP es un estándar abierto, una empresa no controla la definición del modelo. Las definiciones del estándar y los protocolos TCP/IP se explican en un foro público y se definen en
+        un conjunto de documentos de petición de comentarios (RFC) disponibles al público. <br>
+        <img src="images/modeloTCP-IP.PNG" alt="">
+    </p>
+    <h2>Comparación entre el modelo OSI y el modelo TCP/IP.</h2>
+    <p>
+        Los protocolos que forman la suite de protocolos TCP/IP pueden describirse en términos del modelo de referencia OSI. En el modelo OSI, la capa de acceso a la red y la capa de aplicación del modelo TCP-IP están subdivididas 
+        para describir funciones discretas que deben producirse en estas capas. <br>
+        En la capa de acceso a la red, la suite de protocolos TCP-IP no especifica cuáles protocolos usar cuando se transmite por un medio físico. Las capas OSI 1 y 2 tratan los procedimientos necesarios para acceder a los medios y 
+        las maneras físicas de enviar datos por la red. <br>
+        La capa OSI 3, la capa de red, asigna directamente a la capa de Internet TCP-IP. Esta capa se utiliza para describir protocolos que abordan y dirigen mensajes a través de una internetwork. <br>
+        La capa OSI 4, la capa de transporte, asigna directamente a la capa de transporte TCP-IP. Esta capa describe los servicios y las funciones generales que proporcionan la entrega ordenada y confiable de datos entre los hosts de 
+        origen y de destino. <br>
+        La capa de aplicación TCP-IP incluye un número de protocolos que proporciona funcionalidad específica a una variedad de aplicaciones de usuario final. Las capas 5, 6 y 7  del modelo OSI se utilizan como referencias para proveedores 
+        y desarrolladores de software de aplicación para fabricar productos que funcionan en redes. <br>
+        Tanto el modelo TCP/IP como el modelo OSI se utilizan comúnmente en la referencia a protocolos en varias capas. Dado que el modelo OSI separa la capa de enlace de datos de la capa física, se suele utilizar cuando se refiere a esas 
+        capas inferiores. <br>
+        <img src="images/comparacionEntreOSIyTCPIP.PNG" alt="">
+    </p>
+    <h2>Actividad (parte 1). Funciones de las capas de OSI.</h2>
+    <p>
+        Parte 1: <br>
+        <img src="images/funcionesDeLasCapasDeOSI.PNG" alt="">
+        <br> Parte 2: <br>
+        <img src="images/funcionesDeLasCapasDeOSI2.PNG" alt="">
+    </p>
+    <h2>Packet Tracer:Investigación de los modelos TCP/IP y OSI en acción.</h2>
+    <p>
+        <a href="documentos/3.2.4.6 Packet Tracer - Investigating the TCP-IP and OSI Models in Action.pdf" target="_blank" rel="noopener noreferrer">Modelos TCP-IP Y OSI en accion (pdf)</a>
+        <br>
+        <a href="documentos/3.2.4.6 Packet Tracer - Investigating the TCP-IP and OSI Models in Action.pka">Investigacion de modelos tcp-ip y osi en accion - PKA</a>
+    </p>
+    <h2>Segmentación del mensaje.</h2>
+    <p>
+        En teoría, una comunicación simple, como un vídeo musical o un correo electrónico puede enviarse a través de la red desde un origen hacia un desino como una transmisión de bits masiva y continua. Si en realidad los mensajes se transmitieron 
+        de esta manera, significará que ningún otro dispositivo podrá enviar o recibir mensajes en la misma red mientras esta transferencia de datos está en progreso. Estas grandes transmisiones de datos originarán retrasos importantes. Además, si falla un enlace 
+        en la infraestructura de la red interconectada durante la transmisión, el mensaje completo se perdería y tendría que retansmitirse completamente. <br>
+        Un método mejor es dividir los datos en partes más pequeñas y manejables para enviarlas por la red. La división del flujo de datos en partes más pequeñas se denomina <i>segmentación</i>. La segmentación de mensajes tiene dos beneficios principales: 
+        <ul>
+            <li>
+                Primero, al enviar partes individuales más pequeñas del origen  al destino, se pueden intercalar diversas conversaciones en la red, llamadas multiplexaxión.
+                <br>
+                <img src="images/segmentacion.PNG" alt=""> <br>
+                <img src="images/multiplexacion.PNG" alt="">
+            </li>
+            <li>
+                La segmentación puede aumentar la eficiencia de las comunicaciones de red. Si parte del mensaje no logra llegar al destino debido a una falla en la red o a congestión, solo se deben retransmitir las partes faltantes. 
+            </li>
+        </ul>
+        La desventaja de usar segmentación y multiplexación para transmitir mensajes a través de la red es el nivel de complejidad que se agrega al proceso. Supongamos que tuviera que enviar una carta de 100 páginas, pero en cada sobre solo cabe una. 
+        El proceso de escribir la dirección, etiquetar, enviar, recibir y abrir los cien sobres requerirá mucho tiempo tanto para el remitente como para el destinatario. <br>
+        En las comunicaciones de red, cada sgmento del mensake debe seguir un proceso similar para asegurar que llegue al destino correcto y que puede volverse a ensamblar en el contenido del mensaje original, como se muestra en la figura. <br>
+        <img src="images/comunicacionDeMensajes.PNG" alt="">
+    </p>
+    <h2>Unidades de datos de protocolo.</h2>
+    <p>
+        Mientras los datos de la aplicación bajan a la pila del protocolo y transmiten por los medios de la red, se agrega diversa información de protocolos en cada nivel. Esto comúnmente se conoce como proceso de encapsulamiento. <br>
+        La forma que adopta una porción de datos en cualquier capa se denomina <i>unidad de datos del protocolo</i>-<strong>PDU</strong>. 
+        Durante el encapsulamiento, cada capa encapsula las PDU que recibe de la capa inferior de acuerdo con el protocolo que se utiliza. En cada etapa del proceso, una PDU tiene un nombre distinto para reflejar sus funciones nuevas. Aunque no existe
+        una conversión universal de nombres para las PDU, en este curso se denominan de acuerdo con los protocolos de la suite TCP/IP, como se muestra en las imagenes. br
+        <div>
+            <img src="images/datos.PNG" alt=""> <br> datos <br>
+            <img src="images/segmento.png" alt=""> <br> Segmento  <br>
+            <img src="images/paquete.png" alt=""> <br> Paquete <br>
+            <img src="images/trama.PNG" alt=""> <br> Marco (Dependiente del medio) - Trama <br>
+            <img src="images/bits.png" alt=""> <br> Bits <br>
+        </div>
+    </p>
+    <h2>Ejemplo de encapsulamiento.</h2>
+    <p>
+        Cuando se envían mensajes en una red, el proceso de encapsulamiento opera desde las capas supeiores hacia las capas inferiores. En cada capa, la información de la capa superior  se considera como datos en el protocolo encapsulado. Por ejemplo,m 
+        el segmento TCP se considera como datos en el paquete IP.  <br>
+        Ejemplo del proceso de encapsulamiento cuando un servidor web envía una página web a un cliente web. <br>
+        <img src="images/ejemploEncapsulado.png" alt=""> <br>
+        Los protocolos que se muestran en la imagen se 'transformarán' en 1's y 0's para ser enviados al cliente web. <br>
+        <img src="images/ejemploEncapsulado2.png" alt="">
+    </p>
+    <h2>Desencapsulamiento.</h2>
+    <p>
+        Este proceso se invierte en el host receptor , y se conoce como desencapsulamiento. El desencapsulamiento es el proceso que utilizan los dispositivos receptores para eliminar uno o más de los encabezados de protocolo. Los datos se desencapsulan mientras suben 
+        por la pila hacia la aplicación del usuario final. <br>
+        <img src="images/desencapsulamiento.PNG" alt=""> <br>
+        <img src="images/desencapsular2.png" alt="">
+    </p>
+    <h2>Actividad: Ilustrar el proceso de encapsulamiento.</h2>
+    <p>
+        <img src="images/actividad-encapsulamiento.PNG" alt="">
+    </p>
+    <h2>Direcciones de red y direcciones de enlace de datos.</h2>
+    <p>
+        La capa de red y la capa de enlace de datos son responsables de enviar los datos desde el dispositivo de origen o emisor hasta el dispositivo de destino o receptor. <br>
+        <img src="images/direccionesderedydireccionesdeenlacededatos.PNG" alt="">
+        Los protocolos de las dos capas contienen las direcciones de origen y de destino, 
+        pero sus direcciones tienen objetivos distintos. 
+        <ul>
+            <li>
+                <strong>Direcciones de origen y de destino de la capa de red.</strong> Son responsables de enviar el paquete IP desde el dispositivo de origen hasta el dispositivo final, ya sea en la misma red o a una red remota. 
+            </li>
+            <li>
+                <strong>Direcciones de origen y de destino de la capa de enlace de datos.</strong> Son responsavles de enviar la trama de enlace de datos desde una tarjeta de interfaz de red (NIC) a otra en la misma red. 
+            </li>
+        </ul>
+        Una dirección lógica de la capa de red, o capa 3, se usa para enviar el paquete IP desde el dispositivo de origen hasta el dispositivo de destino, como se muestra en la imagen. 
+        <br>
+        <img src="images/direccionesdereddecapa3.PNG" alt="">
+        <br>
+        Los paquetes IP contienen dos direcciones IP: 
+        <ul>
+            <li>Dirección IP de origen: La dirección IP del dispositivo emisor, el origen del paquete.</li>
+            <li>Dirección IP de destino: La dirección IP del dispositivo receptor, es decir, el destino final del paquete.</li>
+        </ul>
+    </p>
+    <h2>Direcciones de enlace de datos.</h2>
+    <p>
+        La dirección física de la capa de enlace de datos, o capa 2, tiene una función distinta. Su propósito es enviar la trama de enlace de datos desde una interfaz de red hasta otra interfaz de red en la misma red. Este proceso se ilustra en las siguientes imagenes. <br>
+        <img src="images/direccioensdeenlacesdedatos.png" alt=""> <br>
+        <img src="images/direccioensdeenlacesdedatos2.png" alt=""> <br>
+        <img src="images/direccioensdeenlacesdedatos3.png" alt=""> <br>
+        Antes de que un paquete IP pueda enviarse a través de una red conectadad por cable o inalámbrica, se debe encapsular en una trama de enlace de datos de modo que pueda transmitirse a través del medio físico. <br>
+        A medida que el paquete IP se mueve de host a router, de router a router y, finalmente, de router a host, es encapsulado en una nueva trama de enlace de datos, en cada punto del recorrido. Cada trama de enlace de datos contiene la dirección de origen de enlace 
+        de datos de la tarjeta NIC que envía la trama y la dirección de destino de enlace de datos de la tarjeta NIC que rcibe la trama. <br>
+        El protocolo de enlace de datos de capa 2 solo se utiliza para enviar el paquete de NIC a NIC en la misma red. El router elimina la información de la capa 2 a medida que una NIC la recibe y agrega nueva información de enlace de datos antes de reenviarla a la NIC de 
+        salida en su recorrido hacia el dispositivo de destino final. <br>
+        El paquete IP se encapsula en una trama de enlace de datos que contiene información de enlace de datos, como la siguiente: 
+        <ul>
+            <li>Direccion de enlace de datos de origen: La dirección física de la NIC del dispositivo que envía la trama de enlace de datos.</li>
+            <li>Dirección de enlace de datos de destino: La dirección física de la NIC que recibe la trama de enlace de datos. Esta dirección es el router del salto siguiente o el dispositivo  de destino final.</li>
+        </ul>
+        La trama de enlace de datos también contiene un trailer que se analizará en mayor detalle más adelante.
+    </p>
+    <h2>Dispositivos en la misma red.</h2>
+    <p>
+        Para comprender la forma en que los dispositivos se comunican en la red, es importante entender las funciones de las direcciones de la capa de red y de las direccioens del enlace de datos. 
+        <br>
+        <strong>Función de las direcciones de la capa de red.</strong> <br>
+        Las direccionesd de la capa de red, o direcciones IP, indican el origen y el destino final. Un paquete IP contiene dos partes: 
+        <ul>
+            <li>
+                <b>Porción de red:</b> La secciñon más a la izquierda de la dirección que indica la red de la que es miembro la dirección IP. Todos los dispositivos de la misma red tienen la misma porción de red de la dirección.
+            </li>
+            <li>
+                <b>Porción de host:</b> La sección restante de la dirección que identifica a un dispositivo específico en la red. La sección de host es única para cada dispositivo en la red.
+            </li>
+        </ul>
+        <cite>
+            <strong>Nota</strong> La máscara de subred se utiliza para identificar la porción de red de una dirección de la porción del host. La máscara de subred se analiza en capítulos más adelante. 
+        </cite>
+        En este ejemplo, tenemos un equipo cliente, PC1, que se comuica con un servidor FTP, en la misma red IP. 
+        <ul>
+            <li>
+                Dirección IP de origen: La dirección IP del dispositivo emisor, es decir, el equipo cliente PC1: 192.168.1.110 
+            </li>
+            <li>
+                Dirección IP de destino: La dirección del dispositivo receptor, el servidor FTP: 192.168.1.9
+            </li>
+        </ul>
+        <strong>Función de las diecciones de la capa de enlace de datos.</strong><br>
+        Cuando el emisor y el receptor del paquete IP están en lamisma red, la trama de enlace de datos se envía directamente al dispositivo receptor. En una red Ethernet, las direcciones de enlace de datos se conocen como direcciones MAC de Ethernet. 
+        Las direcciones MAC están integradas físicamente a la NIC Ethernet.
+        <ul>
+            <li>
+                Dirección MAC de origen: La dirección de enlace de datos, o la dirección MAC de ethernet, del dispositivo que envía la trama de enlace de datos con el paquete IP encapsulado. La dirección MAC de la NIC Ethernet de PC1 es AA-AA-AA-AA-AA-AA,
+                redactada en notación hexadecimal.
+            </li>
+            <li>
+                Dirección MAC de destino: Cuando el dispositivo receptor etá en la misma red que el dispositivo emisor, la dirección MAC de destino es la dirección de enlace de datos des dispositivo receptor. En este ejemplo, la dirección MAC de destino 
+                es la dirección MAC del servidor FTP: CC-CC-CC-CC-CC-CC, redactada en notación hexadecimal.
+            </li>
+        </ul>
+        La trama con el paquete IP encapsulado ahora se puede transmitir desde PC1 directamente hasta el servidor FTP. <br>
+        <img src="images/comunicacionenmismared.PNG" alt="">
+    </p>
+    <h2>Dispositivos en una red remota.</h2>
+    <p>
+        Sin embargo, ¿cuáles son las funciones de la dirección de la capa de red y de la direcciñon de la capa de enlace de datos cuando un dispositivo se comunica con un otro en una red remota? En este ejemplo, tenemos un equipo cliente, PC1, que se comunica 
+        con un servidor, en este caso un servidor web, en una red IP diferente. <br>
+        <strong>Función de las direcciones de la capa de red</strong>
+        <br>
+        Cuando el emisor del paquete se encuentra en una red distinta de la del receptor, las direcciones IP de origen y de destino representan los hots en redes diferentes. Esto lo indica la porción de red de la dirección IP del host de destino. 
+        <ul>
+            <li>
+                <b>Dirección IP de origen:</b> la dirección IP del dispositivo receptor, es decir, el equipo cliente PC1: 192.168.1.110.
+            </li>
+            <li>
+                <b>Dirección IP de destino:</b> la dirección IP del dispositivo receptor, es decir, el servidor web: 172.16.1.99.
+            </li>
+        </ul>
+        En la figura, observe que la porción de red de las direcciones IP de origen y destino se encuentran en redes diferentes. <br>
+        <strong>
+            Función de las direcciones de la capa de enlace de datos.
+        </strong>
+        <br>
+        Cuando el emisor y el receptor del paquete IP se encuentran en redes diferentes, la trama de enlace de datos de Ethernet no se puede enviar directamente al host de destino, debido a que en la red del emisor no se puede tener acceso directamente al host. 
+        La trama de Ethernet se debe enviar a otro dispositivo conocido como router o gateway predeterminado. En nuestro ejemplo, el gateway predeterminado es R1. R1 tiene una dirección de enlace de datos de Ethernet que se encuentra en la misma red que PC1. Esto permite 
+        que PC1 alcance el router directamente. <br>
+        <ul>
+            <li>
+                <b>Dirección MAC de origen:</b> la dirección MAC de Ethernet del dispositivo emisor, PC1. La dirección MAC de la interfaz Ethernet de PC1 es AA-AA-AA-AA-AA-AA. 
+            </li>
+            <li>
+                <b>Dirección MAC de destino:</b> cuando el dispositivo  receptor, la dirección IP de destino, está en una red distinta de la del dispositivo emisor, este usa la dirección MAC de Ethernet del gateway  predeterminado o el router. En este ejemplo, la dirección 
+                MAC de destino es la dirección MAC de la interfaz Ethernet de R1, 11-11-11-11-11-11. Esta es la interfaz que se adjunta a la misma red que PC1. 
+            </li>
+        </ul>
+        La trama de Ethernet con el paquete IP encapsulado ahora se puede transmitir a R1. R1 reenvía el paquete al destino, el servidor web. Esto puede significar que R1 reenvía el paquete  a otro router o directamente al servidor web si el destino  se encuentra en una red conectada a R1. 
+        <br>
+        Es importante que en la direcciñon IP del gateway predeterminado esté configurada en cada host de la red local. Todos los paquetes que tienen como destino redes remotas se envían al gateway predeterminado. Las direcciones MAC de Ethernet y el gateway predeterminado se analizan 
+        en capítulos más adelante. <br>
+        <img src="images/comunicacionRedRemota.PNG" alt="">
+    </p>
+    <h2>Práctica de laboratorio: Instalación de Wireshark.</h2>
+    <p>
+        <a href="documentos/3.4.1.1 Lab - Installing Wireshark.pdf" target="_blank" rel="noopener noreferrer">Instalación de Wireshark.</a>
+    </p>
+    <h2>Práctica de laboratorio: Uso de Wireshark para ver el tráfico de la red.1</h2>
+    <p>
+        <a href="documentos/3.4.1.2 Lab - Using Wireshark to View Network Traffic.pdf" target="_blank" rel="noopener noreferrer">Ver tráfico en la red</a>
+    </p>
+    <h2>Actividad de clase: Funcionamiento garantizado.</h2>
+    <p>
+       <a href="documentos/3.4.1.3 Class Activity - Guaranteed to Work!.pdf" target="_blank" rel="noopener noreferrer">Funcionamiento garantizado.</a> 
+    </p>
+    <h2>Cap. 3 - Protocolos y comunicaciones de red.</h2>
+    <p>
+        Las redes de datos son sistemas de terminales, dispositivos intermedios y medios que conectan los dispositivos intermediarios y medios que conectan los dispositivos. Para que produzca la comunicación,
+        los dispositivos deben saber cómo comunicarse. <br>
+        Estos dispositivos deben cumplir con  reglas y protocolos de comunicación. TCP/IP es un ejemplo de una suite de protocolos. La mayoría de los protocolos son creados para organizaciones de estandarización, 
+        como el IETF o el IEEE. El Instituto de Ingenieros de Electricidad y Electrónica es una organización prfesional para las personas que trabajan en los campos de la electrónica y de la Ingeniería eléctrica. 
+        La ISO, Organización internacional de Normalización, es el mayor desarrollador del mundo de estándares internacionales para una amplia variedad de protocolos y servicios. <br>
+        Los modelos de lred más ampliamente utilizados son OSI y TCP/IP. Asociar los protocolos que establecen las reglas de las comunicaciones de datos con las distintas capas es de gran utilidad para determinar qué 
+        dispositivos y servicios se aplican en puntos especificos mientras los datos pasan a través de las redes LAN y WAN. <br>
+        Los datos que pasan por la pila del modelo OSI se segmentan en partes y se encapsulan con direcciones y otras etiquetas. El proceso se revierte a medida que las partes se desencapsulan y pasan hacia la pila del 
+        protocolo de destino. El modelo OSI describe los procesos de codificación, formateo, segmentación y encapsulamiento de datos para transmitir por la red. <br>
+        La suite de protocolos TCP/IP es un protocolo de estándar abierto que recibió el aval del sector de redes y fue ratificado, o aprobado, por una organización de estandarización. La suite de protocolos de Internet es 
+        una suite de protocolos necesaria para trsnmitir y recibir información mediante internet. <br>
+        Las unidades de datos del protocolo (PDU) se denominan según los protocolos de la suite TCP/IP: datos, segmento,  paquete, trama y bits. <br>
+        La aplicación de los modelos permite a las distintas personas, empresas y asociaciones comerciales analizar las redes actuales y planificar las redes del futuro. 
+    </p>
+        <br><br><br><hr>
         <section>
             <div>
                 <footer>
