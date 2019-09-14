@@ -2803,10 +2803,28 @@ Switch #
         Al analizar los siguientes temas, aprenderá más sobre las conexiones de capa física que se producen y la forma en que esas conexiones afectan el transporte de datos. <br>
         <img src="images/redLocalWifi.PNG" alt="">
     </p>
-    <h2>Capa física.</h2> 4.1.2.1
+    <h2>Capa física.</h2>
     <p>
-        La capa física de OSI proporciona los medios de transporte de los bits 
+        La capa física de OSI proporciona los medios de transporte de los bits que conforman una trama de la capa de enlace de datos a través de los medios de red. Esta capa acepta una trama completa desde la capa de enlace de datos y la codifica como se 
+        secuencia de señales que se transmiten en los medios locales. Un dispositivo final o un dispositivo intermediario recibe los bits codificados que componen una trama. <br>
+        El proceso por el que pasan los datos desde un node de origen hasta un nodo de destino es el siguiente:
+        <ul>
+            <li>
+                La capa de transporte segmenta los datos de usuario, la capa de red los coloca en paquetes y la capa de enlace de datos los encapsula en forma de trama. 
+            </li>
+            <li>
+                La capa física codifica las tramas y crea las señales eléctricas, ópticas o de indas de radio que representan los bits en cada trama.
+            </li>
+            <li>
+                Luego, estas señales se envían por los medios una a la vez. 
+            </li>
+            <li>
+                La capa física del nodo de destino recupera estas señales individuales de los medios, las restaura a sus representaciones en bits y pasa los bits a la capa de enlace de datos en forma de trama completa.
+            </li>
+        </ul>
+        <img src="images/capafisica-nodo-origen-nodo-destino.PNG" alt="">
     </p>
+    4.1.2.2
         <br><br><br><hr>
         <section>
             <div>
