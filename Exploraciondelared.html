@@ -2910,12 +2910,144 @@ Switch #
         En la figura, se muestra cómo se utilizan las técnicas de AM y FM para enviar una señal. <br>
         <img src="images/ondasAM&FM.PNG" alt="">
     </p>
+
     <h2>Ancho de banda.</h2>
     <p>
         Los diferentes medios físicos admiten la transferencia de bits a distintas velocidades. Por lo general, la transferencia de datos se analiza en términos de ancho de banda y rendimiento. <br>
         El ancho de banda es la capacidad de un medio para transportar datos. El ancho de banda digital mide la cantidad de datos que pueden fluir  desde un lugar hacia otro en un período de tiempo determinado. El ancho de banda generalmente se miden en kilobits por segundo (kbps), 
         megabits por segundo (Mbps) o gigabits
+
+    <h2>Ancho de banda </h2>
+    <p>
+        Los diferentes medios físicos admiten la transferencia de bits a distintas velocidades. Por lo general, la tranferencia de datos se analiza en términos  de ancho de banda y rendimiento. <br>
+        El ancho de banda es la capacidad de un medio de transportar datos. El ancho de banda digital mide la cantidad de datos que pueden fluir desde un lugar hacia otro en un período de tiempo determinado. 
+        El ancho de banda generalmente se miden en kilobits por segundo (kbps), megabits por segundo (Mbps) o gigabits por segundo (Gbps). En ocasiones, el ancho de banda se piensa como la velocidad a la que viajan los bits, sin embargo, esto no es adecuado. Por ejemplo, en Ethernet de 10 Mbps y 
+        de 100 Mbps, los bits se envían a la velocidad de la electricidad. La diferencia es el número de bits que se transmiten por segundo. <br>
+        Una combinación de factores determina el ancho de banda práctico de una red: 
+        <ul>
+            <li>Las propiedades de los medios físicos.</li>
+            <li>Las tecnologías seleccionadas para la señalización y la detección de señales de red.</li>
+        </ul>
+        Las propiedades de los medios físicos, las tecnologías actuales y las leyes de la física desempeñan una función al momento de determinar el ancho de banda disponible. <br>
+        En la tabla, se muestran las unidades de medida comúnmente utilizadas para el ancho de banda. <br>
+        <img src="images/anchodebanda.PNG" alt="">
     </p>
+    <h2>Rendimiento.</h2>
+    <p>
+        El rendimiento es la medida de transferencia de bits a través de los medios durante un período de tiempo determinado. <br>
+        Debido a diferentes factores, el rendimiento generalmnete no coincide con el ancho de banda especificado en las implementaciones de la capa física. Muchos factores influyen en el rendimiento, incluidos los siguientes: 
+        <ul>
+            <li>La cantidad de tráfico.</li>
+            <li>El tipo de tráfico.</li>
+            <li>La latencia creada por la cantidad de dispositivos de red encontrados entre origen y destino.</li>
+        </ul>
+        La latencia se refiere a la cantidad de tiempo, incluidas las demoras, que les toma a los datos transferirse desde un punto determinado hasto otro. <br>
+        En una internetwork o una red con múltiples segmentos, el rendimiento no puede ser más rápido que el enlace más lento de la ruta de origen a destino. Incluso si todos los segmentos o gran parte de ellos ienen un ancho de banda elevado, solo se necesita un segmento en la ruta con un 
+        rendimiento inferior para crear un cuello de botella en el rendimiento de toda la red. <br>
+        Existen muchas pruebas de velocidad en líneas que pueden revelar el rendimiento de una conexión a Internet. En la figura, se proporcionan resultados de ejemplo de una prueba de velocidad. <br>
+        Existen una tercera medición ara evaluar la transferencia de datos utilizables, que se conoce como "capacidad de transferencia útil". La capacidad de transferencia útil es la medida de datos utilizables transferidos durante un período determinado. Esta capacidad representa el rendimiento 
+        sin la sobrecarga de tráfico para establecer sesiones, acuses de recibo y encapsulamientos. <br>
+        <img src="images/rendimiento.PNG" alt="">
+    </p>
+    <h2>Tipos de medios físicos.</h2>
+    <p>
+        Esta capa física produce la representación y agrupación de bits en voltajes, radiofrecuencia e impulsos de luz. Muchas organizaciones que establecen estándares han contribuido con la definición de las propiedades mecánicas, eléctricas y físicas de los medios disponibles para diferentes 
+        comunicaciones de datos. Estas especificaciones garantizan que los cables y los conectores funcionen según lo previsto mediante diferentes implementaciones de la capa de enlace de datos. <br>
+        Por ejemplo, los estándares para los medios de cobre se definen según lo siguiente: 
+        <ul>
+            <li>
+                Tipo de cableado de cobre utilizado.
+            </li>
+            <li>
+                Ancho de banda de la comunicación.
+            </li>
+            <li>
+                Tipo de conectores utilizados.
+            </li>
+            <li>    
+                Diagrama de pines y códigos de colores de las conexiones a los medios.
+            </li>
+            <li>
+                Distancia máxima de los medios.
+            </li>
+        </ul>
+        En la figura, se muestran distintos tipos de interfaces y puertos disponibles en un router 1941. <br>
+        <img src="images/router1941.PNG" alt="">
+    </p>
+    <h2>Terminología de la capa física.</h2>
+    <p>
+        <img src="images/terminologiadelacapafísica.PNG" alt="">
+    </p>
+    <h2>Características del cableado de cobre.</h2>
+    <p>
+        Las redes utilizan medios de cobre porque son económicos y fáciles de instalar, y tienen baja resistencia a la corriente eléctrica. Sin embargo, los medios 
+        de cobre se ven limitados por la distancia  y la interferencia de señales. <br>
+        Los datos se transmiten en cables de cobre como impulsos eléctricos. Un detector en la interfaz de red de un dispositivo de destino debe recibir na señal que pueda decodificarse exitosamente para que coincida con la señal 
+        enviada. No obstante, cuanto más lejos viaja una señal, más se deteriora. Esto se denomina atenuación de señal. Por este motivo, todos los medios de cobre deben seguir limitaciones de distancia estrictas según lo especifican los estándares que lo rigen. <br>
+        Los valores de temporización y voltaje de los pulsos eléctricos también son vulnerables a las interferencias de dos fuentes: 
+        <ul>
+            <li>
+                <strong>Interferencia electromagnética (EMI) o interferencia de radiofrecuencia (RFI):</strong> las señales de EMI y RFI pueden distorsionar y dañar las señales de datos que transportan los medios de cobre. Las posibles fuentes de EMI y RFI incluyen las ondas 
+                de radio y dispositivos electromagnéticos, como las luces fluorecentes o los motores eléctricos.
+            </li>
+            <li>
+                <strong>Crosstalk:</strong> se trara de una perturbación causada por los campos eléctricos o magnéticos de un hilo a la señal de un hilo adyacente. En los circuitos telefónicos, el crosstalk puede provocar que se escuche parte de otra conversación  de voz de un 
+                circuito adyacente. En especial, cuando una corriente eléctrica fluye por un hilo, crea un pequeño campo magnético  circular alrededor de dicho hilo, que puede captar un hilo adyacente.
+            </li>
+        </ul>
+        En la figura, se muestra la forma en que la interferencia puede efectuar la transmisión de datos. <br>
+        Para contrarrestar los efectos negativos de la EMI y la RFI, algunos tipos de cables de cobre tienen pares de hilos de circuitos opuestos trenzados que cancelan dicho tipo de interferencia de forma eficaz. <br>
+        La susceptibilidad de los cables de cobre al ruido eléctrico también pueden estar limitada por: 
+        <ul>
+            <li>
+                La elección del tipo o la categoría de cable más adecuados a un entorno de red determiando. 
+            </li>
+            <li>
+                El diseño de una infraestructura de cables para evitar las fuentes de interferencia posibles y conocidas en la estructura del edificio.
+            </li>
+            <li>
+                El uso de técnicas de cableado que incluyen el manejo y la terminación apropiados de los cables.
+            </li>
+        </ul>
+        <img src="images/señalesCableado.PNG" alt="">
+        
+    </p>
+    <h2>Medios de cobre.</h2>
+    <p>
+        Existen tres tipos principales de medios de cobre que se utilizan en las redes:
+        <ul>
+            <li>Par trenzado no blindado (UTP)</li>
+            <li>Par trenzado blindado (STP)</li>
+            <li>Coaxial</li>
+        </ul>
+        Estos cables se utilizan para interconectar los nodos en una LAN y los dispositivos de infraestructura, como switches, routers y puntos de acceso inalámbrico. 
+        Cada tipo de conexión y sus Dispositivos complementarios incluyen requisitos de cableado estipulados por los estándares de la capa física. <br>
+        Los diferentes estándares de la capa física especifican el uso de distintos conectores. Estos estándares especifican las dimensiones mecánicas de los conectores 
+        y las propiedades eléctricas aceptadas de cada tipo. Los medios de red utilizan conectores modulares para facilitar la conexión y desconexión. Además, puede utilizarse 
+        un único tipo de conector físico para diferentes tipos de conexiones. Por ejemplo, el conector RJ-45 se utiliza ampliamente en las LAN con un tipo de medio y en algunas 
+        WAN con otro tipo de medio. <br>
+        <img src="images/cableRJ-45.PNG" alt="">
+    </p>
+    <h2>Cable de par trenzado no blindado.</h2>
+    <p>
+        El cableado de par trenzado no blindado (UTP) es el medio de red más común. El cableado UTP, que se termina con conectores RJ-45, se utiliza para interconectar host de red con 
+        dispositivos intermediarios de red, como switches y routers. <br>
+        En las redes LAN, el cable UTP consta de cuatro pares de hilos codificados por colores que están trenzados entre sí y recubiertos con un revestimiento de plástico flexible que los
+        protege contra daños físicos menores. El trenzado de los hilos ayuda a proteger contra las interferencias de señales de otros hilos. <br>
+        Como se muestra en la figura, los códigos por colores identifican los pares individuales con sus alambres y sirven de ayuda para la terminación de cables. <br>
+        <img src="images/cableNoBlindado.png" alt="">
+    </p>
+    <h2>Cable de par trenzado blindado</h2>
+    <p>
+        El par trenzado blindado (STP) proporciona una mejor protección contra ruido que el cableado UTP. Sin embargo, en comparación con el cable UTP, el cable STP es mucho más costoso y difícil de instalar. 
+        Al igual que el cable UTP, el STP utiliza un conector RJ-45. <br>
+        El cable STP combina las técnicas de blindaje para contrarrestar la EMI y la RFI, y el trenzado de hilos para contrarrestar el crosstalk. Para obtener los máximos beneficios del blindaje, los cables STP 
+        se terminan con conectores de datos STP blindados especiales. Si el cable no se conecta a tierra correctamente, el blindaje puede actuar como antena y captar señales no deseadas. <br>
+        El cable STP que se muestra usa cuatro pares de hilos. Cada uno de estos pares está empaquetado primero con un blindaje de hoja metálica y, luego,  el conjunto se empaqueta con una malla tejida o una hoja 
+        metálica. <br>
+        <img src="images/cableBlindado.PNG" alt="">
+    </p>
+    cablo coaxial - 4.2.1.5
         <br><br><br><hr>
         <section>
             <div>
