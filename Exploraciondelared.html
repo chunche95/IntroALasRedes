@@ -483,6 +483,8 @@
         Los diagramas de topología son obligatorios para todos los que estan trabajando en redes. Estos diagramas proporcionan un mapa visual que muestra cómo está conectada la red.
         Existen dos tipos de diagramas de topología: 
         <ul>
+
+        net
             <li>
                 <strong>Diagrama de topología física:</strong> Identifican la ubicación de los dispositivos intermediarios y la instalación de los cables.
             </li>
@@ -3088,6 +3090,160 @@ Switch #
         En la figura se muestran prácticas de avleado adecuadas para evitar posibles peligros eléctricos y de incendio. <br>
         <img src="images/conexionDeTerminales.PNG" alt="">
     </p>
+    <h2>Actividad: Características de los medios de cobre.</h2>
+    <p>
+        <img src="images/caractMediosDeCobre.png" alt="">
+    </p>
+    <h2>Propiedades del cableado UTP.</h2>
+    <p>
+        Cuando se utiliza como medio de red, el cableado de par trenzado  no blindado (UTP) consta de cuatro pares de hilos codificados por colores que están trenzaados entre sí y recubiertos con un revestimiento  de plástico flexible. Su tamaño pequeño puede ser una ventaja  durante la instalación <br>
+        Los cables UTP no utilizan blindaje para contrarrestar los efectos de la EMI y pa RFI. En cambio, los diseñadores de cables  descubrieron que pueden limitar el efecto negativo del crosstalk  por medio de los métodos siguientes: 
+        <ul>
+            <li>
+                <strong>Anulación:</strong> los diseñadores ahora emparejan los hilos en un circuito. Cuando dos hilos en un circuito eléctrico están cerca, los campos magnéticos son exactamente opuestos entre sí. Por lo tanto, los dos campos magnéticos se anulan y también  anulan señal EMI y RFI externa. 
+            </li>
+            <li>
+                <strong>Cambio del número de vueltas por par de hilos:</strong> para mejorar aún más  el efecto de anulación de los pares de hilos del circuito, los diseñadores cambian el número de vueltas de cada par de hilos en un cable. 
+                Los cables UTP deben seguir especificacionres precisas que rigen cuántas vueltas o trenzas se permiten por metro (3.28ft) de cable. Observe en la figura que el par naranja y naranja/blanco está menos trenzado que el par azul y azul/blanco. Cada par coloreado se trenza una cantidad de veces distinta. 
+            </li>
+        </ul>
+        Los cables UTP dependen exclusivamente del efecto de anulación producido por los pares de hilos trenzados para limitar la degradación de la señal y proporcionar un autoblindaje eficaz de los pares de hilos en los medios de red. <br>
+        <img src="images/cableUTP.PNG" alt="">
+    </p>
+    <h2>Estándares de cableado UTP.</h2>
+    <p>
+        El cableado UTP cumple con los estándares establecidos en conjunto por la TIA/EIA. En particular, la TIA/EIA-568 estipula los estándares  comerciales de cableado para las instalaciones LAN y es el estándar de mayor uso en entornos de cableado LAN. Algunos de los elementos definidos son:
+        <ul>
+            <li>Tipo de cables.</li>
+            <li>Longitudes del cable.</li>
+            <li>Conectores.</li>
+            <li>Terminación de cables.</li>
+            <li>Métodos para realizar pruebas de cable-</li>
+        </ul>
+        El Instituto de Ingenieros Eléctricos y Electrónicos (IEEE) define las características eléctricas del cableado de cobre IEEE califica el cableado UTP según su rendimiento. Los cables se dividen en categorías según su capacidad para transportar datos de ancho de banda a velocidades mayores. Por ejemplo, el cable de categoría 5 (Cat. 5) 
+        se utiliza comúnmente en las instalaciones de FastEthernet 100Base-TX. Otras categorías incluyen el cable de categoría 5 mejorada (Cat 5e), la categoría 6 (Cat. 6) y la categoría 6a. <br>
+        Los cables de categoriasia supeiores se diseñan y fabrican para admitir velocidades superiores de transmisión de datos.
+        A medida que se desarrollan y adoptan nuevas tecnologías Ethernet de velocidades en gigabits, Cat5e es el tipo de cable minimamente aceptable en la actualidad. Cat6 es el tipo de cable recomendado para nuevas instalaciones edilicias. <br>
+        Algunos fabricantes producen cables que exceden las especificaciones de la categoría 6a de la TIA/EIA y se refieren a estos como cables de categoría 7. <br>
+        <strong>Cable de Categoría 3. (UTP)</strong>
+        <br>
+        <img src="images/cat3.png" alt="">
+        <br>
+        Se usa para la comunicación de voz. Se usa con mayor frecuencia para líneas telefónicas. 
+        <br>
+        <strong>Cable de Categoría 5 o 5e. (UTP)</strong>
+        <br>
+        <img src="images/cat5.png" alt="">
+        <br>
+        Usado para la transferencia de datos. Los cables de Cat5 admiten velocidades de 100 Mbps y pueden admitir velocidades de 1000 Mbps, pero esto no se recomienda. <br>
+        Los cables Cat5e admiten velocidades de 1000 Mbps.
+        <br>
+        <strong>Cable de Categoría 6. (UTP)</strong>
+        <br>
+        <img src="images/cat6.png" alt=""> <br>
+        Usado para la transmisión de datos. Cuenta con un separador agregado entre cada par de cables para permitir que funcione a velocidades más elevadas. <br>
+        Admite velocidades desde 1000 Mbps hasta 10 Gbps, aunque esta última no se recomienda.
+        </p>
+        <h2>Conectores UTP.</h2>
+        <p>
+            Los cables YTP generalmente se terminan con un conector RJ-45. Este conector se utiliza para una variedad de de especificaciones de capa física, una de las cuales es Ethernet. El estándar TIA/IEA-568 describe las asignaciones de los códigos por colores de los hilos a la asignación de pines (diagrama de pines) de los cables Ethernet. <br>
+            <img src="images/conectoresRJ-45.PNG" alt="">
+            <br>
+            Como se muestra en la figura, el conector RJ-45 es el componente macho que está engarzado en el extremo del cable. El socket es el componente hembra en un dispositivo de red, una pared, una toma en el tabique divisorio de un cubiculo o un panel de conexiones. <br>
+            Cada vez que se realiza la terminación de un cableado de cobre, existe la posibilidad de que se pierda la señal y de que se genere ruido en el circuito de comunicación. Cuando se realizan las terminaciones de manera incorrecta, cada cable representa una posible fuente de degradación del rendimiento de la capa física. Es fundamental que 
+            todas las terminaciones de medios de cobre sean de calidad superior para garantizar un funcionamiento óptimo con tecnologías de red actuales y futuras. <br>
+            En la figura, se muestra un ejemplo de un cable UTP mal terminado y un cable UTP bien terminado. <br>
+            <img src="images/conexionesConectores.PNG" alt="">
+        </p>
+        <h2>Tipos de cables UTP.</h2>
+        <p>
+            Según las diferentes situaciones, es posible que los cables UTP necesiten armarse según las diferentes convenciones para los cableados. Esto significa que los alambres individuales del cable deben conectarase en diferente orden para distintos grupos de pins en los conectores RJ-45. <br>
+            A continuación se mencionan los principales tipos de cables que se obtienen al utilizar convenciones especificas de cableado: 
+            <ul>
+                <li>
+                    <strong>Cable directo de Ethernet.</strong> El tipo más común de cable de red. Por lo general, se utiliza para interconectar un host con un switch y un switch con un router. 
+                </li>
+                <li>
+                    <strong>Cable cruzado Ethernet.</strong> Cable utilizado para interconectar dispositivos similares. Por ejemplo, para conectar un switch a un switch, un host a un host  o un router a un router.
+                </li>
+                <li>
+                    <strong>Cable de consola.</strong> Cable exclusivo de Cisco utilizado para conectar una estación de trabajo a un puerto de consola de un router o de un switch.
+                </li>
+            </ul>
+            En la figura, se muestra el tipo de cable UTP, los estándares relacionados y la aplicación típica de estos cables. También se identifican los pares de hilos individuales para los estándares TIA-568A y TIA-568B. <br>
+            Es posible que el uso de un cable de conexión cruzada o de conexión directa en forma incorrecta entre los dispositivos no dañe los dispositivos pero tampoco se producirña la conectividad y la comunicación entre los dispositivos. 
+            Este es un error común de laboratorio. Si no se logra la conectividad, la primera medida para resolver este problema es verificar que las conexiones de los dispositivos sean correctas. <br>
+            <img src="images/tiposDeCablesUTP.PNG" alt="">
+        </p>
+        <h2>Comprobación de cables UTP.</h2>
+        <p>
+            después de la instalación, se debe utilizar un comprobador de cables UTP, como el que se muestra en la figura, para probar los siguientes parámetros: 
+            <ul>
+                <li>Mapa de cableado.</li>
+                <li>Longitud del cable.</li>
+                <li>Pérdida de señal debido a atenuación.</li>
+                <li>Crosstalk.</li>
+            </ul>
+            Se recomienda revisar minuciosamente que se cumplan todos los requisitos de instalación de UTP. <br>
+            <img src="images/comprobacionUTP.PNG" alt="">
+        </p>
+        <h2>Actividad: Diagramas de destribución de terminales de cables T568A.</h2>
+        <p>
+            <img src="images/conexionesRJ-45.PNG" alt="">
+        </p>
+        <h2>Práctica de laboratorio. Armado de un cable cruzado Etherner.</h2>
+        <p>
+            <a href="documentos/4.2.2.7 Lab - Building an Ethernet Crossover Cable.pdf" target="_blank" rel="noopener noreferrer">Armado de un cable cruzado Ethernet.</a>
+        </p>
+        <h2>Propiedades del cableado de fibra óptica.</h2>
+        <p>
+            Transmite de datos a través de distancias más extensas y a anchos de banda mayores que cualquier otro medio de red. A diferencia de los cables de cobre, el cable de fibra óptica puede transmitir señales con 
+            menos atenuación y es totalmente inmune a las EMI y RFI. El cable de fibra óptica  se utiliza para interconectar dispositivos de red. <br>
+
+            La fibra óptica es un hilo flexible, pero extremadamente delgado y transparente de vidrio muy puro, no mucho más grueso que un cabello humano. Los bits se codifican en la fibra como impulsos de luz. El cable de fibra óptica actúa 
+            como una guía  de ondas, o una "tibería de luz", para transmitir la luz entre los dos extremos con una pérdida mínima de la señal. <br>
+            A modo de analogía, imagine un rollo de toallas de papel vacío que tiene en el interior recubierto con material reflectante. Este rollo mide mil metros de largo y tiene un pequeño puntero láser que se utiliza para enviar señales 
+            de Código Morse a la velocidad de la luz. Básicamente, así cómo funciona un cable de fibra óptica, excepto que tiene un diámetro más pequeño  y utiliza tecnologías de emisión y recepción de luz sofisticadas. <br>
+            <img src="images/fibraOptica.PNG" alt=""> <br>
+            En la actualidad, el cableado de fibra óptica se utiliza en cuatro tipos de industrias: 
+            <ul>
+                <li>
+                  <b>Redes empresariales.</b> La fibra óptica se utiliza para aplicaciones de cableado troncal y para la interconexión de dispositivos de infraestructura.
+                </li>
+                <li>
+                    <b>Fibre-to-the-Home (FTTH).</b> La fibra hasta el hogar se utiliza para proporcionar servicios de banda ancha siempre activos a hogares y pequeñas empresas.
+                </li>
+                <li>
+                    <b>Redes de largo alcance.</b> Los proveedores de servicios las utilizan para conectar países y ciudades. 
+                </li>
+                <li>
+                    <b>Redes por cable submarinas.</b> Se utilizan para proporcionar soluciones compatibles de alta velocidad y alta capacidad que pueden subsistir en entornos submarinos adversos por distancias transoceánicas. <br>
+                    <a href="https://www.submarinecablemap.com/" target="_blank" rel="noopener noreferrer">CABLES TRANSOCEÁNICOS.</a>
+                </li>
+            </ul>
+            En este curso, nos centraremos en el uso de la fibra óptica en el nivel de empresa.
+        </p>
+        <h2>Diseño de cables de medios de fibra óptica.</h2>
+        <p>
+            La fibra óptica se compone de dos tipos de vidrio (núcle y revestimiento) y un blindaje exterior de protección (revestimiento). <br>
+            <div>
+                <img src="images/diseñoFibra.png" alt=""> <br>
+                <ul>
+                    <b>Envoltura.</b> Generalmente, una envoltura de PVC que protege la fibra de la abrasión, los solventes y otros contaminantes. La composición de esta envoltura externa puede variar en función del uso del cable. <br>
+                    <b>Material de refuerzo.</b> Rodea el búfer, evita que el cable de fibra se estire cuando tiran de él. El material utilizado es, en general, el mismo material que se utiliza para fabricar los chalecos a pruebas de balas. <br>
+                    <b>Búfer.</b> Se utiliza para ayudar a proteger el núcleo y el revestimiento contra cualquier daño. <br>
+                    <b>Cubierta.</b> Hecho de productos químicos levemente diferentes de los que se utilizan para crear el núcleo. Tiende a actuar como un espejo que refleja la luz  hacia el núcleo de la fibra. Así, la luz permanece dentro del núcleo mientras viaja por la fibra. <br>
+                    <b>Núcleo.</b> Es un elemento que transmite la luz y se encuentra en el centro de la fibra óptica. Normalmente el núcleo está hecho de silicio o vidrio. Los pulsos de luz se transmiten a través del núcleo de la fibra. 
+                </ul>
+            </div>
+            <br>
+            Si bien la fibra óptica es muy delgada y susceptible a dobleces muy marcados, las propiedades del vidrio del núcleo y de revestimiento la hacen muy fuerte. La fibra óptica es duradera y se implementa en redes en condiciones 
+            ambientales adversas en todo el mundo. 
+        </p>
+        <h2>Tipos de medios de fibra óptica.</h2>
+        <p>
+            4.2.3.3
+        </p>
         <br><br><br><hr>
         <section>
             <div>
