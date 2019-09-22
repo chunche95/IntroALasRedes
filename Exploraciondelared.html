@@ -3387,9 +3387,34 @@ Switch #
             <a href="documentos/4.2.4.5 Lab - Viewing Wired and Wireless NIC Information.pdf" target="_blank" rel="noopener noreferrer">Visualización de información de tarjeta NIC cableada e inalámbrica.</a>
         </p>
         <h2>La capa de enlace de datos.</h2>
-        <p>
-            4.3.1.1
+        <p>La capa de enlace de datos del modelo OSI (Capa 2), como se muestra en la figura 1, es responsable de lo siguiente: <br>
+            <div>
+                <img src="images/capaOSI.PNG" alt=""> <br>
+                <ul>Figura 1.</ul>
+            </div>
+            <ul>
+                <li> Permite a las capas superiores acceder a los medios. </li>
+                <li> Acepta paquetes de la capa 3 y los empaqueta en tramas. </li>
+                <li> Prepara los datos de red para la red física. </li>
+                <li> Controla la forma en que los datos se colocan y reciben en los medios. </li>
+                <li> Intercambia tramas entre los nodos en un medio de red físico, como UTP o fibra óptica. </li>
+                <li> Recibe y dirige paquetes a un protocolo de capa superior. </li>
+                <li> Lleva a cabo la detección de errores. </li>
+            </ul>
+            La notación de la capa 2 para los dispositivos de red conectados a un medio común se denomina “nodo”. Los nodos crean y reenvían tramas. Como se muestra en la figura 2, la capa de enlace de datos OSI es 
+            responsable del intercambio de tramas Ethernet entre los nodos de origen y de destino a través de un medio de red físico. <br>
+
+            La capa de enlace de datos separa de manera eficaz las transiciones de medios que ocurren a medida que el paquete se reenvía desde los procesos de comunicación de las capas superiores. La capa de enlace 
+            de datos recibe paquetes de un protocolo de capa superior y los dirige a un protocolo de las mismas características, en este caso, IPv4 o IPv6. Este protocolo de capa superior no necesita saber qué medios utiliza la comunicación. 
+            <br>
+            En la figura 1, se muestra el usuario en la computadora. Debajo, aparece un modelo OSI con el nivel dos resaltado. Aparece una línea, que representa una conexión, desde el usuario hasta el router conectado 
+            a Internet. En la figura 2, se muestra una PC en la que se agregan las direcciones de origen y de destino de capa 2 a un marco. <br>
+            <div>
+                <img src="images/direccionesEnlaceDeDatosDeCapa2.PNG" alt=""> <br>
+                <ul>Figura 2.</ul>
+            </div>
         </p>
+        4.3.1.2
         <br><br><br><hr>
         <section>
             <div>
