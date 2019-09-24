@@ -3414,7 +3414,133 @@ Switch #
                 <ul>Figura 2.</ul>
             </div>
         </p>
-        4.3.1.2
+        <h2>Subcapas de enlace de datos.</h2>
+        <p>
+            La capa de enlace de datos se divide en dos subcapas: 
+            <ul>
+                <li>
+                    <b>
+                        Control de enlace lógico (LLC):
+                    </b>
+                    Esta subcapa superior se comunica con la capa de red. Coloca en la trama información que identifica qué protocolo de capa de red se utiliza para la trama. Esta información permite que varios protocolos 
+                    de la Capa 3, tales como IPv4 e IPv6, utilicen la misma interfaz de red y los mismos medios. 
+                </li>
+                <li>
+                    <b>
+                        Control de acceso al medio (MAC):
+                    </b>
+                    Se trata de la subcapa inferior, que define los procesos de acceso al medio que realiza el hardware. Proporciona direccionamiento de la capa de enlace de datos y acceso a varias tecnologías de red.
+                </li>
+            </ul>
+            En la figura, se muestra en que la capa de enlace de datos se divide en las subcapas LLC y MAC. La subcapa LLC se comunica con la capa de red, mientras que la subcapa MAC admite diversas tecnologías de acceso de red. 
+            Por ejemplo, la subcapa MAC se comunica con la tecnología LAN Ethernet para enviar y recibir las tramas a través de cables de cobre o de fibra óptica. La subcapa MAC también se comunica con tecnologías inalámbricas como 
+            Wi-Fi y Bluetooth para enviar y recibir tramas en forma inalámbrica. <br>
+            <img src="images/subcapadeenlacededatos.PNG" alt="">
+        </p>
+        <h2>Control de acceso al medio.</h2>
+        <p>
+           Los protocolos de la Capa 2 especifican la encapsulamiento de un paquete en una trama y las técnicas para colocar y sacar el paquete encapsulado de cada medio. La técnica utilizada para colocar y sacar la trama de los medios 
+           se llama método de control de acceso al medio. <br>
+           A medida que los paquetes se transfiere del host de origen al host de destino, generalmente deben atravesar diferentes redes físicas. Estas redes físicas pueden constar de diferentes tipos de medios físicos, como cables de cobre, 
+           fibra óptica y tecnología inalámbrica compuesta por señales electromagnéticas, frecuencias de radio y microondas, y enlaces satelitales. <br>
+           Sin la capa de enlace de datos, un protocolo de capa de red, tal como IP, tendría que tomar medidas para conectarse con todos los tipos de medios que pudieran existir a lo largo de la ruta de envío. Más aún, IP debería adaptarse cada vez 
+           que se desarrolle una nueva tecnología de red o medio. Este proceso dificultaría la innovación y desarrollo de protocolos y medios de red. Este es un motivo clave para usar un método en capas en interconexión de redes. <br>
+           <div>
+            Ej: <br>
+            PC en París que se conecta a una PC portátil en Japón. <br>
+            <img src="images/ComunicacionParisJapon.PNG" alt="">
+           </div>
+        </p>
+        <h2>Provisión de acceso a los medios.</h2>
+        <p>
+            Durante una misma comunicación, pueden ser necesarios distintos métodos distintos métodos de control de acceso al medio. Cada entorno  de red que los paquetes encuentran cuando viajan desde un host local hasta un host  remoto puede tener características 
+            diferentes. Por ejemplo, una LAN Ethernet consta de muchos hosts que compiten por acceder al medio de red. Los enlaces seriales constan de una conexión directa entre dos dispositivos únicamente. <br>
+            Las interfaces del router encapsulan el paquete en la trama correspondiente, y se utiliza un método de control de accesp al medio adecuado para acceder a cada enlace. En cualquier intercambio de paquetes de capas de red, puede haber muchas transiciones 
+            de medios y capa de enlace de datos. <br>
+            En cada salto a lo largo de la ruta, los routers realizan lo siguiente: 
+            <ul>
+                <li>Aceptan una trama proveniente de un medio.</li>
+                <li>Desencapsulan la trama.</li>
+                <li>Vuelven a encapsular el paquete en una trama nueva.</li>
+                <li>Reenvían la nueva trama adecuada al medio de ese segmento de la red física.</li>
+            </ul>
+            El router de la figura tiene una interfaz Ethernet para comectarse a la LAN y una interfaz serial para conectarse a la WAN. A medida que el router procesa tramas, utilizará los servicios  de la capa de enlace de datos para recibir la trama desde un medio, 
+            desencapsularlo en la PDU de la Capa 3, volver a encapsular la PDU en una trama nueva y colocar la trama en el medio del siguiente enlace de la red. <br>
+            <img src="images/transferenciadetamas.PNG" alt="">
+        </p>
+        <h2>Estándares de la capa de enlace de datos.</h2>
+        <p>
+            A diferencia de los protocolos de las capas superiores del conjunto TCP/IP, los protocolos de capa de enlace de datos generalmente no están definidos por la petición de comentarios (RFC). A pesar de que el Grupo de trabajo de ingeniería de Internet (IETF) 
+            mantiene los protocolos y servicios funcionales para la suite de protocolos TCP/IP en las capas superiores, el IETF no define las funciones ni la operación de esa capa de acceso a la red del modelo. <br>
+            Las organizaciones de ingeniería que definen estándares y protocolos abiertos que se aplican a la capa de enlace de datos incluyen: 
+            <ul>
+                <li>Instituto de Ingenieros eléctricos y Electrónicos (IEEE)</li>
+                <li>Unión Internacional de Telecomunicaciones (ITU)</li>
+                <li>Organización Internacional para la Estandarización (ISO)</li>
+                <li>Instituto Nacioanl Estadounidense de Estándares (ANSI)</li>
+            </ul>
+        </p>
+        <h2>Control de acceso a los medios.</h2>
+        <p>
+            La regulación de la ubicación de las tramas de datos en los medios se encuentra bajo el control de la subcapa de control de acceso al medio. <br>
+            El control de acceso a los medios es el equivalente a las reglas de tráfico que regulan la entrada de vehículos a una autopista. La ausencia de un control de acceso a los medios sería el equivalente a vehículos que ignoran el resto del tráfico e ingresan al 
+            camino sin tener en cuenta a los otros vehículos. Sin embargo, no todos los caminos y entradas son iguales. El tráfico puede ingresar a un camino confluyendo, esperando su turno en una señal de parada o respetando el semáforo. Un conductor sigue un conjunto 
+            de reglas diferente para cada tipo de entrada. <br>
+            De la misma manera, hay diferentes métodos para regular la colocación de tramas en los medios. Los protocolos en la capa de enlace de datos definen las reglas de acceso a los diferentes medios. Estas técnicas de control de acceso a los medios definen si los 
+            nodos comparten los medios y de qué manera lo hacen. <br>
+            El método real de control de acceso al medio utilizado depende de lo siguiente:
+            <ul>
+                <li>
+                    <strong>Topología:</strong> Cómo se muestra la conexión entre los nodos a la capa de enlace de datos.
+                </li>
+                <li>
+                    <strong>Uso compartido de medios:</strong> De qué modo los nodos comparten los medios. El uso compartido de los medios puede ser punto a punto, como en las conexiones WAN, o compartido, como en las redes LAN.
+                </li>
+            </ul>
+            <img src="images/usoCompartidoDeMedios.PNG" alt="">
+        </p>
+        <h2>Topología física y lógica.</h2>
+        <p>
+             La topología de una red es la configuración o relación de los dispositivos de red y las interconexiones entre ellos. Las topologías LAN y WAN se pueden ver de dos maneras: 
+             <ul>
+                 <li>
+                    <b>Topología física:</b> se refiere a las conexiones físicas e identifica cómo se interconectan los terminales y  dispositivos de infraestructura, como los routers, los switches y los puntos de acceso inalámbrico. Las topologías físicas 
+                    generalmente son punto a punto o en estrella. <br>
+                    <img src="images/estrella.PNG" alt="">
+                 </li>
+                 <li>
+                    <b>Topología lógica:</b> se refiere a la forma en que una red transfiere tramas de un nodo al siguiente. Esta disposición consta de conexiones virtuales entre los nodos de una red. Los protocolos de capa de enlace de datos definen estas rutas de señales lógicas.
+                    La topología lógica de los enlaces punto a punto es relativamente simple, mientras que los medios compartidos ofrecen métodos de control de acceso al medio diferentes. <br>
+                    <img src="images/conexionPuntoAPunto.PNG" alt="">
+                 </li>
+             </ul>
+             La capa de enlace de datos "ve" la topología lógica de una red al controlar el acceso de datos a los medios. Es la topología lógica la que influye en el tipo de trama de red y control de acceso a los medios que se utilizan. 
+        </p>
+        <h2>Topología física de WAN comunes.</h2>
+        <p>
+            Por lo general, las WAN se interconectan mediante las siguientes topologías físicas: 
+            <ul>
+                <li>
+                    <b>Punto a punto:</b> esta es la topología más simple, que consta de un enlace permanente entre dos terminales. Por este motivo, es una topología de WAN muy popular.
+                </li>
+                <li>
+                    <b>Hub-and-spoke:</b> es una versión WAN de la topología en estrella, en la que un sitio central interconecta sitios de sucursal mediante enlaces punto a punto.
+                </li>
+                <li>
+                    <b>Malla:</b> esta topología proporcioan alta disponibilidad, pero requiere que cada final esté interconectado con todos los demás sistemas. Por lo tanto, los costos administrativos y físicos pueden ser importantes. Básicamente, cada enlace es un enlace punto a punto al otro nodo. 
+                </li>
+            </ul>
+            En la figura, se muestran las tres topologías físicas de WAN comunes. <br>
+            <img src="images/topologiasComunes.PNG" alt=""> <br>
+            Una híbrida es una variación o una combinación de cualquiera de las topologías mencionadas. Por ejemplo, una malla parcial es una topología híbrida en que se interconectan algunos terminales, aunque no todos.
+        </p>
+        <h2>Topología física punto a punto.</h2>
+        <p>
+            Las topologías físicas punto a punto conectan dos nodos directamente, como se muestra en la figura. <br>
+            <img src="images/puntoapunto.PNG" alt=""> <br>
+            En esta disposición, los dos nodos no tienen que compartir los medios con otros hosts. Además, un nodo no tiene que determinar si una trama entrante está destinada a él o a otro nodo. Por lo tanto, los protocolos de enlace de datos lógicos pueden ser muy simples, dado que todas las tramas en los 
+            medios y el nodo en el otro extremo las saca de los medios del circuito punto a punto. 
+        </p>
         <br><br><br><hr>
         <section>
             <div>
