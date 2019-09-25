@@ -3541,6 +3541,155 @@ Switch #
             En esta disposición, los dos nodos no tienen que compartir los medios con otros hosts. Además, un nodo no tiene que determinar si una trama entrante está destinada a él o a otro nodo. Por lo tanto, los protocolos de enlace de datos lógicos pueden ser muy simples, dado que todas las tramas en los 
             medios y el nodo en el otro extremo las saca de los medios del circuito punto a punto. 
         </p>
+        <h2>Topología lógica punto a punto.</h2>
+        <p>
+            Los nodos de los extremos que se comunican en una red punto a punto pueden estar conectados físicamente a través de una cantidad de dispositivos intermediarios. Sin embargo, el uso de dispositivos físicos en la red no afecta la topología lógica. <br>
+            Como se muestra en la figura, los nodos de origen y destino pueden estar conectados indirectamente entre sí a través de una distancia geográfica. En algunos casos, la conexión lógica entre nodos forma lo que se llama un circuito virtual. Un circuito 
+            virtual es una conexión lógica creada dentro de una red entre dos dispositivos de red. Los dos nodos en cada extremo del circuito virtual intercambian las tramas entre sí. Esto ocurre incluso si las tramas están dirigidas a través de dispositivos intermediarios, 
+            como se muestra en la figura 2. Los circuitos virtuales son construcciones de comunicación lógicas utilizadas por algunas tecnologías de la Capa 2. <br>
+            <img src="images/conexionLogica.PNG" alt="">
+            El método de acceso al medio utilizado por el protocolo de enlace de datos se determina por la topología lógica punto a punto, no la topología física. Esto significa que la conexión lógica de punto a punto entre dos nodos puede no ser necesariamente entre dos nodos físicos en cada extremo de un enlace físico único. <br>
+            <img src="images/conexPuntoAPunto.PNG" alt="">
+        </p>
+        <h2>Topologiá física de LAN.</h2>
+        <p>
+            La topología física define cómo se interconectan físicamente los sistemas finales. En las redes LAN de medios compartidos, los terminales se pueden interconectar mediante las siguientes topologías físicas:
+            <ul>
+                <li>
+                    <strong> Estrella:</strong>
+                    los dispositivos finales se conectan a un dispositivo intermediario central. Las primeras topologías en estrella interconectaban terminales mediante concentradores. Sin embargo, en la actualidad estas topologías utilizan switches. La topología en estrella es fácil de instalar, muy escalable (es fácil agregar y quitar dispositivos finales) y de fácil resolución de problemas.
+                </li>    
+                <li>
+                    <strong> Estrella extendida o híbrida: </strong>
+                    en una topología en estrella extendida, dispositivos intermediarios centrales interconectan otras topologías en estrella. Una estrella extendida es un ejemplo de una topología híbrida.
+                </li>        
+                <li>        
+                    <strong> Bus: </strong>
+                    todos los sistemas finales se encadenan entre sí y terminan de algún modo en cada extremo. No se requieren dispositivos de infraestructura, como switches, para interconectar los terminales. Las topologías de bus con cables coaxiales se utilizaban en las antiguas redes Ethernet, porque eran económicas y fáciles de configurar.
+                </li>
+                <li>    
+                    <strong> Anillo: </strong>
+                    los sistemas finales se conectan a su respectivo vecino y forman un anillo. A diferencia de la topología de bus, la de anillo no necesita tener una terminación. Las topologías de anillo se utilizaban en las antiguas redes de interfaz de datos distribuida por fibra (FDDI) y redes de Token Ring.
+                </li>
+            </ul>
+            En la figura, se muestra cómo se interconectan los terminales en las redes LAN. Es común que una línea recta en un gráfico de redes represente una red LAN Ethernet que incluye una estrella simple y una estrella extendida.
+            <img src="images/topologiaFisica.PNG" alt="">
+        </p>
+        <h2>Half duplex y Full duplex.</h2>
+        <p>
+            Las comunicaciones dúplex refieren a la dirección en la que se transmiten los datos entre dos dispositivos. Las comunicaciones half-duplex limitan el intercambio de datos a una dirección a la vez, mientras que el dúplex completo permite el envío y recepción de datos simultáneo. 
+            <ul>
+                <li>
+                    <strong>Comunicación half-duplex:</strong> los dos dispositivos pueden transmitir y recibir en los medios pero no pueden hacerlo simultáneamente. El modo half-duplex se utiliza en topologías de bus antiguas y en directorios externos. Las redes WLAN también operan en half-duplex. Half-duplex también permite que solo un 
+                    dispositivo envíe o reciba a la ve en el medio compartido, y se utiliza con métodos de acceso por contención. En la figura 1, se muestra la comunicación half-duplex. <br>
+                    <img src="images/halfduplex.PNG" alt=""> <br>
+                    <img src="images/halfduplex2.PNG" alt="">
+                </li>
+                <li>
+                    <strong>Comunicación de dúplex completo:</strong> los dos dispositivos pueden transmitir y recibir en los medios al mismo tiempo. La capa de enlace de datos supone que los medios están disponibles para transmitir para ambos nodos en cualquier momento. Los switches Ethernet operan en el modo de dúplex completo de forma 
+                    predeterminada, pero pueden funcionar en half-duplex si se conectan a un dispositivo como un dispositivo externo. En la figura 2, se muestra la comunicación de dúplex completo. 
+                    <br>
+                    <img src="images/fullDuplex.PNG" alt="">
+                </li>
+            </ul>
+            Es importante que dos interfaces interconectadas, como la NIC de un host y una interfaz en un switch Ethernet, operen con el mismo modo dúplex. De lo contrario, habrá incompatibilidad de dúplex y se generará ineficiencia y latencia en el enlace.
+        </p>
+        <h2>Métodos de control de acceso al medio.</h2>
+        <p>
+            Algunas topologías de red comparten un medio común con varios nodos. Estas se denominan redes de acceso múltiple. Las LAN Ethernet y WLAN son un ejemplo de una red de accesos múltiples. En cualquier momento puede haber una cantidad de dispositivos que intentan enviar y recibir datos utilizando los mismos medios de red. <br>
+            Algunas redes de acceso múltiple requieren reglas que rijan la forma de compartir los medios físicos. Hay dos métodos básicos de control de acceso al medio para medios compartidos: 
+            <ul>
+                <li>
+                    <strong>Acceso por contención:</strong> todos los nodos en half-duplex compiten por el uso del medio, pero solo un dispositivo puede enviar a la vez. Sin embargo, existe un proceso en caso de que más de un dispositivo transmita al mismo tiempo. Las LAN Ethernet que utilizan concentradores y las WLAN son un ejemplo de este tipo de control de acceso. 
+                    En la figura, se muestra el acceso por contención. <br>
+                    <img src="images/accesoBasadoEnLaContencion.PNG" alt="">
+                </li>
+                <li>
+                    <strong>Acceso controlado:</strong> cada nodo tiene su propio tiempo para utilizar el medio. Estos tipos deterministas de redes no son eficientes porque un dispositivo debe aguardar su turno para acceder al medio. Las LAN de Token Ring antiguo son un ejemplo de este tipo de control de acceso. En la figura 2, se muestra el acceso controlado. <br>
+                    <img src="images/accesoControlado.PNG" alt="">
+                </li>
+            </ul>
+            De forma predeterminada, los switches Ethernet funcionan en el modo de dúplex completo. Esto permite que el switch y el dispositivo conectado a dúplex completo envíen y reciban simultáneamente. 
+        </p>
+        <h2>Acceso por contención: CSMA/CD.</h2>
+        <p>
+            Las redes WLAN, LAN Ethernet con concentradores y las redes de bus Ethernet antiguas son todos ejemplos de redes de acceso por contención. Todas estas redes funcionan en el modo half-duplex. Esto requiere un proceso para gestionar cuándo puede enviar un dispositivo y qué sucede cuando múltiples dispositivos envían al mismo tiempo.
+            En las redes LAN Ethernet de half-duplex se utiliza el proceso de acceso múltiple por detección de portadora y detección de colisiones (CSMA/CD). En la Figura 1 se muestra una red LAN Ethernet que utiliza un concentrador. El proceso de CSMA es el siguiente: 
+            <br>
+            1. La PC1 tiene una trama que se debe enviar a la PC3. 
+            <br>            
+            2. La NIC de la PC1 debe determinar si alguien está transmitiendo en el medio. Si no detecta un proveedor de señal, en otras palabras, si no recibe transmisiones de otro dispositivo, asumirá que la red está disponible para enviar.
+            <br>
+            3. La NIC de la PC1 envía la trama de Ethernet, como se muestra en la figura 1:
+            <br>
+            <img src="images/csma-cd.PNG" alt="">
+            <br>
+            4. El directorio externo recibe la trama. Un directorio externo también se conoce como repetidor de múltiples puertos. Todos los bits que se reciben de un puerto entrante se regeneran y envían a todos los demás puertos, como se indica en la figura 2.
+            <br>
+            <img src="images/csma-cd2.PNG" alt="">
+            <br>
+            5. Si otro dispositivo, como una PC2, quiere transmitir, pero está recibiendo una trama, deberá aguardar hasta que el canal esté libre.
+            <br>
+            6. Todos los dispositivos que están conectados al concentrador reciben la trama. Dado que la trama tiene una dirección destino de enlace de datos para la PC3, solo ese dispositivo aceptará y copiará toda la trama. Las NIC de todos los demás dispositivos ignorarán la trama, como se muestra en la figura 3.
+            <br>
+            <img src="images/csma-cd3.PNG" alt="">
+            <br>
+            Si dos dispositivos transmiten al mismo tiempo, se produce una colisión. Los dos dispositivos detectarán la colisión en la red, es decir, la detección de colisión (CD). Esto se logra mediante la comparación de los datos transmitidos con los datos recibidos que realiza la NIC o bien mediante el reconocimiento de la amplitud de señal 
+            si esta es más alta de lo normal en los medios. Los datos enviados por ambos dispositivos se dañarán y deberán enviarse nuevamente.
+        </p>
+        <h2>Acceso por contención: CSMA/CA.</h2>
+        <p>
+            Otra forma de CSM que utilizan las redes WLAN del IEEE 802.11 es el acceso múltiple por detección de portadora con prevención de colisiones (CSMA/CA). CSMA/CA utiliza un método similar a CSMA/CD para detectar si el medio está libre. CSMA/CA también utiliza técnicas adicionales. CSMA/CA no detecta colisiones pero intenta evitarlas ya 
+            que aguarda antes de transmitir. Cada dispositivo que transmite incluye la duración que necesita para la transmisión. Todos los demás dispositivos inalámbricos reciben esta información y saben por cuanto tiempo el medio no estará disponible, como se muestra en la figura. Luego de que un dispositivos inalámbricos envía una trama 802.11, 
+            el receptor devuelve un acuso de recibo para que el emisor sepa que se recibió la trama. <br>
+            Ya sea que es una red LAN Ethernet con concentradores o una red WLAN, los sistemas por contención no escalan bien bajo un uso intensivo de los medios. Es importante tener en cuenta que las redes LAN Ethernet con switches no utilizan sistemas por contención porque el switch y la NIC de host operan en el modo de dúplex completo. <br>
+            <img src="images/csma-ca.PNG" alt="">
+        </p>
+        <h2>La trama.</h2>
+        <p>
+            La capa de enlace de datos prepara los paquetes para su transporte a través de los medios locales encapsulándolos con un encabezado y un tráiler para crear una trama. La descripción de una trama es un elemento clave de cada protocolo de capa de enlace de datos. Si bien existen muchos protocolos de capa de enlace de datos diferentes que 
+            describen las tramas de la capa de enlace de datos, cada tipo de trama tiene tres partes básicas:
+            <ul>
+                <li>Encabezado.</li>
+                <li>Datos.</li>
+                <li>Tráiler.</li>
+            </ul>
+            Todos los protocolos de capa de enlace de datos encapsulan la PDU de la Capa 3 dentro del campo de datos de la trama. Sin embargo, la estructura de la trama y los campos contenidos en el encabezado y tráiler varían de acuerdo con el protocolo. <br>
+            No hay una estructura de trama que cumpla con las necesidades de todos los transportes de datos a través de todos los tipos de medios. Según el entorno, la cantidad de información de control que se necesita en la trama varía para cumplir con los requisitos de control de acceso al medio de la topología lógica y de los medios. <br>
+            Como se muestra en la figura, un entorno frágil requiere más control. <br>
+            <img src="images/entornoFragil.PNG" alt="">
+        </p>
+        <h2>Campos de trama.</h2>
+        <p>
+            El tramado rompe la transmisión en agrupaciones descifrables, con la información de control insertada en el encabezado y tráiler como valores en campos diferentes. Este formato brinda a las señales físicas una estructura que pueden recibir los nodos y que se puede decodificar en paquetes en el destino. <br>
+            Como se muestra en la figura, los tipos de campos de trama genéricos incluyen lo siguiente: 
+            <ul>
+                <li>
+                    <b>Indicadores de arranque y detención de trama:</b> se utilizan para identificar los límites de comienzo y finalización de la trama.
+                </li>
+                <li>
+                    <b>Direccionamiento:</b> indica los nodos de origen y destino en los medios.
+                </li>
+                <li>
+                    <b>Tipo:</b> identifica el protocolo de capa 3 en el campo de datos.
+                </li>
+                <li>
+                    <b>Control:</b> identifica los servicios especiales de control de flujo, como calidad de servicio (QoS). QoS se utiliza para dar prioridad de reenvío a ciertos tipos de mensajes. Las tramas de enlace de datos que llevan paquetes de voz sobre IP (VoIP) suelen recibir prioridad porque son sensibles a demoras. 
+                </li>
+                <li>
+                    <b>Datos:</b> incluye el contenido de la trama (es decir, el encabezado del paquete, el encabezado del segmento y los datos).
+                </li>
+                <li>
+                    <b>Detección de errores:</b> estos campos de trama se utilizan para la detección de errores y se incluyen después de los datos para formar el tráiler. 
+                </li>
+            </ul>
+            No todos los protocolos incluyen todos estos campos. Los estándares para un protocolo específico de enlace de datos definen el formato real de la trama. <br>
+            Los protocolos de la capa de enlace de datos agregan un tráiler en el extremo de cada trama. El tráiler se utiliza para determinar si la trama llegó sin errores. Este proceso se denomina “detección de errores” y se logra mediante la colocación en el tráiler de un resumen lógico o matemático de los bits que componen la trama.
+            La detección de errores se agrega a la capa de enlace de datos porque las señales en los medios pueden sufrir interferencias, distorsiones o pérdidas que cambien considerablemente los valores de bits que representan esas señales. <br>
+            Un nodo de transmisión crea un resumen lógico del contenido de la trama, conocido como el valor de comprobación de redundancia cíclica (CRC). Este valor se coloca en el campo Secuencia de verificación de la trama (FCS) para representar el contenido de la trama. En el tráiler Ethernet, el FCS proporciona un método para que 
+            el nodo receptor determine si la trama experimentó errores de transmisión. <br>
+            <img src="images/camposDeTrama.PNG" alt="">
+        </p>
         <br><br><br><hr>
         <section>
             <div>
