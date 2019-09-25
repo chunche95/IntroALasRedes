@@ -3690,6 +3690,61 @@ Switch #
             el nodo receptor determine si la trama experimentó errores de transmisión. <br>
             <img src="images/camposDeTrama.PNG" alt="">
         </p>
+        <h2>Campos de trama genéricos</h2>
+        <p>
+            <img src="images/camposDeTramaGenericos.PNG" alt="">
+        </p>
+        <h2>Dirección de Capa 2.</h2>
+        <p>
+            La capa de enlace de datos proporciona direccionamiento que es utilizado para transportar una trama a través de los medios locales compartidos. Las direcciones de dispositivo en esta capa se llaman direcciones físicas. <br>
+            El direccionamiento de la capa de enlace de datos está contenido en el encabezado de la trama y especifica el nodo de destino de la trama en la red local. El encabezado de la trama también puede contener la dirección de origen
+            de la trama. <br>
+            A diferencia de las direcciones lógicas de la Capa 3, que son jerárquicas, las direcciones físicas no indican en qué red está ubicado el dispositivo. En cambio, la dirección física es única para un dispositivo en particular. Si el dispositivo se traslada a otra red o subred, sigue funcionando con la misma dirección física de la Capa 2. <br>
+            Las figuras 1 a 3 muestran la función de las direcciones de la capa 2 y capa 3. A medida que el paquete IP se mueve de host a router, de router a router y, finalmente, de router a host, es encapsulado en una nueva trama de enlace de datos, en cada punto del recorrido. Cada trama de enlace de datos contiene la dirección de origen de enlace 
+            de datos de la tarjeta NIC que envía la trama y la dirección de destino de enlace de datos de la tarjeta NIC que recibe la trama. <br>
+            <div class="container">
+                <img src="images/capaDireccionamiento1.PNG" alt=""> 
+                <img src="images/capaDireccionamiento2.PNG" alt="">
+                <img src="images/capaDireccionamiento3.PNG" alt="">
+            </div>
+            No se puede utilizar una dirección específica de un dispositivo y no jerárquica para localizar un dispositivo en grandes redes o de Internet. Eso sería como intentar localizar una casa específica en todo el mundo, sin más datos que el nombre de la calle y el número de la casa. Sin embargo, la dirección física se puede usar para localizar 
+            un dispositivo dentro de un área limitada. Por este motivo, la dirección de la capa de enlace de datos solo se utiliza para entregas locales. Las direcciones en esta capa no tienen significado más allá de la red local. Compare esto con la Capa 3, en donde las direcciones en el encabezado del paquete pasan del host de origen al host de destino, 
+            sin tener en cuenta la cantidad de saltos de redes a lo largo de la ruta. <br>
+            Si los datos deben pasar a otro segmento de red, se necesita un dispositivo intermediario, como un router. El router debe aceptar la trama según la dirección física y desencapsularla para examinar la dirección jerárquica, o dirección IP. Con la dirección IP, el router puede determinar la ubicación de red del dispositivo de destino y el mejor 
+            camino para llegar a él. Una vez que sabe adónde reenviar el paquete, el router crea una nueva trama para el paquete, y la nueva trama se envía al segmento de red siguiente hacia el destino final. 
+        </p>
+        <h2>Tramas LAN y WAN.</h2>
+        <p>
+            En una red TCP/IP, todos los protocolos de capa 2 del modelo OSI funcionan con la dirección IP en la capa 3. Sin embargo, el protocolo de capa 2 específico que se utilice depende de la topología lógica y de los medios físicos. <br>
+            Cada protocolo realiza el control de acceso a los medios para las topologías lógicas de Capa 2 que se especifican. Esto significa que una cantidad de diferentes dispositivos de red puede actuar como nodos que operan en la capa de enlace de datos al implementar estos protocolos. Estos dispositivos incluyen las tarjetas de interfaz de red en PC, 
+            así como las interfaces en routers y en switches de la Capa 2. <br>
+            El protocolo de la Capa 2 que se utiliza para una topología de red particular está determinado por la tecnología utilizada para implementar esa topología. La tecnología está, a su vez, determinada por el tamaño de la red, en términos de cantidad de hosts y alcance geográfico y los servicios que se proveerán a través de la red.
+            En general, las redes LAN utilizan una tecnología de ancho de banda elevado que es capaz de admitir una gran cantidad de hosts. El área geográfica relativamente pequeña de una LAN (un único edificio o un campus de varios edificios) y su alta densidad de usuarios hacen que esta tecnología sea rentable.
+            Sin embargo, utilizar una tecnología de ancho de banda alto no es generalmente rentable para redes de área extensa que cubren grandes áreas geográficas (varias ciudades, por ejemplo). El costo de los enlaces físicos de larga distancia y la tecnología utilizada para transportar las señales a través de esas distancias, generalmente, ocasiona una 
+            menor capacidad de ancho de banda. <br>
+            La diferencia de ancho de banda normalmente produce el uso de diferentes protocolos para las LAN y las WAN.
+            Los protocolos de la capa de enlace de datos incluyen:
+            <ul>
+                <li> Ethernet </li>
+
+                <li> 802.11 inalámbrico </li>
+
+                <li> Protocolo punto a punto (PPP) </li>
+
+                <li> HDLC </li>
+
+                <li> Frame Relay </li>
+            </ul>
+            Ejemplos de protocolos de capa 2. <br>
+            <div class="container">
+                    <img src="images/ejemploProtocoloCapa2.1.PNG" alt=""> 
+                    <img src="images/ejemploProtocoloCapa2.2.PNG" alt=""> 
+                    <img src="images/ejemploProtocoloCapa2.3.PNG" alt=""> 
+                    <img src="images/ejemploProtocoloCapa2.4.PNG" alt=""> 
+                    <img src="images/ejemploProtocoloCapa2.5.PNG" alt="">
+            </div>
+
+        </p>
         <br><br><br><hr>
         <section>
             <div>
