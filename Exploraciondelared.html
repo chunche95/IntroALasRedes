@@ -3891,26 +3891,87 @@ Switch #
                     [Figura 2.]
             </div>
         </p>
-        <h2>Canposde trama de Ethernet.</h2>
+        <h2>Campos de trama de Ethernet.</h2>
         <p>
-            El tamaño de trama de Ethernet es de 64 bytes, y el máximo es de 1518 bytes. Esto incluye todos los bytes del campo "Direcció MAC de destino" hasta el campo "Secuencia de verificación de tramas (FCS)" inclusive. 
-            El campo "Preámbulo" no se incluye al describir el tamaño de una trama. <br>
-            Cualquier trama de menos de 64 bytes de longitud se considera un fragmento de colisión o una trama corta, y es descartada atomáticamente por las estaciones receptoras. Las tramas de más de 1500 bytes de datos se 
-            consideran "jumbos" o tramas bebés gigantes. <br>
-            Si el tamaño de una trama transmitida es menor que el mínimo o mayor que el máximo, el dispositivo receptor descarta la trama. Es posible que las tramas se originen en colisiones u otras señales no deseadas y, por lo 
-            tanto, se consideran no válidas. <br>
-            <div>
+            El tamaño mínimo de trama de Ethernet es de 64 bytes, y el máximo es de 1518 bytes. Esto incluye todos los bytes del 
+            campo “Dirección MAC de destino” hasta el campo “Secuencia de verificación de trama (FCS)” inclusive. El campo “Preámbulo” 
+            no se incluye al describir el tamaño de una trama. <br>
+            Cualquier trama de menos de 64 bytes de longitud se considera un fragmento de colisión o una trama corta, y es descartada 
+            automáticamente por las estaciones receptoras. Las tramas de más de 1500 bytes de datos se consideran “jumbos” o tramas bebés gigantes. <br>
+            Si el tamaño de una trama transmitida es menor que el mínimo o mayor que el máximo, el dispositivo receptor descarta la trama. 
+            Es posible que las tramas descartadas se originen en colisiones u otras señales no deseadas y, por lo tanto, se consideran no válidas. <br>
+            En la ilustración, haga clic en cada campo de la trama de Ethernet para leer más acerca de su función. <br>
+            <div class="container">
                 <img src="images/preambulo.PNG" alt="">
-                <img src="images/dirMACdestino.PNG" alt="">
-                <img src="images/dirMACorigen.PNG" alt="">
+                <img src="images/direccionMACdedestino.PNG" alt="">
+                <img src="images/direccionMACdeorigen.PNG" alt="">
                 <img src="images/etherType.PNG" alt="">
-                <img src="images/tramaEthernet2-datos.PNG" alt="">
+                <img src="images/tramaEthernet-2-Datos.PNG" alt="">
                 <img src="images/FCS.PNG" alt="">
             </div>
         </p>
+        <h2>Actividad: Subcapas MAC y LLC</h2>
+        <p>
+            <img src="images/ActividadSubcapasMACyLLC.PNG" alt="">
+        </p>
         <h2>Actividad: Identificar los nombres de campo de tramas Ethernet.</h2>
         <p>
-            
+            <img src="images/identificarlosnombresdecampodetramasEthernet.PNG" alt=""> 
+            <br>
+            <img src="images/camposdelatramadeethernetIEEE802.3.PNG" alt="">
+        </p>
+        <h2>Práctica de laboratorio. Uso de Wireshark para examinar las tramas de Ethernet.</h2>
+        <p>
+            <a href="documentos/5.1.1.7 Lab - Using Wireshark to Examine Ethernet Frames.pdf" target="_blank" rel="noopener noreferrer">Uso de Wireshark para examinar las tramas de Ethernet.</a>
+        </p>
+        <h2>Dirección MAC y hexadecimal.</h2>
+        <p>
+            Una dirección MAC de Ethernet es un valor binario de 48 bits expresado como 12 dígitos hexadecimales (4 bits por dígito hexadecimal).
+            Así como el sistema decimal es un sistema numérico de base 10, el sistema hexadecimal es un sistema de base 16. El sistema numérico de base 16 utiliza los número del 0 al 9 y las letras de la A a la F. 
+            En la figura 1, se muestran los valores decimales y hexadecimales equivalentes para los números binarios del 0000 al 1111. Es más fácil expresar un valor como un único dígito hexadecimal que como cuatro 
+            bits binarios. <br>
+            Dado que 8 bits (1 byte) es un método de agrupación binaria común, los números binarios del 00000000 al 11111111 se pueden representar en hexadecimal como el rango del 00 al FF, como se muestra en la figura 2.
+            Los ceros iniciales se muestran siempre para completar la representación de 8 bits. Por ejemplo, el valor binario “0000 1010” se muestra en hexadecimal como “0A”. <br>
+            <br>
+            <b>Nota:</b> es importante distinguir los valores hexadecimales de los valores decimales con respecto a los caracteres del 0 al 9, como se muestra en la ilustración.
+            <br>
+            <b>Representación de valores hexadecimales</b>
+            Generalmente, el sistema hexadecimal se representa por escrito por medio del valor precedido por “0x” (por ejemplo, “0x73”) o de un subíndice 16. En ocasiones menos frecuentes, puede estar seguido por una H (por ejemplo, “73H”). 
+            Sin embargo, y debido a que el texto en subíndice no se reconoce en entornos de línea de comandos o de programación, la representación técnica de un valor hexadecimal es precedida por “0x” (cero X). Por lo tanto, los ejemplos 
+            anteriores deberían mostrarse como “0x0A” y “0x73”, respectivamente. <br>
+            El valor hexadecimal se utiliza para representar las direcciones MAC de Ethernet y las direcciones IP versión 6.
+            <br>
+            <b>Conversiones hexadecimales</b>
+            Las conversiones numéricas entre valores decimales y hexadecimales son simples, pero no siempre es conveniente dividir o multiplicar por 16. Si es necesario realizar dichas conversiones, generalmente, es más fácil convertir el valor 
+            decimal o hexadecimal a un valor binario y, a continuación, convertir ese valor binario a un valor decimal o hexadecimal, según corresponda.
+        </p>
+        <h2>Dirección MAC: Identidad de Ethernet.</h2>
+        <p>
+            En Ethernet, cada dispositivo de red está conectado al mismo medio compartido. En el pasado, Ethernet era, en mayor medida, una topología de dúplex medio que utilizaba un bus de acceso múltiple o, más recientemente, hubs Ethernet. 
+            Es decir que todos los nodos recibían cada trama transmitida. Para evitar la sobrecarga excesiva que implicaba el procesamiento de cada trama, se crearon las direcciones MAC a fin de identificar el origen y el destino reales. El 
+            direccionamiento MAC proporciona un método de identificación de dispositivos en el nivel inferior del modelo OSI. Aunque actualmente Ethernet utiliza NIC y switches de dúplex completo, todavía es posible que un dispositivo que no 
+            es el destino deseado reciba una trama de Ethernet. <br>
+            <b>Estructura de la dirección MAC.</b> <br>
+            El valor de la dirección MAC es el resultado directo de las normas implementadas por el IEEE para proveedores con el objetivo de garantizar direcciones únicas para cada dispositivo Ethernet. Las normas establecidas por el IEEE obligan 
+            a los proveedores de dispositivos Ethernet a registrarse en el IEEE. El IEEE asigna al proveedor un código de 3 bytes (24 bits), llamado “identificador único de organización (OUI)”. <br>
+            El IEEE requiere que un proveedor siga dos sencillas reglas, como se muestra en la ilustración: 
+            <ul>
+                <li> Todas las direcciones MAC asignadas a una NIC o a otro dispositivo Ethernet deben utilizar el OUI que se le asignó a dicho proveedor como los tres primeros bytes.</li>
+                <li>Todas las direcciones MAC con el mismo OUI deben tener asignado un valor único en los tres últimos bytes.</li>
+            </ul>
+            <b>Nota:</b> es posible que existan direcciones MAC duplicadas debido a errores de fabricación o en algunos métodos de implementación de máquinas virtuales. En cualquier caso, será necesario modificar la dirección MAC con una nueva NIC o en el software.
+            <br>
+            <img src="images/estructuradeladieccionMACdeEthernet.PNG" alt="">
+        </p>
+        <h2>Procesamineto de tramas.</h2>
+        <p>
+            A menudo, la dirección MAC se conoce como “dirección física (BIA)” porque, históricamente, esta dirección se graba de manera física en la memoria de solo lectura (ROM) de la NIC. Es decir que la dirección está codificada en el chip de la ROM de manera permanente. <br>
+            Nota: en las NIC y los sistemas operativos de PC modernos, es posible cambiar la dirección MAC en el software. Esto es útil cuando se intenta acceder a una red filtrada por BIA. En consecuencia, el filtrado o el control de tráfico basado en la dirección MAC ya no son tan seguros. <br>
+            Cuando la computadora arranca, lo primero que hace la NIC es copiar la dirección MAC de la ROM a la RAM. Cuando un dispositivo reenvía un mensaje a una red Ethernet, adjunta la información del encabezado a la trama. La información del encabezado contiene las direcciones MAC de origen y de destino. <br>
+            En la animación, haga clic en Reproducir para ver el proceso de reenvío de tramas. Cuando una NIC recibe una trama de Ethernet, examina la dirección MAC de destino para ver si coincide con la dirección MAC física del dispositivo almacenada en la RAM. Si no hay coincidencia, el dispositivo descarta la 
+            trama. Si hay coincidencia, envía la trama a las capas OSI, donde ocurre el proceso de desencapsulamiento. <br>
+            Nota: las NIC Ethernet también aceptan tramas si la dirección MAC de destino es un grupo de difusión o de multidifusión del cual es miembro el host. <br>
+            Cualquier dispositivo que pueda ser el origen o el destino de una trama de Ethernet debe tener asignada una dirección MAC. Esto incluye estaciones de trabajo, servidores, impresoras, dispositivos móviles y routers.
         </p>
         <br><br><br><hr>
         <section>
