@@ -3891,6 +3891,27 @@ Switch #
                     [Figura 2.]
             </div>
         </p>
+        <h2>Canposde trama de Ethernet.</h2>
+        <p>
+            El tamaño de trama de Ethernet es de 64 bytes, y el máximo es de 1518 bytes. Esto incluye todos los bytes del campo "Direcció MAC de destino" hasta el campo "Secuencia de verificación de tramas (FCS)" inclusive. 
+            El campo "Preámbulo" no se incluye al describir el tamaño de una trama. <br>
+            Cualquier trama de menos de 64 bytes de longitud se considera un fragmento de colisión o una trama corta, y es descartada atomáticamente por las estaciones receptoras. Las tramas de más de 1500 bytes de datos se 
+            consideran "jumbos" o tramas bebés gigantes. <br>
+            Si el tamaño de una trama transmitida es menor que el mínimo o mayor que el máximo, el dispositivo receptor descarta la trama. Es posible que las tramas se originen en colisiones u otras señales no deseadas y, por lo 
+            tanto, se consideran no válidas. <br>
+            <div>
+                <img src="images/preambulo.PNG" alt="">
+                <img src="images/dirMACdestino.PNG" alt="">
+                <img src="images/dirMACorigen.PNG" alt="">
+                <img src="images/etherType.PNG" alt="">
+                <img src="images/tramaEthernet2-datos.PNG" alt="">
+                <img src="images/FCS.PNG" alt="">
+            </div>
+        </p>
+        <h2>Actividad: Identificar los nombres de campo de tramas Ethernet.</h2>
+        <p>
+            
+        </p>
         <br><br><br><hr>
         <section>
             <div>
