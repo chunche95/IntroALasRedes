@@ -4141,6 +4141,31 @@ Switch #
         <p>
             <img src="images/metodosderenviodetramas-actividad.PNG" alt="">
         </p>
+        <h2>Configuración de dúplex y velocidad.</h2>
+        <p>
+            Dos de los parámetros más básicos de un switch son el ancho de banda y los parámetros de dúplex para cada puerto de switch individual. Es fundamental que los parámetros de dúplex y de ancho de banda coincidan entre el puerto de switch y los dispositivos conectados, como una computadora u otro switch.
+            Existen dos tipos de parámetros de dúplex utilizados para las comunicaciones en una red Ethernet: dúplex medio y dúplex completo.
+            <ul>
+                <li>
+                    Dúplex completo: ambos extremos de la conexión pueden enviar y recibir datos simultáneamente.
+                </li>
+                <li>
+                    Dúplex medio: solo uno de los extremos de la conexión puede enviar datos por vez.
+                </li>
+            </ul>
+            La autonegociación es una función optativa que se encuentra en la mayoría de los switches Ethernet y NIC, que permite que dos dispositivos intercambien automáticamente información sobre velocidad y funcionalidades de dúplex. El switch y el dispositivo conectado seleccionan el modo de mayor rendimiento. 
+            Si ambos dispositivos tienen la funcionalidad, se selecciona dúplex completo, junto con el ancho de banda común más alto. <br>
+            Por ejemplo, en la figura 1, la NIC Ethernet de la PC-A puede funcionar en dúplex completo o en dúplex medio, y a 10 Mb/s o 100 Mb/s. La PC-A está conectada al switch S1 en el puerto 1, que puede funcionar en dúplex completo o en dúplex medio, y a 10 Mb/s, 100 Mb/s o 1000 Mb/s (1 Gb/s). <br>
+            <img src="images/configuraciondeduplexyvelocidad.PNG" alt="">
+            Si ambos dispositivos utilizan la autonegociación, el modo de funcionamiento será en dúplex completo y a 100 Mb/s. <br>
+            
+            <strong>Nota:</strong>de manera predeterminada, la mayoría de los switches Cisco y NIC Ethernet utilizan la autonegociación para la configuración de velocidad y dúplex. Los puertos Gigabit Ethernet solamente funcionan en dúplex completo.
+            <h3>Incompatibilidad de dúplex</h3>
+            Una de las causas más comunes de problemas de rendimiento en enlaces Ethernet de 10 o 100 Mb/s ocurre cuando un puerto del enlace funciona en dúplex medio, mientras el otro puerto funciona en dúplex completo, como se muestra en la figura 2. Esto sucede cuando uno o ambos puertos de un enlace se restablecen, 
+            y el proceso de autonegociación no configura ambos participantes del enlace de la misma manera. También puede ocurrir cuando los usuarios reconfiguran un lado del enlace y olvidan reconfigurar el otro. Ambos lados de un enlace deben tener activada la autonegociación, o bien ambos deben tenerla desactivada. <br>
+            <img src="images/incompatibilidaddeduplex.PNG" alt="">
+
+        </p>
         <br><br><br><hr>
         <section>
             <div>
