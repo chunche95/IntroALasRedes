@@ -4447,6 +4447,30 @@ Switch #
             A diferencia de la capa de transporte (la capa OSI 4), que administra el transporte de datos entre los procesos que se ejecutan en cada host, los protocolos de capa de red especifican la estructura de paquete y los procesos que se utilizan para transportar la información de un host a otro. La capa de red puede transportar paquetes de varios tipos de comunicación entre varios hosts porque funciona sin tener en cuenta los datos que contiene cada paquete. <br>
             <video src="videos/intercambiodedatos.mp4" autoplay="autoplay" width="680" height="480"></video>
         </p>
+        <h2>Protocolos de capa de red.</h2>
+        <p>
+            Existen varios protocolos de capa de red. Sin embargo, como se muestra en la ilustración, solo hay dos protocolos de capa de red que suelen implementarse: 
+            <ul>
+                <li>Protocolo de Internet version 4 (IPv4)</li>
+                <li>Protocolo de Internet version 6 (IPv6)</li>
+            </ul>
+            <img src="images/protocolosDeCapaDeRed.PNG" alt=""> <br>
+            <strong>Nota.</strong> Los protocolos de capa de red antiguos no se muestran en la ilustración y no se analizan en este curso.
+        </p>
+        <h2>Encapsulamiento de IP.</h2>
+        <p>
+            Para encapsular el segmento de capa de transporte u otros datos, IP le agrega un encabezado IP. Este encabezado se usa para entregar el paquete al host de destino. El encabezado IP permanece igual desde el momento en que el paquete deja el host de origen hasta que llega al host de destino. <br>
+            En la figura 1, se muestra el proceso de creación de la PDU de capa de transporte. En la figura 2, se muestra cómo la PDU de capa de red encapsula la PDU de capa de transporte para crear un paquete IP. <br>
+            El proceso de encapsulamiento de datos capa por capa permite que se desarrollen y se escalen los servicios en las diferentes capas sin afectar a las otras capas. Esto significa que IPv4 o IPv6 o cualquier protocolo nuevo que se desarrolle en el futuro puede armar sin inconvenientes un paquete con los segmentos de capa de transporte. <br>
+            Los routers pueden implementar diferentes protocolos de capa de red para que funcionen simultáneamente en una red. El routing que realizan estos dispositivos intermediarios solo toma en cuenta el contenido del encabezado de paquetes de la capa de red. En ningún caso, la porción de datos del paquete, es decir, la PDU de capa de transporte encapsulada, se modifica durante los procesos de la capa de red. <br>
+            <img src="images/" alt="">
+        </p>
+        <h2>Características de IP.</h2>
+        <p>
+            IP se diseño como un protocolo con sobrecarga baja. Provee solo las funciones necesarias para enviar un paquete de un origen a un destino a través de un sistema interconectado de redes. El protocolo no fue diseñado para rastrear ni administrar el flujo de paquetes. Estas funciones, si es necesario, están a cargo de otros protocolos en otras capas, principalmente TCP en la capa 4. <br>
+            En la ilustración, se describen las características básicas de IP. <br>
+            <img src="images/caracteristicasdelprotocoloIP.PNG" alt="">
+        </p>
         <br><br><br><hr>
         <section>
             <div>
