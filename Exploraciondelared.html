@@ -4345,7 +4345,55 @@ Switch #
         </p>
         <h2>Difusiones ARP.</h2>
         <p>
-            
+            Todos los dispositivos de la red local reciben y procesan una solicitud de ARP debido a que es una trama de difusión. En una red comenrcial típica, estas difusiones tendrían, probablemente, un efecto mínimo en el rendimiento de la red. Sin embargo, si se encendiera una gran cantidad de dispositivos 
+            que comenzaran a acceder a los servicios de red al mismo tiempo, el rendimiento podría disminuir durante un breve período, como se muestra en la ilustración. Después de que los dispositivos envían las difusiones ARP iniciales y obtienen las direcciones MAC necesarias, se minimiza cualquier efecto en la red.
+            <br>
+            <img src="images/difusionesdearpyseguridad.PNG" alt="">
+        </p>
+        <h2>Suplantación de ARP.</h2>
+        <p>
+            En algunos casos, el uso de ARP puede ocasionar un riesgo de seguridad potencial conocido como “suplantación de ARP” o “envenenamiento ARP”. Esta es una técnica utilizada por un atacante para responder a una solicitud de ARP de una dirección IPv4 que pertenece a otro dispositivo, como el gateway predeterminado, 
+            como se muestra en la ilustración. El atacante envía una respuesta de ARP con su propia dirección MAC. El receptor de la respuesta de ARP agrega la dirección MAC incorrecta a la tabla ARP y envía estos paquetes al atacante. <br>
+            <img src="images/suplantacionARP.PNG" alt="">
+            Los switches de nivel empresarial incluyen técnicas de mitigación conocidas como “inspección dinámica de ARP (DAI)”. La DAI excede el ámbito de este curso.
+        </p>
+        <h2>Actividad de clase: Fundamentos de switching.</h2>
+        <p>
+            <img src="images/Ethernetusadispositivosfinaleseintermedios.PNG" alt="">
+            <h3>Fundamentos de switching</h3>
+            Nota: esta actividad se puede completar de manera individual, en grupos pequeños o en un entorno de aprendizaje de aula completa. <br>
+            Reproduzca el siguiente vídeo:
+            <a href="https://www.youtube.com/watch?v=g5MezxMcRmk" target="_blank" rel="noopener noreferrer">The History of Ethernet (La historia de Ethernet)</a> <br>
+            Entre los temas analizados, se incluye no solo de dónde venimos en cuanto al desarrollo de la tecnología Ethernet, sino hacia dónde vamos con ella (un enfoque futurista). <br>
+            Después de ver el vídeo y de comparar su contenido con el capítulo 5, busque información sobre Ethernet en Internet. Utilice un enfoque constructivista:
+            <ul>
+                <li>¿Cómo se veía Ethernet cuando se creó?</li>
+                <li>¿En qué aspectos Ethernet se mantuvo igual en los últimos 25 años, y qué cambios se están haciendo para hacerlo más útil para los métodos de transmisión de datos actuales o más aplicable a ellos?</li>
+            </ul>
+            Reúna tres imágenes de medios físicos y dispositivos Ethernet antiguos, actuales y futuros (concéntrese en los switches). Comparta estas imágenes con la clase y hable sobre lo siguiente:
+                <div>
+                    <blockquote>
+                            - ¿En qué aspectos cambiaron los medios físicos y los dispositivos Ethernet intermediarios? <br>
+                            - ¿En qué aspectos se mantuvieron iguales los medios físicos y los dispositivos Ethernet intermediarios? <br>
+                            - ¿Cómo cambiará Ethernet en el futuro? <br>
+                    </blockquote>
+                </div>
+                <a href="documentos/5.4.1.1 Class Activity - MAC and Choose.pdf" target="_blank" rel="noopener noreferrer">Fundamentos de switching.</a>
+        </p> 
+        <h2>Resumen Capítulo 5.</h2>
+        <p>
+            Ethernet es la tecnología LAN más utilizada hoy en día. Es una familia de tecnologías de red que se definen en los estándares IEEE 802.2 y 802.3. Los estándares de Ethernet definen los protocolos de capa 2 y las tecnologías de capa 1. Para los protocolos de capa 2, como con todos los estándares IEEE 802, Ethernet depende de 
+            ambas subcapas individuales de la capa de enlace de datos para funcionar: la subcapa de control de enlace lógico (LLC) y la subcapa MAC. <br>
+            En la capa de enlace de datos, la estructura de la trama es casi idéntica para todos los anchos de banda de Ethernet. La estructura de la trama de Ethernet agrega encabezados y tráilers a la PDU de capa 3 para encapsular el mensaje que se envía. <br>
+            Existen dos estilos de entramado de Ethernet: el estándar Ethernet IEEE 802.3 y el estándar Ethernet DIX, que hoy se conoce como “Ethernet II”. La diferencia más significativa entre ambos estándares es el agregado de un delimitador de inicio de trama (SFD) y el cambio del campo “Tipo” al campo “Longitud” en el estándar 802.3. 
+            Ethernet II es el formato de trama de Ethernet utilizado en las redes TCP/IP. Como implementación de los estándares IEEE 802.2/3, la trama de Ethernet proporciona direccionamiento MAC y verificación de errores. <br>
+            El direccionamiento de capa 2 proporcionado por Ethernet admite comunicaciones de unidifusión, multidifusión y difusión. Ethernet utiliza el protocolo de resolución de direcciones para determinar las direcciones MAC de los destinos y asignarlas a direcciones IPv4 conocidas. <br>
+            Cada nodo de una red IPv4 tiene una dirección MAC y una dirección IPv4. Las direcciones IP se utilizan para identificar el origen inicial y el destino final del paquete. Las direcciones MAC Ethernet se utilizan para enviar el paquete de una NIC Ethernet a otra NIC Ethernet en la misma red IP. El ARP se utiliza para asignar una 
+            dirección IPv4 conocida a una dirección MAC, de manera que el paquete se pueda encapsular en una trama de Ethernet con la dirección de capa 2 correcta. <br>
+            El ARP depende de ciertos tipos de mensajes de difusión y de unidifusión Ethernet, llamados “solicitudes de ARP” y “respuestas de ARP”. El protocolo ARP resuelve las direcciones IPv4 en direcciones MAC y mantiene una tabla de asignaciones. <br>
+            En la mayoría de las redes Ethernet, generalmente, las terminales están conectadas punto a punto a un switch de dúplex completo de capa 2. Un switch LAN de capa 2 realiza el switching y el filtrado solamente según la dirección MAC de la capa de enlace de datos OSI (capa 2). Un switch de capa 2 arma una tabla de direcciones MAC, 
+            que utiliza para tomar decisiones de reenvío. Los switches de capa 2 dependen de los routers para transferir datos entre subredes IP independientes. <br>
+            La figura es un gráfico estándar para las páginas de introducción y conclusión.
         </p>
         <br><br><br><hr>
         <section>
