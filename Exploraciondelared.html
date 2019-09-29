@@ -4427,6 +4427,26 @@ Switch #
             <br>
             En la figura, se muestra un usuario en una computadora conectada a una nube que consta de cinco routers. La nube está conectada a un servidor ubicado en el otro extremo. En la figura, se muestra la forma en que los routers analizan la dirección IP de destino para enviar los paquetes por la ruta correcta.
         </p>
+        <h2>La capa de red.</h2>
+        <p>
+            La capa de red o la capa OSI 3, brinda servicios para permitir que los terminales puedan intercambiar datos en la red. Para lograr el transporte completo, la capa de red utiliza cuatro procesos básicos: 
+            <ul>
+                <li>
+                    <b> Direccionamiento de terminales:</b> Los terminales se deben configurar con una dirección IP única para identificarlos en la red.
+                </li>
+                <li>
+                    <b>Encapsulamiento:</b> La capa de red encapsula la unidad de datos del protocolo (PDU) de la capa de transporte a un paquete. El proceso de encapsulamiento agrega información de encabezado IP, como la dirección IP de los hosts de origen (emisores) y de destino (receptores).
+                </li>
+                <li>
+                    <b>Routing:</b> La capa de red brinca servicios para dirigir paquetes a un host de destino en otra red. Para transferir un paquete a otras redes, debe procesarlo un router. La función del router es seleccionar la mejor ruta y dirigir los paquetes al host de destino en un proceso que se denomina "routing". Un paquete puede cruzar muchos dispositivos intermediarios antes de llegar al host de destino. Se denomina "salto" a cada router que cruza un paquete antes de alcanzar el host de destino.
+                </li>
+                <li>
+                    <b>Desencapsulamiento:</b> Cuando el paquete llega a la capa de red del host de destino, el host revisa el encabezado IP del paquete. Si la dirección IP de destino dentro del encabezado coincide con su propia dirección IP, se elimina el encabezado IP del paquete. Una vez que la capa de red desencapsula el paquete, la PDU de capa 4 que se obtiene se transfiere al servicio apropiado en la capa de transporte.
+                </li>
+            </ul>
+            A diferencia de la capa de transporte (la capa OSI 4), que administra el transporte de datos entre los procesos que se ejecutan en cada host, los protocolos de capa de red especifican la estructura de paquete y los procesos que se utilizan para transportar la información de un host a otro. La capa de red puede transportar paquetes de varios tipos de comunicación entre varios hosts porque funciona sin tener en cuenta los datos que contiene cada paquete. <br>
+            <video src="videos/intercambiodedatos.mp4" autoplay="autoplay" width="680" height="480"></video>
+        </p>
         <br><br><br><hr>
         <section>
             <div>
