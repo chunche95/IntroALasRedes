@@ -19,4 +19,4 @@ git nota "Media - Docs" &&
 git sube
 echo "Archivo(s) docs OK!"
 sleep 2
-clear
+# clear
