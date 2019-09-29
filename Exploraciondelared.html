@@ -4164,7 +4164,45 @@ Switch #
             Una de las causas más comunes de problemas de rendimiento en enlaces Ethernet de 10 o 100 Mb/s ocurre cuando un puerto del enlace funciona en dúplex medio, mientras el otro puerto funciona en dúplex completo, como se muestra en la figura 2. Esto sucede cuando uno o ambos puertos de un enlace se restablecen, 
             y el proceso de autonegociación no configura ambos participantes del enlace de la misma manera. También puede ocurrir cuando los usuarios reconfiguran un lado del enlace y olvidan reconfigurar el otro. Ambos lados de un enlace deben tener activada la autonegociación, o bien ambos deben tenerla desactivada. <br>
             <img src="images/incompatibilidaddeduplex.PNG" alt="">
-
+        </p>
+        <h2>MDIX automática.</h2>
+        <p>
+            Además de tener la configuración de dúplex correcta, también es necesario tener definido el tipo de cable correcto para cada puerto. Anteriormente, las conexiones entre dispositivos específicos, como switch a switch, switch a router, switch a host y router a host, requerían el uso de tipos de cable específicos (cruzado o directo). En la actualidad, la mayoría de los dispositivos de switch permiten que el comando mdix auto interface configuration en la CLI active la función de interfaz cruzada dependiente del medio (MDIX) automática.
+            Cuando se activa la función de MDIX automática, el switch detecta el tipo de cable conectado al puerto y configura las interfaces de manera adecuada. Por lo tanto, se puede utilizar un cable directo o cruzado para realizar la conexión con un puerto 10/100/1000 de cobre situado en el switch, independientemente del tipo de dispositivo que esté en el otro extremo de la conexión.
+            <b>Nota:</b> de manera predeterminada, la función MDIX automática se activa en los switches con el software Cisco IOS versión 12.2(18)SE o posterior.
+            <br>
+            <img src="images/MIDXaout.PNG" alt="">
+        </p>
+        <h2>Destino en la misma red.</h2>
+        <p>
+                Hay dos direcciones primarias asignadas a un dispositivo en una LAN Ethernet:
+                <ul>
+                    <li>Dirección física (dirección MAC): se utiliza para comunicaciones de NIC Ethernet a NIC Ethernet en la misma red.</li>
+                    <li>Dirección lógica (dirección IP): se utiliza para enviar el paquete del origen inicial al destino final.</li>
+                </ul>
+                
+            Las direcciones IP se utilizan para identificar la dirección del origen inicial y del destino final. La dirección IP de destino puede estar en la misma red IP que la de origen o en una red remota. <br>
+            <b>Nota:</b> la mayoría de las aplicaciones utilizan el sistema de nombres de dominio (DNS) para determinar la dirección IP cuando se les indica un nombre de dominio, como “www.cisco.com”. El DNS se analiza en detalle en otro capítulo. <br>
+            Las direcciones de capa 2, o físicas, como las direcciones MAC Ethernet, tienen un propósito diferente: se utilizan para distribuir la trama de enlace de datos con el paquete IP encapsulado de una NIC a otra en la misma red. Si la dirección IP de destino está en la misma red, la dirección MAC de destino es la del dispositivo de destino. <br>
+            En la ilustración, se muestran las direcciones MAC Ethernet y la dirección IP de la PC-A enviando un paquete IP al servidor de archivos en la misma red. <br>
+            La trama de Ethernet de capa 2 contiene lo siguiente: 
+            <ul>
+                <li>
+                    Dirección MAC de destino: es la dirección MAC de la NIC Ethernet del servidor de archivos.
+                </li>
+                <li>
+                    Dirección MAC de origen: es la dirección MAC de la NIC Ethernet de la PC-A.
+                </li>
+            </ul>
+            El paquete IP de capa 3 contiene lo siguiente:
+            <ul>
+                <li>
+                    Dirección IP de origen: es la dirección IP del origen inicial, la PC-A.
+                </li>
+                <li>
+                    Dirección IP de destino: es la dirección IP del destino final, el servidor de archivos.
+                </li>
+            </ul>
         </p>
         <br><br><br><hr>
         <section>
