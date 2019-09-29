@@ -4354,7 +4354,7 @@ Switch #
         <p>
             En algunos casos, el uso de ARP puede ocasionar un riesgo de seguridad potencial conocido como “suplantación de ARP” o “envenenamiento ARP”. Esta es una técnica utilizada por un atacante para responder a una solicitud de ARP de una dirección IPv4 que pertenece a otro dispositivo, como el gateway predeterminado, 
             como se muestra en la ilustración. El atacante envía una respuesta de ARP con su propia dirección MAC. El receptor de la respuesta de ARP agrega la dirección MAC incorrecta a la tabla ARP y envía estos paquetes al atacante. <br>
-            <img src="images/suplantacionARP.PNG" alt="">
+            <br> <img src="images/suplantacionARP.PNG" alt=""> <br>
             Los switches de nivel empresarial incluyen técnicas de mitigación conocidas como “inspección dinámica de ARP (DAI)”. La DAI excede el ámbito de este curso.
         </p>
         <h2>Actividad de clase: Fundamentos de switching.</h2>
@@ -4394,6 +4394,38 @@ Switch #
             En la mayoría de las redes Ethernet, generalmente, las terminales están conectadas punto a punto a un switch de dúplex completo de capa 2. Un switch LAN de capa 2 realiza el switching y el filtrado solamente según la dirección MAC de la capa de enlace de datos OSI (capa 2). Un switch de capa 2 arma una tabla de direcciones MAC, 
             que utiliza para tomar decisiones de reenvío. Los switches de capa 2 dependen de los routers para transferir datos entre subredes IP independientes. <br>
             La figura es un gráfico estándar para las páginas de introducción y conclusión.
+        </p>
+        <h2>Cap. 6 - Capa de red.</h2>
+        <p>
+            Las aplicaciones y servicios de red de un terminal se pueden comunican con las aplicaciones y servicios que se ejecutan en otro terminal. ¿Cómo se comunican los datos en la red de manera eficaz?
+            Los protocolos de la capa de red del modelo OSI especifican el direccionamiento y los procesos que permiten que se armen y se transporten los paquetes de datos de la capa de red. El encapsulamiento de capa de red permite que se transfieran los datos a un destino dentro de una red (o a otra red) con una sobrecarga mínima.
+            En este capítulo, nos concentraremos en el rol de la capa de red. Se examina cómo divide las redes en grupos de hosts para administrar el flujo de paquetes de datos dentro de una red. También se explica cómo se facilita la comunicación entre las redes. Esta comunicación entre redes se denomina "routing".
+            La figura es un gráfico estándar para las páginas de introducción y conclusión.
+        </p>
+        <h2>
+            Actividad de clase: La ruta menos transitada
+        </h2>
+        <p>
+            La ruta menos transitada... o las más transitada <br>
+            Decidió que el próximo fin de semana irá a visitar a un compañero de curso que está en su casa debido a una enfermedad. Usted sabe cuál es su dirección, pero nunca estuvo en ese pueblo antes. En lugar de buscar la dirección en un mapa, decide pedir direcciones a los habitantes del pueblo cuando llegue en el tren. 
+            Los residentes a los que pide ayuda son muy amables. Sin embargo, todos tienen una costumbre interesante. En lugar de explicar por completo el camino que debe tomar para llegar a destino, todos le dicen: <i>“Vaya por esta calle y, en cuanto llegue al cruce más cercano, vuelva a preguntar a alguien allí”</i>.
+            Confundido por esta situación claramente curiosa, sigue estas instrucciones y finalmente llega a la casa de su compañero pasando cruce por cruce y calle por calle. <br>
+            Responda las siguientes preguntas:
+            <div class="container">
+                - ¿Habría sido muy diferente si, en lugar de que se le indicara que fuera hasta el cruce más cercano, se le hubiera indicado el camino completo o una parte del camino más extensa?
+                <br>
+                - ¿Hubiese sido más útil preguntar por la dirección específica o por el nombre de la calle? ¿Qué habría pasado si la persona a la que usted le pidió indicaciones no hubiese sabido dónde estaba su calle de destino o si le hubiesen indicado un camino incorrecto?
+                <br>
+                - Suponga que para volver, decide nuevamente pedir direcciones a los residentes de ese lugar. ¿Tiene la absoluta certeza de que le indicarán que vaya por el mismo camino que recorrió para llegar a la casa de su amigo? Explique su respuesta.
+                <br>
+                - ¿Es necesario explicar de dónde parte cuando pide indicaciones para llegar a un destino deseado?
+                    
+            </div>
+            <a href="documentos/6.0.1.2 Class Activity - The road less traveled....pdf" target="_blank" rel="noopener noreferrer">Actividad de clase: La ruta menos transitada... ¿En serio? Instrucciones</a>
+            <br>
+            <img src="images/larutamenostransitada.PNG" alt=""> 
+            <br>
+            En la figura, se muestra un usuario en una computadora conectada a una nube que consta de cinco routers. La nube está conectada a un servidor ubicado en el otro extremo. En la figura, se muestra la forma en que los routers analizan la dirección IP de destino para enviar los paquetes por la ruta correcta.
         </p>
         <br><br><br><hr>
         <section>
