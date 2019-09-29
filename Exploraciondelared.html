@@ -4080,7 +4080,63 @@ Switch #
         <p>
             <a href="documentos/5.2.1.7 Lab - Viewing the Switch MAC Address Table.pdf" target="_blank" rel="noopener noreferrer">Uso de la CLI de IOS con las tablas de direcciones MAC del switch.</a>
         </p>
-        
+        <h2>Métodos de reenviío de tramas de los switches Cisco.</h2>
+        <p>
+            Los switches utilizan uno de los siguientes métodos de reenvío para el switching de datos entre puertos de la red:
+            <ul>
+                <li>Switching de almacenamiento y envío</li>
+                <li>Switching por método de corte</li>
+            </ul>
+            En la figura, se resaltan las diferencias entre estos dos métodos. <br>
+            <img src="images/metododeenviodepaquetesdelswitch.PNG" alt="">
+            En este tipo de switching, cuando el switch recibe la trama, la almacena en los búferes de datos hasta recibir la trama en su totalidad. Durante el proceso de almacenamiento, el switch analiza 
+            la trama para buscar información acerca de su destino. En este proceso, el switch también lleva a cabo una verificación de errores utilizando la porción del tráiler de comprobación de redundancia 
+            cíclica (CRC) de la trama de Ethernet. <br>
+            La CRC utiliza una fórmula matemática basada en la cantidad de bits (números uno) de la trama para determinar si esta tiene algún error. Después de confirmar la integridad de la trama, se la reenvía por el puerto apropiado hacia su destino. Cuando se detecta un error en la trama, el switch la descarta. 
+            El proceso de descarte de las tramas con errores reduce el ancho de banda consumido por datos dañados. El switching de almacenamiento y envío se requiere para el análisis de calidad de servicio (QoS) en las redes convergentes, donde se necesita una clasificación de la trama para decidir el orden de 
+            prioridad del tráfico. <br>
+            Por ejemplo, los flujos de datos de voz sobre IP deben tener prioridad sobre el tráfico de navegación web. <br>
+            En la figura, reproduzca la animación para ver una demostración del proceso de almacenamiento y envío. <br>
+            <video src="videos/switchingdealmacenamientoyenvio.mp4" alt=""  playsinline="playsinline" controls width="640" height="480"></video> <br>
+            Haga <a href="https://www.cisco.com/c/en/us/products/collateral/switches/nexus-5020-switch/white_paper_c11-465436.html" target="_blank" rel="noopener noreferrer">clic aquí</a>  para obtener más información sobre el switching de almacenamiento de envío y por método de corte.
+        </p>
+        <h2>Switching por método de corte.</h2>
+        <p>
+            En este tipo de switching, el switch actúa sobre los datos apenas los recibe, incluso si la transmisión aún no se completó. El switch reúne en el búfer solo la información suficiente de la trama como para leer la dirección MAC de destino y determinar a qué puerto debe reenviar los datos. La dirección MAC de 
+            destino se encuentra en los primeros 6 bytes de la trama después del preámbulo. El switch busca la dirección MAC de destino en la tabla de switching, determina el puerto de la interfaz de salida y reenvía la trama a su destino mediante el puerto de switch designado. El switch no lleva a cabo ninguna verificación de errores en la trama.
+            Reproduzca la animación para ver una demostración del proceso switching por método de corte.
+            A continuación, se presentan dos variantes del switching por método de corte:
+                <ul>
+                    <li>
+                        Switching de reenvío rápido: este método ofrece el nivel de latencia más bajo. El switching de envío rápido reenvía el paquete inmediatamente después de leer la dirección de destino. Como el switching de reenvío rápido comienza a reenviar el paquete antes de recibirlo por completo, es posible que, a veces, los paquetes se 
+                        distribuyan con errores. Esto no sucede frecuentemente, y el adaptador de red de destino descarta el paquete defectuoso al recibirlo. En el modo de reenvío rápido, la latencia se mide desde el primer bit recibido hasta el primer bit transmitido. El switching de envío rápido es el método de corte típico.
+                    </li>
+                    <li>
+                        Switching libre de fragmentos: en este método, el switch almacena los primeros 64 bytes de la trama antes de reenviarla. El switching libre de fragmentos se puede ver como un punto medio entre el switching de almacenamiento y envío, y el switching por método de corte. El motivo por el que el switching libre de fragmentos 
+                        almacena solamente los primeros 64 bytes de la trama es que la mayoría de los errores y las colisiones de la red se producen en esos primeros 64 bytes. El switching libre de fragmentos intenta mejorar el switching de reenvío rápido al realizar una pequeña verificación de errores en los 64 bytes de la trama para asegurar 
+                        que no haya ocurrido una colisión antes de reenviarla. Este método de switching es un punto medio entre la alta latencia y la alta integridad del switching de almacenamiento y envío, y la baja latencia y la baja integridad del switching de reenvío rápido.
+                    </li>
+                </ul>
+            Algunos switches están configurados para realizar el switching por método de corte en cada puerto hasta alcanzar un umbral de errores definido por el usuario y, luego, cambiar automáticamente al switching de almacenamiento y envío. Si el índice de error está por debajo del umbral, el puerto vuelve automáticamente al switching por método de corte. <br>
+            <video src="videos/switchingpormetododecorte.mp4"  playsinline="playsinline" controls width="640" height="480"></video>
+        </p>
+        <h2>Almacenamiento en búfer de memoria en los switches.</h2>
+        <p>
+                Un switch Ethernet puede usar una técnica de almacenamiento en búfer para almacenar tramas antes de enviarlas. El almacenamiento en búfer también se puede utilizar cuando el puerto de destino está ocupado debido a una congestión. En este caso, el switch almacena la trama hasta que se pueda transmitir. <br>
+                Como se muestra en la ilustración, existen dos métodos de almacenamiento en búfer de memoria: memoria basada en puerto y memoria compartida. <br>
+                <img src="images/buferdememoriabasadaebpuertos.PNG" alt=""> <br>
+                <div class="container">
+                    <h3>Búfer de memoria basada en puerto</h3>
+                    En el búfer de memoria basada en puerto, las tramas se almacenan en colas conectadas a puertos de entrada y de salida específicos. Una trama se transmite al puerto de salida una vez que todas las que están delante de ella en la cola se hayan transmitido correctamente. Es posible que una sola trama demore la transmisión de todas las tramas almacenadas en la memoria debido al tráfico del puerto de destino. Esta demora se produce 
+                    aunque las demás tramas se puedan transmitir a puertos de destino abiertos.
+                </div>
+                <div class="container">
+                <h3>Búfer de memoria compartida.</h3>
+                El búfer de memoria compartida deposita todas las tramas en un búfer de memoria común que comparten todos los puertos del switch. La cantidad de memoria de búfer que requiere un puerto se asigna de forma dinámica. Las tramas que están en el búfer se enlazan de forma dinámica al puerto de destino. Esto permite que se pueda recibir el paquete por un puerto y que se pueda transmitir por otro, sin necesidad de colocarlo en otra cola.
+                El switch conserva un mapa de enlaces de trama a puerto que indica adónde debe transmitirse el paquete. El enlace se elimina del mapa una vez que la trama se transmite correctamente. La cantidad de tramas almacenadas en el búfer está limitada por el tamaño del búfer de memoria en su totalidad y no se limita a un solo búfer de puerto. Esto permite que se transmitan tramas más grandes y que se descarte una menor cantidad de ellas. 
+                Esto es de especial importancia para el switching asimétrico. El switching asimétrico permite diferentes índices de datos en diferentes puertos. Esto permite dedicar un mayor ancho de banda a ciertos puertos, como a un puerto conectado a un servidor.
+                </div>
+        </p>
         <br><br><br><hr>
         <section>
             <div>
