@@ -2774,7 +2774,7 @@ Switch #
     </p>
     <h2>Tipos de conexiones.</h2>
     <p>
-        Ya sea una conexión a una imrpesora local en el hogar o a un sitio web en otro país, para que se pueda producir cualquier comunicación de red se debe establecer antes una comuncicación a una red local. 
+        Ya sea una conexión a una imrpesora local en el hogar o a un sitio web en otro país, para que se pueda producir cualquier comunicación de red se debe establecer antes una comunicación a una red local. 
         Una conexión física puede ser una conexión por cable o una conexión inalámbrica mediante ondas de radio. <br>
         El tipo de conexión física usada depende por completo de la configuración de la red. Por ejemplo, en muchas oficinas corportivas, los empleados tienen PC de escritorio o protátiles que se conectan físicamente,
         mediante  cables, a un switch compartido. Este tipo de configuración se denomina de <strong>red cableada.</strong><br>
@@ -4470,6 +4470,61 @@ Switch #
             IP se diseño como un protocolo con sobrecarga baja. Provee solo las funciones necesarias para enviar un paquete de un origen a un destino a través de un sistema interconectado de redes. El protocolo no fue diseñado para rastrear ni administrar el flujo de paquetes. Estas funciones, si es necesario, están a cargo de otros protocolos en otras capas, principalmente TCP en la capa 4. <br>
             En la ilustración, se describen las características básicas de IP. <br>
             <img src="images/caracteristicasdelprotocoloIP.PNG" alt="">
+        </p>
+        <h2>IP: Sin conexión.</h2>
+        <p>
+            IP no tiene conexión, lo que significa que no se genere una conexión completa exclusiva antes de enviar los datos. Como se muestra en la figura, la comunicación sin conexión es conecptualmente similar a enviarle una carta a alguien sin avisalrle al receptor con anterioridad. <br>
+            <img src="images/comunicacionsinconexion.PNG" alt=""> <br>
+            Las comunicaciones de datos sin conexión funcionan con el mismo principio. Como se muestra en la figura, IP no necesita un intercambio inicial de información de control para establecer una conexión completa para que se reenvíen los paquetes. IP tampoco necesita campos adicionales en el encabezado para mantener una conexión establecida. Este proceso reduce en gran medida la sobrecarga del protocolo IP. Sin embargo, sin una conexión completa preestablecida, los remitentes no saben si los dispositivos de destino están presentes y en 
+            funcionamiento cuando envían paquetes, ni tampoco si el destinatario recibe el paquete o si puede acceder al paquete y leerlo. <br>
+            <img src="images/comunicacionsinconexion2.PNG" alt="">
+        </p>
+        <h2>IP: Entrega de servicio mínimo.</h2>
+        <p>
+            En la ilustración, se muestran las características de entrega de mejor esfuerzo o poco confiable del protocolo IP. El protocolo IP no garantiza que todos lo spaquetes que se envían, de hecho, se reciban. <br>
+            <img src="images/procesodeserviciominimo.PNG" alt=""> <br>
+            Que sea poco confiable significa que IP no tiene la funcionalidad para administrar o recuperar paquetes no recibidos o dañados. Esto se debe a que, si bien los paquetes IP se envían con información sobre la ubicación de entrega, no tiene informaión que pueda procesarse para informar al remitente si la entrega se realizó correctamente. Es posible que los paquetes lleguen dañados o fuera de secuencia al destino o que no lleguen en absoluto. IP no tiene la funcionalidad de retransmitir paquetes si se producen errores. <br>
+            Las aplicaciones que utilizan los datos o los servicios de capas superiores deben solcionar problemas como el envñio de paquetes fuera de orden o la pérdida de paquetes. Esta característica permite que IP funcione de manera muy eficaz. En el paquete del protocolo TCP/IP, la confiabilidad es la función de la capa de transporte. <br>
+        </p>
+        <h2>IP: Independiente de los medios.</h2>
+        <p>
+            IP funciona independientemente de los medios que transpoortan los datos en las capas más bajas de la pila de protocolos. Como se muestra en la figura, los paquetes IP pueden ser señanles electrónicas que se transmiten por cables de cobre, señales ópticas que se transmite por fibra óptica o señales de radio inalámbricas. <br>
+            La capa de enlace de datos OSI se encarga de preparar los paquetes IP para la transmisión por el medio de comunicación. Esto significa que el transporte de paquetes IP no está limitado a un medio en particular. <br>
+            <img src="images/procesoindependientedelosmedios.PNG" alt="">
+            Sin embargo, la capa de red tiene en cuenta una de las características más importantes del medio, que es el tamaño máximo de PDU que cada medio puede transportar. Esta característica se conoce como "unidad de transmisión máxima" (MTU). Parte del control de la comunicación entre la capa de enlace de datos y la capa de red consiste en establecer el tamaño máximo del paquete. La capa de enlace de datos pasa elvalor de MTU a la capa de red. La capa de red luego determina qué tamaño puede tener los paquetes. <br>
+            En algunos casos, un dispositivo intermediario, que por lo general es un router, debe dividir el paquete cuando se reenvia de un medio a otro con una MTU menor.Este proceso se denomina "fragmentación de paquetes"o "fragmentación".
+        </p>
+        <h2>Actividad: Características de IP.</h2>
+        <p>
+            <img src="images/caracteristicasIP.PNG" alt="">
+        </p>
+        <h2>Encabezamiento de paquetes IPv4.</h2>
+        <p>
+            El encabezamiento de paquetes IPv4 consta de campos que contienen información importante sobre el paquete. Estos campos tienen números binarios que examina el proceso de capa 3. Los valores binarios de cada campo identifican  diversos parámetros de configuración del paquete IP. Los diagramas de encabezamiento del protocolo, que se leen de izquierda a derecha y de arriba hacia abajo, proporcionan una representación visual de consulta al analizar los campos del protocolo. El diagrama de encabezado del protocolo IP en la ilustración identifica los campos de un paquete IPv4. <br>
+            Los campos más importantes del encabezamiento de IPv4 son los siguientes: 
+            <ul>
+                <li>
+                    <strong>Versión:</strong> Contiene un valor binario de 4 bits establecido en 0100 que lo identifica como un paquete IP versión 4.
+                </li>
+                <li>
+                    <strong>Servicios diferenciados o DiffServ (DS):</strong> antes conocido como el campo "tipo de servvicio" /ToS), es un capo de 8 bits que se utiliza para determinar la prioridad de cada paquete. Los seis bits más importantes del campo de servicios diferenciados son el punto de código de servicios diferenciados (DSCP), y los últimos dos bits son los de notificación de congestión explícita (ECN).
+                </li>
+                <li>
+                    <strong>Tiempo de duraación (TTL):</strong> Contiene un valor de 8 bits que se usa oara delimitar el tiempo de vida de un paquete. El emisor del paquete establece el valor inicial de TTL que se reduce en uno cada vez que un router procesa el paquete. Si el campo TTL llega a cero, el router descarta el paquete y envía a la dirección IP de origen un mensaje de tiempo superado del protocolo de mensajes de control de Internet (ICMP).
+                </li>
+                <li>
+                    <strong>El campo Protocolo:</strong> se usa para identificar el protocolo del siguiente nivel. Este valor binario de 8 bits indica el tipo de carga de datos que lleva el paquete, lo que permite que la capa de red transmita los datos al protocolo de capa superior apropiado. ICMP (1), TCP (6) y UDP (17) son alguns valores comunes.
+                </li>
+                <li>
+                    <strong>Dirección IPv4 de origen:</strong> contiene un valor binario de 32 bits que representa la dirección IPv4 de origen del paquete. La dirección IPv4 de origen siempre es una dirección de unidifusión.
+                </li>
+                <li>
+                    <strong>Dirección IPv4 de destino:</strong> contiene un valor binario de 32 bits que representa la dirección IPv4 de destino del paquete. La dirección IPv4 de destino es una dirección de unidifusión, de multidifusión o de difusión.
+                </li>
+            </ul>
+            Los dos campos a los que se hace más referencia son los de dirección IP de origen y de destino. En estos campos, se identifica de dónde viene el paquete y a dónde va. Por lo general, estas direcciones no cambian cuando un paquete se transfiere desde el origen hasta el destino. <br>
+            Para identificar y validar el paquete , se usan los campos de longitud del encabezamiento de Iternet (IHL), longitud total y el encabezamiento checksum. <br>
+            Para reordenar un paquete fragmentado, se usan otros campos. Especificamente, el paquete IPv4 utiliza los campos 
         </p>
         <br><br><br><hr>
         <section>
