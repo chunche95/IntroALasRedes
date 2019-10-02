@@ -4625,7 +4625,26 @@ Switch #
         <p>
             <img src="images/camposdeencabezadoIPV6.PNG">
         </p>
-        
+        <h2>La decisión de reenvío de host</h2>
+        <p>
+            Otra función de la capa de red es distingir los paquetes entre hosts. Un host puede enviar un paquete a alguno de los siguientes:
+            <ul>
+                <li>
+                    <b>A sí mismo.</b> Un host puede hacerse ping a sí mismo al enviar un paquete a una dirección IPv4 127.0.0.1, denominada "interfaz de bucle invertido"
+                    El hacer ping a la interfaz de bucle invertido, pone a prueba la pila del protocolo TCP/IP en el host.
+                </li>
+                <li>
+                    <b>Al host local.</b> Este es un host  que está en la misma red local que el host emisor. Los host comparten la misma direción de red.
+                </li>
+                <li>
+                    <b>A un módulo remoto de E/S.</b> Este es un host  en una red  remota. Los hosts o comparten la misma dirección de red.
+                </li>
+            </ul>
+            Que un paquete tenga  como destino un host local o un módulo remoto de E/S lo determjna la combinación de máscara  de subred y dirección IPv4 del dispositivo de origen
+            (emisor) en comparación con la máscara de subred y la dirección IPv4 del dispositivo de destino. <br>
+            En una red doméstica o comercial puede haber varios dispositivos cableados o inalambricos interconectados que utilizan un dispoistivo intermediario, como un switch LAN o un punto de acceso
+            inalambrico (WAP). Este dispositivo
+        </p>
         <hr><hr>
         <section>
             <div>
