@@ -4498,7 +4498,7 @@ Switch #
         <p>
             <img src="images/caracteristicasIP.PNG" alt="">
         </p>
-        <h2>Encabezamiento de paquetes IPv4.</h2>
+        <h2>Encabezado de paquetes IPv4.</h2>
         <p>
             El encabezamiento de paquetes IPv4 consta de campos que contienen información importante sobre el paquete. Estos campos tienen números binarios que examina el proceso de capa 3. Los valores binarios de cada campo identifican  diversos parámetros de configuración del paquete IP. Los diagramas de encabezamiento del protocolo, que se leen de izquierda a derecha y de arriba hacia abajo, proporcionan una representación visual de consulta al analizar los campos del protocolo. El diagrama de encabezado del protocolo IP en la ilustración identifica los campos de un paquete IPv4. <br>
             Los campos más importantes del encabezamiento de IPv4 son los siguientes: 
@@ -4524,7 +4524,13 @@ Switch #
             </ul>
             Los dos campos a los que se hace más referencia son los de dirección IP de origen y de destino. En estos campos, se identifica de dónde viene el paquete y a dónde va. Por lo general, estas direcciones no cambian cuando un paquete se transfiere desde el origen hasta el destino. <br>
             Para identificar y validar el paquete , se usan los campos de longitud del encabezamiento de Iternet (IHL), longitud total y el encabezamiento checksum. <br>
-            Para reordenar un paquete fragmentado, se usan otros campos. Especificamente, el paquete IPv4 utiliza los campos 
+            Para reordenar un paquete fragmentado, se usan otros campos. Especificamente, el paquete IPv4 utiliza los campos. Especificamente el paquete IPv4 utiliza los campos de identificación, señaladores y desplazamiento de fragmentos para llevar un control de los fragmentos. Es posible que un router deba fragmentar un paquete cuando lo reenvíe de un medio a otro con una MTU menor. <br>
+            Los campos "opciones" y "relleno" se usan con poca frecuencia y exceden el ámbito de este capítulo. <br>
+            <img src="images/encabezamientodepaquetesIPv4.PNG" alt="">
+        </p>
+        <h2>Demostración: Ejemplos de encabezados IPv4 en Wireshark.</h2>
+        <p>
+            
         </p>
         <br><br><br><hr>
         <section>
