@@ -4528,9 +4528,47 @@ Switch #
             Los campos "opciones" y "relleno" se usan con poca frecuencia y exceden el ámbito de este capítulo. <br>
             <img src="images/encabezamientodepaquetesIPv4.PNG" alt="">
         </p>
-        <h2>Demostración: Ejemplos de encabezados IPv4 en Wireshark.</h2>
+        <h2>Demostración. Ejemplos de encabezados IPv4 en Wireshark.</h2>
         <p>
-            
+            <video src="videos/encabezados-IPv4.mp4" controls width="640" height="480"></video>
+        </p>
+        <h2>Actividad del encabezado de IPv4.</h2>
+        <p>
+            <img src="images/camposdelencabezaminetodeIPv4.PNG" alt="">
+        </p>
+        <h2>Limitaciones de IPv4.</h2>
+        <p>
+            A lo largo de los años, IPv4 se actualizó para enfrentar los nuevos desafíos. Sin mebargo, incluso con los cambios, IPv4 aún tiene tres grandes problemas:
+            <ul>
+                <li>
+                    <strong>Agotamiento de las direcciones IP:</strong> IPv4 tiene una cantidad limitada de direcciones IPv4 públicas únicas disponibles. Si bien hay aproximadamente 4000 millones de direcciones IPv4, el incremento en la cantidad de dispositivos nuevos con IP habilitado, las conexiones constantes y el crecimiento potencial de regones menos desarrolladas aumentaron la necesidad de direcciones.
+                </li>
+                <li>
+                    <strong>Expansión de la tabla de routing de Internet:</strong> Los ruters usan tablas de routing para determinar las mejores rutas. A medida que aumenta el número de servidores conectados a Internet, aumenta también el número de rutas de red. Estas rutas IPv4 consumen una gran cantidad de recursos de memoria y de procesador en los routers de Internet. 
+                </li>
+                <li>
+                    <b>Falta de conectividad completa:</b> Una de las tecnologías más implementadas en las redes IPv4 es la traducción de direcciones de red (NAT). NAT proporciona una manera para que varios dispositivos compartan una única dirección IPv4  pública. Sin embargo, dado que la dirección IPv4 pública se comparte, se oculta la dirección IPv4  de un host de la red interna. Esto puede ser un problema para las tecnologías que necesitan conectividad completa.
+                </li>
+            </ul>
+        </p>
+        <h2>Introducción a IPv6.</h2>
+        <p>
+            A principios de la década de 1990, los problemas con IPv4 preocuparon al Grupo de trabajo de ingeniería de Internet (IETF) que, en consecuencia, comenzó a buscar un reemplazo. Esto tuvo como resultado el desarrollo de IP versión 6 (IPv6). IPv6 supera las limitaciones de IPv4 y representa una mejora importante con características que se adaptan mejor a las demandas de red actuales y previsibles. <br>
+            Las mejoras de IPv6 incluyen lo siguiente:
+            <ul>
+                <li>
+                    <strong>Mayor espacio de direcciones:</strong> Las direcciones IPv6 se basan en el direccionamiento jerárquico de 128 bits en comparación con los 32 bits de IPv4.
+                </li>
+                <li>
+                    <strong>Mejor manejo de paquetes:</strong> Se redujo la cantidad de campos del encabezado de IPv6 para hacerlo más simple.
+                </li>
+                <li>
+                    <strong>Se elimina la necesidad de NAT:</strong> Al tener un número tan grande de direcciones IPv6 públicas, la NAT entre las direcciones IPv4 privadas, la NAT entre las direcciones IPv4 privadas y públicas ya no es necesaria. Esto evita algunos problemas de aplicación inducidos por NAT que tuvieron algunas aplicaciones que necesitan conectividad completa.
+                </li>
+            </ul>
+            El espacio de direcciones IPv4 de 32 bits ofrece aproximadamente 4.294.967.296 direcciones únicas. Una de las principales mejoras de diseño de IPv6 con respecto a IPv4 es el encabezado de IPv6 simplificado. <br>
+            En la ilustración, se puede ver una comparación entre el espacio de direcciones IPv4 e IPV6. <br>
+            <img src="images/cuantasdireccionestesandisponiblesconIPv6.PNG" alt="">
         </p>
         <br><br><br><hr>
         <section>
