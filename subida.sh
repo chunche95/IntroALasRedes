@@ -1,5 +1,10 @@
+
 #!/bin/sh
 
+# Modificacion del script
+git add subida.sh &&
+git nota "Script de subida de archivos" &&
+git sube
 # Principal
 git add Exploraciondelared.html &&
 git nota "Introduccion a las redes - Networking Academy by Cisco" &&
