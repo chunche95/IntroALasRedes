@@ -4570,7 +4570,7 @@ Switch #
             En la ilustración, se puede ver una comparación entre el espacio de direcciones IPv4 e IPV6. <br>
             <img src="images/cuantasdireccionestesandisponiblesconIPv6.PNG" alt="">
         </p>
-        <h2>Encabezamiento IPv6.</h2>
+        <h2>Encapsulamiento IPv6.</h2>
         <p>
             Una de las mejoras más improtantes de IPv6 con respecto a IPv4 es el encabezaiento de IPv6. <br>
             Por ejemplo, el encabezado de IPv4  que se muestra en la figura consta de 20 octetos(hasta 60 bytes si se usa el campo Opciones) y 12 campos de encabezado básico, sin contar los campos  Opciones y Relleno. Como se muestra en la ilustración, IPv6 algunos campos permanecen iguales, mientras que a otros se les cambio el nombre y la posoción, y algunos campos de IPv4 ya no
@@ -4613,6 +4613,7 @@ Switch #
                 <strong>Dirección IPv6 destino.</strong> Es un campo de 128 bits que indica la dirección IPv6 del host receptor.
              </li>
             </ul>
+            <img src="images/camposdeencabezadoIPv6.PNG" alt="">
             Un paquete IPv6 también  puede contener encabezados de extensión (EH), que proveen información optativa de la capa de red. Los encabezados de extensión son opcionales y están ubicados entre el encabezado de IPv6 y
             el contenido. Los EH se usan   para fragmentar, dar seguridad, admitir la movilidad y otras acciones. <br>
             A diferencia de IPv4, los routers no fragmentan de los paquetes IPv6 enrutados.
@@ -4623,7 +4624,7 @@ Switch #
         </p>
         <h2>Actividad. Campos de encabezado de IPv6.</h2>
         <p>
-            <img src="images/camposdeencabezadoIPV6.PNG">
+            <img src="images/ACTIVIDADcamposdeencabezadoIPV6.PNG">
         </p>
         <h2>La decisión de reenvío de host</h2>
         <p>
@@ -4647,8 +4648,9 @@ Switch #
             dispositivos adicionales. Si un host envia un paquete a un host a través del dispositivo configurado con la misma red IP que el dispositivo  host, el paquetese reenvía por la interfaz de host
             a través del dispositivo intermediario y se dirige directamente al dispositivo de destino. <br>
             Por supuesto, en la mayoría de las situaciones queremos que nuestros dispositivos se conecten más allá  del segmento de red local, por ejemplo, que vayan a otras cosas, empresas y a Internet.
-            Los dispositivos que no están en el segmento de red local  se denominan "modulo remoto E/S".
-            6.2.1.1
+            Los dispositivos que no están en el segmento de red local  se denominan "modulo remoto E/S". Cuando un dispositivo de origen envía un paquete a un dispositivo remoto, se necesita la ayuda de los routers y de routing. 
+            El routing es el proceso de identificación de la mejor ruta para llegar a un destino. El router conectado al segmento de red local se denomina gateway predeterminado. <br>
+            <img src="images/trestiposdedestino.PNG" alt="">
         </p>
         <hr><hr>
         <section>
