@@ -4575,7 +4575,7 @@ Switch #
             Una de las mejoras más improtantes de IPv6 con respecto a IPv4 es el encabezaiento de IPv6. <br>
             Por ejemplo, el encabezado de IPv4  que se muestra en la figura consta de 20 octetos(hasta 60 bytes si se usa el campo Opciones) y 12 campos de encabezado básico, sin contar los campos  Opciones y Relleno. Como se muestra en la ilustración, IPv6 algunos campos permanecen iguales, mientras que a otros se les cambio el nombre y la posoción, y algunos campos de IPv4 ya no
             son necesarios. <br>
-            <img src="images/encabezadoIPV4vsIPV6.PNG" alt="">
+            <img src="images/encabezadoIPV4vsIPV6.PNG" alt=""> <br>
             En cambio, el encabezado simplicado de IPv6 que se muestra en la figura consta de 40 octetos (principalmente debido a la longitud de las direcciones de IPv6 de origwn y de destino) y 8 campos de encabezado ( 3 campos de encabezado de IPv4 y 5 campos de encabezado adicionales). Como se resalta en la ilustración, algunos campos mantienen el mismo nombre que tenian en IPv4,
             a algunos campos se les cambio el nombrre o la posición y se agregó un campo nuevo. <br>
             <img src="images/encabezadoIPv4vsIPv6-2.PNG" alt=""> <br>
@@ -4651,6 +4651,29 @@ Switch #
             Los dispositivos que no están en el segmento de red local  se denominan "modulo remoto E/S". Cuando un dispositivo de origen envía un paquete a un dispositivo remoto, se necesita la ayuda de los routers y de routing. 
             El routing es el proceso de identificación de la mejor ruta para llegar a un destino. El router conectado al segmento de red local se denomina gateway predeterminado. <br>
             <img src="images/trestiposdedestino.PNG" alt="">
+        </p>
+        <h2>Gateway predeterminado.</h2>
+        <p>
+            El gateway predeterminado es el dispositivo de red que puede enrutar el tráfico a otras redes. Es el router el que puede enrutar el tráfico fuera de la red local. <br>
+            Si se piensa en una red como si fuera una habitación, el gateway predeterminado es como la puerta. Si desea ingresar a otra habitación o red, debe encontrar la puerta. <br>
+            A su vez,una PC o computadora que no conoce la dirección IP del gateway predeterminado es como una persona, en una habitación, que no sabe dónde está la puerta. Las personas en la habitación o la red pueden hablar entre sí, pero si no conocen 
+            la dirección del gateway predeterminado o si esta no existiera,no hay salida. <br>
+            En la ilustración, se muestra una lista de las funciones del gateway predeterminado. <br>
+            <img src="images/gatewayPredeterminado.PNG" alt="">
+        </p>
+        <h2>Uso del gateway predeterminado.</h2>
+        <p>
+            La tabla de routing de un host incluye, por lo eneral, ungateway predeterminado. El host recibe la dirección IPv4 del gateway predeterminado ya sea de manera dinámica del protocolo DHCP o si se la configura manualmente. En la ilustración, la PC1 y la PC2 
+            están configuradas con la dirección IPv4 del gateway predeterminado 192.168.10.1. La configuración de un gateway predeterminado genera una ruta predeterminada en la tabla de routing de la PC. Una ruta predeterminada es la ruta o camino que la PC usa cuando 
+            intenta conectarse a la red remota. <br>
+            La ruta predeterminada se desprende de la configuración del gateway predeterminado y se ubica en la tabla de routing del servidor. Tanto la PC1 com la PC2 tendrán una ruta predeterminada para enviar todo el tráfico destinado a las redes remotas al R1. <br>
+            <img src="images/gatewayPredeterminadodehost.PNG" alt="">
+        </p>
+        <h2>Tablas de routing de host.</h2>
+        <p>
+            Para mostrar la tabla de routing de un host de Windows, se puede usar el comando <code>route print</code> o <code>netstat -r</code>. <br>
+            Ambos comandos generan el mismo resultado. El resultado puede ser un poco abrumador al principio, pero es bastante simple de comprender. <br>
+            Al introducir el comando netstat -r o su comando equivalente route print, se muestran tres secciones relacionadas con las conexiones de red TCP/IP actuales:
         </p>
         <hr><hr>
         <section>
