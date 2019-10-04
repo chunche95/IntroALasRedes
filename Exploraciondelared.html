@@ -4721,6 +4721,24 @@ Switch #
         <p>
             <video src="videos/tabladeroutingipv4.mp4" controls width="680" height="480" ></video>
         </p>
+        <h2>Entradas de tabla de routing conectadas directamente.</h2>
+        <p>
+            Cuando se configura una interfaz de router con una dirección IPv4, una máscara de subred y luego se la activa, se generan  de manera automática las siguientes dos entradas de tabla de routing. 
+            <ul>
+                <li>
+                    <strong>C:</strong> Identifica una red conectada directamente. Las redes conectadas directamente se crean de manera automática cuando se configura una interfaz  con una dirección IP y se le activa.
+                </li>
+                <li>
+                    <strong>L:</strong> Indica que esta es una interfaz local. Esta es la dirección IPv4 de la interfaz del router. 
+                </li>
+            </ul>
+            En lailustración, se muestran las entradas de la tabla de routing de R1 para la red conectada directamente 192.168.10.0. Estas entradas se agregaron automáticamente a la tabla de routing cuando se configuró y se activó la interfaz GigabitEthernet 0/0. <br>
+            <strong>Nota:</strong> Las entradas de la interfaz local no aparecían en las tablas de routing antes de la version 15 de IOS. <br>
+            <img src="images/entradasdetabladeroutingconectadasdirectamente.PNG" alt="">
+            <br> <img src="images/entradasdetabladeroutingconectadasdirectamente2.PNG" alt="">
+            <br> <img src="images/entradasdetabladeroutingconectadasdirectamente3.PNG" alt="">
+        </p>
+
         <hr><hr>
         <section>
             <div>
