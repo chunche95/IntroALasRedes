@@ -18,5 +18,8 @@ git add documentos/. &&
 git nota "Media - Docs" &&
 git sube
 echo "Archivo(s) docs OK!"
+git add Archivos/. &&
+git nota "Media - Others" &&
+git sube
 sleep 2
 # clear
