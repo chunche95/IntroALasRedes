@@ -4836,9 +4836,44 @@ Switch #
         <p>
             Por lo general, los switches, routers y dispositivos Cisco interconectan muchos dispositivos. Es por este motivo que estos dispositivos tienen diferentes tipos de puertos e interfaces que se usen para conectarse al dispositivo. Por ejemplo, la placa de circuito de un router Cisco de la serie 1941 tiene los conectores y puertos que se describen en la ilustración. Haga clic en cada área resaltada para ver más información. <br>
             Al igual que muchos dispositivos de red, los dispositivos Cisco usan indicadores de diodo emisor de luz (LED) para brindar información de estado. Un LED de interfaz indica la actividad de la interfaz correspondiente. Si un LED está apagado cuando la interfaz está activa y la interfaz está conectada correctamente, puede indicar que hay un problema con esa interfaz. Si una interfaz está sobrecargada, su LED está encendido permanentemente.
-            En la figura, se muestra la placa de circuito de un router 1941. Entre las conexiones y los puertos resaltados se incluyen tarjetas HWIC, memoria Flash, consola, auxiliar, USB e interfaces Ethernet Gigabit. Para obtener más información, haga clic en cada uno. <br>
-            <video src="videos/conexionesaunrouter.mp4"></video>
+            En la figura, se muestra la placa de circuito de un router 1941. Entre las conexiones y los puertos resaltados se incluyen tarjetas HWIC, memoria Flash, consola, auxiliar, USB e interfaces Ethernet Gigabit. <br>
+            <video src="videos/conexionesaunrouter.mp4" autoplay="autoplay" height="580" width="780"></video>
         </p>
+        <h2>Interfaces WAN y LAN.</h2>
+        <p>
+            Las conexiones de un router Cicso pueden agruparse en dos categorías. Interfaces de router en banda y puertos de administración. Ver figura inferior. <br>
+            <video src="videos/interfacesypuertosdeadministracion.mp4" autoplay width="780" height="580"></video> <br>
+            De manera similar a lo que sucede con un switch Cisco, existen diversas formas de acceder al modo EXEC del usuario en el entorno CLI de un router Cisco. Las más habituales son las siguientes:
+            <ul>
+                <li>
+                    <strong>Consola:</strong> Este es un puerto de administración físico que proporciona acceso fuera de banda a un dispositivo de Cisco. El acceso fuera de banda hace referencia al acceso por un canal de administración exclusivo que se usa únicamente con fines de mantenimiento del dispositivo. 
+                </li>
+                <li>
+                    <strong>Shell seguro (SSH):</strong> SSh es un método para establecer de manera remota una conexión CLI segura a través de una interfaz por medio de una red. A diferencia de las conexiones de consola, las conexiones SSH requieren servicios de red activos en el dispositivo, incluida una interfaz activa configurada con una dirección.
+                </li>
+                <li>
+                    <strong>Telnet:</strong> Telnet es un método inseguro para establecer una sesión CLI de manera remota a través de una interfaz virtual por medio de una red. A diferencia de las conexiones SSH, Telnet no proporciona una conexión cifrada de manera segura. La autenticación de usuario, las contraseñas y los comandos se envían por la red en texto no cifrado.
+                </li>
+            </ul>
+            <cite>
+                <strong>Nota:</strong> Algunos dispositivos, como los routers, también pueden admitir un puerto auxiliar antiguo se que haya utilizado para establecer una sesión CLI vía remota con un módem. De manera similar a la conexión de consola, el puerto auxiliar está fuera de banda y no se requieren servicios de red para configurarlo o para que esté disponible. <br>
+                Telnet y SSh necesitan una conexión de red en banda, lo que significa que un administrador debe acceder al router a través de una de las interfaces de la red LAN o WAN, ver ilustración inferior. <br>
+                <video src="videos/interfacesderouterenbanda.mp4"></video>
+                <br>
+                Las interfaces en banda reciben y envían paquetes IP. Cada interfax configurada y activa en el router es un miembro o host de una red IP diferente. Se debe configurar cada interfaz con una sola dirección IPv4 y una máscara de subred de una red diferente. Cisco IOS no permite  que dos interfaces activas en el mismo router pertenexcan a la misma red.
+            </cite>
+        </p>
+        <h2>Actividad: descripciones de las funciones y de las partes de hardware de un router.</h2>
+        <p>
+            <img src="images/ACTIVIDAD-Identificaciondeelementosdeunaentradadetabladeenrutamientoderouter.PNG" alt="">
+        </p>
+        <h2>Packet Tracer. Exploración de dispositivos de interconexión de redes.</h2>
+        <p>
+            <a href="documentos/6.3.1.8 Packet Tracer - Exploring Internetworking Devices.pdf" target="_blank" rel="noopener noreferrer">Exploración de dispositivos de interconexión de redes (instrucciones)</a>
+            <br>
+            <a href="documentos/6.3.1.8 Packet Tracer - Exploring Internetworking Devices.pka" target="_blank" rel="noopener noreferrer">Exploración de dispositivos de interconexión de redes (PKA)</a>
+        </p>
+        <h2></h2>
         <hr><hr>
         <section>
             <div>
