@@ -4983,6 +4983,57 @@ Switch #
             Use el verificador de sintaxis de la figura inferior para practicar la configuración de una interfaz de la red LAN. <br>
             <video src="videos/configuraciondeinterfacesdelaredLAN.mp4" controls width="640" height="480" muted></video>
         </p>
+        <h2>Gateway predeterminado para un host.</h2>
+        <p>
+            Para que un terminal se comunique a través de la red, se debe configurar con la información de dirección IP correcta, incluida la dirección de gateway predeterminado. El gateway predeterminado se usa solamente cuando el host desea enviar un paquete a un dispositivo de otra red. En general, la dirección de gateway predeterminado es la dirección de la interfaz de router conectada 
+            a la red local del host. La dirección IP del dispositivo host y la dirección de interfaz de router deben estar en la misma red. <br>
+            La topología de red en la Figura 1 y 2 consta de un router que interconecta las dos LAN separadas. G0/0 se conecta a la red 192.168.10.0, mientras que G0/1 se conecta a la red 192.168.11.0. Cada dispositivo host está configurado con la dirección de gateway predeterminado apropiada. <br>
+            En la figura 1, la PC1 envía un paquete a la PC2. En este ejemplo, no se utiliza el gateway predeterminado. En cambio, PC1 dirige el paquete con la dirección IP de PC2 y lo reenvía directamente a PC2 a través del switch. <br>
+            En la figura 2, la PC1 envía un paquete a la PC3. En este ejemplo, la PC1 dirige un paquete con la dirección IP de la PC3, pero luego envía el paquete al router. El router acepta el paquete, accede a su tabla de routing para determinar la interfaz de salida apropiada según la dirección de destino y, luego, envía el paquete por la interfaz apropiada para que llegue a la PC3. <br>
+            En la Figura 1, se muestra un router con dos LAN. Cada LAN tiene 2 PC. En esta figura, se muestra la forma en que un host puede comunicarse con otro host en la misma LAN sin utilizar el gateway. En la Figura 2, se muestra un router con dos LAN. Cada LAN tiene 2 PC. En esta figura, se muestra la forma en que un host solicita al gateway que se comunique con un host en otra LAN. <br>
+            <div class="container">
+                Fig.1 
+                <img src="images/hacerpingaunhostlocal.PNG" alt=""> 
+                <hr>
+                Fig.2 
+                <img src="images/hacerpingaunmoduloremoto.PNG" alt="">
+            </div>
+        </p>
+        <h2>Gateway predeterminado para un switch.</h2>
+        <p>
+            Por lo general, un switch de grupo de trabajo que interconecta computadoras cliente es un dispositivo de capa 2. Como tal, un switch de capa 2 no necesita una dirección IP para funcionar adecuadamente. Sin embargo, si desea conectarse al switch y administrarlo en varias redes, debe configurar la SVI con una dirección IPv4, una máscara de subred y una dirección de gateway predeterminado. <br>
+            Por lo general, la dirección del gateway predeterminado se configura en todos los dispositivos que desean comunicarse más allá de la red local. En otras palabras, para acceder de manera remota al switch desde otra red con SSH o Telnet, el switch debe tener una SVI configurado con una dirección IPv4, una máscara de subred y una dirección de gateway predeterminado. Si se accede al switch desde 
+            un host dentro de la red local, la dirección IPv4 de gateway predeterminado no es necesaria. <br>
+            Para configurar un gateway predeterminado en un switch, use el comando de configuración global ip default-gateway. La dirección IP configurada es la de la interfaz de router del switch conectado. <br>
+            En la Figura 1 se muestra un administrador que establece una conexión remota al switch S1 en otra red. El switch S1 se debe configurar con un gateway predeterminado, para que pueda responder y establecer una conexión SSH con el host administrativo. <br>
+            Un concepto erróneo habitual es que el switch usa su dirección de gateway predeterminado configurada para determinar a dónde enviar los paquetes provenientes de los hosts conectados al switch y destinados a hosts de redes remotas. En realidad, la información de dirección IP y de gateway predeterminado se usa únicamente para los paquetes que se originan en el switch. Los paquetes que se originan 
+            en servidores conectados al switch ya deben crearse con la dirección de gateway predeterminado configurada en el sistema operativo de su servidor. <br>
+            Utilice el verificador de sintaxis de la figura 2 para practicar la configuración de un gateway predeterminado en un switch. <br>
+            En la figura 1, se muestra una red con un trabajador conectado a una LAN. En la figura, se muestra la forma de configurar un switch con una interfaz de administración (VLAN 1) y un gateway predeterminado para que un administrador de redes pueda administrar el switch en forma remota. Sin esta configuración, no puede conectarse a un switch en forma remota. En la figura 2, aparece una actividad con 
+            Syntax Checker en la que el alumno configura una interfaz de administración y un gateway predeterminado en un switch. <br>
+            <div class="container">
+                <img src="images/showrunning-config.PNG" alt=""> <br>
+                <img src="images/configuraciondeungatewaypredeterminadodeunswitch.PNG" alt="">
+            </div>
+        </p>
+        <h2>Conexión de un router a una red LAN.</h2>
+        <p>
+                <a href="documentos/6.4.3.3 Packet Tracer - Connect a Router to a LAN.pdf" target="_blank" rel="noopener noreferrer">Conexión de un router a una red LAN (instrucciones)</a> <br>
+                <a href="documentos/6.4.3.3 Packet Tracer - Connect a Router to a LAN.pka" target="_blank" rel="noopener noreferrer">Conexión de un router a una red LAN (PKA)</a>
+        </p>
+        <h2>Solución de problemas del gateway predeterminado</h2>
+        <p>
+            Para que un dispositivo se comunique en varias redes, debe estar configurado con una dirección IP, una máscara de subred y un gateway predeterminado. El gateway predeterminado se usa cuando el host desea enviar un paquete a un dispositivo de otra red. En general, la dirección de gateway predeterminado es la dirección de la interfaz de router conectada a la red local a la que se conecta el host. 
+            En esta actividad, terminará de registrar la red. Luego, verificará el registro de la red mediante la prueba de la conectividad completa y la solución de problemas. Los métodos de solución de problemas que usted usará constan de los siguientes pasos: <br>
+            Paso 1. Verificar el registro de la red y usar pruebas para aislar problemas.  <br>
+            Paso 2. Determinar una solución apropiada para un problema determinado. <br>
+            Paso 3. Implementar la solución. <br>
+            Paso 4. Realizar pruebas para verificar que se haya solucionado el problema. <br>
+            Paso 5. Registrar la solución. <br>
+
+            <a href="documentos/6.4.3.4 Packet Tracer - Troubleshooting Default Gateway Issues.pdf" target="_blank" rel="noopener noreferrer">Packet Tracer: Solución de problemas del gateway predeterminado (instrucciones)</a>
+            <a href="documentos/6.4.3.4 Packet Tracer - Troubleshooting Default Gateway Issues.pka" target="_blank" rel="noopener noreferrer">Packet Tracer: Solución de problemas del gateway predeterminado (PKA)</a>
+        </p>
         <hr><hr>
         <section>
             <div>
