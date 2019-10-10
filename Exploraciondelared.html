@@ -4958,7 +4958,30 @@ Switch #
         </p>
         <h2>Configuración interfaces de routers.</h2>
         <p>
-            Para que se pueda llegar 
+            Para que se pueda llegar a los routers, se deben configurar las interfaces de router en banda. Existen muchos tipos diferentes  de interfaces para los routers Cisco. En este ejemplo, el router Cisco de la serie 1941, tiene las siguientes características:
+            <ul>
+                <li>
+                    <strong>Dos interfaces Gigabit Ethernet:</strong> GigabitEthernet 0/0 (G0/0) y GigabitEthernet 0/1 (G0/1)
+                </li>
+                <li>
+                    <strong>Una tarjeta de interfaz serial WAN (WIC) que consta de dos interfaces:</strong> serial 0/0/0 (S0/0/0) y serial 0/0/1 (S0/0/1)
+                </li>
+            </ul>
+            <cite>
+                <strong>Nota:</strong>  Obtener más información sobre las abreviaciones y la numeración de las interfaces &rarr; <a href="https://www.cisco.com/c/en/us/td/docs/routers/access/2900/hardware/installation/guide/Hardware_Installation_Guide/Overview.html" target="_blank" rel="noopener noreferrer">más info.</a>
+            </cite>
+            Las tareas para configurar una interfaz de router  se indican en la figura. Observe cómo se asemeja a configurar una SVI de administración en un switch. <br>
+            <img src="images/tareasdeconfiguraciondeinterfazderouter" alt=""> <br>
+            Si bien no es necesario, es aconsejable configurar una descripción en cada interfaz para ayudar a registrar la información de la red.  El texto de la descripción tiene un límite de 240 caracteres. En las redes de producción, una descripción puede ser útil para la solución de problemas, dado que proporciona información 
+            con respecto al tipo de red a la que estña conectada la interfaz y con respecto a otros routers que pueda haber en esa red. Si la interfaz se conecta a un ISp o a un proveedor de servicios de telefonía móvil, resulta útil introducir la información de contacto y de conexión de dichos terceros. <br>
+            Al usar el comando <code>no shutdown</code>, se activa la interfaz y es similar a darle energía. La interfaz ta,bién debe estar conectada a otro dispositivo, como un switch o un router, para que la capa física se active. <br>
+            En la figura,se muestra la configuración de las itnerfaces de la red LAN conectadas al R1. <br>
+            <div class="container">
+                <img src="images/configuraciondelasinterfacesdelaredLANaR1.PNG" alt=""> <br>
+                <img src="images/configuraciondelasinterfacesdelaredLANaR1.1.PNG" alt=""> 
+            </div>
+            Use el verificador de sintaxis de la figura inferior para practicar la configuración de una interfaz de la red LAN. <br>
+            <video src="videos/configuraciondeinterfacesdelaredLAN.mp4" controls width="640" height="480" muted></video>
         </p>
         <hr><hr>
         <section>
@@ -4977,3 +5000,43 @@ Switch #
     <hr>
 </body>
 </html>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
+<cite></cite>
