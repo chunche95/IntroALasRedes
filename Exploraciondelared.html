@@ -5210,7 +5210,30 @@ Switch #
             En la figura, se muestra la dirección IPv4 decimal punteada 192.168.10.10 y los valores binarios de los octetos debajo de ella. Las direcciones IP se dividen en la porción de red y la porción de host, con los tres primeros octetos en la red y el cuarto octeto en el host. <br>
             <img src="images/Captura.PNGporcionderedyhost.PNG" alt="">
         </p>
-        
+        <h2>La máscara de subred.</h2>
+        <p>
+            Como se muestra en la figura, se deben configurar tres direcciones IPv4 decimales punteadas cuando se asigna una configuración IPv4 al host. 
+            <ul>
+                <li>
+                    <strong>Dirección IPv4.</strong> Dirección IPv4 única del host.
+                </li>
+                <li>
+                    <strong>Máscara de subred.</strong> Se usa para identificar la porción de red/host de la dirección IPv4.
+                </li>
+                <li>
+                    <strong>Gateway rpedeterminado.</strong> Identifica el gateway local (es decir, la dirección IPv4 de interfaz de router local) para llegar a redes remotas.
+                </li>
+            </ul>
+            Cuando se asigna una dirección IPv4 a un dispositivo, la máscara de subred se usa para determinar la dirección de red a la que pertenece el dispositivo. La dirección de red representa todos los dispositivos de la misma red. <br>
+            <img src="images/ConfiguraciondeIPenunhost.PNG" alt=""> <br>
+            En figura siguiente, se muestra la dirección decimal punteada y la máscara de subred de 32 bits. Observe que la máscara de subred es básicamente una secuencia de bits 1 seguida de una secuencia de bits 0. <br>
+            <img src="images/mascaradesubred.PNG" alt=""> <br>
+            Para identificar las porciones de red y de host de una dirección IPv4, se compara la máscara de subred con la dirección IPv4 bit por bit, de izquierda a derecha, como se muestra en la figura. <br>
+            <img src="images/paraciondeladierccioniPylamascaradesubres.PNG" alt=""> <br>
+            Los 1 de mascara de subred identifican la porción de red, mientras qye los 0 identifican  la porción de host. Se debe tener en cuenta que la máscara de subred no contiene en efecto la porción de red o de host de una dirección IPv4, sino que 
+            simplemente le dice a la PC dónde estas porciones en una dirección IPv4 dada. <br>
+            El proceso real que se usa para identificar la porción de red y la porción de host se denomina AND. 
+        </p>
         <hr><hr>
         <section>
             <div>
