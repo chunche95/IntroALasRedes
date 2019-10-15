@@ -28,7 +28,7 @@ sleep 2
 # Other - Otros.
 git add . &&
 git nota "Others" && 
-git sube
+git push origin master
 echo "Otros archivos  subidos"
 sleep 2
 echo "+-------------------------------------+"
