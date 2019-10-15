@@ -32,6 +32,6 @@ git push origin master
 echo "Otros archivos  subidos"
 sleep 2
 echo "+-------------------------------------+"
-echo "| Todos los trabajaos han finaluizado |"
+echo "| Todos los trabajaos han finalizado |"
 echo "+-------------------------------------+"
 # clear
