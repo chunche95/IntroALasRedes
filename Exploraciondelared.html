@@ -5234,7 +5234,32 @@ Switch #
             simplemente le dice a la PC dónde estas porciones en una dirección IPv4 dada. <br>
             El proceso real que se usa para identificar la porción de red y la porción de host se denomina AND. 
         </p>
-        7.1.2.3
+        <h2>AND lógico.</h2>
+        <p>
+            El AND lógico es una de las tres operaciones binarias básicas que se utilizan en la lógica digital. Las otras dos son OR y NOT. Si bien en las redes de datos se usan las tres, solo AND se usa para determinar la dirección de red. Por lo tanto, nuestro debate en este punto se limita a la operación lógica AND. <br>
+            La operación lógica AND es la comparación de dos bits que producen los resultados que se muestran en la figura 1. Observe que solo mediante 1 AND 1 se obtiene 1. <br>
+            <img src="images/operacionlogicaAND.PNG" alt=""><br> Fig.1 <br>
+            Para identificar la dirección de red de un host IPv4, se recurre a la operación lógica AND para la dirección IPv4, bit por bit, con la máscara de subred. El uso de la operación AND entre la dirección y la máscara de subred produce la dirección de red. <br>
+            Para demostrar cómo se usa AND para detectar una dirección de red, piense en un host con la dirección IPv4 192.168.10.10 y la máscara de subred 255.255.255.0. En la figura 2, se muestra la dirección de host IPv4 y la conversión a dirección binaria. En la figura 3, se agrega la dirección binaria de la máscara de subred del host. <br>
+            <img src="images/direccionIPdehostbinaria.PNG" alt=""><br>Fig.2 <br>
+            <img src="images/direccionbinaria255.255.255.0.PNG" alt=""><br>Fig.3 <br>
+            En las secciones resaltadas en amarillo de la figura 4, se identifican los bits AND que produjeron un 1 binario en la fila de Resultados AND. Todas las demás comparaciones de bits producen 0 binarios. Observe cómo el último octeto ya no tiene bits 1 binarios. <br>
+            <img src="images/operacionlogicaAND.PNG" alt=""><br>Fig.4 <br>
+            Por último, en la figura 5, se muestra la dirección de red resultante 192.168.10.0 255.255.255.0. Por lo tanto, el host 192.168.10.10 está en la red 192.168.10.0 255.255.255.0. <br>
+            <img src="images/direcciondered.PNG" alt=""><br>Fig.5 <br>
+            En la Figura 1 se muestra la operación lógica AND donde 1 y 1 equivalen a 1 pero todas las demás posibilidades equivalen a cero. En la Figura 2 se muestran los formatos decimal punteado y binario correspondientes a la dirección IP 192.168.10.10. En la Figura 3 se suman los formatos decimal punteado y binario correspondientes a la máscara 
+            de subred 255.255.255.0 a la Figura 2. En la Figura 4 se muestra la operación AND entre el formato binario de la dirección IP y el formato binario de la máscara de subred. En la Figura 5 se muestra el resultado de la operación AND: la dirección de red 192.168.10.0 <br>
+        </p>
+        <h2>Actividad: Uso de la operación AND para determinar la dirección de red.</h2>
+        <p>
+            <img src="images/Actividad-Uso de la operacion and para determinar la direccion de red.PNG" alt="">
+        </p>
+        <h2>Longitud de prefijo.</h2>
+        <p>
+            Puede ser difícil expresar direcciones de red y de host con la dirección de la máscara de subred decimal punteada. Afortunadamente, xiste un método alternativo más simple para identificar una máscara de subred que se denomina "longitud de prefijo". <br>
+            Específicamente, la longitud de prefijo es el número de bits en 1 en la máscara de subred. Se escribe mediante la "notación de barra diagonal", es decir, una "/"seguida por el número de bits en la máscara de subred y anteponga una barra diagonal. <br>
+            Para ver un ejemplo, consulte la tabla de la ilustración. En la primera columna 
+        </p>
         <hr><hr>
         <section>
             <div>
