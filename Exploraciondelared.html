@@ -5099,7 +5099,7 @@ Switch #
             El trabajo con número binario puede ser desafiante. Para que esto resulte más fácil, las direcciones IPv4 suele expresarse mediante una notación decimal punteada, como se muestra en la figura inferior. A la PC1 se le asignó la dirección IPv4 192.168.10.10, y la dirección de gateway predeterminado es 192.168.10.1. <br>
             <img src="images/direccionesIPv4expresadasenformatodecimalpunteado.PNG" alt=""> <br>
             En la ilustración inferior, se compara la dirección decimal punteada con la dirección binaria de 32 bits de la PC1. <br>
-            <video src="videos/comparaciondeladireccionIPv4delaPC1endecimalpunteadoyenbinario.mp4" autoplay loop width="640" height="480" muted></video> <br>
+            <video src="videos/comparaciondeladireccionIPv4delaPC1endecimalpunteadoyenbinario.mp4" autoplay loop muted width="640" height="480" muted></video> <br>
             Para tener una buena comprensión del direccionamiento de red, es necesario comprender el direccionamiento binario y obtener habilidades prácticas en la conversión entre direcciones IPv4 binarias y decimales punteadas. <br>
             En esta sección, se explica cómo convertir entre los sistemas de numeración de base dos y base 10.
         </p>
@@ -5293,8 +5293,8 @@ Switch #
             Los conceptos que se debaten en este tema son fundamentales para comprender el direccionamineto IPv4. Asegúrese de entender cómo una dirección de red identifica una porción de red y una porción de host mediante la máscara de subred 
             o la longitud de prefijo y la operación AND. También debe tomar nota de los diferentes tipos de direcciones de red dentro de una red.
             <div class="container">
-                <video src="videos/tiposdedireccionesenunared.mp4" autoplay loop height="480" width="640" ></video>
-                <video src="videos/tiposdedireccionesenlared192.168.10.0-24.mp4" autoplay loop height="480" width="640" ></video>
+                <video src="videos/tiposdedireccionesenunared.mp4" autoplay loop muted height="480" width="640" ></video>
+                <video src="videos/tiposdedireccionesenlared192.168.10.0-24.mp4" autoplay loop muted height="480" width="640" ></video>
                 <img src="images/direcciondered10.1.1.0.PNG" alt=""> <br>
                 <img src="images/direcciondehost10.1.1.10.PNG" alt=""> <br>
                 <img src="images/primerhost10.1.1.1.PNG" alt=""> <br>
@@ -5338,18 +5338,39 @@ Switch #
             <ul>
                 <li>
                     <strong>Unidifusión.</strong> Es el proceso de enviar un paquete de un host  a otro individual, como se muestra. <br>
-                    <video src="videos/unidifusion.mp4" autoplay loop height="480" width="640" ></video> 
+                    <video src="videos/unidifusion.mp4" autoplay loop muted height="480" width="640" ></video> 
                 </li>
                 <li>
                     <strong>Difusión.</strong> Es el proceso de enviar un paquete de un host a todos los hosts de la red, como se muestra en la figura. <br>
-                    <video src="videos/difusion.mp4" autoplay loop height="480" width="640" ></video> 
+                    <video src="videos/difusion.mp4" autoplay loop muted height="480" width="640" ></video> 
                 </li>
                 <li>
                     <strong>Multidifusión.</strong> Es el proceso de enviar un paquete de un hosts, probablemente en diferentes redes, como se muestra en la figura. <br>
-                    <video src="videos/multidifusion.mp4" autoplay loop height="480" width="640" ></video> 
+                    <video src="videos/multidifusion.mp4" autoplay loop muted height="480" width="640" ></video> 
                 </li>
             </ul>
-            Estos tres tipos de comunicación se usa con distintos objetivos en las redes de datos. En los tres casos,
+            Estos tres tipos de comunicación se usa con distintos objetivos en las redes de datos. En los tres casos, se coloca la dirección IPv4 del host de origen en el encabezado del paquete como la dirección de origen. 
+        </p>
+        <h2>Transmisión de unidifusión.</h2>
+        <p>
+            La comunicación de unidifusión se usa para la comunicación normal de host a host, tanto en redes cliente/servidor como en redes punto a punto. Los  paquetes de unidifusión usan la dirección del dispositivo  de destino como la dirección de destino y pueden enrutarse en una interconexión de redes. <br>
+            <video src="videos/transmisiondeunidifusion.mp4" autoplay loop muted height="480" width="640" ></video> <br>
+            En una IPv4, la dirección  de unidifusión aplicada a un terminal se denomina "dirección de host". En la comunicación de unidifusión, las direcciones asignadas a los dos terminales se usan como las direcciones IPv4 de origen y de destino. Durante el proceso de encapsulamiento, el host de origen usa su 
+            direcciñon IPv4 como dirección de origen y dirección IPv4  del host de destino. Sin importar si en el destino se especificó un paquete como unidifusión, difusión o multidifusión, la dirección de origen de cualquier paquete siempre es la dirección de unidifusión del host de origen. <br>
+            <cite>
+                <strong>Nota:</strong> en este curso, todas las comunicaciones entre dispositivos son de unidifusión, a menos que se indique lo contrario.
+            </cite> <br>
+            Las direcciones de host IPv4 de unidifusión se encuentra en el itervalo de direcciones de 0.0.0.0 a 223.255.255.255. Sin embargo, dentro de este intérvalo existen muchas direcciones reservadas para fines específicos. Estas direcciones con fines específicos se analizan más adelante en este capítulo. 
+        </p>
+        <h2>Transmisión de difusión.</h2>
+        <p>
+            El tráfico de difusión se utiliza para enviar paquetes a todos los hosts en la red con la dirección de difusión para la red. En una difusión, el paquete contiene una dirección IPv4 de destino con todos los números uno (1) en la porción de host. Esto significa que todos los hosts de esa red local (dominio de difusión) reciben y ven 
+            el paquete. En gran parte de la tecnología impulsada por la red, como DHCP, se utilizan transmisiones por difusión. Cuando un host recibe un paquete enviado a la dirección de difusión de la red, el host procesa el paquete de la misma manera en la que procesaría un paquete dirigido a su dirección de unidifusión. <br>
+            La difusión puede ser dirigida o limitada. Una difusión dirigida se envía a todos los hosts de una red específica. Por ejemplo, un host de la red 172.16.4.0/24 envía un paquete a la dirección 172.16.4.255. Se envía una difusión limitada a 255.255.255.255. De manera predeterminada, los routers no reenvían transmisiones por difusión. <br>
+            A modo de ejemplo, un host dentro de la red 172.16.4.0/24 transmitiría por difusión a todos los hosts de su red utilizando un paquete con una dirección de destino 255.255.255.255. <br>
+            <video src="videos/difusionlimitada.mp4" autoplay loop muted height="480" width="640" ></video> <br>
+            Cuando se transmite un paquete por difusión, utiliza recursos de la red y hace que cada host receptor de la red procese el paquete. Por lo tanto, se debe limitar el tráfico de difusión para que no afecte negativamente el rendimiento de la red o de los dispositivos. Debido a que los routers separan los dominios de difusión, la subdivisión 
+            de redes puede mejorar el rendimiento de la red al eliminar el exceso de tráfico de difusión.
         </p>
         <hr><hr>
         <section>
