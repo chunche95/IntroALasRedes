@@ -5268,27 +5268,39 @@ Switch #
             Cada dirección de red contiene (o identifica) direcciones de host y una dirección de difusión, como se describe en la figura. 
             <ul>
                 <li>
-                    <strong>En la figura 2 ,</strong> se enumeran y se describen las 
+                    <strong>En la figura 2 ,</strong> se enumeran y se describen las direcciones específicas dentro de la red 192.168.10.0/24
                 </li>
                 <li>
-                    <strong>En la figura 3 ,</strong>
+                    Para vert otro ejemplo, consulte las figuras 3 a 7. En estas ilustraciones, observe cómo la porción de red de las direcciones se mantiene igual, al tiempo que la porción de host cambia. 
                 </li>
                 <li>
-                    <strong>En la figura 4 ,</strong>
+                    <strong>En la figura 3 ,</strong> se muestra la dirección de red 10.1.1.0/24. Los bots de host son todos 0.
                 </li>
                 <li>
-                    <strong>En la figura 5 ,</strong>
+                    <strong>En la figura 4 ,</strong> se muestra la dirección de host IPv4 10.1.1.10. Los bits de host son una mezcla de 0 y 1.
                 </li>
                 <li>
-                    <strong>En la figura 6 ,</strong>
+                    <strong>En la figura 5 ,</strong> se muestra la primera dirección de hhost IPv4 10.1.1.1. Los bots de host son todos 0 con un 1. Observer que se asigna a la interfaz de router y, por lo tanto, se transformaría en el 
+                    gateway predeterminado para todos los hosts en esa red.
                 </li>
                 <li>
-                    <strong>En la figura 7 ,</strong>
+                    <strong>En la figura 6 ,</strong> se muestra la última dirección de host IPv4 10.1.1.254. Los bits de host son todos 1 con un 0.
                 </li>
                 <li>
-    <strong>En la figura  ,</strong> 7.1.2.6                   
+                    <strong>En la figura 7 ,</strong> se muestra la dirección de difusión 10.1.1.255. Los bits de host son todos 1.
                 </li>
             </ul>
+            Los conceptos que se debaten en este tema son fundamentales para comprender el direccionamineto IPv4. Asegúrese de entender cómo una dirección de red identifica una porción de red y una porción de host mediante la máscara de subred 
+            o la longitud de prefijo y la operación AND. También debe tomar nota de los diferentes tipos de direcciones de red dentro de una red.
+            <div class="container">
+                <video src="videos/tiposdedireccionesenunared.mp4" autoplay loop height="480" width="640" ></video>
+                <video src="videos/tiposdedireccionesenlared192.168.10.0-24.mp4" autoplay loop height="480" width="640" ></video>
+                <img src="images/direcciondered10.1.1.0.PNG" alt=""> <br>
+                <img src="images/direcciondehost10.1.1.10.PNG" alt=""> <br>
+                <img src="images/primerhost10.1.1.1.PNG" alt=""> <br>
+                <img src="images/ultimohost10.1.1.254.PNG" alt=""> <br>
+                <img src="images/direcciondedifusion.PNG" alt="">
+            </div>
         </p>
         <hr><hr>
         <section>
