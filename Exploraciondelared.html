@@ -5395,7 +5395,75 @@ Switch #
             <br>
             <a href="documentos/7.1.3.8 Packet Tracer - Investigate Unicast, Broadcast, and Multicast Traffic.pka" target="_blank" rel="noopener noreferrer">Packet Tracer: Investigación del tráfico de unidifusión, difusión y multidifusión (PKA)</a>
         </p>
-        7.1.4.1
+        <h2>Direcciones IPv4 públicas y privadas.</h2>
+        <p>
+            Las direcciones IPv4 públicas son direcciones que se enrutan globalmente entre los routers de los ISP (provvedores de servicios de Internet). Sin embargo, no todas las direcciones IPv4 disponibles pueden usarse en Internet. Existen bloques de direcciones llamadas direcciones privadas que son utilizadas por la mayor parte de las organizaciones 
+            para asignar direcciones IPv4 a hosts internos. <br>
+            A mediados de la década de 1990, se presentaron las direcciones IPv4 privadas debido a la reducción del espacio de direcciones IPv4. Las direcciones IPv4 privadas no son exclusivas y pueden usarse en una red interna. <br>
+            Específicamente, los bloques de direcciones privadas son los siguientes:
+            <ul>
+                <li><strong>10.0.0.0/8 o 10.0.0.0</strong> a <strong>10.255.255.255</strong></li>
+                <li><strong>172.16.0.0/12 o 172.16.0.0</strong> a <strong>172.31.255.255</strong></li>
+                <li><strong>192.168.0.0/16 o 192.168.0.0</strong> a <strong>192.168.255.255</strong></li>
+            </ul>
+            Es importante saber que las direcciones dentro de estos bloques de direcciones no están permitidas en Internet y deben ser filtradas (descartadas) por los routers de Internet. Por ejemplo, en la ilustración, los usuarios de las redes 1,2 o 3 envían paquetes a destinos remotos. Los routers del proveedor de servicios de Internet (ISP) detectan que las direcciones IPv4 
+            de origen de los paquetes son de direcciones privadas y, por tanto, descartan los paquetes. <br>
+            <img src="images/lasdireccionesprivadasnosepuedenenrutaratravesdeinternet.PNG" alt=""> <br>
+            <cite>
+                <b>Nota:</b> Las direcciones privadas se definen en RFC 1918. <br>
+            </cite>
+            La mayoría de las organizaciones usan direcciones IPv4 privadas para los hosts internos. Sin embargo, estas direcciones RFC 1918 no se pueden enrutar en Internet y deben traducrise a direcciones IPv4 públicas. Se usa la traducción de direcciones de red (NAT) para traducir entre direcciones IPv4 privadas y públicas. En general, esto se hace en el router que conecta la red 
+            interna a la red del ISP. <br>
+            Los routers domésticos brindan la misma funcionalidad. Por ejemplo, la mayoría de los routers domésticos asignan direcciones IPv4 a sus hosts cableados e inalámbricos desde la dirección privada 192.168.1.0/24. <br>
+            A la interfaz de router doméstico que se conecta a la red del proveedor de servicios de Internet (ISP) se le asigna una dirección IPv4 pública para usar en Internet.
+        </p>
+        <h2>Actividad: admisión o bloque de direcciones IPv4.</h2>
+        <p>
+            <img src="images/admisionobloqueodedireccionesIPv4.PNG" alt="">
+        </p>
+        <h2>Direcciones IPv4 de usuarios especiales.</h2>
+        <p>
+            Existen ciertas direcciones, como la dirección de red y la dirección de difusión, que no se pueden asignar a los hosts. También hay direcciones especiales que pueden asignarse a los hosts, pero con restricciones respecto de la forma en que dichos hosts pueden interactuar dentro d ela red.
+            <ul>
+                <li>
+                    <strong>Direcciones de blucle invertido (127.0.0.0/8 o 127.0.0.1 a 127.255.255.254)</strong> Generalmente identificadas solo como 127.0.0.1, son direcciones especiales que usa un host para dirigir el tráfico hacia sí mismo. Por ejemplo, se puede usar en un hosts para probar si la configuración TCP/IP funciona, como se muestra en la figura. Observe cómo la dirección 
+                    de bucle invertido 127.0.0.1 responde al comando ping. También observe cómo todas las direcciones de este realizan un bucle invertido hacia el hosts local, como se muestra con el segundo ping de la ilustración. 
+                </li>
+                <li>
+                    <strong>Direcciones de enlace local (169.254.0.0/16 o 169.254.0.1 a 169.254.255.254)</strong> Más comúnmente conocidas como "direcciones IP privadas automáticas" (APIPA), un cliente DHCP Windows las usa para la autoconfiguración en cas de que no haya servidores DHCP disponibles.
+                </li>
+                <li>
+                    <strong>Direcciones TEST-NET (192.0.2.0/24 o 192.0.2.0 a 192.0.2.255)</strong> Estas direcciones se aportan con fines de enseñanza y aprendizaje, y pueden usarse en ejemplos de documentación y de redes.
+                </li>
+            </ul>
+            <cite>
+                <b>Nota:</b> También existen direcciones experimentales en el bloque 240.0.0.0 a 255.255.255.254 que se reservan para uso futuro (RFC 3330). <br>
+            </cite>
+            <img src="images/PINGALAINTERFAZDEBUCLEINVERTIDO.PNG" alt="">
+        </p>
+        <h2>Direccionamineto con clase antigua.</h2>
+        <p>
+            En 1981, las direcciones IPv4 de Internet se asignaban mediante el Direccionamiento con clase como se define en RFC 790, número asignados. A los clientes se les asignó una dirección de red basada en una de tres clases: A,B o C. RFC dividia los rangos de unidifusión en clases específicas denimonadas: 
+            <ul>
+                <li>
+                    <strong>Clase A (0.0.0.0/8 a 127.0.0.0/8)</strong> diseñada para admitir redes extremadamente grandes, con mñas de 16 millones de direcciones de host. Usaba un prefijo /8 fijo donde el primer octeto indicaba la dirección de red y los tres octetos restantes eran para las direcciones de host. Todas las direcciones de clase A requieren que el bit más significativo  del octeto de valor superior fuese un cero que creaba un total de 128 redes 
+                    de clase A porsibles. En la figura, se resume la clase A. <br>
+                    <img src="images/claseA.PNG" alt="">
+                </li>  
+                <li>
+                    <strong>Clase B (128.0.0.0/16 a 191.255.0.0/16)</strong> diseñada para satisfacer la necesidad de redes de tamaño moderado a grande, con hasta 65.000 direcciones de host. Usaba un prefijo /16 fijo donde los octetos de valor superior indicaban la dirección de red y los dos octetos restantes eran para las direcciones de host. Los dos bits mñas significativos del octeto de valor superior deben ser 10 que crean mñas de 16.000 redes. 
+                    En la figura, se recume la clase B. <br>
+                    <img src="images/claseB.PNG" alt="">
+                </li>
+                <li>
+                    <strong>Clase C (192.0.0.0/24 a 223.255.255.0/24)</strong> diseñada para admitir redes pequeñas con un máximo de 254 host. Usaba un prefijo /24 fijo donde los tres primeros octetos indicaban la red u el octeto restante era para las direcciones de host. Los tres bits más significativos del octeto de valor superior deben ser 110 que crean más de 2 millones de redes posibles. En la figura, se resume la red de clase C. <br>
+                    <img src="images/claseC.PNG" alt="">
+                </li>
+            </ul>
+            <storng>
+                Nota: también existe un bloque de multidifusión de clase D que va de 224.0.0.0 a 239.0.0.0, y un bloque de direcciones experimentales de clase E que va de 240.0.0.0 a 255.0.0.0. 
+            </strong>
+        </p>
         <hr><hr>
         <section>
             <div>
