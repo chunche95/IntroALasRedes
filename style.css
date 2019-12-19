@@ -201,6 +201,20 @@ input, select, textarea {
 			}
 
 		}
+	/* images */
+	
+	img{
+		width: 100%;
+		height: auto;
+	}
+	
+	/* Video */
+	
+	video{
+		width: 95%;
+		height: auto;
+		/* height="480" width="auto" */
+	}
 
 	a {
 		-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
