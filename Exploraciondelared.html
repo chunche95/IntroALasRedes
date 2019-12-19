@@ -4463,7 +4463,8 @@ Switch #
             En la figura 1, se muestra el proceso de creación de la PDU de capa de transporte. En la figura 2, se muestra cómo la PDU de capa de red encapsula la PDU de capa de transporte para crear un paquete IP. <br>
             El proceso de encapsulamiento de datos capa por capa permite que se desarrollen y se escalen los servicios en las diferentes capas sin afectar a las otras capas. Esto significa que IPv4 o IPv6 o cualquier protocolo nuevo que se desarrolle en el futuro puede armar sin inconvenientes un paquete con los segmentos de capa de transporte. <br>
             Los routers pueden implementar diferentes protocolos de capa de red para que funcionen simultáneamente en una red. El routing que realizan estos dispositivos intermediarios solo toma en cuenta el contenido del encabezado de paquetes de la capa de red. En ningún caso, la porción de datos del paquete, es decir, la PDU de capa de transporte encapsulada, se modifica durante los procesos de la capa de red. <br>
-            <img src="images/" alt="">
+            <img src="images/PDUdelacapadetransporte-Segmento.PNG" alt=""> <br>
+            <img src="images/PDUdelacapadered-paqueteIP.PNG" alt="">
         </p>
         <h2>Características de IP.</h2>
         <p>
@@ -5464,7 +5465,57 @@ Switch #
                 Nota: también existe un bloque de multidifusión de clase D que va de 224.0.0.0 a 239.0.0.0, y un bloque de direcciones experimentales de clase E que va de 240.0.0.0 a 255.0.0.0. 
             </strong>
         </p>
-        7.1.4.5
+       <h2>Demostración en vídeo: Direccionamiento IPv4 con clase.</h2>
+       <p> 
+           <video src="videos/classfulAddressingAndSubnetMask.mp4"  controls></video>
+       </p>
+       <h2>Asignación de direcciones sin clase.</h2>
+       <p>
+           Como se muestra en la ilustración, el sistema con clase asignaba el 50% de las direcciones IPv4 disponibles a 128 redes de clase A, el 25% de las direcciones a la clase B, y la clase C compartía el 25% restante con las clases D y E. El problema es que así se desperdiciaba una gran cantidad de direcciones y se agotaba la disponibilidad de las direcciones IPv4. No todos los requisitos de las organizaciones se ajustaban a una de estas tres clases. 
+           Por ejemplo, una empresa que tenía una red con 260 hosts necesitaría recibir una dirección de clase B con más de 65.000 direcciones, con lo que se despericiarían 64.740 direcciones. <br>
+           El direccionamiento con clase se abandonó a finales de la década de 1990 para favorecer el sistema de direccionamiento sin clase actual. Sin embargo, todavía existen versiones con clase en las redes actuales. Por ejemplo, cuando se asigna una dirección IPv4 a una computadora, el sistema operativo examina la dirección que se asigna para determinar si es de clase A,B o C. El sistema operativo después asume el prefijo que usa esa clase y realiza la asignación
+           de la máscara de subred predeterminada. <br>
+           <img src="images/resumen de asignacion de direcciones con distincion de clases.PNG" alt=""> <br>
+           El sistema usado actualmente se conoce como <i>Direccionamiento sin clase</i>. El nombre formal es <i>"Classless Inter-Domain Routing"</i> (CIDR, pronunciado "cider"). En 1993, el IETF creó un nuevo conjunto de estándares que permitía que los proveedores de servicios asignaran direcciones IPv4 en cualquier límite de bits de dirección (longitud de prefijo) en lugar de solo con una dirección de clase A,B o C. Se hizo para poder demorar la disminución y el agotamiento 
+           final de las direcciones IPv4. <br>
+           El IETF sabía que el CIDR era solo una solución temporal y que sería necesario desarrollar un nuevo protocolo IP para admitir el rápido crecimiento de la cantidad de usuarios de Internet. En 1994, el IETF comenzó a trabajar para encontrar un sucesor de IPv4, que finalmente fue IPv6. <br>
+           Entonces, ¿quién administra y asigna estas direcciones IPv4?
+       </p>
+       <h2>Asignación de direcciones IP</h2>
+       <p>
+           Para que una empresa u organización  admita host de red, por ejemplo, servidores web a los que se accede desde Internet, esa organización  debe tener asignado un bloque de direcciones públicas. Se debe tener en cuenta que las direcciones públicas deben ser únicas, y el uso de estas direcciones públicas se regula y se asigna a cada organización de forma independiente. Esto es válido para las direcciones IPv4 e IPv6. <br>
+           Tanto las direcciones IPv4 como las IPv6 son administradas por la Autoridad de Números Asignados a Internet (Internet Assigned Number Authority, <a href="http://www.iana.org" target="_blank" rel="noopener noreferrer">IANA</a>). La IANA administra y asigna bloques de direcciones IP a los Registros Regionales de Internet (RIR). <br>
+           Los RIR se encargan de asignar direcciones IP a los ISP, quienes a su vez proporcionan bloques de direcciones IPv4 a las organizaciones y a los ISP más pequeños. Las organizaciones pueden obtener sus direcciones directamente de un RIR, según las políticas de ese RIR. <br>
+           <div>
+               <img src="images/asignacion de direcciones IP1.PNG" alt=""><br>
+               <img src="images/asignacion de direcciones IP2.PNG" alt=""><br>
+               <img src="images/asignacion de direcciones IP3.PNG" alt=""><br>
+               <img src="images/asignacion de direcciones IP4.PNG" alt=""><br>
+               <img src="images/asignacion de direcciones IP5.PNG" alt=""><br>
+           </div>
+       </p>
+       <h2>Actividad: Direcciones IPv4 públicas o privadas.</h2>
+       <p>
+           <img src="images/actividad-direccionesIPv4publicasoprivadas.PNG" alt="">
+       </p>
+       <h2>Práctica de laboratorio: Identificación de direcciones IPv4.</h2>
+       <p>
+           <a href="documentos/7.1.4.9 Lab - Identifying IPv4 Addresses.pdf" target="_blank" rel="noopener noreferrer">Práctica de laboratorio: Identificación de direcciones IPv4.</a>
+       </p>
+       <h2>Necesidad de utilizar IPv6.</h2>
+       <p>
+           IPv6 está diseñado para ser el sucesor de IPv4. IPv6 tiene un mayor espacio de direcciones de 128 bits, lo que proporciona 340 sextillones de direcciones. (Es decir, el número 340 seguido de 36 ceros). Sin embargo, IPv6 es más que solo direcciones más extensas. Cuando el IETF comenzó el desarrollo de un sucesor de IPv4, utilizó esta oportunidad para corregir las limitaciones de IPv4 e incluir mejoras adicionales. Un ejmeplo es el protocolo de mensajes de control de Internet versión 6 (ICMPv6), 
+           que incluye la resolución de direcciones, las cuales no se encuentran en ICMP para IPv4 (ICMPv4). ICMPv4 e ICMPv6 se analizan más adelante en este capítulo. <br>
+           <img src="images/fecha de agotamiento de las direcciones IPv4 de RIR.PNG" alt=""> <br>
+           <strong>Necesidad de utilizar IPv6</strong> <br>
+           El agotamiento del espacio de direcciones IPv4 fue el factor que motivó la migración a IPv6. Debido al aumento de la conexión a Internet en África. Asia y otras áreas del mundo, las direcciones IPv4 ya no son suficientes como para admitir este crecimiento. Como se muestra en la figura, a cuatro de cinco RIR se les agotaron las direcciones IPv4. <br>
+           IPv4 tiene un máximo de 4300 millones de direcciones. Las direcciones privadas en combinación con la traducción de direcciones de red (NAT) fueron esenciales para demorar la reducción del espacio de direcciones IPv4. Sin embargo, la NAT rompre muchas aplicaciones y tiene limitaciones que obstaculizan considerablemente las comunicaciones entre pares. <br>
+           <strong>Internet de todo</strong> <br>
+           En la actualidad, Internet es significativamente distinta de como era en las últimas décadas. Actualmente, Internet es mucho más que el correo electrónico, las páginas web y la tranferencia de archivos entre computadoras. Internet evoluciona y se está convirtiendo en una Internet de los objetos. Ya no serán solo las computadoras, las tabletas PC y los teléfonos inteligentes los únicos dispositivos que accedan a Internet. Los dispositivos del futuro preparados para acceder a Internet y equipados 
+           con sensores incluirán desde automóviles y dispositivos biomédicos hasta electrodomésticos y ecosistemas naturales. <br>
+           Con una población que accede a Intenet cada vez mayor, un espacio de direcciones IPv4 limitado, los problemas de NAT y la Internet de todo, llegó el momento de comenzar la transición hacia IPv6.
+       </p>
+       7.2.1.2
         <hr><hr>
         <section>
             <div>
