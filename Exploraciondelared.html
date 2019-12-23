@@ -5517,7 +5517,22 @@ Switch #
        </p>
        <h2>Coexistencia de IPv4 e IPv6</h2>
        <p>
-           No hay una única fecha para realizar la transición a IPv6. en un futuro cercano, IPv4 e IPv6 coexistirán. Se espera que la transición demore años. El IETF creó diversos protocolos y herramientas para ayudar a los administradores de redes migrar las redes a IPv6.
+           No hay una única fecha para realizar la transición a IPv6. en un futuro cercano, IPv4 e IPv6 coexistirán. Se espera que la transición demore años. El IETF creó diversos protocolos y herramientas para ayudar a los administradores de redes migrar las redes a IPv6. Las técnicas de migración pueden dividirse en tres categorías: 
+           <ul>
+               <li>
+                    <strong>Dual-stack:</strong>como se muestra en la figura, la técnica dual-stack permite que IPv4 e IPv6 coexistan en el mismo segmento de red. Los dispositivos dual-stack ejecutan pilas de protocolos IPv4 e IPv6 de manera simultánea. <br>
+                    <img src="images/dualstack.PNG" alt="">
+               </li>
+               <li>
+                    <strong>Tunelización:</strong>como se muestra en la figura, el protocolo  de túnel es un método para transportar un paquete IPv6 en una red IPv4. El paquete IPv6 se encapsula dentro de un paquete IPv4, de manera similar a lo que sucede con otros tipos de datos.  <br>
+                    <img src="images/tunelizacion.PNG" alt="">
+               </li>
+               <li>
+                    <strong>Traducción:</strong> como se muestra en la figura, la traducción de direcciones de red 64 (NAT64) permite que los dispositivos habilitados para IPv6 se comuniquen con los dispositivos habilitados para IPv4 mediante una técnica de traducción similar a NAT para IPv4. Un paquete IPv6 se traduce a un paquete IPv4 y viceversa.  <br>
+                    <img src="images/traduccion.PNG" alt="">
+               </li>
+           </ul>
+           <strong>Nota:</strong> la Tunelización y la traducción solo se usan cuando es necesario. El objetivo debe ser las comunicaciones IPv6 nativas de origen a destino.
        </p>
         <hr><hr>
         <section>
