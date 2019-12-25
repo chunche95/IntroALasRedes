@@ -5649,8 +5649,25 @@ Switch #
            Los tipos de direcciones IPv6 de unidifusión más comunes son las direcciones de unidifusión globales (GUA) y las direcciones de unidifusión link-local. 
            <h3>Unidifusión global</h3>
            <p>
-               
+              Las direcciones  de unidifusión  globales son similares a las direcciones IPv4 públicas. Estas son direcciones enrutables de Internet globalmente exclusivas. Las direcciones de unidifusión globales pueden 
+              configurarse estáticamente o asignarse de forma dinámica.
            </p>
+           <h3>Link-local</h3>
+           <p>
+            Las direcciones link-local se utilizan para comunicarse con otros dispositivos en el mismo enlace local. Con IPv6, el término “enlace” hace referencia a una subred. Las direcciones link-local se limitan a un único 
+            enlace. Su exclusividad se debe confirmar solo para ese enlace, ya que no se pueden enrutar más allá del enlace. En otras palabras, los routers no reenvían paquetes con una dirección de origen o de destino link-local. 
+           </p>
+           <h3>Local única</h3>
+           <p>
+            Otro tipo de dirección de unidifusión es la dirección de unidifusión local única. Las direcciones IPv6 locales únicas tienen ciertas similitudes con las direcciones privadas RFC 1918 para IPv4, pero existen grandes 
+            diferencias. Las direcciones locales únicas se utilizan para el direccionamiento local dentro de un sitio o entre una cantidad limitada de sitios. Estas direcciones no deberían poder enrutarse en la IPv6 global, 
+            y no deberían traducirse hacia direcciones IPv6 globales. Las direcciones locales únicas están en el rango de FC00::/7 a FDFF::/7. <br>
+            Con IPv4, las direcciones privadas se combinan con NAT/PAT para proporcionar una traducción de varios a uno de direcciones privadas a públicas. Esto se hace debido a la disponibilidad limitada del espacio de direcciones 
+            IPv4. Muchos sitios también utilizan la naturaleza privada de las direcciones definidas en RFC 1918 para ayudar a proteger u ocultar su red de posibles riesgos de seguridad. Sin embargo, este nunca fue el uso previsto de 
+            esas tecnologías, y el IETF siempre recomendó que los sitios tomaran las precauciones de seguridad adecuadas en el router del lado de Internet. Las direcciones locales únicas pueden usarse en dispositivos que nunca necesitan
+            o nunca pueden acceder a otra red.
+           </p>
+           <img src="images/direcciones Ipv6 de unidifusion.PNG" alt="">
        </p>
         <hr><hr>
         <section>
