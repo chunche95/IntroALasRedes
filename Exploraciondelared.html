@@ -5546,8 +5546,68 @@ Switch #
            <p>
                Como se muestra en la figura anterior, el formato preferido para escribir una dirección IPv6 es: x:x:x:x:x:x:x:x, donde cada 'x' consta de cuatro valores hexadecimales. Al hacer referencia a 8 bits de una dirección IPv4, utilizamos el término "octeto". En IPv6, un "hexteto" es el término no oficial que se utiliza para referirse a un segmento de 16 bits o cuatro valores hexadecimales. 
                Cada 'x' es un único hexteto, 16 bits o cuatro dígitos hexadecimales. <br>
-               "Formato preferido" significa que la dirección IPv6 se escribe utilizando los 32 dígitos hexadecimales. No significa necesariamente que sea el método ideal para representar 
+               "Formato preferido" significa que la dirección IPv6 se escribe utilizando los 32 dígitos hexadecimales. No significa necesariamente que sea el método ideal para representar la dirección IPv6. En las siguientes páginas veremos dos reglas que permiten reducir el número de dígitos necesarios para representar una dirección IPv6. <br>
+               En la figura inferior, se presenta un resumen de la relación entre decimal, binario y hexadecimal. <br>
+               <img src="images/numeracionHexadecimal.PNG" alt=""> <br>
+               En la figura siguiente, se muestran ejemplos de direcciones IPv6 en el formato preferido. <br>
+               <img src="images/ejemplosDeFormatoPreferido.PNG" alt="">
            </p>
+       </p>
+       <h2>Regla 1: Omitir los 0 iniciales</h2>
+       <p>
+           La primera regla para ayudar a reducir la notación de las direcciones IPv6 consiste en omitir los 0 (ceros) iniciales en cualquier sección de 16 bits o hexteto. Por ejemplo: 
+           <ul>
+               <li>01AB puede representarse como 1AB</li>
+               <li>09F0 puede representarse como 9F0</li>
+               <li>0A00 puede representarse como A00</li>
+               <li>00AB puede representarse como AB</li>
+           </ul>
+           Esta regla solo es válida para los ceros iniciales y <strong>NO</strong> para los ceros finales; de lo contrario, la dirección sería ambigua. Por ejemplo, el hexteto "ABC" podría ser "0ABC" o "ABC0", pero estos no representan el mismo valor. <br>
+           En las figuras siguientes, se muestran varios ejemplos de cómo se pueden utilizar la omisión de ceros iniciales para reducir el tamaño  de una dirección IPv6. Para cada ejemplo, se muestra el formato preferido. Advierta cómo la omisión de ceros inicales en la mayoría de los ejemplos da como resultado una representación más pequeña de la dirección. <br>
+           <div>
+               <img src="images/omisionDeCerosIniciales1.PNG" class="alargado" alt=""> <br>
+               <img src="images/omisionDeCerosIniciales2.PNG" class="alargado" alt=""> <br>
+               <img src="images/omisionDeCerosIniciales3.PNG" class="alargado" alt=""> <br>
+               <img src="images/omisionDeCerosIniciales4.PNG" class="alargado" alt=""> <br>
+               <img src="images/omisionDeCerosIniciales5.PNG" class="alargado" alt=""> <br>
+               <img src="images/omisionDeCerosIniciales6.PNG" class="alargado" alt=""> <br>
+               <img src="images/omisionDeCerosIniciales7.PNG" class="alargado" alt=""> <br>
+               <img src="images/omisionDeCerosIniciales8.PNG" class="alargado" alt="">
+           </div>
+       </p>
+       <h2>Regla 2:  Omitir los segmentos de 0</h2>
+       <p>
+          La segunda regla que permite reducir la notación de direcciones IPv6 es que los dos puntos dobles(::) pueden reemplazar cualquier cadena ñunica y contigua de uno o más segmentos de 16 bits (hextetos) compuestos solo por ceros. <br>
+          Los dos puntos dobles (::) se pueden utilizar solamente una vez dentro de una dirección ; de lo contrario, habría más de una dirección resultante posible. Cuando se utiliza junto con la técnica de omisión de ceros iniciales, la notación de direcciones IPv6 generalmente se puede reducir de maneraconsiderable. Esto se suele conocer como "formato comprimido". <br>
+          Dirección incorrecta:  <br>
+          <code>
+              2001:0DB8::ABCD:1234
+          </code> <br>
+          Expansiones posibles de direcciones comprimidas ambiguas:
+          <ul>
+              <li>
+                2001:0DB8::ABCD:0000:0000:1234
+              </li>
+              <li>
+                2001:0DB8::ABCD:0000:0000:0000:1234
+              </li>
+              <li>
+                2001:0DB8:0000:ABCD::1234
+              </li>
+              <li>
+                2001:0DB8:0000:0000:ABCD::1234
+              </li>
+          </ul>
+          En las figuras 1 a 7, se muestran varios ejemplos de cómo el uso de los dos puntos dobles (::) y la omisión de los 0 iniciales pueden reducir el tamaño de una dirección IPv6.
+          <div>
+              <img src="images/usoDeDosPuntosDobles1.PNG" class="alargado" alt=""> <br>
+              <img src="images/usoDeDosPuntosDobles2.PNG" class="alargado" alt=""> <br>
+              <img src="images/usoDeDosPuntosDobles3.PNG" class="alargado" alt=""> <br>
+              <img src="images/usoDeDosPuntosDobles4.PNG" class="alargado" alt=""> <br>
+              <img src="images/usoDeDosPuntosDobles5.PNG" class="alargado" alt=""> <br>
+              <img src="images/usoDeDosPuntosDobles6.PNG" class="alargado" alt=""> <br>
+              <img src="images/usoDeDosPuntosDobles7.PNG" class="alargado" alt=""> 
+          </div>
        </p>
         <hr><hr>
         <section>
