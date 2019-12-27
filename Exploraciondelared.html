@@ -5669,6 +5669,21 @@ Switch #
            </p>
            <img src="images/direcciones Ipv6 de unidifusion.PNG" alt="">
        </p>
+       <h2>Direcciones IPv6 unidifusión link-local</h2>
+       <p>
+            Una dirección IPv6 link-local permite que un dispositivo se comunique con otros dispositivos con IPv6 habilitado en el mismo enlace y solo en ese enlace (subred). Los paquetes con direcciones link-local de origen o destino 
+            no pueden enrutarse más allá del enlace en el que se originó el paquete. <br>
+            La dirección de unidifusión global no es un requisito. Sin embargo, cada interfaz de red con IPv6 habilitado debe tener una dirección link-local. <br>
+            Si en una interfaz no se configura una dirección link-local de forma manual, el dispositivo crea automáticamente su propia dirección sin comunicarse con un servidor DHCP. Los hosts con IPv6 habilitado crean una dirección IPv6 
+            link-local incluso si no se asignó una dirección IPv6 de unidifusión global al dispositivo. Esto permite que los dispositivos con IPv6 habilitado se comuniquen con otros dispositivos con IPv6 habilitado en la misma subred. 
+            Esto incluye la comunicación con el gateway predeterminado (router). <br>
+            Las direcciones IPv6 link-local están en el rango de FE80::/10. /10 indica que los primeros 10 bits son 1111 1110 10xx xxxx. El primer hexteto tiene un rango de 1111 1110 1000 0000 (FE80) a 1111 1110 1011 1111 (FEBF). <br>
+            En la figura siguiente, se muestra un ejemplo de comunicación mediante direcciones IPv6 link-local. <br>
+            <img src="images/comunicaciones IPv6 link-local.PNG" alt=""> <br>
+            En la figura inferior, se muestran algunos usos de las direcciones IPv6 link-local. <br>
+            <img src="images/usos de una direcciones ipv6 link-local.PNG" alt=""> <br>
+            Nota: Generalmente, es la dirección de enlace local del router, y no la dirección de unidifusión global, que se usa como gateway predeterminado para otros dispositivos del enlace.
+       </p>
         <hr><hr>
         <section>
             <div>
