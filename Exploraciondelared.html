@@ -5878,16 +5878,17 @@ Switch #
 
                 En la figura inferior, se muestra la dirección IPv6 de unidifusión global de la PCA creada de manera dinámica mediante SLAAC y el proceso EUI-64. Una manera sencilla de identificar que una dirección muy probablemente se creó mediante EUI-64 es el valor FFFE ubicado en medio de la ID de interfaz, 
                 como se muestra en la figura. <br>
-                <img src="images/MensajeRA+GeneradoMedianteEUI64.PNG" alt=""> <br>
+                <img src="images/MensajeRA+GeneradoMedianteEUI64.PNG" class="alargado" alt=""> <br>
                 La ventaja de EUI-64 es que se puede utilizar la dirección MAC de Ethernet para determinar la ID de interfaz. También permite que los administradores de redes rastreen fácilmente una dirección IPv6 a un terminal mediante la dirección MAC única. Sin embargo, esto generó inquietudes a muchos usuarios 
                 con respecto a la privacidad. Les preocupa que los paquetes puedan ser rastreados a la PC física real. Debido a estas inquietudes, se puede utilizar en cambio una ID de interfaz generada aleatoriamente. 
             </p>
             <h3>ID de interfaz generadas aleatoriamente</h3>
             <p>
-                Según el sistema operativo, un dispositivo puede utilizar una ID de interfaz generada aleatoriamente en lugar de utilizar la dirección MAC y el proceso EUI-64. Por ejemplo, a partir de Windows Vista, Windows utiliza una ID de interfaz generada aleatoriamente en lugar de una ID de interfaz creada mediante EUI-64. Windows XP y los sistemas operativos Windows anteriores utilizaban EUI-64.
-                Después de establecer la ID de interfaz, ya sea mediante el proceso EUI-64 o mediante la generación aleatoria, se la puede combinar con un prefijo IPv6 en el mensaje RA para crear una dirección de unidifusión global, como se muestra en la figura.
-                <br> <img src="images/MensajeRA+NumeroAleatoriode64bits.PNG" alt="">
-                Nota: para garantizar la exclusividad de cualquier dirección IPv6 de unidifusión, el cliente puede usar un proceso denominado "detección de direcciones duplicadas" (DAD). Es similar a una solicitud de ARP para su propia dirección. Si no se obtiene una respuesta, la dirección es única.
+                Según el sistema operativo, un dispositivo puede utilizar una ID de interfaz generada aleatoriamente en lugar de utilizar la dirección MAC y el proceso EUI-64. Por ejemplo, a partir de Windows Vista, Windows utiliza una ID de interfaz generada aleatoriamente en lugar de una ID de interfaz creada 
+                mediante EUI-64. Windows XP y los sistemas operativos Windows anteriores utilizaban EUI-64. <br>
+                Después de establecer la ID de interfaz, ya sea mediante el proceso EUI-64 o mediante la generación aleatoria, se la puede combinar con un prefijo IPv6 en el mensaje RA para crear una dirección de unidifusión global, como se muestra en la figura. <br>
+                <img src="images/MensajeRA+NumeroAleatoriode64bits.PNG" class="alargado" alt=""> <br>
+                <strong>Nota:</strong> para garantizar la exclusividad de cualquier dirección IPv6 de unidifusión, el cliente puede usar un proceso denominado "detección de direcciones duplicadas" (DAD). Es similar a una solicitud de ARP para su propia dirección. Si no se obtiene una respuesta, la dirección es única.
             </p>
         </p>
         <hr><hr>
