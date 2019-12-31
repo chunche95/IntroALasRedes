@@ -5971,6 +5971,44 @@ Switch #
                 <img src="images/comunicacionesipv6demultidifusiondetodoslosnodos.PNG" alt="">
             </p>
         </p>
+        <h2>Direcciones IPv6 de multidifusión de nodo solicitado</h2>
+        <p>
+            Una dirección de multidifusión de nodo solicitado es similar a una dirección de multidifusión de todos los nodos. La ventaja de una dirección de multidifusión de nodo solicitado es que se asigna a una dirección especial de multidifusión de Ethernet. Esto permite que la NIC Ethernet filtre el marco al examinar la dirección MAC de destino sin enviarla al proceso de IPv6 para ver si el dispositivo es el objetivo previsto del paquete IPv6
+            <div>
+                <img src="images/direccion IPv6 de multidifusion de nodo solicitado.PNG" alt="">
+            </div>
+        </p>
+        <h2>Práctica de laboratorio: Identificación de direcciones IPv6.</h2>
+        <p>
+            <a href="documentos/7.2.5.3 Lab - Identifying IPv6 Addresses.pdf" target="_blank" rel="noopener noreferrer">Identificación de direcciones IPv6</a>
+        </p>
+        <h2>Práctica de laboratorio: Configuración de direcciones IPv6 en dispositivos de red.</h2>
+        <p>
+            <a href="documentos/7.2.5.4 Lab - Configuring IPv6 Addresses on Network Devices.pdf" target="_blank" rel="noopener noreferrer">Configuración de direcciones IPv6 en dispositivos de red</a>
+        </p>
+        <h2>ICMPv4 e ICMPv6</h2>
+        <p>
+            Si bien IP es solo un protocolo de máximo esfuerzo, el paquete TCP/IP permite que los mensajes se envíen en caso de que se produzcan determinados errores. Estos mensajes se envían mediante los servicios de ICMP. El objetivo de estos mensajes es proporcionar respuestas acerca de temas relacionados con el procesamiento de paquetes IP en determinadas condiciones, no es hacer que IP sea confiable. 
+            Los mensajes de ICMP no son obligatorios y, a menudo, no se permiten dentro de una red por razones de seguridad. <br>
+            El protocolo ICMP está disponible tanto para IPv4 como para IPv6. El protocolo de mensajes para IPv4 es ICMPv4. ICMPv6 proporciona estos mismos servicios para IPv6, pero incluye funcionalidad adicional. En este curso, el término ICMP se utilizará para referirse tanto a ICMPv4 como a ICMPv6. <br>
+            Existe una gran variedad de tipos de mensajes de ICMP y de razones para enviarlos. Analizaremos algunos de los mensajes más comunes. <br>
+            Los mensajes ICMP comunes a ICMPv4 y a ICMPv6 incluyen lo siguiente:
+            <ul>
+                <li>Confirmación de host</li>
+                <li>Destino o servicio inaccesible</li>
+                <li>Tiempo superado</li>
+                <li>Redireccionamiento de ruta</li>
+            </ul>
+            <h3>Confirmación de host</h3>
+            <p>
+                Se puede utilizar un mensaje de eco ICMP para determinar si un host funciona. El host local envía una solicitud de eco ICMP a un host. Si el host se encuentra disponible, el host de destino responde con una respuesta de eco. En la ilustración, haga clic en el botón Reproducir para ver una animación de la solicitud de eco/respuesta de eco ICMP. Este uso de los mensajes de eco ICMP es la base de la utilidad ping. 
+            </p>
+            <h3>Destino o servicio inaccesible</h3>
+            <p>
+                Cuando un host o gateway recibe un paquete que no puede entregar, puede utilizar un mensaje ICMP de destino inalcanzable para notificar al origen que el destino o el servicio son inalcanzables. El mensaje incluye un código que indica el motivo por el cual no se pudo entregar el paquete. <br>
+                Algunos de los códigos de destino inalcanzable para ICMPv4 son los siguientes:
+            </p>
+        </p>
         <hr><hr>
         <section>
             <div>
