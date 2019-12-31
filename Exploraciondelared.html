@@ -5891,7 +5891,25 @@ Switch #
                 <strong>Nota:</strong> para garantizar la exclusividad de cualquier dirección IPv6 de unidifusión, el cliente puede usar un proceso denominado "detección de direcciones duplicadas" (DAD). Es similar a una solicitud de ARP para su propia dirección. Si no se obtiene una respuesta, la dirección es única.
             </p>
         </p>
-        
+        <h2>Direcciones link-local dinámicas.</h2>
+        <p>
+            Todos los dispositivos IPv6 deben tener direcciones IPv6 link-local. Las direcciones link-local se pueden establecer dinámicamente o se pueden configurar de forma manual como direcciones link-local estáticas. <br>
+            En la figura 1, se muestra que la dirección link-local fue creada de manera dinámica con el prefijo FE80::/10 y la ID de interfaz mediante el proceso EUI-64 o un número de 64 bits de generación aleatoria. En general, los sistemas operativos usan el mismo método, tanto para una dirección de unidifusión global 
+            creada por SLAAC como para una dirección link-local asignada de manera dinámica, como se muestra en la figura 2. <br>
+            Los routers Cisco crean automáticamente una dirección IPv6 link-local cada vez que se asigna una dirección de unidifusión global a la interfaz. De manera predeterminada, los routers con Cisco IOS utilizan EUI-64 para generar la ID de interfaz para todas las direcciones link-local en las interfaces IPv6. 
+            Para las interfaces seriales, el router utiliza la dirección MAC de una interfaz Ethernet. Recuerde que una dirección link-local debe ser única solo en ese enlace o red. Sin embargo, una desventaja de utilizar direcciones de enlace local asignadas dinámicamente es su ID de interfaz larga, que dificulta 
+            identificar y recordar las direcciones asignadas. En la figura 3, se muestra la dirección MAC en la interfaz GigabitEthernet 0/0 del router R1. Esta dirección se usa para crear de manera dinámica las direcciones link-local en la misma interfaz. <br>
+            Para que sea más fácil reconocer y recordar estas direcciones en los routers, es habitual configurar las direcciones IPv6 link-local de manera estática en ellos. <br>
+            En la figura 1, se muestra el formato de una dirección IPv6 link-local. En la figura, se destacan los diez primeros bits binarios establecidos como 1111111010, que es FE80::/10 diez. Los 54 bits restantes en el prefijo en general se llevan a cero. La ID de interfaz de 64 bits puede obtenerse a través de EUI-64 
+            o un número de 64 bits generado aleatoriamente. En la figura 2, se muestran dos ventanas de línea de comandos de Windows. Ambas ventanas muestran el resultado del comando "ipconfig". En la ventana superior, la dirección link-local se generó mediante el uso de EUI-64. En la ventana inferior, la dirección link-local 
+            se creó mediante el uso de un número generado aleatoriamente de 64 bits para la ID de interfaz. En la figura 3, se muestra el resultado en un router del comando "show interface gigabitethernet 0/0". Se destaca la dirección MAC, fc99.4775.c3e0. El segundo comando ingresado es "show ipv6 interface brief". 
+            El resultado de este comando comprueba que el router utiliza la misma dirección link-local en las tres interfaces IPv6 activadas. La dirección link-local se generó mediante el uso de EUI-64. 
+            <div>
+                <img src="images/direccion IPv6 link-local.PNG" alt=""> <br> <p>Imagen 1</p>
+                <img src="images/direcciones link-local creadas de forma dinámica.PNG" alt=""> <br> <p>Imagen 2</p> 
+                <img src="images/direccion link-local del router generada mediante EUI-64.PNG" alt=""> <br> <p>Imagen 3</p> 
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
