@@ -6007,7 +6007,20 @@ Switch #
             <p>
                 Cuando un host o gateway recibe un paquete que no puede entregar, puede utilizar un mensaje ICMP de destino inalcanzable para notificar al origen que el destino o el servicio son inalcanzables. El mensaje incluye un código que indica el motivo por el cual no se pudo entregar el paquete. <br>
                 Algunos de los códigos de destino inalcanzable para ICMPv4 son los siguientes:
+                <ul>
+                    <li>0: red inalcanzable</li>
+                    <li>1: host inalcanzable</li>
+                    <li>2: protocolo inalcanzable</li>
+                    <li>3: puerto inalcanzable</li>
+                </ul>
+                <b>Nota:</b> ICMPv6 tiene códigos similares, pero levemente diferentes para los mensajes de destino inalcanzables.
             </p>
+            <h3>Tiempo superado</h3>
+            <p>
+                Los routers utilizan los mensajes de tiempo superado de ICMPv4 para indicar que un paquete no puede reenviarse debido a que el campo de tiempo de duración (TTL) del paquete se disminuyó a 0. Si un router recibe un paquete y disminuye el campo TTL en el paquete IPV4 a cero, descarta el paquete y envía un mensaje de tiempo superado al host de origen. <br>
+                ICMPv6 también envía un mensaje de tiempo superado si el router no puede reenviar un paquete IPv6 debido a que el paquete caducó. IPv6 no tiene un campo TTL, por lo que utiliza el campo de límite de saltos para determinar si el paquete caducó.
+            </p>
+            <video src="videos/ping a un host remoto.mp4" autoplay loop></video>
         </p>
         <hr><hr>
         <section>
