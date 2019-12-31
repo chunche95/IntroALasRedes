@@ -3087,7 +3087,6 @@ Switch #
         niveles de voltaje no deseados cuando se utiliza para conectar dispositivos que incluyen fuentes de energía con diferentes potenciales de conexión a tierra. Estos casos son posibles cuando el cableado de cobre se utiliza para conectar redes en diferentes edificios o pisos que utilizan  distintas instalaciones de energía. Finalmente, el cableado de
         cobre puede conducir los voltajes provocados por descargas eléctricas a los distintos dispositivos de red. <br>
         Como consecuencia, las corrientes y los coltajes no deseados  pueden generar un daño  a los dispositivos  de red y a las PC's conectadas. o bien provocar  lesiones al personal. Para prevenir situaciones potencialmente peligrosas y perjudiciales, es importante instalar correctamente el cableado de cobre según las especificaciones relevantes y los códigos de edificación. <br>
-        En la figura se muestran prácticas de avleado adecuadas para evitar posibles peligros eléctricos y de incendio. <br>
         <img src="images/conexionDeTerminales.PNG" alt="">
     </p>
     <h2>Actividad: Características de los medios de cobre.</h2>
@@ -6061,24 +6060,36 @@ Switch #
                     <img src="images/deteccion de direcciones duplicadas-DAD.PNG" alt="">
                 </div>
             </p>
-            <h2>Ping: Prueba de pila local</h2>
+        </p>
+        <h2>Ping: Prueba de pila local</h2>
+        <p>
+            Ping es una utilidad de prueba que utiliza mensajes de solicitud y de respuesta de eco ICMP para probar la conectividad entre hosts. Ping funciona con hosts IPv4 e IPv6. <br>
+            Para probar la conectividad con otro host de una red, se envía una solicitud de eco a la dirección de host mediante el comando ping. Si el host en la dirección especificada recibe la solicitud de eco, responde con una respuesta de eco. A medida que se recibe cada respuesta de eco, el comando ping proporciona comentarios acerca del tiempo 
+            transcurrido entre el envío de la solicitud y la recepción de la respuesta. Esto puede ser una medida del rendimiento de la red. <br>
+            El comando ping tiene un valor de tiempo de espera para la respuesta. Si no se recibe una respuesta dentro del tiempo de espera, el comando ping proporciona un mensaje que indica que no se recibió una respuesta. Generalmente, esto indica que existe un problema, pero también podría indicar que se habilitaron características de seguridad 
+            que bloquean los mensajes ping en la red. <br>
+            Una vez que se envían todas las solicitudes, la utilidad ping proporciona un resumen que incluye la tasa de éxito y el tiempo promedio del viaje de ida y vuelta al destino.
+            <h3>Ping del bucle invertido local</h3>
             <p>
-                Ping es una utilidad de prueba que utiliza mensajes de solicitud y de respuesta de eco ICMP para probar la conectividad entre hosts. Ping funciona con hosts IPv4 e IPv6. <br>
-                Para probar la conectividad con otro host de una red, se envía una solicitud de eco a la dirección de host mediante el comando ping. Si el host en la dirección especificada recibe la solicitud de eco, responde con una respuesta de eco. A medida que se recibe cada respuesta de eco, el comando ping proporciona comentarios acerca del tiempo 
-                transcurrido entre el envío de la solicitud y la recepción de la respuesta. Esto puede ser una medida del rendimiento de la red. <br>
-                El comando ping tiene un valor de tiempo de espera para la respuesta. Si no se recibe una respuesta dentro del tiempo de espera, el comando ping proporciona un mensaje que indica que no se recibió una respuesta. Generalmente, esto indica que existe un problema, pero también podría indicar que se habilitaron características de seguridad 
-                que bloquean los mensajes ping en la red. <br>
-                Una vez que se envían todas las solicitudes, la utilidad ping proporciona un resumen que incluye la tasa de éxito y el tiempo promedio del viaje de ida y vuelta al destino.
-                <h3>Ping del bucle invertido local</h3>
-                <p>
-                    Existen casos especiales de prueba y verificación para los cuales se puede usar el comando ping. Un caso es la prueba de la configuración interna de IPv4 o de IPv6 en el host local. Para realizar esta prueba, se debe hacer ping a la dirección de bucle invertido local 127.0.0.1 para IPv4 (::1 para IPv6). En la ilustración, 
-                    se muestra la prueba de la dirección IPv4 de bucle invertido. <br>
-                    Una respuesta de 127.0.0.1 para IPv4 (o ::1 para IPv6) indica que IP está instalado correctamente en el host. Esta respuesta proviene de la capa de red. Sin embargo, esta respuesta no indica que las direcciones, las máscaras o los gateways estén configurados adecuadamente. Tampoco indica nada acerca del estado de la capa 
-                    inferior de la pila de red. Simplemente, prueba el protocolo IP en la capa de red de dicho protocolo. Un mensaje de error indica que TCP/IP no funciona en el host. <br>
-                    En la figura, se muestra la utilidad de línea de comando para probar la pila local de TCP/IP en una computadora que ejecuta IPv4. El comando es ping 127.0.0.1. <br>
-                    <img src="images/ping de stack TCP-ip local.PNG" alt="">
-                </p>
+                Existen casos especiales de prueba y verificación para los cuales se puede usar el comando ping. Un caso es la prueba de la configuración interna de IPv4 o de IPv6 en el host local. Para realizar esta prueba, se debe hacer ping a la dirección de bucle invertido local 127.0.0.1 para IPv4 (::1 para IPv6). En la ilustración, 
+                se muestra la prueba de la dirección IPv4 de bucle invertido. <br>
+                Una respuesta de 127.0.0.1 para IPv4 (o ::1 para IPv6) indica que IP está instalado correctamente en el host. Esta respuesta proviene de la capa de red. Sin embargo, esta respuesta no indica que las direcciones, las máscaras o los gateways estén configurados adecuadamente. Tampoco indica nada acerca del estado de la capa 
+                inferior de la pila de red. Simplemente, prueba el protocolo IP en la capa de red de dicho protocolo. Un mensaje de error indica que TCP/IP no funciona en el host. <br>
+                En la figura, se muestra la utilidad de línea de comando para probar la pila local de TCP/IP en una computadora que ejecuta IPv4. El comando es ping 127.0.0.1. <br>
+                <img src="images/ping de stack TCP-ip local.PNG" alt="">
             </p>
+        </p>
+        <h2>Ping:Prueba de la conectividad a la LAN local</h2>
+        <p>
+            También es posible utilizar el comando ping para probar la capacidad de comunicación de un host en la red local. Por lo general, esto se realiza haciendo ping a la dirección IP del gateway del host. Un ping al gateway indica que la interfaz del host y la interfaz del router que cumplen la función de gateway funcionan en la red local. <br>
+            Para esta prueba, se suele usar la dirección de gateway porque el router generalmente está en funcionamiento. Si la dirección de gateway no responde, se puede enviar un ping a la dirección IP de otro host en la red local que se sepa que funciona. <br>
+            Si el gateway u otro host responden, los hosts locales pueden comunicarse correctamente en la red local. Si el gateway no responde pero otro host sí lo hace, esto podría indicar un problema con la interfaz de router que sirve como gateway. <br>
+            Una posibilidad es que se haya configurado la dirección de gateway incorrecta en el host. Otra posibilidad es que la interfaz del router puede estar en funcionamiento, pero se le ha aplicado seguridad, de manera que no procesa o responde solicitudes de ping. <br>
+            <img src="images/prueba de la conectividad IPv4 a la red local.PNG" alt="">
+        </p>
+        <h2>Ping: Prueba de la conectividad a una red remota.</h2>
+        <p>
+            7.3.2.3
         </p>
         <hr><hr>
         <section>
