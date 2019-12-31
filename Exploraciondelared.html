@@ -6046,7 +6046,38 @@ Switch #
             <h3>Resolución de direcciones</h3>
             <p>
                 La resolución de direcciones se usa cuando un dispositivo en la LAN conoce la dirección IPv6 de unidifusion de un destino, pero no conoce la dirección MAC de Ethernet. Para determinar la dirección MAC del destino, el dispositivo envía un mensaje de NS a la dirección de nodo solicitado. El mensaje incluye la dirección IPv6 conocida
-                (objetivo). El dispoistivo
+                (objetivo). El dispoistivo que se destinó a la dirección IPv6 responde con un mensaje NA que contiene la dirección MAC de Ethernet. En la figura, se muestra dis PC que intercambian mensajes de NS y NA.
+                <div>
+                    <img src="images/envio de mensajes entre dispositivos IPv6.PNG" alt="">
+                    <img src="images/envio de mensajes entre dispositivos IPv6-2.PNG" alt="">
+                </div>
+            </p>
+            <h3>Detección de direcciones duplicadas</h3>
+            <p>
+                Cuando se asigna una dirección de unidifusión global o link-local a un dispositivo, se recomienda realizar una operación DAD en la dirección para garantizar que sea única. Para verificar la singularidad de una dirección, el dispositivo envía un mensaje de NS con su propia dirección IPv6 como dirección IPv6 de destino, 
+                como se muestra en la figura siguiente. Si otro dispositivo de la red tiene esta dirección, responde con un mensaje NA. Este mensaje NA notifica al dispositivo emisor que la dirección está en uso. Si no se devuelve un mensaje NA correspondiente dentro de determinado período, la dirección de unidifusión es única y su uso es aceptable. <br>
+                <strong>Nota:</strong> no es necesaria la operación DAD, pero la RFC 4861 recomienda que se realice una DAD en las direcciones de unidifusión.
+                <div>
+                    <img src="images/deteccion de direcciones duplicadas-DAD.PNG" alt="">
+                </div>
+            </p>
+            <h2>Ping: Prueba de pila local</h2>
+            <p>
+                Ping es una utilidad de prueba que utiliza mensajes de solicitud y de respuesta de eco ICMP para probar la conectividad entre hosts. Ping funciona con hosts IPv4 e IPv6. <br>
+                Para probar la conectividad con otro host de una red, se envía una solicitud de eco a la dirección de host mediante el comando ping. Si el host en la dirección especificada recibe la solicitud de eco, responde con una respuesta de eco. A medida que se recibe cada respuesta de eco, el comando ping proporciona comentarios acerca del tiempo 
+                transcurrido entre el envío de la solicitud y la recepción de la respuesta. Esto puede ser una medida del rendimiento de la red. <br>
+                El comando ping tiene un valor de tiempo de espera para la respuesta. Si no se recibe una respuesta dentro del tiempo de espera, el comando ping proporciona un mensaje que indica que no se recibió una respuesta. Generalmente, esto indica que existe un problema, pero también podría indicar que se habilitaron características de seguridad 
+                que bloquean los mensajes ping en la red. <br>
+                Una vez que se envían todas las solicitudes, la utilidad ping proporciona un resumen que incluye la tasa de éxito y el tiempo promedio del viaje de ida y vuelta al destino.
+                <h3>Ping del bucle invertido local</h3>
+                <p>
+                    Existen casos especiales de prueba y verificación para los cuales se puede usar el comando ping. Un caso es la prueba de la configuración interna de IPv4 o de IPv6 en el host local. Para realizar esta prueba, se debe hacer ping a la dirección de bucle invertido local 127.0.0.1 para IPv4 (::1 para IPv6). En la ilustración, 
+                    se muestra la prueba de la dirección IPv4 de bucle invertido. <br>
+                    Una respuesta de 127.0.0.1 para IPv4 (o ::1 para IPv6) indica que IP está instalado correctamente en el host. Esta respuesta proviene de la capa de red. Sin embargo, esta respuesta no indica que las direcciones, las máscaras o los gateways estén configurados adecuadamente. Tampoco indica nada acerca del estado de la capa 
+                    inferior de la pila de red. Simplemente, prueba el protocolo IP en la capa de red de dicho protocolo. Un mensaje de error indica que TCP/IP no funciona en el host. <br>
+                    En la figura, se muestra la utilidad de línea de comando para probar la pila local de TCP/IP en una computadora que ejecuta IPv4. El comando es ping 127.0.0.1. <br>
+                    <img src="images/ping de stack TCP-ip local.PNG" alt="">
+                </p>
             </p>
         </p>
         <hr><hr>
