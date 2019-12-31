@@ -5832,8 +5832,62 @@ Switch #
                 usan los servicios de un servidor DHCPv6 con información de estado. <br>
                 Con esta opción, el mensaje RA sugiere que el dispositivo use lo siguiente:
                 <ul>
-                    
+                    <li> La dirección link-local del router, la dirección IPv6 de origen del RA para la dirección de gateway predeterminado </li>
+                    <li> Un servidor DHCPv6 con información de estado para obtener una dirección de unidifusión global, una dirección del servidor DNS, un nombre de dominio y toda la información restante. </li>
                 </ul>
+                <img src="images/mensajes de solicitud y de anuncio de router.PNG" alt=""> <br>
+                Un servidor DHCPv6 con información de estado asigna y mantiene una lista de qué dispositivo recibe cuál dirección IPv6. DHCP para IPv4 tiene información de estado. <br>
+                Nota: la dirección de gateway predeterminado solo puede obtenerse de manera dinámica del mensaje RA. El servidor DHCPv6 con información de estado o sin ella no brinda la dirección de gateway predeterminado.
+            </p>
+        </p>
+        <h2>Proceso EUI-64 y generración aleatoria.</h2>
+        <p>
+            Cuando el mensaje RA es SLAAC o SLAAC con DHCPv6 sin información de estado, el cliente debe generar su propia ID de interfaz. El cliente conoce la porción de prefijo de la dirección del mensaje RA, pero debe crear su propia ID de interfaz. 
+            La ID de interfaz puede crearse mediante el proceso EUI-64 o mediante un número de 64 bits de generación aleatoria, como se muestra en la figura. <br>
+            <img src="images/procesoeui-64.PNG" alt="">
+            <h3>Proceso EUI-64</h3>
+            <p>
+                El IEEE definió el identificador único extendido (EUI) o proceso EUI-64 modificado. Este proceso utiliza la dirección MAC de Ethernet de 48 bits de un cliente e introduce otros 16 bits en medio de la dirección MAC de 48 bits para crear una ID de interfaz de 64 bits.
+                Las direcciones MAC de Ethernet, por lo general, se representan en formato hexadecimal y constan de dos partes: 
+                <ul>
+                    <li>
+                        <b>Identificador único de organización (OUI):</b> el OUI es un código de proveedor de 24 bits (6 dígitos hexadecimales) asignados por el IEEE.
+                    </li>
+                    <li>
+                        <b>Identificador de dispositivo:</b> el identificador de dispositivo es un valor único de 24 bits (6 dígitos hexadecimales) dentro de un OUI común.
+                    </li>
+                </ul>
+                Las ID de interfaz EUI-64 se representan en sistema binario y constan de tres partes:
+                <ul>
+                    <li> OUI de 24 bits de la dirección MAC del cliente, pero el séptimo bit (bit universal/local, U/L) se invierte. Esto quiere decir que si el séptimo bit es un 0, se transforma en un 1, y viceversa.</li>
+                    <li> El valor de 16 bits FFFE introducido (en formato hexadecimal).</li>
+                    <li> Identificador de dispositivo de 24 bits de la dirección MAC del cliente.</li>
+                </ul>
+                En la figura siguiente, se ilustra el proceso EUI-64, con la siguiente dirección MAC de GigabitEthernet de R1:  FC99:4775:CEE0.
+                <ul>
+                    <strong>Paso 1:</strong> Dividir la dirección MAC entre el OUI y el identificador de dispositivo.
+                    <br>
+                    <strong>Paso 2:</strong> Insertar el valor hexadecimal FFFE, que en sistema binario es 1111 1111 1111 1110.
+                    <br>
+                    <strong>Paso 3:</strong> Convertir los primeros 2 valores hexadecimales del OUI a sistema binario y cambie el bit U/L (bit 7). En este ejemplo, el 0 en el bit 7 se cambia a 1.
+                </ul>
+                <img src="images/procesoEUI64-OUI24bits+IDdeDispositivo24bits.PNG" alt=""> <br>
+                El resultado es una ID de interfaz FE99:47FF:FE75:CEE0 generada mediante EUI-64.
+
+                Nota: en RFC 5342, se analiza el uso del bit U/L y las razones para invertir su valor.
+
+                En la figura inferior, se muestra la dirección IPv6 de unidifusión global de la PCA creada de manera dinámica mediante SLAAC y el proceso EUI-64. Una manera sencilla de identificar que una dirección muy probablemente se creó mediante EUI-64 es el valor FFFE ubicado en medio de la ID de interfaz, 
+                como se muestra en la figura. <br>
+                <img src="images/MensajeRA+GeneradoMedianteEUI64.PNG" alt=""> <br>
+                La ventaja de EUI-64 es que se puede utilizar la dirección MAC de Ethernet para determinar la ID de interfaz. También permite que los administradores de redes rastreen fácilmente una dirección IPv6 a un terminal mediante la dirección MAC única. Sin embargo, esto generó inquietudes a muchos usuarios 
+                con respecto a la privacidad. Les preocupa que los paquetes puedan ser rastreados a la PC física real. Debido a estas inquietudes, se puede utilizar en cambio una ID de interfaz generada aleatoriamente. 
+            </p>
+            <h3>ID de interfaz generadas aleatoriamente</h3>
+            <p>
+                Según el sistema operativo, un dispositivo puede utilizar una ID de interfaz generada aleatoriamente en lugar de utilizar la dirección MAC y el proceso EUI-64. Por ejemplo, a partir de Windows Vista, Windows utiliza una ID de interfaz generada aleatoriamente en lugar de una ID de interfaz creada mediante EUI-64. Windows XP y los sistemas operativos Windows anteriores utilizaban EUI-64.
+                Después de establecer la ID de interfaz, ya sea mediante el proceso EUI-64 o mediante la generación aleatoria, se la puede combinar con un prefijo IPv6 en el mensaje RA para crear una dirección de unidifusión global, como se muestra en la figura.
+                <br> <img src="images/MensajeRA+NumeroAleatoriode64bits.PNG" alt="">
+                Nota: para garantizar la exclusividad de cualquier dirección IPv6 de unidifusión, el cliente puede usar un proceso denominado "detección de direcciones duplicadas" (DAD). Es similar a una solicitud de ARP para su propia dirección. Si no se obtiene una respuesta, la dirección es única.
             </p>
         </p>
         <hr><hr>
