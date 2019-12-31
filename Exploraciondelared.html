@@ -6022,6 +6022,33 @@ Switch #
             </p>
             <video src="videos/ping a un host remoto.mp4" autoplay loop></video>
         </p>
+        <h2>Mensajes de solicitud y de anuncio de router de ICMPv6</h2>
+        <p>
+            Los mensajes informativos y de error que se encuentran en ICMPv6 son muy similares a los mensajes de control y de error que implementan ICMPv4. Sin embargo, ICMPv6 tiene nuevas características y funcionalidad mejorada que no se encuentra en ICMPv4. Los mensajes ICMPv6 están encapsulados en IPv6. <br>
+            ICMPv6 incluye cuatro protocolos nuevos como parte del protocolo de detección de vecino (ND o NDP). <br>
+            Mensajería entre un router IPv6 y un dispositivo IPv6:
+            <ul>
+                <li>Mensaje de solicitud de router (RS)</li>
+                <li>Mensaje de anuncio de router (RA)</li>
+            </ul>
+            Mensaje entre dispositivos IPv6:
+            <ul>
+                <li>Mensaje de solicitud de vecino (NS)</li>
+                <li>Mensaje de anuncio de vecino (NA)</li>
+            </ul>
+            <b>Nota:</b> El ND de ICMPv6 también incluye el mensaje de redireccionamiento, que tiene una función similar al mensaje de redireccionamiento utilizado en ICMPv4. <br>
+            En las figuras siguientes, se muestra un ejemplo de una PC y un router que intercambian mensajes de anuncio de router y de solicitud. 
+            <div>
+                <img src="images/envio de mensajes entre un router IPv6 y un dispositivo IPv6.PNG" alt=""> 
+                <img src="images/envio de mensajes entre un router IPv6 y un dispositivo IPv6-2.PNG" alt="">
+            </div>
+            Los mensajes de solicitud y anuncio de vecino se usan para la resolución de direcciones y para la detección de direcciones duplicadas (DAD).
+            <h3>Resolución de direcciones</h3>
+            <p>
+                La resolución de direcciones se usa cuando un dispositivo en la LAN conoce la dirección IPv6 de unidifusion de un destino, pero no conoce la dirección MAC de Ethernet. Para determinar la dirección MAC del destino, el dispositivo envía un mensaje de NS a la dirección de nodo solicitado. El mensaje incluye la dirección IPv6 conocida
+                (objetivo). El dispoistivo
+            </p>
+        </p>
         <hr><hr>
         <section>
             <div>
