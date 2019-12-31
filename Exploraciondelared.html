@@ -5960,12 +5960,15 @@ Switch #
                 Dos grupos comunes de direcciones IPv6 de multidifusión asignadas incluyen los siguientes:
                 <ul>
                     <li>
-                        <b>Grupo de multidifusión FF02::1 para todos los nodos:</b>
+                        <b>Grupo de multidifusión FF02::1 para todos los nodos:</b> este es un grupo de multidifusión al que se unen todos los dispositivos con IPv6 habilitado. Los paquetes que se envían a este grupo son recibidos y procesados por todas las interfaces IPv6 en el enlace o en la red. Esto tiene el mismo efecto que una dirección de difusión en IPv4. En la ilustración, se muestra un ejemplo de comunicación 
+                        mediante la dirección de multidifusión de todos los nodos. Un router IPv6 envía mensajes de RA de protocolo de mensajes de control de Internet versión 6 (ICMPv6) al grupo de multidifusión de todos los nodos. El mensaje RA proporciona a todos los dispositivos en la red con IPv6 habilitado la información de direccionamiento, como el prefijo, la longitud de prefijo y el gateway predeterminado.
                     </li>
                     <li>
-                        <b>Grupo de multidifusión FF02::2 para todos los nodos:</b>
+                        <b>Grupo de multidifusión FF02::2 para todos los nodos:</b> este es un grupo de multidifusión al que se unen todos los routers IPv6. Un router comienza a formar parte de este grupo cuando se lo habilita como router IPv6 con el comando de configuración global ipv6 unicast-routing. Los paquetes que se envían a este grupo son recibidos y procesados por todos los routers IPv6 en el enlace o en la red.
                     </li>
                 </ul>
+                Los dispositivos con IPv6 habilitado envían mensajes de solicitud de router (RS) de ICMPv6 a la dirección de multidifusión de todos los routers. El mensaje RS solicita un mensaje RA del router IPv6 para contribuir a la configuración de direcciones del dispositivo. <br>
+                <img src="images/comunicacionesipv6demultidifusiondetodoslosnodos.PNG" alt="">
             </p>
         </p>
         <hr><hr>
