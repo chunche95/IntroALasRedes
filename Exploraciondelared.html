@@ -5910,6 +5910,35 @@ Switch #
                 <img src="images/direccion link-local del router generada mediante EUI-64.PNG" alt=""> <br> <p>Imagen 3</p> 
             </div>
         </p>
+        <h2>Direcciones link-local estáticas</h2>
+        <p>
+            Configurar la dirección link-local manualmente permite crear una dirección reconocible y más fácil de recordar. Por lo general, solo es necesario crear direcciones de enlace local reconocibles en los routers. Esto es útil, ya que utilizan direcciones de enlace local del router como direcciones de gateway predeterminado y en los mensajes routing de anuncios. <br>
+            Las direcciones link-local pueden configurarse manualmente mediante el mismo comando de interfaz utilizado para crear las direcciones IPv6 de unidifusión globales, pero con un parámetro <b>link-local</b> adicional. Cuando una dirección comienza con este hexteto dentro del rango de FE80 a FEBF, el parámetro de link-local debe seguir a la dirección. <br>
+            En la ilustración, se muestra la configuración de una dirección link-local con el comando de interfaz <b>ipv6 address</b>. La dirección link-local FE80::1 se utiliza para que sea posible reconocer fácilmente que pertenece al router R1. Se configura la misma dirección link-local IPv6 en todas las interfaces del R1. Se puede configurar FE80::1 en cada enlace, 
+            debido a que solamente tiene que ser única en ese enlace. <br>
+            De manera similar al R1, el router R2 se configura con FE80::2 como la dirección IPv6 link-local en todas las interfaces. <br>
+            En la figura, se muestra la sintaxis del comando para configurar la dirección link-local en la interfaz de router. También se muestra un ejemplo de configuración de tres interfaces en un router con el mismo comando link-local, que es "ipv6 address fe80::1 link-local". <br>
+            <img src="images/configuracion de direcciones link-local en el R1.PNG" alt="">
+        </p>
+        <h2>Verificación de la configuración de la dirección IPv6.</h2>
+        <p>
+            Como se muestra en la figura 1, el comando para verificar la configuración de la interfaz IPv6 es similar al comando que se utiliza para IPv4. <br>
+            El comando show interface muestra la dirección MAC de las interfaces Ethernet. EUI-64 utiliza esta dirección MAC para generar la ID de interfaz para la dirección link-local. Además, el comando show ipv6 interface brief muestra el resultado abreviado para cada una de las interfaces. El resultado [up/up] en la misma línea que la interfaz indica el estado de interfaz de la capa 1 y la capa 2. Esto es lo mismo que las columnas Status Estado y Protocol (Protocolo) en el comando IPv4 equivalente. <br>
+            Observe que cada interfaz tiene dos direcciones IPv6. La segunda dirección para cada interfaz es la dirección de unidifusión global que se configuró. La primera dirección, la que comienza con FE80, es la dirección de unidifusión link-local para la interfaz. Recuerde que la dirección link-local se agrega automáticamente a la interfaz cuando se asigna una dirección de unidifusión global. <br>
+            Además, observe que la dirección link-local Serial 0/0/0 de R1 es igual a la interfaz GigabitEthernet 0/0. Las interfaces seriales no tienen direcciones MAC de Ethernet, por lo que Cisco IOS usa la dirección MAC de la primera interfaz Ethernet disponible. Esto es posible porque las interfaces link-local solo deben ser únicas en ese enlace. <br>
+            La dirección link-local de la interfaz de router suele ser la dirección de gateway predeterminado para los dispositivos en ese enlace o red. <br>
+            Como se muestra en la figura 2, se puede usar el comando show ipv6 route para verificar que las redes IPv6 y las direcciones de interfaz IPv6 específicas se hayan instalado en la tabla de routing IPv6. El comando show ipv6 route muestra solamente las redes IPv6, no las redes IPv4. <br>
+            Dentro de la tabla de rutas, una C junto a la ruta indica que es una red conectada directamente. Cuando la interfaz de router se configura con una dirección de unidifusión global y su estado es “up/up”, se agrega el prefijo y la longitud de prefijo IPv6 a la tabla de routing IPv6 como una ruta conectada. <br>
+            <b>Nota:</b> La L indica una ruta local, la dirección IPv6 específica asignada a la interfaz. Esta no es una dirección de enlace local. Las direcciones de enlace local no están incluidas en la tabla de routing del router, ya que no son direcciones enrutables. <br>
+            La dirección IPv6 de unidifusión global configurada en la interfaz también se instala en la tabla de routing como una ruta local. La ruta local tiene un prefijo /128. La tabla de routing utiliza las rutas locales para procesar eficazmente paquetes cuya dirección de destino es la dirección de interfaz del router. <br>
+            El comando ping de IPv6 es idéntico al comando que se usa en IPv4, excepto que se usa una dirección IPv6. Como se muestra en la figura 3, el comando se utiliza para verificar la conectividad de capa 3 entre el R1 y la PC1. Al hacer ping de un router a una dirección link-local, Cisco IOS solicita al usuario la interfaz de salida. Como la dirección link-local de destino puede ser uno o más de sus enlaces o redes, el router debe saber a qué interfaz enviar el comando ping. <br>
+            Utilice el verificador de sintaxis de la figura 4 para verificar la configuración de la dirección IPv6. <br>
+            <div>
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
