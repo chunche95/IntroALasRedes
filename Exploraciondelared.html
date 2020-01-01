@@ -2001,7 +2001,7 @@ Switch #
     </p>
     <h2>Establecimiento de reglas.</h2>
     <p>
-        Antes de comunicarse entre sí, las personas deben usar reglas o acuerdos establecidos que rijan la conversación. Estas reglas o protocolos deben respetarse para que el mensaje se envíe y comprenda conrrectamente.
+        Antes de comunicarse entre sí, las personas deben usar reglas o acuerdos establecidos que rijan la conversación. Estas reglas o protocolos deben respetarse para que el mensaje se envíe y comprenda correctamente.
         Los protocolos deben dar cuenta de los siguientes requisitos:
         <ul>
             <li>Un emisor y un receptor identificados.</li>
@@ -6089,7 +6089,29 @@ Switch #
         </p>
         <h2>Ping: Prueba de la conectividad a una red remota.</h2>
         <p>
-            7.3.2.3
+            Tmabién se puede utilizar el comando <code>ping</code> para probar la capacidad de un host local para comunicarse en una interconexión de redes. El host local puede hacer ping a un host IPv4 operativo de una red remota, como se muestra en la ilustración. <br>
+            <video src="videos/prueba de comnectividad a una LAN remota Ping a un host remoto.mp4" controls></video>
+            Si este ping se realiza correctamente, se puede verificar el funcionamiento de una amplia porción de la interconexión de redes. Un ping correcto en una interconexión de redes confirma la comunicación en la red local, el funcionamiento del router que sirve como gateway y el funcionamiento de todos los routers que podrían estar en la ruta entre la red 
+            local y la red del módulo remoto de E/S. <br>
+            De manera adicional, se puede verificar la funcionalidad del módulo remoto de E/S. Si el módulo remoto de E/S no podía comunicarse fuera de la red local, no hubiera respondido. <br>
+            <strong>Nota:</strong> muchos administradores de redes limitan o prohíben la entrada de mensajes ICMP a la red de la empresa; po lo tanto, la falta de una respuesta de ping puede ser por razones de seguridad.
+        </p>
+        <h2>Traceroute: Prueba de la ruta</h2>
+        <p>
+            El comando ping se usa para probar la conectividad entre dos hosts, pero no proporciona información sobre los detalles de dispositivos entre los hosts. Traceroute ( <code>tracert</code> ) es una utilidad que genera una lista de saltos que se alcanzaron correctamente a lo largo de la ruta. Esta lista puede proporcionar información importante sobre la verificación 
+            y la solución de problemas. Si los datos llegan al destino, el rastreo indica la interfaz de cada router que aparace en la ruta entre los hosts. Si los datos fallan en algún  salto a lo largo del camino, la dirección del último router que respondió al rastreo puede indicar dónde se encuentra el problema o las restricciones de seguridad. 
+            <h3>Tiempo de ida y vuelta (RTT)</h3> 
+            <p>
+                El uso de traceroute proporciona el tiempo de ida y vuelta para casa salto a lo largo de una ruta e indica su un salto no responde. El tiempo de ida y vuelta es el tiempo que le lleva a un paquete llegar al módulo remoto de E7S y el tiempo que la respuesta del host demora en regresar. Se utilixa un asterisco (*) para indicar un paquete perdido o sin respuesta. <br>
+                Esta información se puede utilizar para ubicar un router problemático en la ruta. Si en la pantalla se muestra tiempos de respuesta  elevados o pérdidas de datos de un salto en particular esto constituye un indicio de que los recursos del router o sus conexiones pueden estar sobrecargados. 
+            </p>
+            <h3>TTL de IPv4 y límite de saltos de IPv6</h3>
+            <p>
+                Traceroute utiliza una función del campo TTL en IPv4 y del campo límite de salto de IPv6 en los encabezados de capa 3, junto con el mensaje de tiempo superado de ICMP. <br>
+                La primera secuencia de mensajes enviados desde traceroute tiene un valor de 1 en el campo TTL. Esto hace que el TTL agote el tiempo de espera del paquete IPv4 en el primer router. Este router luego responde con un mensaje de ICMPv4 . Traceroute ahora tiene la dirección del primer salto. <br>
+                A continuación, Traceroute incrementa progresivamente el campo TTL (2,3,4,...) para cada secuencia de mensajes. De esta manerea se proporciona al rastreo la dirección de cada salto a medida que los paquetes agotan el límite de tiempo a lo largo del camino. El campo TTL sigue aumentando hasta que se alcanza el destino, o se incrementa a un máximo predefinido. <br>
+                Despuñes de alcanzar el destino final, el hosts responde con un mensaje ICMP de puerto inalcanzable o con un mensaje ICMP de respuesta de eco en lugar del mensaje ICMP de tiempo superado.
+            </p>
         </p>
         <hr><hr>
         <section>
