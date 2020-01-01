@@ -6108,11 +6108,16 @@ Switch #
             <h3>TTL de IPv4 y límite de saltos de IPv6</h3>
             <p>
                 Traceroute utiliza una función del campo TTL en IPv4 y del campo límite de salto de IPv6 en los encabezados de capa 3, junto con el mensaje de tiempo superado de ICMP. <br>
-                <video src="videos/" controls></video>
+                <video src="videos/traceroute-tracert-Prueba-de-rutas.mp4" controls></video>
                 La primera secuencia de mensajes enviados desde traceroute tiene un valor de 1 en el campo TTL. Esto hace que el TTL agote el tiempo de espera del paquete IPv4 en el primer router. Este router luego responde con un mensaje de ICMPv4 . Traceroute ahora tiene la dirección del primer salto. <br>
                 A continuación, Traceroute incrementa progresivamente el campo TTL (2,3,4,...) para cada secuencia de mensajes. De esta manerea se proporciona al rastreo la dirección de cada salto a medida que los paquetes agotan el límite de tiempo a lo largo del camino. El campo TTL sigue aumentando hasta que se alcanza el destino, o se incrementa a un máximo predefinido. <br>
                 Despuñes de alcanzar el destino final, el hosts responde con un mensaje ICMP de puerto inalcanzable o con un mensaje ICMP de respuesta de eco en lugar del mensaje ICMP de tiempo superado.
             </p>
+        </p>
+        <h2>Packet Tracer: Identificación del direccionamiento IPv4 e IPv6.</h2>
+        <p>
+            <a href="documentos/7.3.2.5 Packet Tracer - Verifying IPv4 and IPv6 Addressing.pdf" target="_blank" rel="noopener noreferrer">PT: Identificación del direccionamiento IPv4 e IPv6 (Instrucciones)</a> <br>
+            <a href="documentos/7.3.2.5 Packet Tracer - Verifying IPv4 and IPv6 Addressing.pka" target="_blank" rel="noopener noreferrer">PT: Identificación del direccionamiento IPv4 e IPv6 (PKA)</a>
         </p>
         <hr><hr>
         <section>
