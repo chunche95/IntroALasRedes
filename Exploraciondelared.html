@@ -6260,6 +6260,16 @@ Switch #
             En este capítulo, se trata la observación del método binario. Pese a que puede parecer abrumador al principio, concéntrese y preste mucha atención 
             a los detalles; con la práctica, la división en subredes se volverá más sencilla. 
         </p>
+        <h2>Límites del octeto</h2>
+        <p>
+            Cada interfaz en un router está conectada a una red. La dirección IPv4 y la máscara de subred configuradas en la interfaz del router se utilizan para identificar el dominio de difusión específico. Recuerde que la longitud de prefijo y la máscara de subred 
+            son modos diferentes de identificar la porción de red de una dirección. <br>
+            Las subredes IPv4 se crean utilizando uno o más de los bits de host como bits de red. Esto se realiza por medio de la ampliación de la máscara de subred para que tome prestados algunos de los bits de la porción de host de la dirección a fin de crear bits 
+            de red adicionales. Cuantos más bits de host se tomen prestados, mayor será la cantidad de subredes que puedan definirse. <br>
+            Las redes se subdividen con más facilidad en el límite del octeto de /8 /16 y /24. En la tabla de la ilustración, se identifican estas longitudes de prefijo, las máscaras de subred equivalentes, los bits de red y de host, y la cantidad de hosts que cada subred 
+            puede conectar. Observe que el uso de longitudes de prefijo más extensas disminuye la cantidad de hosts por subred. <br>
+            <img src="images/divisionderedesensubredesenellimitedelocteto.PNG" alt="">
+        </p>
         <hr><hr>
         <section>
             <div>
