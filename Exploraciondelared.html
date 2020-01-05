@@ -6270,6 +6270,34 @@ Switch #
             puede conectar. Observe que el uso de longitudes de prefijo más extensas disminuye la cantidad de hosts por subred. <br>
             <img src="images/divisionderedesensubredesenellimitedelocteto.PNG" alt="">
         </p>
+        <h2>División en subredes sin clase</h2>
+        <p>
+            En los ejemplos que se vieron hasta ahora, se pidieron prestados bits de host de los prefijos de red comunes /8, /16 y /24. Sin embargo, las subredes pueden tomar prestados bits de cualquier any posición de bit de host para crear otras máscaras. <br>
+            Por ejemplo, una dirección de red /24 se suele dividir en subredes con longitudes de prefijo más extensas al tomar prestados bits del cuarto octeto. Esto le proporciona al administrador mayor flexibilidad al asignar direcciones de red a un número menor de terminales.
+            Tal como se muestra en la ilustración: 
+            <ul>
+                <li>
+                    Fila /25: Tomar prestado 1 bit del cuarto octeto crea 2 subredes que admiten, cada una, 126 hosts. 
+                </li>
+                <li>
+                    Fila /26: Tomar prestados 2 bits crea 4 subredes que admiten, cada una, 62 hosts.
+                </li>
+                <li>
+                    Fila /27: Tomar prestados 3 bits crea 8 subredes que admiten, cada una, 30 hosts. 
+                </li>
+                <li>
+                    Fila /28: Tomar prestados 4 bits crea 16 subredes que admiten, cada una, 14 hosts. 
+                </li>
+                <li>
+                    Fila /29: Tomar prestados 5 bits crea 32 subredes que admiten, cada una, 6 hosts. 
+                </li>
+                <li>
+                    Fila /30: Tomar prestados 6 bits crea 64 subredes que admiten, cada una, 2 hosts. 
+                </li>
+            </ul>
+            <img src="images/division de una red -24 en subredes.PNG" alt=""> <br>
+            Por cada bit que se toma prestado en el cuarto octeto, la cantidad de subredes disponible se duplica, al tiempo que se reduce la cantidad de direcciones de host por subred.
+        </p>
         <hr><hr>
         <section>
             <div>
