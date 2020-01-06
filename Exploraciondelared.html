@@ -6424,7 +6424,16 @@ Switch #
             En la figura 3, se muestran las subredes resultantes desde 172.16.0.0 /23 hasta 172.16.254.0 /23. <br>
             <img src="images/subredes de -23.PNG" alt=""> <p>Fig. 3</p>
         </p>
-        <h2></h2>
+        <h2>Cálculo de hosts</h2>
+        <p>
+            Para calcular la cantidad de hosts que puede admitir cada subred, examine el terver y el cuarto octetos. Después de tomar prestados 7 bits para la subred, restan 1 bit de host en el tercer octeto y 8 bits de host en el cuarto octeto, lo que da un total de 9 bits que no se tomaron prestados. <br>
+            Aplique la fórmula de cálculo de host que se muestra en la figura 1. Existen solo 510 direcciones de host disponibles para cada subred /23. <br>
+            Como se muestra en al figura 2, la primera dirección de host para la primera subred es 172.16.0.1, y la última dirección de host es 172.16.1.254. <br>
+            <div>
+                <img src="images/calculo de numero de host - resta de 9 bits.PNG" alt=""> <br>
+                <img src="images/intervalo de direcciones para la subred 172.16.0.0-23.PNG" alt="">
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
