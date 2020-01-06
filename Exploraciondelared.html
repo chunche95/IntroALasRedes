@@ -6440,7 +6440,40 @@ Switch #
         </p>
         <h2>Creación de 1000 subredes con una red /8</h2>
         <p>
-            Es 
+            Es posible que algunas organizaciones, como pequeños proveedores de servicios o grandes empresas, puedan necesitar aún más subredes. Tome, por ejemplo, un ISP pequeño que requiera 1000 subredes para sus clientes. Cada cliente necesita gran cantidad de espacio en la 
+            porción de host para crear sus propias subredes.  <br>
+            La dirección de red 10.0.0.0 tiene una máscara de subred predeterminada 255.0.0.0 o /8. Esto significa que hay 8 bits en la porción de red y 24 bits de host disponibles para tomar prestados a fin de realizar la división en subredes. Por lo tanto, el ISP pequeño dividirá 
+            la red 10.0.0.0/8 en subredes. <br>
+            Como siempre, para crear subredes, debemos tomar prestados bits de la porción de host de la dirección IP de la interconexión de redes existente. Comenzaremos de izquierda a derecha con el primer bit de host disponible y tomaremos prestado un único bit por vez hasta alcanzar 
+            la cantidad de bits necesarios para crear 1000 subredes. Tal como se muestra en la figura 1, necesitamos tomar prestados 10 bits para crear 1024 subredes. Específicamente, necesitamos tomar prestados 8 bits del segundo octeto y 2 bits más del tercero. <br>
+            En la figura 2, se muestra la dirección de red y la máscara de subred resultante, la cual se convierte en 255.255.192.0 o un prefijo /18. <br>
+            En la figura 3, se muestran las subredes resultantes al tomar prestados 10 bits, con lo que se crean las subredes de 10.0.0.0 /18 a 10.255.128.0 /18. <br>
+            En la figura 4, se muestra que no se tomaron prestados 14 bits de host, por lo tanto, 2^14 - 2 = 16 382. Esto indica que cada una de las 1000 subredes puede admitir hasta 16 382 hosts. <br>
+            En la figura 5, se muestran las especificaciones de la primera subred. <br>
+            <div>
+                <img src="images/cantidad de subredes creadas en red 10.0.0.0-8.PNG" alt=""> <p>Fig. 1</p>
+                <img src="images/red 10.0.0.0.PNG" alt=""> <p>Fig. 2</p>
+                <img src="images/subredes -18 resultantes.PNG" alt=""> <p>Fig. 3</p>
+                <img src="images/calculo de numero de host - red 10.0.0.0-18.PNG" alt=""> <p>Fig. 4</p>
+                <img src="images/intervalo de direcciones para la subred 10.0.0.0-18.PNG" alt=""> <p>Fig. 5</p>
+            </div>
+        </p>
+        <h2>Demostración de vídeo: División en subredes a través de varios octetos.</h2>
+        <p>
+            <video src="videos/subnetting-across-multiple-octets.mp4" controls></video>
+        </p>
+        <h2>División en subredes basada en necesidad de hosts</h2>
+        <p>
+            Existen dos factores que se deben tener en cuenta al planificar las subredes:
+            <ul>
+                <li>El número de direcciones de host que se requieren para cada red.</li>
+                <li>El nº de subredes individuales necesarias.</li>
+            </ul>
+            En la tabla de la ilustración, se muestran las especificaciones para una división en subredes de una red /24. Observe que existe una relación inversa entre la cantidad de subredes y la cantidad de hosts. Cuantos más bits se toman prestados para crear subredes, 
+            menor es la cantidad de bits de host disponibles. Si se necesitan más direcciones de host, se requieren más bits de host, lo que tiene como resultado menos subredes. <br>
+            La cantidad de direcciones de host que se requieren en la subred más grande determina cuántos bits se deben dejar en la porción de host. Recuerde que dos de las direcciones no se pueden utilizar, de modo que la cantidad utilizable de direcciones se puede calcular 
+            mediante la fórmula 2^n - 2. <br>
+            <video src="videos/divisiondeunared-24ensubredes.mp4" loop="loop" autoplay="autoplay"></video>
         </p>
         <hr><hr>
         <section>
