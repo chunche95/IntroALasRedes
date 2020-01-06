@@ -6363,7 +6363,37 @@ Switch #
         </p>
         <h2>Fórmulas de división en subredes</h2>
         <p>
-
+            Para calcular la cantidad de subredes que se pueden crear a partir de los bits que se piden prestados, utilice la fórmula que se muestra en la figura 1. En la figura 2, se muestra la cantidad posible de subredes que se pueden crear 
+            cuando se piden prestados 1, 2, 3, 4, 5 o 6 bits. <br>
+            <strong>Nota:</strong> los últimos dos bits no se pueden tomar prestados del último octeto, ya que no habría direcciones de host disponibles. Por lo tanto, la longitud de prefijo más extensa posible cuando se divide en subredes es /30 o 255.255.255.252. <br>
+            Para calcular la cantidad de hosts que se pueden admitir, utilice la fórmula que se muestra en la figura 3. Existen dos direcciones de subred que no se pueden asignar a un host: la dirección de red y la dirección de difusión, de modo que debemos restar 2. <br>
+            Tal como se muestra en la figura 4, existen 7 bits de host restantes, por lo que el cálculo es 2^7 = 128 - 2 = 126. Esto significa que cada una de las subredes tiene 126 direcciones de host válidas. <br>
+            Por lo tanto, si se toma prestado 1 bit de host para la red, se crean 2 subredes, y cada una de estas puede tener un total de 126 hosts asignados.
+            <div>
+                <img src="images/formula para calcular la cantidad de subredes.PNG" alt=""> <p>Fig.1</p>
+                <img src="images/division de una red -24 en subredes, usando la formula.PNG" alt=""> <p>Fig.2</p>
+                <img src="images/formula para calcular el numero de hosts.PNG" alt=""> <p>Fig.3</p>
+                <img src="images/calculo de numero de hosts.PNG" alt=""> <p>Fig.4</p>
+            </div>
+        </p>
+        <h2>Creación de cuatro subredes</h2>
+        <p>
+            Ahora, considere la topología de red que se muestra en la figura 1. La empresa usa el intervalo de direcciones de red privado 192.168.1.0/24 y necesita tres subredes. Tomar prestado un solo bit proporcionó únicamente dos subredes, entonces, 
+            se debe tomar prestado otro bit de host, tal como se muestra en la figura 2. Al usar la fórmula 2^n para los dos bits que se tomaron prestados, se obtienen 2^2 = 4 subredes como resultado. Los detalles específicos de las cuatro subredes se muestran en la figura 3. 
+            Las cuatro subredes utilizan la máscara de subred resultante /26 o 255.255.255.192. <br>
+            Para calcular la cantidad de hosts, examine el último octeto, que se muestra en la figura 4. Después de tomar prestados 2 bits para la subred, restan 6 bits de host. Aplique la fórmula de cálculo de host 2^n - 2, tal como se muestra, para revelar que cada subred 
+            puede admitir 62 direcciones de host. Las direcciones significativas de la primera subred (p. ej.: red 0) se muestran en la figura 5. <br>
+            Solamente se requieren las primeras tres subredes, ya que solo hay tres interfaces. En la figura 6, se muestran las especificaciones de las primeras tres subredes que se usarán para cumplir con la topología de la figura 1. <br>
+            Por último, en la figura 7, se aplica la primera dirección de host válida de cada subred a la interfaz de la red LAN del R1 respectiva. 
+            <div>
+                <img src="images/topologia de division en subredes -26.PNG" alt=""> <p>Fig.1</p>
+                <img src="images/se toman prestados 2 bits.PNG" alt=""> <p>Fig.2</p>
+                <img src="images/si se toman prestados 2 bits, se crean 4 subredes.PNG" alt=""> <p>Fig.3</p>
+                <img src="images/calculo del numero de host para 4 subredes.PNG" alt=""> <p>Fig.4</p>
+                <img src="images/intervalo de direcciones para la subred 192.168.1.0-26.PNG" alt=""> <p>Fig.5</p>
+                <img src="images/intervalo de direcciones para las redes 0 a 2.PNG" alt=""> <p>Fig.6</p>
+                <img src="images/" alt=""> <p>Fig.7</p>
+            </div>
         </p>
         <hr><hr>
         <section>
