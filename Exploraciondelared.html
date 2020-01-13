@@ -6484,6 +6484,49 @@ Switch #
             se requieren para la subred más grande. Cuantos más bits se toman prestados para crear subredes adicionales, menor es la cantidad de hosts disponibles por subred. <br>
             <img src="images/subredes segun la estructura de la organizacion.PNG" alt="">
         </p>
+        <h2>Ejemplo basado en requisitos de la red</h2>
+        <p>
+            Los administradores de redes deben diseñar un esquema de direccionamiento de red que admita la cantidad máxima de hosts para cada red y la cantidad de subredes. El esquema de direccionamiento debe permitir el crecimiento tanto de la cantidad de direcciones de host por subred como de la cantidad total de subredes. <br>
+            En este ejemplo, las oficinas centrales de la empresa asignaron la dirección de red privada 172.16.0.0/22 (10 bits de host) a una sucursal. Como se muestra en la figura 1, esto proporciona 1022 direcciones de host. <br>
+            La topología para las sucursales, descrita en la figura 2, consiste en 5 segmentos LAN y 4 conexiones de interconexión de redes entre routers. Por lo tanto, se requieren 9 subredes. La subred más grande requiere 40 hosts. <br>
+            La dirección de red 172.16.0.0/22 tiene 10 bits de host, tal como se muestra en la figura 3. Debido a que la subred más grande requiere 40 hosts, se debe tomar prestado un mínimo de 6 bits de host para proporcionar el direccionamiento de los 40 hosts. Esto se determina mediante la fórmula 2^6 – 2 = 62 hosts. <br>
+            La fórmula para determinar subredes da un resultado de 16 subredes: 2^4 = 16. Dado que la interconexión de redes que se utilizó como ejemplo requiere 9 subredes, esto cumple con el requisito y permite cierto crecimiento adicional. <br>
+            Por lo tanto, los primeros 4 bits de host se pueden utilizar para asignar subredes, tal como se muestra en la figura 4. Cuando se piden prestados 4 bits, la nueva longitud de prefijo es /26, con la máscara de subred 255.255.255.192. <br>
+            Como se muestra en la figura 5, las subredes se pueden asignar a los segmentos LAN y a conexiones de router a router. <br>
+            <div>
+                <img src="images/direccion-de-red.PNG" alt=""> <p>Fig. 1</p>
+                <img src="images/reddelaempresa.PNG" alt=""> <p>Fig. 2</p>
+                <img src="images/esquemadesubredes.PNG" alt=""> <p>Fig. 3</p>
+                <img src="images/esquemadelas15subredes.PNG" alt=""> <p>Fig. 4</p>
+                <img src="images/172.16.0.0-22.PNG" alt=""> <p>Fig. 5 </p>
+            </div>
+        </p>
+        <h2>Actividad: Cálculo de máscara de subred (básico)</h2>
+        <p>
+            <img src="images/actividad-cálculodemascaradesubred(básico).PNG" alt=""> <br>
+            <img src="images/actividad-cálculodemascaradesubred(básico)-2.PNG" alt="">
+        </p>
+        <h2>Actividad: Determinación de la cantidad de bits que se deben tomar prestados</h2>
+        <p>
+            <img src="images/actividad-determinaciondelacantidaddebitsquesedebentomarprestados.PNG" alt="">
+        </p>
+        <h2>Práctica de laboratorio: Cálculo de subredes IPv4</h2>
+        <p>
+            <a href="documentos/8.1.4.6 Lab - Calculating IPv4 Subnets.pdf" target="_blank" rel="noopener noreferrer">Cálculo de subredes IPv4</a>
+        </p>
+        <h2>Packet Tracer: División en subredes, situación</h2>
+        <p>
+            <a href="documentos/8.1.4.7 Packet Tracer - Subnetting Scenario.pdf" target="_blank" rel="noopener noreferrer">PT: Situación de división en subredes (Instrucciones)</a> <br>
+            <a href="documentos/8.1.4.7 Packet Tracer - Subnetting Scenario.pka" target="_blank" rel="noopener noreferrer">PT: Situación de división en subredes (PKA)</a>
+        </p>
+        <h2>Práctica de laboratorio: Diseño e implementación de un esquema de direccionamiento IPv4 dividido en subredes</h2>
+        <p>
+            <a href="documentos/8.1.4.8 Lab - Designing and Implementing a Subnetted IPv4 Addressing Scheme.pdf" target="_blank" rel="noopener noreferrer">Práctica de laboratorio: Diseño e implementación de un esquema de direccionamiento IPv4 dividido en subredes</a>
+        </p>
+        <h2>Desperdicio de direccionamiento en la división en subredes tradicional</h2>
+        <p>
+            
+        </p>
         <hr><hr>
         <section>
             <div>
