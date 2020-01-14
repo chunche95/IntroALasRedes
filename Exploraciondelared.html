@@ -6508,7 +6508,7 @@ Switch #
         </p>
         <h2>Actividad: Determinación de la cantidad de bits que se deben tomar prestados</h2>
         <p>
-            <img src="images/actividad-determinaciondelacantidaddebitsquesedebentomarprestados.PNG" alt="">
+            <img src="images/actividad-determinaciondelacantidaddebitsquesedebentomarprestados.PNG" class="alargado" alt="">
         </p>
         <h2>Práctica de laboratorio: Cálculo de subredes IPv4</h2>
         <p>
@@ -6595,7 +6595,7 @@ Switch #
         <p>
             Un cuadro de direccionamiento se puede usar para identificar los bloques de direcciones que están disponibles para usar y cuáles ya se encuentran asignados, tal como se muestra en la figura 1. Este método ayuda a evitar la asignación de direcciones que ya han sido asignadas. 
             <div>
-                <img src="images/división básica en subredes de 192.168.20.0-24.PNG" alt=""> <p>Fig.1</p>
+                <img src="images/división básica en subredes de 192.168.20.0-24.PNG" class="alargado" alt=""> <p>Fig.1</p>
             </div>
             Como se muestra en la figura 2, para utilizar el espacio de direcciones de manera más eficaz, se crean subredes /30 para los enlaces WAN. A fin de mantener juntos los bloques de direcciones sin utilizar en un bloque de espacio de direcciones contiguo, la última subred /27 se volvió a subdividir para cear subredes /30. 
             Las primeras 3 subredes se asignaron a enlaces WAN. <br>
@@ -6659,6 +6659,93 @@ Switch #
                     Gateway: Los routers y los dispositivos de firewall tienen una dirección IP asignada para cada interfaz que sirve como gateway para los hosts de dicha red. Normalmente, la interfaz de router utiliza la dirección más baja o más alta de la red.
                 </li>
             </ul>
+            En la tabla siguiente, se muestra un ejemplo de la asignación de direcciones para una red pequeña. <br>
+            <img src="images/intervalos de direcciones IP.PNG" class="alargado" alt=""> <br>
+            Al desarrollar un esquema de asignación de direcciones IP, por lo general se recomienda tener un patrón establecido de la forma en que se asignan las direcciones a cada tipo de dispositivo. Esto beneficia a los administradores a la hora de agregar y quitar dispositivos, ya que filtra el tráfico basado en IP, y también simplifica el registro.
+        </p>
+        <h2>Packet tracer: Diseño e implementación de un esquema de direccionamiento VLSM</h2>
+        <p>
+            <a href="documentos/8.2.1.4 Packet Tracer - Designing and Implementing a VLSM Addressing Scheme.pdf" target="_blank" rel="noopener noreferrer">PT: Diseño e implementación de un esquema de direccionamiento VLSM (Instrucciones)</a> <br>
+            <a href="documentos/8.2.1.4 Packet Tracer - Designing and Implementing a VLSM Addressing Scheme.pka" target="_blank" rel="noopener noreferrer">PT: Diseño e implementación de un esquema de direccionamiento VLSM (PKA)</a>
+        </p>
+        <h2>Práctica de laboratorio: Diseño e implementación de un esquema de direccionamiento VLSM</h2>
+        <p>
+            <a href="documentos/8.2.1.5 Lab - Designing and Implementing a VLSM Addressing Scheme.pdf" target="_blank" rel="noopener noreferrer">Diseño e implementación de un esquema de direccionamiento VLSM</a>
+        </p>
+        <h2>Dirección IPv6 de unidifusión global</h2>
+        <p>
+            La división en subredes IPv6 requiere un enfoque diferente que la división en subredes IPv4. Las mismas razones para la división en subredes del espacio de asignación de direcciones IPv4 para administrar el tráfico de red también se aplican a IPv6. Sin embargo, debido a la gran cantidad de direcciones IPv6, ya no es necesario preocuparse por conservar direcciones. 
+            El plan de direcciones IPv6 puede concentrarse en el mejor enfoque jerárquico para administrar y asignar subredes IPv6. Consulte la ilustración para hacer una revisión rápida de la estructura de una dirección IPv6 de unidifusión global. <br>
+            La división en subredes IPv4 no comprende solamente limitar los dominios de difusión, sino que también incluye la administración de la escasez de dirección. Para ayudar a conservar las direcciones IPv4, se debe determinar la máscara de subred y utilizar VLSM. En la división en subredes IPv6, la conservación del espacio de direcciones no es un problema que considerar. 
+            La ID de subred incluye más subredes que las suficientes. La división en subredes IPv6 tiene que ver con la creación de una jerarquía de direccionamiento basada en la cantidad de subredes necesarias. <br>
+            Recuerde que existen dos tipos de direcciones IPv6 asignables: una dirección IPv6 link-local nunca se subdivide, ya que solo existe en el enlace local; sin embargo, una dirección IPv6 de unidifusión global se puede dividir. <br>
+            La dirección IPv6 de unidifusión global consiste, por lo general, en un prefijo de routing global /48, una ID de subred de 16 bits y una ID de interfaz de 64 bits. 
+            <div>
+                <img src="images/estructura de direccion IPv6 de unidifusión global - prefijo de routing global.PNG" alt=""> <br>
+                <img src="images/estructura de direccion IPv6 de unidifusión global - ID de subred.PNG" alt=""> <br>
+                <img src="images/estructura de direccion IPv6 de unidifusión global - ID de interfaz.PNG" alt="">
+            </div>
+        </p>
+        <h2>División en subredes mediante la ID de subred</h2>
+        <p>
+            La sección de ID de subred de 16 bits de la dirección IPv6 de unidifusión global puede ser utilizada por una organización para crear subredes internas. <br>
+            La ID de subred proporciona más subredes que las necesarias y admite más hosts de los que puedan llegarse a necesitar para una subred. Por ejemplo, la sección de 16 bits permite realizar lo siguiente:  
+            <ul>
+                <li>Crear hasta 65536 subredes /64. Esto no incluye la posibilidad de tomar prestados bits de la ID de interfaz de la dirección.</li>
+                <li>Admitir hasta 18 millones de direcciones IPv6 de host por subred (por ej. 18'000.000'000.000'000.000).</li>
+            </ul>
+            <strong>Nota:</strong> también se puede dividir en subredes en la ID de interfaz de 64 bits (o porción de host), pese a que no suele ser necesario. <br>
+            La división en subredes IPv6 también es más fácil de implementar que la IPv4, ya que no se requiere la conversión al sistema binario. Para determinar la siguiente dubred disponible, simplemente se suman los valores en el sistema hexadecimal. <br>
+            Por ejemplo, suponga que a una organización se le asignó el prefijo de routing global 2001:0DB8:ACAD::/48 con una ID de subred de 16 bits. Esto permitiría a la organización crear subredes /64, tal como se muestra en la ilustración. Observe que el prefijo de routing global es igual para todas las subredes. Solo se incrementa el hexteto de la ID de subred en sistema 
+            hexadecimal para cada subred. <br>
+            <img src="images/bloque de direcciones - 2001.0DB8.ACAD..-48.PNG" alt="">
+        </p>
+        <h2>Asignación de subred IPv6</h2>
+        <p>
+            Con la posibilidad de elegir entre más de 65 000 subredes, la tarea del administrador de redes se convierte en la tarea de diseñar un esquema lógico para direccionar la red. <br>
+            Como se muestra en la figura 1, la topología que se utiliza de ejemplo requerirá subredes para cada LAN, así como para el enlace WAN entre el R1 y el R2. A diferencia del ejemplo para IPv4, con IPv6 la subred del enlace WAN no se sigue dividiendo en subredes. 
+            Aunque esto puede provocar el “desperdicio” de direcciones, eso no constituye un motivo de preocupación al utilizar IPv6. <br>
+            Como se muestra en la figura 2, para este ejemplo se utiliza la asignación de cinco subredes IPv6, con el campo de ID de subred del 0001 al 0005. Cada subred /64 proporcionará más direcciones de las que jamás se necesitarán. <br>
+            Como se muestra en la figura 3, se asigna una subred /64 a cada segmento LAN y al enlace WAN. <br>
+            De manera similar a la configuración de IPv4, en la figura 4 se muestra que cada una de las interfaces de router se configuró en una subred IPv6 distinta. <br>
+            <div>
+                <img src="images/topologia de ejemplo.PNG" alt=""> <p>Fig.1</p>
+                <img src="images/division en subredes IPv6.PNG" alt=""> <p>Fig.2</p>
+                <img src="images/asignacion de subredes IPv6.PNG" alt=""> <p>Fig.3</p>
+                <img src="images/configuracion de direcciones IPv6.PNG" alt=""> <p>Fig.4</p>
+            </div>
+        </p>
+        <h2>Packet Tracer: Implementación de un esquema de direccionamiento IPv6 dividido en subredes.</h2>
+        <p>
+            <a href="documentos/8.3.1.4 Packet Tracer - Implementing a Subnetted IPv6 Addressing Scheme.pdf" target="_blank" rel="noopener noreferrer">PT: Implementación de un esquema de direccionamiento IPv6 dividido en subredes (Instrucciones)</a> <br>
+            <a href="documentos/8.3.1.4 Packet Tracer - Implementing a Subnetted IPv6 Addressing Scheme.pka" target="_blank" rel="noopener noreferrer">PT: Implementación de un esquema de direccionamiento IPv6 dividido en subredes (PKA)</a> 
+        </p>
+        <h2>Actividad de clase: ¿Puedes llamarme ahora?</h2>
+        <p>
+            <img src="images/planificación de una subred - ocho subredes (cuatro hosts en cada subred ó 30).PNG" alt=""> <br>
+            <a href="documentos/8.4.1.1 Class Activity - Can You Call Me Now.pdf" target="_blank" rel="noopener noreferrer">Actividad: ¿Puedes llamarme ahora? - instrucciones.</a>
+        </p>
+        <h2>Packet Tracer: Desarrollo de integración de habilidades.</h2>
+        <p>
+            <a href="documentos/8.4.1.2 Packet Tracer - Skills Integration Challenge.pdf" target="_blank" rel="noopener noreferrer">PT: Desafío de integración de habilidades (Instrucciones)</a> <br>
+            <a href="documentos/8.4.1.2 Packet Tracer - Skills Integration Challenge.pka" target="_blank" rel="noopener noreferrer">PT: Desafío de integración de habilidades (PKA)</a> <br>
+        </p>
+        <h2>Capítulo 8: División de redes IP en subredes</h2>
+        <p>
+            El proceso de segmentación de una red mediante su división en varios espacios de red más pequeños se denomina "división en subredes". <br>
+            Cada dirección de red tiene un intervalo válido de direcciones de host. Todos los dispositivos conectados a la misma red tienen una dirección de host IPv4 para esa red y una máscara de subred o un prefijo de red común. 
+            Es posible reenviar el tráfico entre hosts directamente, siempre que estén en la misma subred. El tráfico no puede reenviarse entre subredes sin un router. Para determinar si el tráfico es local o remoto, 
+            el router utiliza la máscara de subred. El prefijo y la máscara de subred son diferentes formas de representar lo mismo: la porción de red de una dirección. <br>
+            Las subredes IPv4 se crean utilizando uno o más de los bits de host como bits de red. Dos factores muy importantes que conducen a la determinación del bloque de direcciones IP con la máscara de subred son la cantidad de subredes 
+            requeridas y la cantidad máxima de hosts necesarios por subred. Existe una relación inversa entre la cantidad de subredes y la cantidad de hosts: cuantos más bits se toman prestados para crear subredes, menor es la cantidad de 
+            bits de host disponibles, lo que da como resultado menos hosts por subred. <br>
+            La fórmula 2^n (donde “n” representa la cantidad de bits de host restantes) se utiliza para calcular cuántas direcciones disponibles habrá en cada subred. Sin embargo, no son utilizables la dirección de red y la dirección de difusión dentro de un intervalo. 
+            Por lo tanto, para calcular el número de direcciones utilizables, se requiere el cálculo 2^n - 2. <br>
+            La subdivisión de subredes, o el uso de una máscara de subred de longitud variable (VLSM), se diseñó para evitar que se desperdicien direcciones. <br>
+            La división en subredes IPv6 requiere un enfoque diferente que la división en subredes IPv4. Los espacios de direcciones IPv6 no se dividen en subredes para conservar direcciones, sino para admitir el diseño lógico jerárquico de la red. Por lo tanto, 
+            mientras que la división en subredes IPv4 tiene que ver con administrar la escasez de direcciones, la división en subredes IPv6 se relaciona con armar una jerarquía de direccionamiento basada en la cantidad de routers y las redes que estos admiten. <br>
+            Se requiere una planificación cuidadosa para hacer buen uso del espacio de direcciones disponible. Los requisitos de tamaño, ubicación, uso y acceso son consideraciones que se deben tener en cuenta en el proceso de planificación de direcciones. <br>
+            Una vez implementada, la red IP se debe probar para verificar la conectividad y el rendimiento operativo.
         </p>
         <hr><hr>
         <section>
