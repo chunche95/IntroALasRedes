@@ -6614,7 +6614,51 @@ Switch #
         </p>
         <h2>Planificación de direcciones de red</h2>
         <p>
-            
+            Como se muestra en la ilustración, es necesario que la asignación del espacio de direcciones de la capa de red dentro de la red de la empresa esté bien diseñada. La asignación de direcciones no debe ser aleatoria. <br>
+            <img src="images/planificación de la asignación de direcciones IP.PNG" alt=""> <br>
+            La planificación de las subredes de la red requiere un análisis tanto de las necesidades de uso de red de la organización como de la forma en que se estructurarán las subredes. El punto de partida consiste en llevar a cabo un estudio de los requisitos de la red. Esto significa analizar la totalidad de la red y determinar sus secciones principales y el modo 
+            en que se segmentarán. El plan de direcciones incluye la determinación de las necesidades de cada subred en cuanto al tamaño, la cantidad de hosts por subred, la forma en que se asignarán las direcciones de host, cuáles son los hosts que requerirán direcciones IPv4 estáticas y cuáles pueden utilizar DHCP para obtener la información de asignación de direcciones. <br>
+            El tamaño de la subred implica planificar la cantidad de hosts que requerirán direcciones IPv4 de host en cada subred de la red privada subdividida. Por ejemplo, en un diseño de red de campus, sería recomendable considerar cuántos hosts se necesitan en la LAN de la administración, cuántos en la LAN del cuerpo docente y cuántos en la LAN de los estudiantes. 
+            En una red doméstica, se podrían considerar la cantidad de hosts en la LAN principal de la casa y la cantidad de hosts en la LAN de la oficina en el hogar. <br>
+            Como ya se mencionó, el administrador de redes decide el rango de direcciones IPv4 privadas utilizado en una LAN, y debe considerarlo cuidadosamente para asegurarse de que haya suficientes direcciones de host disponibles para los hosts conocidos hasta el momento y para futuras expansiones. Recuerde que los rangos de direcciones IPv4 privadas son los siguientes:
+            <ul>
+                <li>De 10.0.0.0 a 10.255.255.255, con la máscara de subred 255.0.0.0 o /8</li>
+                <li>De 172.16.0.0 a 172.31.255.255, con la máscara de subred 255.240.0.0 o /12</li>
+                <li>De 192.168.0.0 a 192.168.255.255, con la máscara de subred 255.255.0.0 o /16</li>
+            </ul>
+            Conocer los requisitos de direcciones IPv4 permite determinar el o los rangos de direcciones de host que se deben implementar. La división en subredes del espacio de direcciones IPv4 privadas seleccionado proporciona las direcciones de host para satisfacer las necesidades de la red. <br>
+            En cuanto a las direcciones públicas que se utilizan para conectarse a Internet, suelen ser asignadas por un proveedor de servicios. Por lo tanto, si bien se aplicarían los mismos principios de la división en subredes, esto generalmente no es responsabilidad del administrador de redes de la organización.
+        </p>
+        <h2>Planificación del direccionamiento de la red</h2>
+        <p>
+            En la imagen, se muestra tres consideraciones principales para planificar la asignación de direcciones. <br>
+            <img src="images/consideraciones principales al planificar las asignaciones de direcciones.PNG" alt=""> <br>
+            Evitar la duplicación de direcciones hace referencia al hecho de que cada host en una interconexión de redes debe tener una dirección única. Sin la planificación  y el registro adecuados, se podría asignar una dirección a más de un host, lo que ocasionaría problemas de acceso para ambos hosts. <br>
+            Proporcionar acceso y controlarlo hace referencia al hecho de que algunos hosts, como los servidores proporcionan recursos a hosts tanto internos como externos. La dirección de capa 3 asignada a un servidor puede utilizarse para controlar el acceso a ese servidor. Sin embargo, si la dirección se asigna de manera aleatoria  y no está bien registrada, es más difícil 
+            controlar el acceso. <br>
+            Supervisar la seguridad y el rendimiento de los hosts significa que se examina el tráfico de red para las direcciones IP de origen o reciben paquetes excesivos. Si el direccionamiento de la red se planifica y se registra de forma correcta, es posible encontrar fácilmente los dispositivos de red problemáticos.
+        </p>
+        <h2>Asignación de direcciones a dispositivos.</h2>
+        <p>
+            Dentro de una red, existen distintos tipos de dispositivos que requieren direcciones, incluidos los siguientes:
+            <ul>
+                <li>
+                    Clientes usuarios finales: La mayoría de las redes asignan direcciones de manera dinámica con el protocolo de configuración dinámica de host (DHCP). Esto reduce la carga sobre el personal de soporte de red y elimina de manera virtual los errores de entrada. Del mismo modo, las direcciones solo se conceden por un período determinado. 
+                    Cambiar el esquema de división en subredes significa que se necesita volver a configurar el servidor DHCP y que los clientes deben renovar sus direcciones IP. Los clientes IPv6 pueden obtener información de dirección mediante DHCPv6 o SLAAC.
+                </li>
+                <li>
+                    Servidores y periféricos: Deben tener una dirección IP estática predecible. Utilice un sistema de numeración coherente para estos dispositivos.
+                </li>
+                <li>
+                    Servidores a los que se puede acceder mediante Internet: En muchas redes, los servidores deben ponerse a disposición de usuarios remotos. En la mayoría de los casos, a estos servidores se les asignan direcciones privadas internamente, y el router o firewall en el perímetro de la red debe estar configurado para traducir la dirección interna a una dirección pública.
+                </li>
+                <li>
+                    Dispositivos intermediarios: A estos dispositivos se asignan direcciones para la administración, la supervisión y la seguridad de redes. Debido a que es necesario saber cómo comunicarse con dispositivos intermediarios, estos deben tener asignadas direcciones predecibles y estáticas. 
+                </li>
+                <li>
+                    Gateway: Los routers y los dispositivos de firewall tienen una dirección IP asignada para cada interfaz que sirve como gateway para los hosts de dicha red. Normalmente, la interfaz de router utiliza la dirección más baja o más alta de la red.
+                </li>
+            </ul>
         </p>
         <hr><hr>
         <section>
