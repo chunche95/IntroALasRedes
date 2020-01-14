@@ -6799,6 +6799,41 @@ Switch #
             funciones de administración de la comunicación de datos. <br>
             <img src="images/servicios de la capa de transporte.PNG" alt="">
         </p>
+        <h2>Confiabilidad de la capa de transporte</h2>
+        <p>
+            La capa de transporte también es responsable de administrar los requisitos de confiabilidad de las conversaciones. Las diferentes  aplicaciones tienen diferentes requisitos de confiabilidad de transporte. <br>
+            IP se ocupa solo de la estructura, el direccionamiento y el routing de paquetes. IP no especifica la manera en que se lleva a cabo la entrega o el transporte de los paquetes. Los protocolos de transporte especifican la manera en que se transfieren los mensajes entre los hosts.
+            TCP/IP proporciona dos protocolos de la capa de transporte; el protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP), como se muestra en la figura. IP usa estos protocolos de transporte para habilitar la comunicación y la transferencia de datos 
+            entre los hosts. <br>
+            TCP se considera un protocolo de la capa de transporte confiable y completo, ya que garantiza que todos los datos lleguen al destino. Sin embargo, esto requiere campos adicionales en el encabezado TCP que aumentan el tamaño del paquete y también la demora. En cambio, UDP es un protocolo 
+            de capa de transporte más simple, aunque no proporciona confiabilidad. Por lo tanto, tiene menos campos y es más rápido que TCP. <br>
+            <img src="images/confiabilidad de la capa de transporte.PNG" alt="">
+        </p>
+        <h2>TCP</h2>
+        <p>
+            La función del protocolo de transporte TCp es similar al envío de paquetes de los que se hace un seguimiento de origen a destino. Si se divide un pedido de envío en varios paquetes, el cliente puede revisar en línea el orden de la entrega. <br>
+            Con TCP, hay tres operaciones básicas de confiabilidad:
+            <ul>
+                <li>Numeración y seguimiento de los segmentos de datos transmitidos a un host específico desde una aplicación específica.</li>
+                <li>Reconocimiento de los datos recibidos.</li>
+                <li>Retransmisión de los datos sin reconocimiento despuñes de un tiempo determinado.</li>
+            </ul>
+            <div>
+                <video src="videos/TCP.mp4" autoplay loop="lopp" muted></video>
+            </div>
+        </p>
+        <h2>UDP</h2>
+        <p>
+            Si bien las funciones de confiabilidad de TCP proporcionan una comunicación más sólida entre aplicaciones, también representan una sobrecarga adicional y pueden provocar demoras en la transmisión. Existe una compensación entre el valor de la confiabilidad y la carga que implica para los recursos de la red. 
+            Agregar sobrecarga para garantizar la confiabilidad para algunas aplicaciones podría reducir la utilidad a la aplicación e incluso ser perjudicial. En estos casos, UDP es un protocolo de transporte mejor. <br>
+            UDP proporciona las funciones básicas para entregar segmentos de datos entre las aplicaciones adecuadas, con muy poca sobrecarga y revisión de datos. UDP se conoce como un protocolo de entrega de máximo esfuerzo. En el contexto de redes, la entrega de máximo esfuerzo se denomina "poco confiable" porque no 
+            hay reconocimiento que indique que los datos se recibieron en el destino. Con UDP, no existen procesos de capa de transporte que informen al emisor si la entrega se realizó correctamente. <br>
+            El proceso de UDP es similar al envío por correo de una carta simple sin registrar. El emisor de la carta no conoce la disponibilidad del receptor para recibir la carta. Además, la oficina de correos tampoco es responsable de hacer un seguimiento de la carta ni de informar al emisor si esta no llega a destino. <br>
+            <div>
+                <video src="videos/UDP.mp4"autoplay loop="loop" muted></video>
+            </div>
+        </p>
+        9.1.1.7
         <hr><hr>
         <section>
             <div>
