@@ -6541,6 +6541,58 @@ Switch #
         </p>
         <h2>Máscaras de subred de longitud variable</h2>
         <p>
+            Observe que, en todos los ejemplos de división en subredes anteriores, se aplicó la misma máscara de subred a todas las subredes. Esto significa que cada subred tiene la misma cantidad de direcciones de host disponibles. <br>
+            Como se ilustra en la figura 1, mediante la división en subredes tradicional se crean subredes de igual tamaño. Cada subred en un esquema tradicional utiliza la misma máscara de subred. Como se muestra en la figura 2, VLSM permite dividir un espacio de red en partes desiguales. 
+            Con VLSM, la máscara de subred varía según la cantidad de bits que se toman prestados para una subred específica, de lo cual deriva la parte “variable” de la VLSM. <br>
+            La división en subredes de VLSM es similar a la división en subredes tradicional en cuanto a que se toman prestados bits para crear subredes. Las fórmulas para calcular la cantidad de hosts por subred y la cantidad de subredes que se crean también son válidas para VLSM. <br>
+            La diferencia es que la división en subredes no es una actividad que conste de un único paso. Con VLSM, la red primero se divide en subredes y, a continuación, las subredes se subdividen en subredes. Este proceso se puede repetir varias veces crear subredes de diversos tamaños. <br>
+            Nota: cuando utilice la VLSM, siempre comience por cumplir los requisitos de host de la subred más grande. Siga con la división en subredes hasta que se cumplan los requisitos de host de la subred más pequeña.
+            <div>
+                <img src="images/la division en subredes crea subredes de igual tamaño.PNG" alt=""> <p>Fig.1</p>
+                <img src="images/subredes de distintos tamaños.PNG" alt=""> <p>Fig.2</p>
+            </div>
+        </p>
+        <h2>VLSM básica</h2>
+        <p>
+            Para comprender mejor el proceso de VLSM, vuelva al ejemplo anterior que se muestra en la figura 1. La red 192.168.20.0/24 se dividió en ocho subredes del mismo tamaño. Se asignaron siete de las ocho subredes. Cuatro subredes se utilizaron para las LAN, y tres se utilizaron para las conexiones WAN entre los routers. 
+            Recuerde que el espacio de direcciones desperdiciado estaba en las subredes utilizadas para las conexiones WAN, dado que esas subredes requerían solo dos direcciones utilizables: una para cada interfaz de router. Para evitar este desperdicio, se puede utilizar VLSM para crear subredes más pequeñas para las conexiones WAN. <br>
+            Para crear subredes más pequeñas para los enlaces WAN, se dividirá una de las subredes. En este ejemplo, la última subred, 192.168.20.224/27, puede subdividirse aún más. <br>
+            Recuerde que cuando se conoce la cantidad de direcciones de host necesarias, puede utilizarse la fórmula 2^n - 2 (donde “n” es igual a la cantidad de bits de host restantes). Para proporcionar dos direcciones utilizables, se deben dejar 2 bits de host en la porción de host. <br>
+            Debido a que hay 5 bits de host en el espacio de direcciones 192.168.20.224/27 subdividido, se pueden tomar prestados 3 bits más y dejar 2 bits en la porción de host, tal como se muestra en la figura 2. Los cálculos que se realizan llegado este punto son exactamente los mismos que se utilizan para la división en subredes tradicional: 
+            Se toman prestados los bits, y se determinan los rangos de subred. <br>
+            Este esquema de división en subredes VLSM reduce la cantidad de direcciones por subred a un tamaño adecuado para las WAN. La división de la subred 7 para las WAN permite que las subredes 4, 5 y 6 estén disponibles para redes futuras y que haya 5 subredes más disponibles para las WAN.
+            <div>
+                <img src="images/division básica en subredes.PNG" alt=""> <p>Fig.1</p>
+                <img src="images/esquema de división en subredes de VLSM.PNG" alt=""> <p>Fig.2</p>
+            </div>
+        </p>
+        <h2>Demostración en vídeo: VLSM básica</h2>
+        <p>
+            <video src="videos/VLSMbásica.mp4" controls></video>
+        </p>
+        <h2>VLSM en la práctica</h2>
+        <p>
+            Si se usan subredes VLSM (Variable Length Subnet Mask), se pueden direccionar los segmentos LAN y WAN sin desperdicios innecesarios. <br>
+            <img src="images/topología de la red de VLSM resultante.PNG" alt=""> <p>Fig.1</p>
+            Tal como se muestra en la figura siguiente, a los hosts en cada una de las LAN se les asignan una dirección de host válida con el rango para esa subred y una máscara /27. Cada uno de los cuatro routers tendrá una interfaz de red LAN con una subred /27 y una o más interfaces seriales con una subred /30. <br>
+            Mediante un esquema de direccionamiento común, la primera dirección IPv4 de host para cada subred se asigna a la interfaz de la red LAN del router. A las interfaces WAN de los routers se les asignan las direcciones IP y la máscara para las subredes /30. <br>
+            En las figuras de la 2 a la 5, se muestra la configuración de interfaz para cada uno de los routers. 
+            <div>
+                <img src="images/topología de la red-subredes VLSM.PNG" alt=""> <p>Fig.2</p>
+                <img src="images/topología de la red-subredes VLSM 2.PNG" alt=""> <p>Fig.3</p>
+                <img src="images/topología de la red-subredes VLSM 3.PNG" alt=""> <p>Fig.4</p>
+                <img src="images/topología de la red-subredes VLSM 4.PNG" alt=""> <p>Fig.5</p>
+            </div>
+            Los hosts en cada subred tendrán una dirección IPv4 de host del intérvalo de direcciones de host para esa subred y una máscara adecuada. Los hosts utilizan la dirección de la interfaz de la red LAN del router conectada como dirección de gateway predeterminado.
+            <ul>
+                <li>El gateway predeterminado para los hosts del edificio A (192.168.20.0/27) es 192.168.20.1</li>
+                <li>El gateway predeterminado para los hosts del edificio B (192.168.20.32/27) es 192.168.20.33</li>
+                <li>El gateway predeterminado para los hosts del edificio C (192.168.20.64/27) es 192.168.20.65</li>
+                <li>El gateway predeterminado para los hosts del edificio D (192.168.20.96/27) es 192.168.20.97</li>
+            </ul>
+        </p>
+        <h2>Cuadro de VLSM</h2>
+        <p>
             
         </p>
         <hr><hr>
