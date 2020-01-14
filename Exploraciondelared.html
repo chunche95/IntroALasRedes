@@ -6747,6 +6747,58 @@ Switch #
             Se requiere una planificación cuidadosa para hacer buen uso del espacio de direcciones disponible. Los requisitos de tamaño, ubicación, uso y acceso son consideraciones que se deben tener en cuenta en el proceso de planificación de direcciones. <br>
             Una vez implementada, la red IP se debe probar para verificar la conectividad y el rendimiento operativo.
         </p>
+        <h2>Capa de transporte.</h2>
+        <p>
+            Las redes de datos e Internet brindan soporte a la red humana por medio del suministro de comunicación confiable entre personas. En un único dispositivo, los usuarios pueden utilizar varias aplicaciones y diversos servicios, como correo electrónico, la  web y 
+            mensajería instantánea para enviar mensajes u obtener información. Los datos de cada una de estas aplicaciones se empaquetan, se transportan y se entregan a la aplicación correspondiente en el dispositivo de destino. <br>
+            Los procesos que se describen en la capa de transporte del modelo OSI aceptan los datos de la capa de aplicación y los preparan para el direccionamiento en la capa de red. Un equipo de origen se comunica con un equipo receptor para decidir los datos en segmentos, 
+            cómo asgurarse de que ninguno de los segmentos se pierda y cómo verificar si llegan todos los segmentos. Al considerar la capa de transporte, imagínese un departamento de envíos que prepara un único pedido de varios paquetes para entregar.
+        </p>
+        <h2>Actividad de clase: Tenemos que hablar (juego)</h2>
+        <p>
+            <img src="images/actividadTenemosquehablar.PNG" alt=""> <br>
+            <a href="documentos/9.0.1.2 Class Activity - We Need to Talk.pdf" target="_blank" rel="noopener noreferrer">Actividad de clase. Tenemos que hablar (Instrucciones)</a>
+        </p>
+        <h2>Función de la capa de transporte</h2>
+        <p>
+            La capa de transporte es responsable de establecer una sesión de comunicación temporal entre dos aplicaciones y de transmitir datos entre ellas. Una aplicación genera datos que se envían desde una aplicación en un host de origen a una aplicación en un host de destino. 
+            Este es, independientemente del tipo de host destino, el tipo de medios a través de los cuales deben viajar los datos, la ruta seguida por los datos, la congestión en un enlace o el tamaño de la red. Como se muestra en la ilustración, 
+            la capa de transporte es el enlace entre la capa de aplicación y las capas inferiores que son responsables de la transmisión a través de la red. <br>
+            <img src="images/habilitación de aplicaciones en dispositivos para la comunicación.PNG" alt="">
+        </p>
+        <h2>Responsabilidades de la capa de transporte</h2>
+        <p>
+            <h3>Seguimiento de conversaciones individuales</h3>
+            <p>
+                En la capa de transporte, cada conjunto de datos que fluye entre una aplicación de origen y una de destino se conoce como "conversación". Un host puede tener varias aplicaciones que se comunican a través de la red de forma simultánea. 
+                Cada una de estas aplicaciones se comunica con una o más aplicaciones en uno o más hosts remotos. Es responsabilidad de la capa de transporte mantener y hacer un seguimiento de todas estas conversaciones. <br>
+                <img src="images/seguimiento de las conversaciones.PNG" alt="">
+            </p>
+            <h3>Segmentación de datos y rearmado de segmentos</h3>
+            <p>
+                Se deben preparar los datos para el envío a través de los medios en partes manejables. La mayoría de las redes tienen un límite de la cantidad de datos que se puede incluir en un solo paquete. Los protocolos de la capa de transporte tienen servicios que segmentan 
+                los datos de aplicación en bloques de un tamaño apropiado. <br>
+                Estos servicios incluyen el encapsulamiento necesario en cada porción de datos. Se agrega un encabezado a cada bloque de datos para el rearmado. Este encabezado se utiliza para hacer un seguimiento del flujo de datos. <br>
+                En el destino, la capa de transporte debe poder reconstruir las porciones de datos en un flujo de datos completo que sea útil para la capa de aplicación. Los protocolos en la capa de transporte describen cómo se utiliza la información del encabezado de dicha capa 
+                para rearmar las porciones de datos en flujos y transmitirlos a la capa de aplicación. <br>
+                <img src="images/segmentacion -  capa de transporte.PNG" alt="">
+            </p>
+            <h3>Identficación de las aplicaciones</h3>
+            <p>
+                Para pasar flujos de datos a las aplicaciones adecuadas, la capa de transporte debe identificar la aplicación objetivo. Para lograrlo, la capa de transporte asigna un identificador a cada aplicación, llamado número de puerto. A todos los procesos de 
+                software que requieran acceso a la red se les asigna un número de puerto exclusivo para ese host. <br>
+                <img src="images/identificacion de la aplicacion.PNG" alt="">
+            </p>
+        </p>
+        <h2></h2>
+        <p>
+            El envío de algunos tipos de datos (por ejemplo, una transmisión de vídeo) a través de una red, como un flujo completo de comunicación, puede consumir todo el ancho de banda disponible. Esto impedirá que se produzcan otras comunicaciones al mismo tiempo.
+            También podría dificultar la recuperación de errores y la retransmisión de datos dañados. <br>
+            En la figura, se muestra que la segmentación de los datos en partes más pequeñas permite que se entrelacen (multiplexen) varias comunicaciones de distintos usuarios en la misma red. <br>
+            Para identificar cada segmento de datos, la capa de transporte agrega un encabezado que contiene datos binarios organizados en varios campos. Los valores de estos campos permiten que los distintos protocolos de la capa de transporte lleven a cabo variadas
+            funciones de administración de la comunicación de datos. <br>
+            <img src="images/servicios de la capa de transporte.PNG" alt="">
+        </p>
         <hr><hr>
         <section>
             <div>
