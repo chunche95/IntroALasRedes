@@ -6593,8 +6593,22 @@ Switch #
         </p>
         <h2>Cuadro de VLSM</h2>
         <p>
-            
+            Un cuadro de direccionamiento se puede usar para identificar los bloques de direcciones que están disponibles para usar y cuáles ya se encuentran asignados, tal como se muestra en la figura 1. Este método ayuda a evitar la asignación de direcciones que ya han sido asignadas. 
+            <div>
+                <img src="images/división básica en subredes de 192.168.20.0-24.PNG" alt=""> <p>Fig.1</p>
+            </div>
+            Como se muestra en la figura 2, para utilizar el espacio de direcciones de manera más eficaz, se crean subredes /30 para los enlaces WAN. A fin de mantener juntos los bloques de direcciones sin utilizar en un bloque de espacio de direcciones contiguo, la última subred /27 se volvió a subdividir para cear subredes /30. 
+            Las primeras 3 subredes se asignaron a enlaces WAN. <br>
+            Diseñar el esquema de direccionamiento de esta manera deja 3 subredes /27 continuas sin utilizar y 5 subredes /30 contiguas sin utilizar.
+            <div>
+                <img src="images/división en subredes VLSM de 192.168.20.0-24.PNG" alt=""> <p>Fig.2</p>
+            </div>
         </p>
+        <h2>Demostración en vídeo: Ejemplo de VLSM</h2>
+        <p>
+            <video src="videos/" controls></video>
+        </p>
+        <h2></h2>
         <hr><hr>
         <section>
             <div>
