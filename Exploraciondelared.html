@@ -7063,6 +7063,29 @@ Switch #
                 </ol>
             </ul>
         </p>
+        <h2>Finalización de la sesión TCP</h2>
+        <p>
+            Para cerrar una conexión, se debe establecer el marcador de control de finalización (FIN) en el encabezado del segmento. Para finalizar todas las sesiones TCP de una vía, se utiliza un enlace de dos vías, que consta de un segmento FIN y un segmento de reconocimiento (ACK). 
+            Por lo tanto, para terminar una conversación simple admitida por TCP, se requieren cuatro intercambios para finalizar ambas sesiones. <br>
+            En la figura, haga clic en los botones 1 a 4 para ver la finalización de la conexión TCP. <br>
+            <strong>Nota:</strong> En esta explicación, los términos “cliente” y “servidor” se utilizan como referencia con fines de simplificación, pero el proceso de finalización puede ser iniciado por dos hosts cualesquiera que tengan una sesión abierta:
+            <ul>
+                <ol>Paso 1: cuando el cliente no tiene más datos para enviar en la transmisión, envía un segmento con el marcador FIN establecido. <br>
+                <img src="images/envio soli de FIN a B.PNG" alt=""> 
+            </ol>
+                <ol>Paso 2: el servidor envía un ACK para reconocer el marcador FIN y terminar la sesión de cliente a servidor. <br>
+                <img src="images/B envia la respuesta de ACK a A.PNG" alt=""> 
+            </ol>
+                <ol>Paso 3: el servidor envía un FIN al cliente para terminar la sesión de servidor a cliente. <br>
+                <img src="images/B envia la solicitud de FIN a A.PNG" alt=""> 
+            </ol>
+                <ol>Paso 4: el cliente responde con un ACK para reconocer el recibo del FIN desde el servidor. <br>
+                <img src="images/A envia la respuesta de ACK a B.PNG" alt=""> 
+            </ol>
+            </ul>
+            Una vez reconocidos todos los segmentos, la sesión se cierra. <br>
+            <img src="images/sesión finalizada.PNG" alt="">
+        </p>
         <hr><hr>
         <section>
             <div>
