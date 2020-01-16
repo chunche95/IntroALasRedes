@@ -6932,7 +6932,7 @@ Switch #
                     Indica si la información es urgente.
                 </li>
             </ul>
-            <img src="image/segmento TCP.PNG" alt="">
+            <img src="images/segmentoTCP.PNG" alt="">
         </p>
         <h2>Característica de UDP</h2>
         <p>
@@ -6952,7 +6952,15 @@ Switch #
             UDP tiene una sobrecarga baja de 8 bytes. <br>
             <img src="images/datagramaUDP.PNG" alt="">
         </p>
-        <h2></h2>
+        <h2>Conversaciones múltiples e independientes</h2>
+        <p>
+            La capa de transporte debe poder separar y administrar varias comunicaciones con diferentes necesidades de requisitos de transporte. Los usuarios tienen la expectativa de poder recibir y enviar correos 
+            electrónicos y mensajes instantáneos, explorar sitios web y realizar una llamada telefónica de VoIP de manera simultánea. <br>
+            Cada una de estas aplicaciones envía y recibe datos a través de la red al mismo tiempo, a pesar de los diferentes requisitos de confiabilidad. Además, los datos de la llamada telefónica no están dirigidos 
+            al navegador web, y el texto de un mensaje instantáneo no aparece en un correo electrónico. <br>
+            TCP y UDP administran estas diferentes conversaciones simultáneas por medio de campos de encabezado que pueden identificar de manera exclusiva estas aplicaciones. Estos identificadores únicos son números de puertos. <br>
+            <img src="images/direccionamientodelpuerto.PNG" alt="">
+        </p>
         <hr><hr>
         <section>
             <div>
