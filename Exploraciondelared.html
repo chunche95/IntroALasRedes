@@ -6979,19 +6979,52 @@ Switch #
         </p>
         <h2>Pares de sockets</h2>
         <p>
-        Los puertos de origen y de destino se colocan dentro del segmento. Los segmentos se encapsulan dentro de un paquete IP. El paquete IP contiene la dirección IP de origen y de destino. Se conoce como socket a la 
-        combinación de la dirección IP de origen y el número de puerto de origen, o de la dirección IP de destino y el número de puerto de destino. El socket se utiliza para identificar el servidor y el servicio que solicita el cliente. 
-        Un socket de cliente puede ser parecido a esto, donde 1099 representa el número de puerto de origen: 192.168.1.5:1099 <br>
-        El socket en un servidor web podría ser el siguiente: 192.168.1.7:80 <br>
-        Juntos, estos dos sockets se combinan para formar un par de sockets: 192.168.1.5:1099, 192.168.1.7:80 <br>
-        Los sockets permiten que los diversos procesos que se ejecutan en un cliente se distingan entre sí. También permiten la diferenciación de diferentes conexiones a un proceso de servidor. <br>
-        El número de puerto de origen actúa como dirección de retorno para la aplicación que realiza la solicitud. La capa de transporte hace un seguimiento de este puerto y de la aplicación que generó la solicitud de manera 
-        que cuando se devuelva una respuesta, esta se envíe a la aplicación correcta. <br>
-        <img src="images/pares de sockets.PNG" alt="">
+            Los puertos de origen y de destino se colocan dentro del segmento. Los segmentos se encapsulan dentro de un paquete IP. El paquete IP contiene la dirección IP de origen y de destino. Se conoce como socket a la 
+            combinación de la dirección IP de origen y el número de puerto de origen, o de la dirección IP de destino y el número de puerto de destino. El socket se utiliza para identificar el servidor y el servicio que solicita el cliente. 
+            Un socket de cliente puede ser parecido a esto, donde 1099 representa el número de puerto de origen: 192.168.1.5:1099 <br>
+            El socket en un servidor web podría ser el siguiente: 192.168.1.7:80 <br>
+            Juntos, estos dos sockets se combinan para formar un par de sockets: 192.168.1.5:1099, 192.168.1.7:80 <br>
+            Los sockets permiten que los diversos procesos que se ejecutan en un cliente se distingan entre sí. También permiten la diferenciación de diferentes conexiones a un proceso de servidor. <br>
+            El número de puerto de origen actúa como dirección de retorno para la aplicación que realiza la solicitud. La capa de transporte hace un seguimiento de este puerto y de la aplicación que generó la solicitud de manera 
+            que cuando se devuelva una respuesta, esta se envíe a la aplicación correcta. <br>
+            <img src="images/pares de sockets.PNG" alt="">
         </p>
         <h2>Grupos de números de puerto</h2>
         <p>
-            
+            La Autoridad de Números Asignados de Internet (IANA) es el organismo normativo responsable de asignar los diferentes estándares de direccionamiento, incluidos los números de puerto. Existen diferentes tipos de números de puerto, 
+            como se muestra en la figura 1:
+            <ul>
+                <li>
+                    <strong>Puertos conocidos (números del 0 al 1023)</strong>: estos números se reservan para servicios y aplicaciones. Por lo general, se utilizan para aplicaciones como navegadores web, 
+                    clientes de correo electrónico y clientes de acceso remoto. Al definir estos puertos bien conocidos para las aplicaciones de los servidores, las aplicaciones cliente se pueden programar para solicitar una conexión a ese puerto 
+                    en particular y a su servicio relacionado.
+                </li>
+                <li>
+                    <strong>Puertos registrados (números del 1024 al 49151)</strong>: IANA asigna estos números de puerto a una entidad que los solicite para utilizar con procesos o aplicaciones específicos. Principalmente, estos procesos son aplicaciones 
+                    individuales que el usuario elige instalar en lugar de aplicaciones comunes que recibiría un número de puerto bien conocido. Por ejemplo, Cisco ha registrado el puerto 1985 para su proceso Hot Standby Routing Protocol (HSRP).
+                </li>
+                <li>
+                    <strong>Puertos dinámicos o provados (números 49152 a 65535)</strong>: también conocidos como puertos efímeros, usualmente el SO del cliente los asigna de forma dinámica cuando se inicia una conexión a un servicio. 
+                    El puerto dinámico se utiliza para identificar la aplicación cliente durante la comunicación.
+                </li>
+            </ul>
+            <div>
+                <img src="images/numeros de puerto.PNG" class="alargado" alt=""> <p>Fig. 1</p>
+            </div>
+            <strong>Nota:</strong> Algunos sistemas operativos pueden utilizar números de puerto registrados en lugar de números de puerto dinámicos para asignar los puertos de origen. <br>
+            En la figura 2, se muestran algunos números de puerto conocidos y sus aplicaciones asociadas. Algunas aplicaciones pueden utilizar TCP y UDP. Por ejemplo, DNS utiliza UDP cuando los clientes envían solicitudes a un servidor DNS. Sin embargo, la comunicación entre dos servidores DNS siempre usa TCP.
+            Haga clic aquí para ver la lista completa de los números de puerto y las aplicaciones asociadas en el sitio web de la IANA. 
+            <div>
+                <video src="videos/" loop="loop" autoplay></video>
+            </div>
+        </p>
+        <h2>El comando <strong>netstat</strong></h2>
+        <p>
+                Las conexiones TCP no descritas pueden representar una importante amenaza a la seguridad. Pueden indicar que algo o alguien está conectado al host local. A veces es necesario conocer las conexiones TCP activas que están abiertas y en ejecución en el host de red. 
+                Netstat es una utilidad de red importante que puede usarse para verificar esas conexiones. Como se muestra en la figura, introduzca el comando netstat para obtener un listado de los protocolos que se están usando, las direcciones y los números de puerto locales, 
+                las direcciones y los números de puerto externos y el estado de la conexión. <br>
+                De manera predeterminada, el comando netstat intentará resolver direcciones IP en nombres de dominio y números de puerto en aplicaciones conocidas. La opción -n se puede utilizar para mostrar direcciones IP y números de puerto en su formato numérico. <br>
+                <img src="images/netstat.PNG" alt="">
         </p>
         <hr><hr>
         <section>
