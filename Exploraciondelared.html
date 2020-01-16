@@ -7020,11 +7020,29 @@ Switch #
         </p>
         <h2>El comando <strong>netstat</strong></h2>
         <p>
-                Las conexiones TCP no descritas pueden representar una importante amenaza a la seguridad. Pueden indicar que algo o alguien está conectado al host local. A veces es necesario conocer las conexiones TCP activas que están abiertas y en ejecución en el host de red. 
-                Netstat es una utilidad de red importante que puede usarse para verificar esas conexiones. Como se muestra en la figura, introduzca el comando netstat para obtener un listado de los protocolos que se están usando, las direcciones y los números de puerto locales, 
-                las direcciones y los números de puerto externos y el estado de la conexión. <br>
-                De manera predeterminada, el comando netstat intentará resolver direcciones IP en nombres de dominio y números de puerto en aplicaciones conocidas. La opción -n se puede utilizar para mostrar direcciones IP y números de puerto en su formato numérico. <br>
-                <img src="images/netstat.PNG" alt="">
+            Las conexiones TCP no descritas pueden representar una importante amenaza a la seguridad. Pueden indicar que algo o alguien está conectado al host local. A veces es necesario conocer las conexiones TCP activas que están abiertas y en ejecución en el host de red. 
+            Netstat es una utilidad de red importante que puede usarse para verificar esas conexiones. Como se muestra en la figura, introduzca el comando netstat para obtener un listado de los protocolos que se están usando, las direcciones y los números de puerto locales, 
+            las direcciones y los números de puerto externos y el estado de la conexión. <br>
+            De manera predeterminada, el comando netstat intentará resolver direcciones IP en nombres de dominio y números de puerto en aplicaciones conocidas. La opción -n se puede utilizar para mostrar direcciones IP y números de puerto en su formato numérico. <br>
+            <img src="images/netstat.PNG" alt="">
+        </p>
+        <h2>Actividad: Características de TCP y UDP</h2>
+        <p>
+            <img src="images/actividad-caracteristicas de TCP y UDP.PNG" alt="">
+        </p>
+        <h2>Procesos del servidor TCP</h2>
+        <p>
+            Cada proceso de aplicación que se ejecuta en el servidor está configurado para utilizar un número de puerto, ya sea predeterminado o de forma manual, por el administrador del sistema. Un servidor individual no puede tener dos servicios asignados al mismo número de puerto dentro de los mismos servicios de la capa de transporte. <br>
+            Por ejemplo, un host que ejecuta una aplicación de servidor web y una de transferencia de archivos no puede configurar ambas para utilizar el mismo puerto (por ejemplo, el puerto TCP 80). Una aplicación de servidor activa asignada a un puerto específico se considera abierta, lo que significa que la capa de transporte acepta y 
+            procesa los segmentos dirigidos a ese puerto. Toda solicitud entrante de un cliente direccionada al socket correcto es aceptada y los datos se envían a la aplicación del servidor. Pueden existir varios puertos abiertos simultáneamente en un servidor, uno para cada aplicación de servidor activa. <br>
+            Consulte las figuras 1 a 5 para ver la asignación típica de puertos de origen y de destino en las operaciones TCP de cliente y servidor. 
+            <div>
+                <img src="images/clientes envian solicitud TCP.PNG" alt=""> <p>Fig. 1</p>
+                <img src="images/solicitar puertos de destino.PNG" alt=""> <p>Fig. 2</p>
+                <img src="images/solicitar puertos de orgien.PNG" alt=""> <p>Fig. 3</p>
+                <img src="images/respuesta de puertos de destino.PNG" alt=""> <p>Fig. 4</p>
+                <img src="images/respuesta de puertos de origen.PNG" alt=""> <p>Fig. 5</p>
+            </div>
         </p>
         <hr><hr>
         <section>
