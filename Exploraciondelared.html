@@ -6833,7 +6833,126 @@ Switch #
                 <video src="videos/UDP.mp4"autoplay loop="loop" muted></video>
             </div>
         </p>
-        9.1.1.7
+        <h2>Protocolo de la capa de transporte correcto para la aplicción adecuada</h2>
+        <p>
+            Para algunas aplicaciones, los segn¡mentos deben llegar en una secuencia muy especifica para l¡que se puedan procesar correctamente. <br>
+            Con otras aplicaciones, los datos se consideran útiles una vez que todos se reciben en forma completa. En ambos casos, se utiliza TCP como protocolo de transporte. Los desarrolladores de aplicaciones deben elegir qué tipo de protocolo de transporte es adecuado según los requisitos de las aplicaciones. <br>
+            Por ejemplo, las aplicaciones como las bases de datos, los navegadores web y los clientes de correo electrónico, requieren que todos los datos que se envían lleguen a destino en su formato original. Cualquier pérdida de datos puede dañar una comunicación y dejarla incompleta o ilegible. Estas aplicaciones están diseñadas para usar TCP. <br>
+            En otros casos, una aplicación puede tolerar cierta pérdida de datos durante la trnasmisión a través de la red, pero no se admiten retrasos en la transmisión UDP es la mejor opción para estas aplicaciones, ya que se requiere menos sobrecarga de red. Con aplicaciones como la transmisión de audio y vídeo en vivo o de voz sobre IP (VoIP), 
+            es preferible utilizar UDP. Los reconocimientos y la retransmisión reducirían la velocidad de entrega. <br>
+            Por ejemplo, si uno o dos segmentos de una tranmisión de vñideo en vivo no llegan al destino, se interrumpe momentáneamente la transmisión. Esto puede manifestarse como distorsión en la image o el sonido, pero puede no ser perceptible para el usuario. Si el dispositivo de dsetino tuviera que dar cuenta de los datos perdidos, 
+            la transmisión se podría demorar mientras espera las retransmisiones, lo que ocasionaría que la imagen o el sonido se degraden considerablemente. En este caso, es mejor producir el mejor vídeo o audio posible con los segmentos recibidos y prescindir de la confiabilidad. <br>
+            <strong>Nota:</strong> Las aplicaciones que transmiten audio y vídeo almacenado utilizan TCP. Por ejemplo, si de repente la red no puede admitir el ancho de banda necesario para ver una película a pedido, la aplicación detiene la reproducción. Durante la pausa, es posible que vea un mensaje de <i>"almecenando en búfer..."</i> 
+            mientras TCP intenta restablecer la transmisión. Una vez que todos los segmentos estén en orden y se restaure un nivel mínimo de ancho de banda, la sesión TCP se reanuda y la película comienza a reproducirse. <br>
+            <img src="images/protocolosdelacapadetransporte.PNG" alt="">
+        </p>
+        <h2>Características de TCP</h2>
+        <p>
+            Para entender las diferencias entre TCP y UDP, es importante comprender la manera en que cada protocolo implementa las características especñificas de confiabilidad y la forma en que realizan el seguimiento de las conversaciones. Además de admitir funciones básicas de segmentación y rearmado de datos. TCP, como se muestra en la figura, 
+            también proporciona otros servicios. <br>
+            <img src="images/servicios TCP.PNG" alt=""> 
+            <h3>Establecimiento de una sesión</h3>
+            <p>
+                TCP es un protocolo a la conexión. Un protocolo orientado a la conexión es uno que negocia y establece una conexión (o sesión) permanente entre los dispositivos de origen y de destino antes de reenviar tráfico. Mediante el establecimiento de sesión, los dispositivos negocian la cantidad de tráfico que se puede reenviar en un momento determinado, 
+                y los datos que se comunican entre ambos se pueden administrar detenidamente.
+            </p>
+            <h3>Entrega confiable</h3>
+            <p>
+                En términos de redes, la confiabilidad significa asegurar que cada segmento que envía el origen llegue al destino. Por varias razones, es posible que un segmento se dañe o se pierda por completo a medida que se transmite en la red.
+            </p>
+            <h3>Entrega en el mismo orden</h3>
+            <p>
+                Los datos pueden llegar en el orden equivocado, debido a que las redes pueden proporcionar varias rutas que pueden tener diferentes velocidades de transmisión. Al numerar y secuenciar los segmentos, TCP puede asegurar que estos se rearmen en el orden correcto. 
+            </p>
+            <h3>Control de flujo</h3>
+            <p>
+                Los hosts de red tienen recursos limitados, como la memoria o la capacidad de procesamiento. Cuando TCP advierte que estos recursos están sobrecargados, puede solicitar que la aplicación emisora reduzca la velocidad del flujo de datos. Esto lo lleva a cabo TCP, que regula la cantidad de datos que transmite el origen. El control de flujo puede evitar la necesidad 
+                de retransmitir los datos cuando los recursos dej host receptor están desbordados. <br>
+                Para obtener más información sobre TCP, consulte el <a href="https://www.ietf.org/rfc/rfc793.txt" target="_blank" rel="noopener noreferrer">RFC</a>.
+            </p>
+        </p>
+        <h2>Encabezado TCP</h2>
+        <p>
+            TCP  es un protocolo con información de estado. Un protocolo con información de estado es un protocolo  que realiza el seguimiento del estado de la sesión de comunicación. Para hacer un seguimiento del estado de una sesión, TCP registra qué información se envió y  qué información se reconoció. La sesión con estado comienza con el establecimiento de sesión y finaliza cuando 
+            se cierar en la terminación de sesión. <br>
+            Como se muestra en la ilustración, cada segmento TCP  tiene 20 bytes de sobrecarga en el encabezamiento que encapsula los datos de la capa de aplicación: 
+            <ul>
+                <li>
+                    <strong>
+                        Puerto de origen (16 bits) y puerto de destino (16 bits):
+                    </strong>
+                    Se utilizan para identificar la aplicación.
+                </li>
+                <li>
+                    <strong>
+                        Número de secuencia (32 bits):
+                    </strong>
+                    Se usa para rearmar los datos.
+                </li>
+                <li>
+                    <strong>
+                        Número de reconocimiento (32 bits):
+                    </strong>
+                    Indica que los datos se han recibido y el siguiente byte esperado de la fuente.
+                </li>
+                <li>
+                    <strong>
+                        Longitud del encabezado (4 bits):
+                    </strong>
+                    Conocido como "desplazamiento de datos". Indica la longitus del encabezado del segmento TCP.
+                </li>
+                <li>
+                    <strong>
+                        Reservado (6 bits):
+                    </strong>
+                    Este campo está reservado par el futuro.
+                </li>
+                <li>
+                    <strong>
+                        Bits de control (6 bits):
+                    </strong>
+                    Incluye códigos de bit, o marcadores, que indican el propósito y la función del segmento TCP.
+                </li>
+                <li>
+                    <strong>
+                        Tamaño de la ventana (16 bits):
+                    </strong>
+                    Indica la cantidad de bytes que se pueden aceptar por vez.
+                </li>
+                <li>
+                    <strong>
+                        Checksum (16 bits):
+                    </strong>
+                    Se usa para la verificación de errores en el encabezado y los datos del segmento.
+                </li>
+                <li>
+                    <strong>
+                        Urgente (16 bits):
+                    </strong>
+                    Indica si la información es urgente.
+                </li>
+            </ul>
+            <img src="image/segmento TCP.PNG" alt="">
+        </p>
+        <h2>Característica de UDP</h2>
+        <p>
+            EL protocolo UDP se considera un protocolo de transporte de máximo esfuezo. UDP es un protocolo de transporte liviano que ofrece  la misma segmentación 
+            y rearmado de datos que TCP. UDP es un protocolo tan simple que, por lo general, se lo describe en términos de lo que no hace en comparación con TCP. <br>
+            En la figura, se describe las características de UDP. <br>
+            <img src="images/UDP.PNG" alt=""> <br>
+            Para obtener más información sobre UDP, lea <a href="https://www.ietf.org/rfc/rfc768.txt" target="_blank" rel="noopener noreferrer">RFC</a>.
+        </p>
+        <h2>Encabezado UDP</h2>
+        <p>
+            UDP es un protocolo sin información estado, lo cual significa que ni el cliente ni el servidor están obligados a hacer un seguimiento del estado de la sesión de comunicación. 
+            Si se requiere confiabilidad al utilizar UDP como protocolo de transporte, a esta la debe administrar la aplicación. <br>
+            Uno de los requisitos más importantes para transmitir vídeo en vivo y voz a través de la red es que los datos fluyan rápidamente. Las aplicaciones de vídeo y de voz en vivo 
+            pueden tolerar cierta pérdida de datos con un efecto mínimo o imperceptible, y se adaptan perfectamente a UDP. <br>
+            Los fragmentos de comunicación en UDP se llaman datagramas, como se muestra en la figura. El protocolo de la capa de transporte envía estos datagramas como máximo esfuerzo. 
+            UDP tiene una sobrecarga baja de 8 bytes. <br>
+            <img src="images/datagramaUDP.PNG" alt="">
+        </p>
+        <h2></h2>
         <hr><hr>
         <section>
             <div>
