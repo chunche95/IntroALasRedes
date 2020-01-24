@@ -7117,6 +7117,18 @@ Switch #
         <p>
             <img src="images/actividad - parte 2- proceso de conexion y finalizacion de TCP.PNG" alt="">
         </p>
+        <h2>Confiabilidad de TCP: entrega ordenada.</h2>
+        <p>
+            Los segmentos TCP pueden llegar a su destino desordenados. Para que el receptor comprenda el mensaje original, los datos en estos segmentos se vuelven a ensamblar en el orden original. Para lograr esto, se asignan números de secuencia en el encabezado de cada paquete. El número de secuencia representa el primer byte de datos del segmento TCP. <br>
+            Durante la configuración de la sesión, se establece un número de secuencia inicial (ISN). Este ISN representa el valor inicial de los bytes para esta sesión que se transmite a la aplicación receptora. A medida que se transmiten los datos surante la sesión, el número de secuencia se incrementa según el número de bytes que se han transmitido. Este segmento de bytes 
+            de datos permite identificar y reconocer cada segmento de manera exclusiva. A partir de esto, se pueden identificar segmentos perdidos. <br>
+            <strong>Nota:</strong> El ISN no comienza en uno, sino que se trata de un número aleatorio. Esto permite evitar ciertos tipos de ataques maliciosos. Para mayor simplicidad, usaremos un ISM de 1 para los ejemplos de este capítulo. <br>
+            Los números de secuencia de segmento indican cómo reensamblar y reordenar los segmentos recibidos, como se muestra en la figura. <br>
+            <img src="images/los segmentos TCP se vuelven a ordenar en el destino.PNG" alt=""> <br>
+            El proceso TCP receptor coloca los datos del segmento en un búfer de recepción. Los segmentos se colocan en el orden de secuencia correcto y se pasan a la capa de aplicación cuando se vuelven a ensamblar. Todos los segmentos que llegan con números de secuencia desordenados se retienen para su posterior procesamiento. A continuación, cuando llegan los segmentos con bytes faltantes, 
+            tales segmentos se procesan en orden. 
+        </p>
+        <h2></h2>
         <hr><hr>
         <section>
             <div>
