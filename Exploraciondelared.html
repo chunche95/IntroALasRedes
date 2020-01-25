@@ -7167,6 +7167,25 @@ Switch #
             <strong>Nota.</strong> La explicación de los mecanismos, temporizadores y algoritmos reales de manejo de la congestión se encuentra fuera del alcanve de este curso. <br>
             <img src="images/controldecongestionTCP.PNG" alt="">
         </p>
+        <h2>Comparación de baja sobrecarga y confiablidad de UDP</h2>
+        <p>
+            UDP es un protocolo simple que proporciona las funciones básicas de la capa de transporte. Tiene una sobrecarga mucho menor que TCP, ya que no está orientado a la conexión y no proporciona los mecanismos sofisticados de retransmisión, secuenciación y control de flujo  que ofrecen confiabilidad. <br>
+            Esto no significa que las aplicaciones que usan UDP sean siempre poco confiables ni que UDP sea un protocolo inferior. Solo quiere decir que estas funciones no las proporciona el protocolo de la capa de transporte, y se deben implementar apate, si fuera necesario. <br>
+            La baja sobrecarga del UDP es muy deseable para los protocolos que realizan transacciones simples de solicitud y respuesta. Por ejemplo, uasr TCP para DHCP introduciría un cantidad innecesaria de tráfico de red. Si existe un problema con una solicitud o una respuesta, el dispositivo simplemnte envía la solicitud nuevamente si no se recibe ninguna respuesta. <br>
+            <img src="images/transporte de datos con baja sobrecarga de UDP.PNG" alt="">
+        </p>
+        <h2>Reensamblaje de datagramas de UDP</h2>
+        <p>
+            Tal como los segmentos con TDP, cuando se envían datagramas UDP a un destino, a menudo toman diferentes rutas y llegan en el orden equivocado. UDP no realiza un seguimiento de los números de secuencia de la manera en que lo hace TCP. UDP no tiene forma de reordenar datagramas en el orden en que se transmiten, como se muestra en la ilustración. <br>
+            Por lo tanto, UDP simplemente reensambla los datos en el orden en que se recibieron y los envía a la aplicación. Si la secuencia de datos es importante para la aplicación, esta debe identificar la secuencia adecuada y determinar cómo se deben procesar los datos. <br>
+            <img src="images/UDP-Sin conexión y poco fiable.PNG" alt="">
+        </p>
+        <h2>Procesos y solicitudes del servidor UDP</h2>
+        <p>
+            Al igual que las aplicaciones basadas en TCP, a las aplicaciones de servidor basadas en UDP se les asignan números de puerto conocidos o registrados, como se muestra en la figura. Cuando estas aplicaciones o estos procesos se ejecutan en un servidor, aceptan los datos que coinciden con el número de puerto asignado. Cuando UDP recibe un datagrama destinado a uno de esos puertos, envía los datos de aplicaciones a la aplicación adecuada en base a su 
+            número de puerto. <br>
+            <strong>Nota:</strong> El servidor de usuario de acceso telefónico de autenticación remota (RADUIS) que se muestra en la figura proporciona servicios de autentificación, autorización y auditoría para administrar el acceso de usuario. El funcionamiento de RADIUS excede el ñambito de este curso.
+        </p>
         <hr><hr>
         <section>
             <div>
