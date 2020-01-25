@@ -7210,7 +7210,35 @@ Switch #
             capa de transporte y usar los servicios de TCP. <br>
             <img src="images/aplicaciones que usan TCP.PNG" alt="">
         </p>
-        <h2></h2>
+        <h2>Aplicaciones que usan UDP</h2>
+        <p>
+            Existen tres tipos de aplicaciones que son las más adecuadas para UDP. 
+            <ul>
+                <li><strong>Aplicaciones multimedia y vídeo en vivo.</strong> Pueden tolerar cierta pérdida de datos, pero requieren retrasos cortos o que no haya retrasos. Los ejemplos incluyen VoIP y transmisión de vídeo en vivo.</li>
+                <li><strong>Aplicaciones con solicitudes y respuestas simples.</strong> Aplicaciones con transmisiones simples en las que un host envía una solicitud y existe la posibilidad de que reciba una respuesta o no. Por ejemplo, DNS y DHCP.</li>
+                <li><strong>Aplicaciones que manejan la confiabilidad por su cuenta.</strong> Comunicaciones unidireccionales que no requieren control de flujo, detección de errores, reconocimientos ni recuperación de errores o que puedan ser manejados por la aplicación. Por ejemplo, SNMP y TFTP.</li>
+            </ul>
+            Aunque DNS y SNMP usan UDP de manera predeterminada, ambos también pueden usar TCP. DNS utilizará TCP si la solicitud DNS o la respuesta DNS tiene más de 512 bytes, como cuando una respuesta DNS incluye un gran número de resoluciones de nombres. Del mismo modo, en algunas situaciones, el administrador de 
+            redes puede querer configurar SNMP para usar TCP. <br>
+            <img src="images/aplicaciones que usan UDP.PNG" alt="">
+        </p>
+        <h2>Práctica de laboratorio: Uso de Wireshark para examinar capturas de FTP y TFTP</h2>
+        <p>
+            <a href="documentos/9.2.4.3 Lab - Using Wireshark to Examine TCP and UDP Captures.pdf" target="_blank" rel="noopener noreferrer">Uso de Wireshark para examinar capturas de FTP y TFTP.</a>
+        </p>
+        <h2>Actividad. TCP,UDP o ambos</h2>
+        <p>
+            <img src="images/actividad-tcp,udpoambos.PNG" alt="">
+        </p>
+        <h2>Actividad: Tenemos que hablar nuevamente (juego)</h2>
+        <p>
+            <a href="documentos/9.3.1.1 Class Activity - We Need to Talk, Again.pdf" target="_blank" rel="noopener noreferrer">Actividad de clase:  Tenemos que hablar nuevamente (Instrucciones)</a>
+        </p>
+        <h2>Packet Tracer: Comunicaciones de TCP y UDP</h2>
+        <p>
+            <a href="documentos/9.3.1.2 Packet Tracer Simulation - Exploration of TCP and UDP Communication.pdf" target="_blank" rel="noopener noreferrer">Simulación de Packet Tracer: Comunicaciones TCP y UDP (Instrucciones)</a> <br>
+            <a href="documentos/9.3.1.2 Packet Tracer Simulation - Exploration of TCP and UDP Communications.pka" target="_blank" rel="noopener noreferrer">Simulación de Packet Tracer: Comunicaciones TCP y UDP (PKA)</a>
+        </p>
         <hr><hr>
         <section>
             <div>
