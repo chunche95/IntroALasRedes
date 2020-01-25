@@ -4258,7 +4258,7 @@ Switch #
         </p>
         <h2>Demostración. Solicitud de ARP.</h2>
         <p>
-            Una solicitud de ARP se envía cuando un dispoistivo necesita asociar una dirección MAC a una dirección IPv4 y no tiene una entrada para la dirección IPv4 en su tabla ARP. <br>
+            Una solicitud de ARP se envía cuando un dispositivo necesita asociar una dirección MAC a una dirección IPv4 y no tiene una entrada para la dirección IPv4 en su tabla ARP. <br>
             Los mensajes de ARP se encapsulan directamente dentro de una trama de Ethernet. No se utiliza un encabezamiento de IPv4. El mensaje de solicitud de ARP incluye lo siguiente.
             <ul>
                 <li>
@@ -4643,7 +4643,7 @@ Switch #
             </ul>
             Que un paquete tenga  como destino un host local o un módulo remoto de E/S lo determjna la combinación de máscara  de subred y dirección IPv4 del dispositivo de origen
             (emisor) en comparación con la máscara de subred y la dirección IPv4 del dispositivo de destino. <br>
-            En una red doméstica o comercial puede haber varios dispositivos cableados o inalambricos interconectados que utilizan un dispoistivo intermediario, como un switch LAN o un punto de acceso
+            En una red doméstica o comercial puede haber varios dispositivos cableados o inalambricos interconectados que utilizan un dispositivo intermediario, como un switch LAN o un punto de acceso
             inalambrico (WAP). Este dispositivo intermediario proporciona interconexiones entre los host de la red local. Los host locales pueden conectarse y compartir información sin la necesidad de
             dispositivos adicionales. Si un host envia un paquete a un host a través del dispositivo configurado con la misma red IP que el dispositivo  host, el paquetese reenvía por la interfaz de host
             a través del dispositivo intermediario y se dirige directamente al dispositivo de destino. <br>
@@ -5317,7 +5317,7 @@ Switch #
         <h2>Asignación de una dirección IPv4 estática a un host.</h2>
         <p>
             Se puede asignar direcciones IP a los dispositivos de manera estática o dinámica. <br>
-            En las redes, algunos dispositivos necesitan una dirección IP fija. Por ejemplo, las impresoras, los servidores y los dispoisitivos de red necesitan una dirección IP que no cambie. Por este motivo, generalmente, se asigna a estos dispositivos a una dirección IP estática. <br>
+            En las redes, algunos dispositivos necesitan una dirección IP fija. Por ejemplo, las impresoras, los servidores y los dispositivos de red necesitan una dirección IP que no cambie. Por este motivo, generalmente, se asigna a estos dispositivos a una dirección IP estática. <br>
             Un host también se puede configurar con una dirección IPv4 estática como la que se muestra en la ilustración. En redes pequeñas, es aceptable asignar direcciones IP estáticas a los hosts. Sin embargo, en una red grande, introducir una dirección estática en cada host llevaría 
             mucho tiempo. Es importante mantener una lista precisa de las direcciones IP estáticas asignadas a cada dispositivo. <br>
             <img src="images/asignacionestatica.PNG" alt=""> 
@@ -6045,7 +6045,7 @@ Switch #
             <h3>Resolución de direcciones</h3>
             <p>
                 La resolución de direcciones se usa cuando un dispositivo en la LAN conoce la dirección IPv6 de unidifusion de un destino, pero no conoce la dirección MAC de Ethernet. Para determinar la dirección MAC del destino, el dispositivo envía un mensaje de NS a la dirección de nodo solicitado. El mensaje incluye la dirección IPv6 conocida
-                (objetivo). El dispoistivo que se destinó a la dirección IPv6 responde con un mensaje NA que contiene la dirección MAC de Ethernet. En la figura, se muestra dis PC que intercambian mensajes de NS y NA.
+                (objetivo). El dispositivo que se destinó a la dirección IPv6 responde con un mensaje NA que contiene la dirección MAC de Ethernet. En la figura, se muestra dis PC que intercambian mensajes de NS y NA.
                 <div>
                     <img src="images/envio de mensajes entre dispositivos IPv6.PNG" alt="">
                     <img src="images/envio de mensajes entre dispositivos IPv6-2.PNG" alt="">
@@ -7308,7 +7308,23 @@ Switch #
                 Como su nombre lo indica, las funciones de la capa de sesión crean y mantienen diálogos entre las aplicaciones de origen y destino. La capa de sesión maneja el intercambio de información para iniciar los diálogos y mantenerlos activos, y para reiniciar sesiones que se interrumpieron o que estuvieron inactivas durante un período prolongado.
             </p>
         </p>
-        <h2>Protocolos de </h2>
+        <h2>Protocolos de capa de aplicación de TCP/IP</h2>
+        <p>
+            Los protocolos de aplicación TCP/IP especifican el formato y la información de control necesarios para muchas funciones de comunicación comunes de Internet. 
+            <div>
+                <img src="images/dns.PNG" alt=""> <br>
+                <img src="images/bootp.PNG" alt=""> <br>
+                <img src="images/dhcp.PNG" alt=""> <br>
+                <img src="images/smtp.PNG" alt=""> <br>
+                <img src="images/pop.PNG" alt=""> <br>
+                <img src="images/imap.PNG" alt=""> <br>
+                <img src="images/ftp.PNG" alt=""> <br>
+                <img src="images/tftp.PNG" alt=""> <br>
+                <img src="images/http.PNG" alt=""> <br>
+                <img src="images/https.PNG" alt=""> <br>
+            </div>
+            Los protocolos de capa de aplicación son usados tanto por los dispositivosde origen como de destino durante una sesión de comunicación. Para que las comunicaciones se lleven a cabo correctamente, los protocolos de capa  de aplicación que se implementaron en los hosts de origen y de destino deben ser compatibles.
+        </p>
         <hr><hr>
         <section>
             <div>
