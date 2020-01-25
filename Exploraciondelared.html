@@ -7184,8 +7184,33 @@ Switch #
         <p>
             Al igual que las aplicaciones basadas en TCP, a las aplicaciones de servidor basadas en UDP se les asignan números de puerto conocidos o registrados, como se muestra en la figura. Cuando estas aplicaciones o estos procesos se ejecutan en un servidor, aceptan los datos que coinciden con el número de puerto asignado. Cuando UDP recibe un datagrama destinado a uno de esos puertos, envía los datos de aplicaciones a la aplicación adecuada en base a su 
             número de puerto. <br>
-            <strong>Nota:</strong> El servidor de usuario de acceso telefónico de autenticación remota (RADUIS) que se muestra en la figura proporciona servicios de autentificación, autorización y auditoría para administrar el acceso de usuario. El funcionamiento de RADIUS excede el ñambito de este curso.
+            <strong>Nota:</strong> El servidor de usuario de acceso telefónico de autenticación remota (RADUIS) que se muestra en la figura proporciona servicios de autentificación, autorización y auditoría para administrar el acceso de usuario. El funcionamiento de RADIUS excede el ámbito de este curso. <br>
+            <img src="images/servidor UDP a la escucha de solicitudes.PNG" alt="">
         </p>
+        <h2>Procesos de cliente UDP</h2>
+        <p>
+            Como el TCP, la comunicación cliente-servidor es iniciada por una aplicación cliente que solicita datos de un proceso de servidor. El proceso de cliente UDP selecciona dinámicamente un número de puerto del intérvalo de números de puerto y lo usa como puerto de origen para la conversación. Por lo general, el puerto de dstino es el número de puerto bien conocido o registrado que se asigna al proceso de servidor. <br>
+            Una vex que el cliente selecciona los puertos de origen y de destino, este mismo par de puertos se usa en el encabezamiento de todos los datagramas que se utilizan en la transacción. Para la devolución de datos del servidor al cliente, se invierten los números de puerto de origen y destino en el encabezado del datagrama. <br>
+            <div>
+                <h5>Detalles de los procesos de cliente UDP</h5>
+                <img src="images/procesoUDP-envio de solicitud.PNG" alt=""> <p>Fig. 1</p>
+                <img src="images/procesoUDP-solicitar puerto de destino.PNG" alt=""> <p>Fig. 2</p>
+                <img src="images/procesoUDP-solicitar puerto de origen.PNG" alt=""> <p>Fig. 3</p>
+                <img src="images/procesoUDP-respuesta de puertos de destino.PNG" alt=""> <p>Fig. 4</p>
+                <img src="images/procesoUDP-respuesta de puertos de origen.PNG" alt=""> <p>Fig. 5</p>
+            </div>
+        </p>
+        <h2>Práctica de laboratorio: Uso de Wireshark para examinar una captura de UDP y DNS</h2>
+        <p>
+            <a href="documentos/9.2.3.5 Lab - Using Wireshark to Examine a UDP DNS Capture.pdf" target="_blank" rel="noopener noreferrer">Uso de Wireshark para examinar una captura de UDP y DNS</a>
+        </p>
+        <h2>Aplicaciones que usan TCP</h2>
+        <p>
+            TCP  es un excelente ejemplo de cómo las diferentes capas de la suite de protocolos TCP/IP tienen funciones especificas. TCP se encarga de todas las tareas asociadas con la división del flujo de datos en segmentos, lo que proporciona confiabilidad, control de flujo de datos y reordenamiento de segmentos. TCP libera la aplicación de tener que administrar  estas tareas. Las aplicaciones, como las que se muestran en la figuram simplemente pueden enviar el flujo de datos a la 
+            capa de transporte y usar los servicios de TCP. <br>
+            <img src="images/aplicaciones que usan TCP.PNG" alt="">
+        </p>
+        
         <hr><hr>
         <section>
             <div>
