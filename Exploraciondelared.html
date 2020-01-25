@@ -7133,6 +7133,15 @@ Switch #
             Una de las funciones de TCP es garantizar que cada segmento llegue a destino. Los servicios TCP en el host de destino envían un reconocimiento de los datos que reciben la aplicación de origen. <br>
             <video src="videos/TCP-Reliability.mp4" controls></video>
         </p>
+        <h2>Vídeo de demostración: Pérdida y retransmisión de datos.</h2>
+        <p>
+            La pérdida de datos se produce en ocasiones, sin importar qué tan bien diseñada esté la red, por tanto, TCP proporciona métodos para administrar estas pérdidas de segmentos. Entre estos están un mecanismo para retransmitir segmentos para los datos sin reconocimiento. <br>
+            <div>
+                <video src="videos/TCP-Data loss and retransmission.mp4" controls></video>
+            </div>
+            <a href="documentos/9.2.2.3 Video Notes - Data Loss and Retransmission.pdf" target="_blank" rel="noopener noreferrer">Soporte del vídeo</a> <br>
+            <strong>Nota:</strong> En la actualidad, los hosts pueden emplear también una característica optativa llamada reconocimiento selectivo (SACK). Si ambos hosts admiten SACK, es posible que el destino reconozca los bytes de segmentos discontinuos, y el hosts solo necesitará volver a transmitir los datos perdidos.
+        </p>
         <hr><hr>
         <section>
             <div>
