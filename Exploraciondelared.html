@@ -7239,6 +7239,75 @@ Switch #
             <a href="documentos/9.3.1.2 Packet Tracer Simulation - Exploration of TCP and UDP Communication.pdf" target="_blank" rel="noopener noreferrer">Simulación de Packet Tracer: Comunicaciones TCP y UDP (Instrucciones)</a> <br>
             <a href="documentos/9.3.1.2 Packet Tracer Simulation - Exploration of TCP and UDP Communications.pka" target="_blank" rel="noopener noreferrer">Simulación de Packet Tracer: Comunicaciones TCP y UDP (PKA)</a>
         </p>
+        <h2>Capítulo 9: Capa de transporte</h2>
+        <p>
+            La capa de transporte proporciona servicios relacionados con el transporte de las siguientes maneras:
+            <ul>
+                <li>La división en segmentos de los datos que se reciben de una aplicación</li>
+                <li>La adición de un encabezado para identificar y administrar cada segmento</li>
+                <li>El uso de la información del encabezado para reensamblar los segmentos de nuevo en datos de aplicación</li>
+                <li>El paso de los datos ensamblados hacia la aplicación correcta</li>
+            </ul>
+            UDP y TCP son protocolos de la capa de transporte comunes. <br>
+            Los datagramas de UDP y los segmentos TCP tienen encabezados que se agregan delante de los datos, los cuales incluyen un número de puerto de origen y un número de puerto de destino. 
+            Estos números de puerto permiten que los datos se dirijan a la aplicación correcta que se ejecuta en el equipo de destino. <br>
+            TCP pasa datos a la red hasta que conoce el destino y está lista para recibirlos. Luego TCP administra el flujo de datos y reenvía todos los segmentos de datos de los que recibió reconocimiento 
+            a medida que se reciben en el destino. TCP utiliza mecanismos de enlace, temporizadores, mensajes de reconocimiento y control del flujo mediante mecanismo de ventana dinámico para lograr la confiabilidad. 
+            El proceso de confiabilidad, sin embargo, impone una sobrecarga en la red en términos de encabezados de segmentos mucho más grandes y más tráfico de la red entre el origen y el destino. <br>
+            Si se deben entregar los datos de aplicación a través de la red de manera rápida, o si el ancho de banda de la red no admite la sobrecarga de mensajes de control que se intercambian entre los sistemas de origen y destino, 
+            UDP es el protocolo de la capa de transporte preferido por los desarrolladores. UDP no ofrece ninguna de las características de confiabilidad de TCP. Sin embargo, esto no significa necesariamente que la comunicación misma 
+            no sea confiable; puede haber mecanismos en los protocolos de la capa de aplicación y servicios que procesen datagramas perdidos o retrasados si la aplicación tiene estos requisitos. <br>
+            El desarrollador de la aplicación decide cuál es el protocolo de capa de transporte que más se ajusta a los requisitos de la aplicación. Es importante recordar que el resto de las capas cumplen una función en las comunicaciones de red 
+            de datos y afectan el rendimiento de estas.
+        </p>
+        <h2>Capa de aplicación</h2>
+        <p>
+            Las aplicaciones como los navegadores web, los juegos en ñinea, el chat y el correo electrónico con amigos nos permiten enviar y recibir información con relativa facilidad. En general, podemos acceder a estas aplicaciones y usarlas sin saber cómo funcionan. 
+            Sin embargo, para los profesionales de las redes, es importante saber cómo una aplicación puede formatear, transmitir e interpretar mensajes que se envían y se reciben a través de la red. <br>
+            La visualización de los mecanismos que permiten la comunicación a través de la red se hace más fácil si usamos el esquema en capas del modelo OSI. <br>
+            En este capítulom analizaremos la función de la capa de aplicación y la manera en que las aplicaciones, los servicios y los protocolos que están dentro de la capa de aplicación hacen posible una comunicación sólida a través de las redes de datos.
+        </p>
+        <h2>Actividad de clase: Investigación de aplicaciones</h2>
+        <p>
+            <a href="documentos/10.0.1.2 Class Activity - Application Investigation.pdf" target="_blank" rel="noopener noreferrer">Actividad de clase: Investigación de aplicaciones</a>
+        </p>
+        <h2>Capa de aplicación</h2>
+        <p>
+            <h3>Capa de aplicación</h3>
+            <p>
+                La capa de aplicación es la más cercana al usuario final. Como se muestra en la figura, es la capa que proporciona la interfaz entre las aplicaciones utilizadas para la comunicación y la red subyacente en la cual se transmiten los mensajes. Los protocolos de capa de aplicación 
+                se usan para intercambiar los datos entre los programas que se ejecutan en los hosts de origen y destino. <br>
+                Las tres capas superiores del modelo OSI (aplicación, presentación y sesión) definen funciones de la capa de aplicación TCP/IP única. <br>
+                Existen muchos protocolos de capa de aplicación, y estén en constante desarrollo. Algunos de los protocolos de capa de aplicación más conocidos incluyen el protocolo de transferencia de hipertexto (HTTP), el protocolo de transferencia de archivos (FTP), el protocolo trivial de transferencia de archivos (TFTP), 
+                el protocolo de acceso a mensajes de Internet (IMAP) y el protocolo del sistema de nombres de dominio (DNS). <br>
+                <img src="images/capa de aplicacion.PNG" alt="">
+            </p>
+        </p>
+        <h2>Capas de presentación y sesión</h2>
+        <p>
+            <h3>Capa de presentación</h3>
+            <p>
+                La capa de presentación tiene tres funciones principales:
+                <ul>
+                    <li>
+                        Dar formato a los datos del dispositivo de origen, o presentarlos, en una forma compatible para que lo reciba el dispositivo de destino.
+                    </li>
+                    <li>
+                        Comprimir los datos de forma tal que los pueda descomprimir el dispositivo de destino.
+                    </li>
+                    <li>
+                        Cifrar los datos para la transmisión y descifrarlos al recibirlos.
+                    </li>
+                </ul>
+                Como se muestra en la ilustración, la capa de presentación da formato a los datos para la capa de aplicación y establece estándares para los formatos de archivo. Dentro de los estándares más conocidos para vídeo encontramos QickTime y Motion Picture Experts Group (MPEG). Entre los formatos gráficos de imagen conocidos que se 
+                utilizan en redes, se incluyen los siguientes: formato de intercambio de gráficos (GIF), formato de Joint Photographic  Experts Group (JPEG) y formato de gráficos de red portátiles (PNG). <br>
+                <img src="images/capa de presentacion.PNG" alt="">
+            </p>
+            <h3>Capa de sesión</h3>
+            <p>
+                Como su nombre lo indica, las funciones de la capa de sesión crean y mantienen diálogos entre las aplicaciones de origen y destino. La capa de sesión maneja el intercambio de información para iniciar los diálogos y mantenerlos activos, y para reiniciar sesiones que se interrumpieron o que estuvieron inactivas durante un período prolongado.
+            </p>
+        </p>
         <hr><hr>
         <section>
             <div>
