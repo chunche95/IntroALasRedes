@@ -3170,7 +3170,7 @@ Switch #
                 </li>
             </ul>
             En la figura, se muestra el tipo de cable UTP, los estándares relacionados y la aplicación típica de estos cables. También se identifican los pares de hilos individuales para los estándares TIA-568A y TIA-568B. <br>
-            Es posible que el uso de un cable de conexión cruzada o de conexión directa en forma incorrecta entre los dispositivos no dañe los dispositivos pero tampoco se producirña la conectividad y la comunicación entre los dispositivos.
+            Es posible que el uso de un cable de conexión cruzada o de conexión directa en forma incorrecta entre los dispositivos no dañe los dispositivos pero tampoco se producirá la conectividad y la comunicación entre los dispositivos.
             Este es un error común de laboratorio. Si no se logra la conectividad, la primera medida para resolver este problema es verificar que las conexiones de los dispositivos sean correctas. <br>
             <img src="images/tiposDeCablesUTP.PNG" alt="">
         </p>
@@ -7141,6 +7141,31 @@ Switch #
             </div>
             <a href="documentos/9.2.2.3 Video Notes - Data Loss and Retransmission.pdf" target="_blank" rel="noopener noreferrer">Soporte del vídeo</a> <br>
             <strong>Nota:</strong> En la actualidad, los hosts pueden emplear también una característica optativa llamada reconocimiento selectivo (SACK). Si ambos hosts admiten SACK, es posible que el destino reconozca los bytes de segmentos discontinuos, y el hosts solo necesitará volver a transmitir los datos perdidos.
+        </p>
+        <h2>Control de flujo de TCP tamaño de la ventana y reconocimientos</h2>
+        <p>
+            Tcp también ofrece mecanismos de control de flujo, la cantidad de datos que el destino puede recibir y procesar con habilidad. El control de flujo permite mantener la confiabilidad de la transmisión de TCP mediante el ajuste de velocidad de flujo de datos entre el origen y destino para una sesión dada. Para lograr esto, el encabezado TCP incluye un campo de 16bits llamado "tamaño de la ventana". <br>
+            En la figura, se muestra un ejemplo de tamaño de ventana y reconocimientos. El tamaño de ventana es la cantidad de bytes que el dispositivo de destino de una sesión TCP puede acpetar y procesar al mismo tiempo. En este ejemplo, el tamaño de la ventana inicial para una sesión TCP de la PC B es 10.000 bytes. A partir del primer byte, el byte 1, el último byte que la PC A puede enviar sin recibir un reconocimiento 
+            es el byte 10.000 . Esto se conoce como la "ventana de envío" de la PC A. El tamaño de ventana se incluye en cada segmento TCP para que el destino pueda modificar el tamaño de ventana en cualquier momento, según la disponibilidad del búfer. <br>
+            <strong>Nota:</strong> En la figuram el origen está transmitiendo 1460 bytes de datos dentro de cada segmento TCP. Esto se conoce como el MMS (tamaño de segmento máximo). <br>
+            El tamaño inicial de la ventana se acuerda cuando se establece la sesión TCP durante la realización del enlace de tres vías. El dispositivo de origen debe limitar la cantidad de bytes enviados al dispositivo de destino en función del tamaño de la ventana de destino. El dispositivo de origen puede continuar enviando más datos para la sesión solo cuando obtiene un reconocimiento de los bytes recibidos. Por lo general,
+            el destino no esperara que se reciban todos los bytes de su tamaño de ventana antes de contestar con un acuse de recibo. A medida que se reciben y procesan los bytes, el destino envía reconocimientos para informar al origen que puede continuar enviando bytes adicionales. <br>
+            Por lo general, la PC B no esperará hasta que los 10000 bytes se hayan recibido antes de enviar un reconocimiento. Esto signidica que la PC A puede ajustar su ventana de envío a medida que recibe reconocimientos de la PC B. Como se muesta en la figura, cuando la PC A recibe un reconocimiento con el número 2921, la ventana de envío de PC A se incrementará otros 10.000 bytes a la PC B, siempre y cuando no supere la nueva 
+            ventana de envío establecida en 12 920. <br>
+            El proceso en el que el destino envía reconocimientos a medida que procesa los bytes recibidos y el ajuste continuo de la ventana de envío del origen se conoce como ventanas deslizantes. <br>
+            Si disminuye la disponibilidad de espacio de búfer del destino, puede reducir el tamaño de ventana para informar al origen que reduzca el número de bytes que debe enviar sin recibir un reconocimiento. <br>
+            <strong>Nota:</strong> Por lo general, los dispositivos usan el protocolo de ventanas deslizantes. Con las ventanas deslizantes, el receptor no espera que se alcance la cantidad de bytes en el tamaño de ventana antes de enviar un acuse de recibo. Por lo general, el receptor envía un acuse de recibo cada dos segmentos recibidos. El número de segmentos recibidos antes de que se acuse recibo puede variar. 
+            La ventaja de las ventanas deslizantes es que permiten que el emisor transmita continuamente segmentos mientras el recpetor está acusando recibo de los segmentos anteriores. Los detalles de las ventanas deslizantes exceden el ámbito de este curso. <br>
+            <img src="images/ejemplo de tamaño de ventana de TCP.PNG" alt="">
+        </p>
+        <h2>Control de flujo de TCP prevención de congestiones.</h2>
+        <p>
+            Cuando se produce congestión de una red, el router sobrecargado comienza a descartar paquetes. Cuando los paquetes que contiene los segmentos TCP no llegan a su destino, se quedan sin reconocimiento. Mediante la determinación de la tasa a la que se envían pero no se reconocen los segmentos TCP, el origen puede asumir un cierto nivel de congestión de la red. <br>
+            Siempre que haya congestiónm se producirá la retransmisión de los segmentos TCP perdidos del origen. Si la retransmisión no se controla adecuadamente, la retransmisión adicional de los segmentos TCP puede emperorar aún más la congestión. No sólo se introducen en la red los nuevos paquetes con segmentos TCP, sino que el efecto de retroalimentación de los segmentos TCP retransmitidos que se perdieron también se sumará a la congestión. 
+            Para evitar y controlar la congestión, TCP emplea varios mecanismos, temporizadores y algoritmos de manejo de la congestión. <br>
+            Si el origen determina que los segmentos TCP no están siendo reconocidos o que sí son reconocidos pero no de una manera oportuna, entonces puede reducir el número de bytes que envía antes de recibir un reconocimiento. Tenga en cuenta que es el origen el que está reduciendo el número de bytes sin reconocimiento que envía y no el tamaño de ventana determinado por el destino. <br>
+            <strong>Nota.</strong> La explicación de los mecanismos, temporizadores y algoritmos reales de manejo de la congestión se encuentra fuera del alcanve de este curso. <br>
+            <img src="images/controldecongestionTCP.PNG" alt="">
         </p>
         <hr><hr>
         <section>
