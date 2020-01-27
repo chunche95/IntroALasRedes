@@ -28,10 +28,12 @@ sleep 2
 # Other - Otros.
 git add . &&
 git nota "Others" && 
+sleep 1
+clear
 git push origin master
 echo "Otros archivos  subidos"
 sleep 2
 echo "+-------------------------------------+"
-echo "| Todos los trabajos han finalizado |"
+echo "| Todos los trabajos han finalizado   |"
 echo "+-------------------------------------+"
 # clear
