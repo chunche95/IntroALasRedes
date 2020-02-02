@@ -7488,6 +7488,22 @@ Switch #
             El servicio del cliente DNS en los equipos Windows también almacena los nombres resueltos previamente en la memoria. El comando ipconfig /displaydns muestra todas las entradas DNS en caché. <br>
             <img src="images/formato del mensaje DNS.PNG" alt="">
         </p>
+        <h2>Jerarquía DNS</h2>
+        <p>
+            El protocolo DNS utiliza un sistema jerárquico para crear una base de datos que proporcione la resolución de nombres. La jerarquía es similar a un árbol invertido con la raíz en la parte superior y las ramas por debajo 
+            (consulte la figura). DNS utiliza nombres de domino para formar la jerarquía. <br>
+            <img src="images/jerarquia DNS.PNG" alt=""> <br>
+            La estructura de nomenclatura se divide en zonas pequeñas y manejables. Cada servidor DNS mantiene un archivo de base de datos específico y sólo es responsable de administrar las asignaciones de nombre a IP para esa 
+            pequeña porción de toda la estructura DNS. Cuando un servidor DNS recibe una solicitud para una traducción de nombre que no se encuentra dentro de esa zona DNS, el servidor DNS reenvía la solicitud a otro servidor DNS dentro de la zona adecuada para su traducción. <br>
+            Nota: DNS es escalable, porque la resolución de los nombres de hosts se distribuye entre varios servidores. <br>
+            Los diferentes dominios de primer nivel representan el tipo de organización o el país de origen. Entre los ejemplos de dominios del nivel superior se encuentran: 
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </p>
         <hr><hr>
         <section>
             <div>
