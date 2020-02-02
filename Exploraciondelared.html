@@ -7532,6 +7532,62 @@ Switch #
             DHCPv6 (DHCP para IPv6) proporciona servicios similares para los clientes IPv6. Una diferencia importante es que DHCPv6 no brinda una dirección de gateway predeterminado. Esto sólo se puede obtener de forma dinámica a partir del anuncio de router del propio router. <br>
             <img src="images/protocolo de config. dinámica de host.PNG" alt="">
         </p>
+        <h2>Funcionamineto DCHP</h2>
+        <p>
+            Como se muestra en la ilustración, cuando un dispositivo configurado con DHCP e IPv4 se inicia o se conecta a la red, el cliente transmite un mensaje de detección de DHCP (DHCPDISCOVER) para identificar cualquier servidor de DHCP disponible en la red. Un servidor de DHCP 
+            responde con un mensaje de oferta de DHCP (DHCPOFFER), que ofrece una concesión al cliente. El mensaje de oferta contiene la dirección IPv4 y la máscara de subred que se deben asignar, la dirección IPv4 del servidor DNS y la dirección IPv4 del gateway predeterminado. 
+            La oferta de concesión también incluye la duración de esta. <br>
+            El cliente puede recibir varios mensajes DHCPOFFER si hay más de un servidor de DHCP en la red local. Por lo tanto, debe elegir entre ellos y enviar un mensaje de solicitud de DHCP (DHCPREQUEST) que identifique el servidor explícito y la oferta de concesión que el cliente 
+            acepta. Un cliente también puede optar por solicitar una dirección previamente asignada por el servidor. <br>
+            Suponiendo que la dirección IPv4 solicitada por el cliente, u ofrecida por el servidor, aún está disponible, el servidor devuelve un mensaje de reconocimiento de DHCP (DHCPACK) que le informa al cliente que finalizó la concesión. Si la oferta ya no es válida, el servidor 
+            seleccionado responde con un mensaje de reconocimiento negativo de DHCP (DHCPNAK). Si se devuelve un mensaje DHCPNAK, entonces el proceso de selección debe volver a comenzar con la transmisión de un nuevo mensaje DHCPDISCOVER. Una vez que el cliente tiene la concesión, 
+            se debe renovar mediante otro mensaje DHCPREQUEST antes de que expire. <br>
+            El servidor DHCP asegura que todas las direcciones IP sean únicas (no se puede asignar la misma dirección IP a dos dispositivos de red diferentes de forma simultánea). La mayoría de los proveedores de Internet utilizan DHCP para asignar direcciones a los clientes. <br>
+            DHCPv6 tiene un conjunto similar de mensajes a los que se muestran en la figura de DHCP para IPv4. Los mensajes de DHCPv6 son SOLICIT, ADVERTISE, INFORMATION REQUEST y REPLY. <br>
+            <img src="images/funcionamiento de DHCP.PNG" alt="">
+        </p>
+        <h2>Packet Tracer: Servidores DHCP y Servidores DNS</h2>
+        <p>
+            <a href="documentos/10.2.1.7 Packet Tracer - Web and Email.pdf" target="_blank" rel="noopener noreferrer">PT:Servidores DHCP y servidores DNS (Instrucciones)</a> <br>
+            <a href="documentos/10.2.1.7 Packet Tracer - Web and Email.pka" target="_blank" rel="noopener noreferrer">PT:Servidores DHCP y servidores DNS (PKA)</a> 
+        </p>
+        <h2>Práctica de laboratorio: Observación de servidores DNS</h2>
+        <p>
+            <a href="documentos/10.2.2.8 Lab - Observing DNS Resolution.pdf" target="_blank" rel="noopener noreferrer">Práctica de laboratorio: Observación de la resolución DNS</a>
+        </p>
+        <h2>Protocolo de transferencia de archivos</h2>
+        <p>
+            FTP es otro protocolo de capa de aplicación que se utiliza comúnmente. El protocolo FTP se desarrolló para permitir las transferencias de datos entre un cliente y un servidor. Un cliente FTP es una aplicación que se ejecuta en una computadora cliente y 
+            se utiliza para insertar y extraer datos en un servidor FTP. <br>
+            Como se muestra en la figura, para transferir datos correctamente, FTP requiere dos conexiones entre el cliente y el servidor, una para los comandos y las respuestas y la otra para la transferencia de archivos propiamente dicha: 
+            <ul>
+                <li>El cliente establece la primera conexión al servidor para el tráfico de control por medio del puerto 21 de TCP, que está constituido por comandos del cliente y respuestas del servidor.</li>
+                <li>El cliente establece la segunda conexión al servidor para la transferencia de datos propiamente dicha por medio del puerto 20 de TCP. Esta conexión se crea cada vez que hay datos para transferir.</li>
+            </ul>
+            <img src="images/proceso FTP.PNG" alt=""> <br>
+            La transferencia de datos se puede producir en ambas direcciones. El cliente puede descargar (extraer) datos del servidor o subir datos a él (insertarlos).
+        </p>
+        <h2>Bloque de mensajes del servidor</h2>
+        <p>
+            El bloque de mensajes del servidor (SMB) es un protocolo de intercambio de archivos cliente/servidor que describe la estructura de los recursos de red compartidos, como archivos, directorios, impresoras y puertos serie. Es un protocolo de solicitud-respuesta. 
+            Todos los mensajes SMB comparten un mismo formato. Este formato utiliza un encabezado de tamaño fijo seguido de un parámetro de tamaño variable y un componente de datos. <br>
+            Los mensajes SMB pueden:
+            <ul>
+                <li>Iniciar, autentificar y terminar sesiones</li>
+                <li>Controlar el acceso a los archivos y a las impresoras</li>
+                <li>Autorizar una aplicación para enviar o recibir mensajes para o de otro dispositivo</li>
+            </ul>
+            Los servicios de impresión y transferencia de archivos SMB se han transformado en el pilar de las redes de Microsoft. Con la presentación de la serie de software Windows 2000, Microsoft cambió la estructura subyacente para el uso de SMB. En versiones 
+            anteriores de los productos de Microsoft, los servicios de SMB utilizaban un protocolo que no es TCP/IP para implementar la resolución de nombres. A partir de Windows 2000, todos los productos subsiguientes de Microsoft utilizan la convención de nomenclatura DNS, 
+            que permite que los protocolos TCP/IP admitan directamente el uso compartido de recursos de SMB, como se muestra en la figura 1. El proceso de intercambio de archivos de SMB entre equipos Windows se muestra en la figura 2. <br>
+            A diferencia del protocolo para compartir archivos admitido por FTP, los clientes establecen una conexión a largo plazo con los servidores. Después de establecer la conexión, el usuario del cliente puede acceder a los recursos en el servidor como si el recurso 
+            fuera local para el host del cliente. <br>
+            Los sistemas operativos LINUX y UNIX también proporcionan un método de intercambio de recursos con redes de Microsoft mediante una versión del SMB llamado SAMBA. Los sistemas operativos Macintosh de Apple también admiten recursos compartidos utilizando el protocolo SMB. <br>
+            <div>
+                <img src="images/" alt=""><p>Img.1</p>
+                <img src="images/" alt=""><p>Img.2</p>
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
