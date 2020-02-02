@@ -7466,6 +7466,28 @@ Switch #
                 <img src="images/resolver direcciones DNS. paso 5.PNG" alt=""> <p>Img.5</p>
             </div>
         </p>
+        <h2>Formato del mensaje DNS</h2>
+        <p>
+            El servidor DNS almacena tipos de registros de recursos utilizados para resolver nombres. Estos registros contienen el nombre, la dirección y el tipo de registro. Algunos de estos tipos de registros son:
+            <ul>
+                <li>
+                    <strong>A</strong> Una dirección IPv4 de terminal.
+                </li>
+                <li>
+                    <strong>NS</strong> Un servidor  de nombre autoritativo.
+                </li>
+                <li>
+                    <strong>AAAA</strong> Una dirección IPv6 de terminal.
+                </li>
+                <li>    
+                    <strong>MX</strong> Un registro de intercambio de correo.
+                </li>
+            </ul>
+            Cuando un cliente realiza una consulta, el proceso DNS del servidor observa primero sus propios registros para resolver el nombre. Si no puede resolverlo con los registros almacenados, contacta a otros servidores para hacerlo. 
+            Una vez que se encuentra una coincidencia y se la devuelve al servidor solicitante original, este almacena temporalmente la dirección numerada por si se vuelve a solicitar el mismo nombre. <br>
+            El servicio del cliente DNS en los equipos Windows también almacena los nombres resueltos previamente en la memoria. El comando ipconfig /displaydns muestra todas las entradas DNS en caché. <br>
+            <img src="images/formato del mensaje DNS.PNG" alt="">
+        </p>
         <hr><hr>
         <section>
             <div>
