@@ -7339,20 +7339,19 @@ Switch #
             cliente el correo electrónifo solicitado. Como se muestra en la figura, la transferencia de datos de un cliente a un servidor se conoce como "carga" y la transferencia de datos de un servidor a un cliente se conoce como "descarga". <br>
             <img src="images/ejemplo de carga de servidor de archivos y del cliente.PNG" alt="">
         </p>
-        <h2>Redes entre pares</h2>
+        <h2>Redes entre pares.</h2>
         <p>
-            En el modelo de red entre pares (P2P), se accede a los datos de un dispositivo par sin usar un servidor dedicado. <br>
-            El modelo de red P2P consta de dos partes: las redes P2P y las aplicaciones P2P. Ambas partes tienen características similares, pero en la práctica son diferentes. <br>
+            En el modelo de red entre pares (P2P),se accede a los datos de un dispositivo par sin utilizar un servidor dedicado. <br>
+            El modelo de red P2P consta de dos partes: las redes P2P y las aplicaciones P2P. Ambas partes tienen características similares, pero en la práctica son muy diferentes. <br>
             En una red P2P, hay dos o más PC que están conectadas por medio de una red y pueden compartir recursos (como impresoras y archivos) sin tener un servidor dedicado. Todo terminal conectado puede funcionar como servidor y como cliente. Un equipo puede asumir la función de servidor para una transacción mientras funciona en forma simultánea 
             como cliente para otra transacción. Las funciones de cliente y servidor se establecen por solicitud. <br>
-            <img src="images/redes entre pares.PNG" alt=""> <br>
-            En la figura se muestra un ejemplo simple de red P2P. Además de compartir archivos, una red como esta permitiría que los usuarios habiliten juegos en red o compartan una conexión a Internet.
+            En la figura se muestra un ejemplo simple de red P2P. Además de compartir archivos, una red como esta permitiría que los usuarios habiliten juegos en red o compartan una conexión a Internet. <br>
+            <img src="images/redesentrepares.PNG" alt="">
         </p>
         <h2>Aplicaciones entre pares</h2>
         <p>
-            Una aplicación P2P permite que un dispositivo funcione como cliente y como servidor dentro de la misma comunicación, como se muestra en la figura. 
+            Una aplicación P2P permite que un dispositivo funcione como cliente y como servidor dentro de la misma comunicación, como se muestra en la figura. En este modelo, cada cliente es un servidor y cada servidor es un cliente. Las aplicaciones P2P requieren que cada terminal proporcione una interfaz de usuario y ejecute un servicio en segundo plano. <br>
             <img src="images/aplicaciones punto a punto.PNG" alt=""> <br>
-            En este modelo, cada cliente es un servidor y cada servidor es un cliente. Las aplicaciones P2P requieren que cada terminal proporcione una interfaz de usuario y ejecute un servicio en segundo plano. <br>
             Algunas aplicaciones P2P utilizan un sistema híbrido donde se descentraliza el intercambio de recursos, pero los índices que apuntan a las ubicaciones de los recursos están almacenados en un directorio centralizado. En un sistema híbrido, cada punto accede a un servidor de índice para obtener la ubicación de un recurso almacenado en otro punto.
         </p>
         <h2>Aplicaciones P2P comunes</h2>
@@ -7364,15 +7363,94 @@ Switch #
                 <li>BitTorrent</li>
                 <li>Bitcoin</li>
             </ul>
-            Algunas aplicaciones P2P se basan en el protocolo Gnutella, con el que cada usuario comparte archivos enteros con otros usuarios. Como se muestra en la ilustración, el software de cliente compatible con Gnutella permite a los usuarios conectarse a los servicios Gnutella a través de Internet, además de ubicar los recursos compartidos por otros puntos 
-            Gnutella y acceder a dichos recursos. Hay muchas aplicaciones del cliente Gnutella disponibles, como gtk-gnutella, WireShare, Shareaza y Bearshare. <br>
-            Muchas aplicaciones P2P permiten a los usuarios compartir partes de muchos archivos entre sí al mismo tiempo. Los clientes utilizan un pequeño archivo llamado archivo torrent para localizar a otros usuarios que tienen las piezas que necesitan y conectarse directamente a ellos. Este archivo también contiene información sobre los equipos de seguimiento 
-            que realizan el seguimiento de qué usuarios tienen qué archivos. Los clientes piden partes de varios usuarios al mismo tiempo, lo que se conoce como un enjambre. Esta tecnología se llama BitTorrent. Hay muchos clientes de BitTorrent, incluidos BitTorrent, uTorrent, Frostwire y qBittorrent. <br>
+            Algunas aplicaciones P2P se basan en el protocolo Gnutella, con el que cada usuario comparte archivos enteros con otros usuarios. Como se muestra en la ilustración, el software de cliente compatible con Gnutella permite a los usuarios conectarse a los servicios Gnutella a través de Internet, además de ubicar los recursos compartidos por otros puntos Gnutella 
+            y acceder a dichos recursos. Hay muchas aplicaciones del cliente Gnutella disponibles, como gtk-gnutella, WireShare, Shareaza y Bearshare.
+            Muchas aplicaciones P2P permiten a los usuarios compartir partes de muchos archivos entre sí al mismo tiempo. Los clientes utilizan un pequeño archivo llamado archivo torrent para localizar a otros usuarios que tienen las piezas que necesitan y conectarse directamente a ellos. Este archivo también contiene información sobre los equipos de seguimiento que realizan 
+            el seguimiento de qué usuarios tienen qué archivos. Los clientes piden partes de varios usuarios al mismo tiempo, lo que se conoce como un enjambre. Esta tecnología se llama BitTorrent. Hay muchos clientes de BitTorrent, incluidos BitTorrent, uTorrent, Frostwire y qBittorrent.        
             <img src="images/Gnutella admite aplicaciones P2P.PNG" alt=""> <br>
             Nota: Cualquier tipo de archivo se puede compartir entre los usuarios. Muchos de estos archivos están protegidos por derechos de autor, lo que significa que sólo el creador tiene el derecho de utilizarlos y distribuirlos. Es contrario a la ley descargar o distribuir archivos protegidos por derechos de autor sin el permiso del titular de los derechos de autor. 
             La violación de los derechos de autor puede ocasionar cargos penales y demandas civiles. Complete la práctica de laboratorio en la página siguiente para obtener más información sobre estos temas legales.
         </p>
-        <h2></h2>
+        <h2>Práctica de laboratorio: Investigación de intercambio de archivos entre pares.</h2>
+        <p>
+            <a href="documentos/10.1.2.5 Lab - Researching Peer-to-Peer File Sharing.pdf" target="_blank" rel="noopener noreferrer">Investigación del intercambio de archivos entre pares</a>
+        </p>
+        <h2>Protocolo de transferencia de hipertexto y lenguaje de marcado de hipertexto</h2>
+        <p>
+            Cuando se escribe una dirección web o un localizador uniforme de recursos (URL) en un navegador web, el navegador establece una conexión con el servicio web que se ejecuta en el servidor mediante el protocolo HTTP. Los nombres que la mayoría de las personas asocia con las direcciones web son URL e identificadores uniformes de recursos (URI). <br>
+            Para comprender mejor cómo interactúan el navegador web con el servidor web, podemos analizar cómo se abre una página web en un navegador. Para este ejemplo, utilice el URL http://www.cisco.com/index.html. <br>
+            Primero, el navegador interpreta las tres partes del URL, como se muestra en la Figura 1: <br>
+            <img src="images/cisco-pointToPoint.PNG" class="alargado" alt="">
+            <ul>
+                <ol>1. http (protocol o esquema)</ol>
+                <ol>2. www.cisco.com (nombre del servidor)</ol>
+                <ol>3. index.html (nombre del archivo especifico solicitado)</ol>
+            </ul>
+            A continuación, el navegador se comunica con un servidor de nombres para convertir www.cisco.com en una dirección IP numérica que utiliza para conectarse al servidor, como se muestra en la figura 2. Mediante los requisitos de HTTP, el navegador envía una solicitud GET al servidor y solicita el archivo index.html. El servidor envía el código HTML para 
+            esta página web al navegador, como se muestra en la figura 3. Finalmente, el navegador descifra el código HTML y da formato a la página para que se pueda visualizar en la ventana del navegador, como se muestra en la figura 4. 
+            <div>
+                <img src="images/http-paso1.PNG" alt=""> <br>
+                <img src="images/http-paso2.PNG" alt=""> <br>
+                <img src="images/http-paso3.PNG" alt="">
+            </div>
+        </p> 
+        <h2>HTTP y HTTPS</h2>
+        <p>
+            HTTP es un protocolo de solicitud/respuesta. Cuando un cliente, por o general un navegador webm envía una solicitud a un servidor web, HTTP especifica loss tipos de mensaje que se usa para esa comunicación. Los tres tipos de mensajes comunes son GET,POST y PUT (consulte la figura): <br>
+            <div>
+                <img src="images/protocolo HTTP con GET.PNG" alt=""> <br>
+                <p>
+                    Al escribir "http://www.cisco.com" en la barra de direcciones de un navegador web, se genera el mensaje GET
+                </p>
+            </div>
+            <ul>
+                <li>GET: solicitud de archivos por parte del cliente. Un cliente  (navegador web) envñia el mensaje GET al servidor web para solicitat las páginas HTML</li>
+                <li>POST: carga archivos de datos, coomo los datos de formulario, al servidor web.</li>
+                <li>PUT: carga los recursos o el contenido, como por ejemplo una imagen, en el servidor web.</li>
+            </ul>
+            Aunque HTTP es sumamente flexible, no es un protocolo seguro. Los mensajes de solicitud envían información al servidor en un texto sin formato que puede ser interceptado y leído. Las respuestas del servidor, generalmente páginas HTML, también están sin cifrar.
+            Para una comunicación segura a través de Internet, se utiliza el protocolo HTTP seguro (HTTPS). HTTPS utiliza autenticación y cifrado para proteger los datos mientras viajan entre el cliente y el servidor. HTTPS utiliza el mismo proceso de solicitud del cliente-respuesta del servidor que HTTP, pero el flujo de datos se cifra con capa de sockets seguros (SSL) 
+            antes de transportarse a través de la red.
+        </p>
+        <h2>Protocolos de correo electrónico</h2>
+        <p>
+            Uno de los principales servicios que un ISP ofrece es hosting de correo electrónico. Para ejecutar el correo electrónico en una PC o en otro terminal, se requieren varios servicios y aplicaciones, como se muestra en la figura. El correo electrónico es un método para almacenar y enviar que se utiliza para enviar, almacenar y recuperar mensajes electrónicos a través de una red. 
+            Los mensajes de correo electrónico se guardan en bases de datos en servidores de correo. <br>
+            Los clientes de correo electrónico se comunican con servidores de correo para enviar y recibir mensajes de correo electrónico. Los servidores de correo se comunican con otros servidores de correo para transportar mensajes desde un dominio a otro. Un cliente de correo electrónico no se comunica directamente con otro cliente de correo electrónico cuando envía un mensaje. 
+            Más bien, ambos clientes dependen del servidor de correo para el transporte de los mensajes. <br>
+            <img src="images/email.PNG" alt=""> <br>
+            El correo electrónico admite tres protocolos diferentes para su funcionamiento: el protocolo simple de transferencia de correo (SMTP), el protocolo de oficina de correos (POP) e IMAP. El proceso de capa de aplicación que envía correo utiliza SMTP. Sin embargo, un cliente recupera el correo electrónico mediante uno de dos protocolos de capa de aplicación: POP o IMAP. 
+        </p>
+        <h2>Funcionamiento de SMTP</h2>
+        <p>
+            Los formatos de mensajes SMTP necesitan un encabezado y un cuerpo de mensaje. Mientras que el cuerpo del mensaje puede contener la cantidad de texto que se desee, el encabezado debe contar con una dirección de correo electrónico de destinatario correctamente formateada y una dirección de emisor. <br>
+            Cuando un cliente envía correo electrónico, el proceso SMTP del cliente se conecta a un proceso SMTP del servidor en el puerto bien conocido 25. Después de que se establece la conexión, el cliente intenta enviar el correo electrónico al servidor a través de esta. Una vez que el servidor recibe el mensaje, lo ubica en una cuenta local (si el destinatario es local) 
+            o lo reenvía a otro servidor de correo para su entrega, como se muestra en la figura. <br>
+            <img src="images/SMTP-funcionamiento.PNG" alt=""> <br>
+            El servidor de correo electrónico de destino puede no estar en línea, o estar muy ocupado, cuando se envían los mensajes. Por lo tanto, el SMTP pone los mensajes en cola para enviarlos posteriormente. El servidor verifica periódicamente la cola en busca de mensajes e intenta enviarlos nuevamente. Si el mensaje aún no se ha entregado después de un tiempo predeterminado de expiración, 
+            se devolverá al emisor como imposible de entregar.
+        </p>
+        <h2>Funcionamiento de POP</h2>
+        <p>
+            POP es utilizado por una aplicación para recuperar correo electrónico de un servidor de correo. Con POP, el correo se descarga desde el servidor al cliente y después se elimina en el servidor. POP funciona de esta forma, de manera predeterminada. <br>
+            El servidor comienza el servicio POP escuchando de manera pasiva en el puerto TCP 110 las solicitudes de conexión del cliente. Cuando un cliente desea utilizar el servicio, envía una solicitud para establecer una conexión TCP con el servidor. Una vez establecida la conexión, el servidor POP envía un saludo. A continuación, el cliente y el servidor POP intercambian 
+            comandos y respuestas hasta que la conexión se cierra o cancela. <br>
+            Con POP, los mensajes de correo electrónico se descargan en el cliente y se eliminan del servidor, esto significa que no existe una ubicación centralizada donde se conserven los mensajes de correo electrónico. Como POP no almacena mensajes, no es una opción adecuada para una pequeña empresa que necesita una solución de respaldo centralizada. <br>
+            <img src="images/POP-funcionamiento.PNG" alt="">
+        </p>
+        <h2>Funcionamiento de IMAP</h2>
+        <p>
+            IMAP es otro protocolo que describe un método para recuperar mensajes de correo electrónico. A diferencia de POP, cuando el usuario se conecta a un servidor con capacidad IMAP, se descargan copias de los mensajes a la aplicación cliente. Los mensajes originales se mantienen en el servidor hasta que se eliminen manualmente. Los usuarios ven copias de los mensajes en 
+            su software de cliente de correo electrónico. <br>
+            Los usuarios pueden crear una jerarquía de archivos en el servidor para organizar y guardar el correo. Dicha estructura de archivos se duplica también en el cliente de correo electrónico. Cuando un usuario decide eliminar un mensaje, el servidor sincroniza esa acción y elimina el mensaje del servidor. <br>
+            <img src="images/IMAP-funcionamiento.PNG" alt="">
+        </p>
+        <h2>Packet Tracer: Web y correo electrónico</h2>
+        <p>
+            <a href="documentos/10.2.1.7 Packet Tracer - Web and Email.pdf" target="_blank" rel="noopener noreferrer">PT: Web y correo electrónico (Instrucciones)</a> <br>
+            <a href="documentos/10.2.1.7 Packet Tracer - Web and Email.pka" target="_blank" rel="noopener noreferrer">PT: Web y correo electrónico (PKA)</a>
+        </p>
+        <h2>Servicio de nombres de dominio</h2>
         <hr><hr>
         <section>
             <div>

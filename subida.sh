@@ -1,6 +1,9 @@
 
 #!/bin/sh
 
+# Bajando los cambios realizados en otros PC's
+echo "Bajando los cambios del repositorio" && 
+git pull
 # Modificacion del script
 git add subida.sh &&
 git nota "Script de subida de archivos" &&
