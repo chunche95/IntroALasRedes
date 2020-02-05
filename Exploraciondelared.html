@@ -8116,7 +8116,13 @@ Switch #
         <p>
             <strong>Seguridad adicional de contraseñas.</strong> <br>
             Las contraseñas seguras resultan útiles en la medida en que sean secretas. Se pueden tomar diversas medidas para asegurar que las contraseñas sigan siendo secretas. Mediante el comando de configuración global <code>service password-encryption</code>,  
-            se evita que las personas no autorizadas vean las contraseñas como texto no cifrado en el archivo de configuración, como se muestra en la ilustración. Este comando provoca el cifrado de todas las contraseñas sin cifrar.
+            se evita que las personas no autorizadas vean las contraseñas como texto no cifrado en el archivo de configuración, como se muestra en la ilustración. Este comando provoca el cifrado de todas las contraseñas sin cifrar. <br>
+            Además, para asegurar que todas las contraseñas configuradas tengan una longitud mínima específica, utilice el comando security passwords min-length del modo de configuración global.
+            Otra forma en la que los piratas informáticos descubren las contraseñas es simplemente mediante ataques de fuerza bruta, es decir, probando varias contraseñas hasta que una funcione. Es posible evitar este tipo de ataques si se bloquean los intentos de 
+            inicio de sesión en el dispositivo cuando se produce una determinada cantidad de errores en un lapso específico. <br>
+            <code>Router(config)# login block-for 120 attempts 3 within 60</code> <br>
+            Este comando bloquea los intentos de inicio de sesión durante 120 segundos si hay tres intentos de inicio de sesión fallidos en 60 segundos. <br>
+            (falta a partir de EXEC TIMEOUT)
         </p>
         <hr><hr>
         <section>
