@@ -8101,11 +8101,22 @@ Switch #
             <ul>
                 <li>Utilice una longitud de contraseña de, al menos, ocho caracteres y preferentemente de diez caracteres o más. Cuanto más larga sea, mejor será la contraseña.</li>
                 <li>Cree contraseñas completas. Incluya una cobinación de letras mayúsculas y minúsculas, números, símbolos y espacios, se están permitidos.</li>
-                <li>Evite las contraseñas basadas en la repetición, las palabras comunes de diccionario, las secuencias de letras o números, los nombres de usuario, los nombres de parientes o mascotas, información biográfica (como fechas de nacimiento), números de identificación, nombres de antepasos u otra información fácilmente identificable. </li>
+                <li>Evite las contraseñas basadas en la repetición, las palabras comunes de diccionario, las secuencias de letras o números, los nombres de usuario, los nombres de parientes o mascotas, información biográfica (como fechas de nacimiento), números de identificación, 
+                    nombres de antepasos u otra información fácilmente identificable. </li>
                 <li>Escriba una contraseña con errores de ortografía a propósito. Por ejemplo, Smith = Smyth = 5mYth o Seguridad = 5egur1dad.</li>
                 <li>Cambie las contraseñas con frecuencia. Si se pone en riesgo una contraseña sin saberlo,se limitan las oportunidades para que el atacante la utilice.</li>
                 <li>No anote las contraseñas no las deje en lugares obvios, por ejemplo, en el escritorio o el monitor.</li>
             </ul>
+            En la ilustración, se muestran ejemplos de contraseñas seguras y no seguras. <br>
+            <img src="images/contraseñas.PNG" alt=""> <br>
+            En los routers Cisco, se ignoran los espacios iniciales para las contraseñas, pero no ocurre lo mismo con los espacios que le siguen al primer carácter. Por lo tanto, un método para crear una contraseña segura es utilizar la barra espaciadora y crear una frase 
+            compuesta de muchas palabras. Esto se conoce como frase de contraseña. Una frase de contraseña suele ser más fácil de recordar que una contraseña simple. Además, es más larga y más difícil de descifrar.
+        </p>
+        <h2>Prácticas de seguridad básica</h2>
+        <p>
+            <strong>Seguridad adicional de contraseñas.</strong> <br>
+            Las contraseñas seguras resultan útiles en la medida en que sean secretas. Se pueden tomar diversas medidas para asegurar que las contraseñas sigan siendo secretas. Mediante el comando de configuración global <code>service password-encryption</code>,  
+            se evita que las personas no autorizadas vean las contraseñas como texto no cifrado en el archivo de configuración, como se muestra en la ilustración. Este comando provoca el cifrado de todas las contraseñas sin cifrar.
         </p>
         <hr><hr>
         <section>
