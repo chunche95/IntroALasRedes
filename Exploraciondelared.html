@@ -8152,7 +8152,46 @@ Switch #
         </p>
         <h2>Práctica de laboratorio. Acceso a dispositivos de red mediante SSH</h2>
         <p>
-            
+            <a href="documentos/11.2.4.6 Lab - Accessing Network Devices with SSH.pdf" target="_blank" rel="noopener noreferrer">Práctica de laboratorio. Acceso a dispositivos de red mediante SSH</a>
+        </p>
+        <h2>Práctica de laboratorio: Examinación de Telnet y SSH en Wireshark</h2>
+        <p>
+            <a href="documentos/11.2.4.7 Lab - Examining Telnet and SSH in Wireshark.pdf" target="_blank" rel="noopener noreferrer">Examinando Telnet y SSH con Wireshark</a>
+        </p>
+        <h2>Práctica de laboratorio. Protección de dispositivos de red</h2>
+        <p>
+            <a href="documentos/11.2.4.8 Lab - Securing Network Devices.pdf" target="_blank" rel="noopener noreferrer">Protección de dispositivos de red</a>
+        </p>
+        <h2>Interpretación de los resultados del comando <code>ping</code></h2>
+        <p>
+            El comando <code>ping</code> es una manera eficaz de probar la conectividad. El comando ping usa el protocolo de mensajes de control de Internet (ICMP) y verifica la conectividad de la capa 3. 
+            El comando ping no siempre identifica la naturaleza de un problema, pero puede contribuir su origen, un primer paso importante en la resolución de problemas de una falla de red. 
+            <h3>Indicadores de ping IOS</h3>
+            <p>
+                Un ping emitido desde el IOS tiene como resultado una de varias indicaciones para cada solicitud de eco ICMP que se envió. Los indicadores más comunes son los siguientes: 
+                <ul>
+                    <li>
+                        <strong>!</strong>- indica la recepción de un mensaje de respuesta de eco ICMP, como se muestra en la imagen. <br>
+                        <img src="images/indicadores de ping IOS.PNG" alt="">
+                    </li>
+                    <li>
+                        <strong>.</strong>- indica que se agotó el tiempo mientras se esperaba un mensaje de respuesta de eco ICMP.
+                    </li>
+                    <li>
+                        <strong>U</strong>- Se recibió un mensaje ICMP inalcanzable.
+                    </li>
+                </ul>
+                El "." (punto) puede señalar que se produjo un problema de conectividad en alguna parte de la ruta. También puede indicar que un router de la ruta no contaba con una ruta hacia el destino y 
+                no envió un mensaje de ICMP de destino inalcanzable. También puede señalar que el ping fue bloqueado por la seguridad del dispositivo. Cuando se envía un ping en una LAN Ethernet, es habitual 
+                que se agote el tiempo de espera del primer pedido de eco si se requiere el proceso ARP. <br>
+                La "U" indica que un router a lo largo de la ruta respondió con un mensaje ICMP inalcanzable. O bien el router no contaba con una ruta hacia la dirección de destino o se bloqueó la solicitud de ping. 
+            </p>
+            <h3>Prueba de loopback</h3>
+            <p>
+                El comando ping también se puede utilizar para verificar la configuración de IP interna en el host local al hacer ping a la dirección de loopback, 127.0.0.1, como se muestra en la figura. <br>
+                <img src="images/loopback.PNG" alt="">
+                Esto verifica que el stack de protocolos funcione correctamente desde la capa de red hasta la capa física y viceversa, sin colocar realmente una señal en los medios.
+            </p>
         </p>
         <hr><hr>
         <section>
