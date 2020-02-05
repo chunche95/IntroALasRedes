@@ -8114,6 +8114,7 @@ Switch #
         </p>
         <h2>Prácticas de seguridad básica</h2>
         <p>
+            <img src="images/service password.PNG" alt="">
             <strong>Seguridad adicional de contraseñas.</strong> <br>
             Las contraseñas seguras resultan útiles en la medida en que sean secretas. Se pueden tomar diversas medidas para asegurar que las contraseñas sigan siendo secretas. Mediante el comando de configuración global <code>service password-encryption</code>,  
             se evita que las personas no autorizadas vean las contraseñas como texto no cifrado en el archivo de configuración, como se muestra en la ilustración. Este comando provoca el cifrado de todas las contraseñas sin cifrar. <br>
@@ -8122,7 +8123,27 @@ Switch #
             inicio de sesión en el dispositivo cuando se produce una determinada cantidad de errores en un lapso específico. <br>
             <code>Router(config)# login block-for 120 attempts 3 within 60</code> <br>
             Este comando bloquea los intentos de inicio de sesión durante 120 segundos si hay tres intentos de inicio de sesión fallidos en 60 segundos. <br>
-            (falta a partir de EXEC TIMEOUT)
+           <strong>Exec Timeout</strong> <br>
+           Otra recomendación es configurar tiempos de espera de ejecución. Al configurar el tiempo de espera de ejecución, le ordena al dispositivo Cisco que desconecte automáticamente a los usuarios en una línea después de que hayan estado inactivos durante el valor de 
+           tiempo de espera de ejecución. Los tiempos de espera de ejecución se pueden configurar en los puertos de consola, VTY y auxiliares con el comando <code>exec-timeout</code> en el modo de configuración de línea. <br>
+           <blockquote>
+               <i>Router(config)#</i>line vty 0 4 <br>
+               <i>Router(config-line)#</i>exec-timeout 10 
+           </blockquote>
+        </p>
+        <h2>Activar SHH</h2>
+        <p>
+            Telnet no es seguro. Los datos contenidos en un paquete Telnet se transmiten sin cifrar. Por este motivo, se recomienda especialmente habilitar SSH en los dispositivos para obtener un método de acceso remoto seguro. Es posible configurar un dispositivo Cisco para que admita SSH mediante cuatro pasos, como se muestra en la ilustración.
+            <ul>
+                <ol>Paso 1. Asegúrese de que el router tenga un nombre de host exclusivo y configure el nombre de dominio IP de la red mediante el comando ip domain-name en el modo de configuración global.</ol>
+                <ol>Paso 2. Se deben generar claves secretas unidireccionales para que un router cifre el tráfico SSH. Para generar la clave SSH, utilice el comando crypto key generate rsa general-keys en el modo de configuración global. El significado específico de las diferentes partes de este comando es complejo y excede el ámbito de este curso. 
+                    Observe que el módulo determina el tamaño de la clave y se puede configurar de 360 a 2048 bits. Cuanto más grande es el módulo, más segura es la clave, pero más se tarda en cifrar y descifrar la información. La longitud mínima de módulo recomendada es de 1024 bits.
+                </ol>
+                <ol>Paso 3. Cree una entrada de nombre de usuario en la base de datos local mediante el comando de configuración global username.</ol>
+                <ol>Paso 4. Habilite las sesiones SSH entrantes mediante los comandos de línea vty login local y transport input ssh.</ol>
+            </ul>
+            Ahora se puede acceder remotamente al router solo con SSH. <br>
+            <img src="images/SSH.PNG" alt="">
         </p>
         <hr><hr>
         <section>
