@@ -8284,6 +8284,68 @@ Switch #
             </div>
         </p>
         <h2>Vídeo de demostración: El comando show version</h2>
+        <p>
+            <video src="videos/show-version-command.mp4" controls></video>
+        </p>
+        <h2>Packet Tracer: Uso de los comandos show</h2>
+        <p>
+            <a href="documentos/11.3.3.3 Packet Tracer - Using Show Commands.pdf" target="_blank" rel="noopener noreferrer">PT: Uso de los comandos show (Instrucciones)</a> <br>
+            <a href="documentos/11.3.3.3 Packet Tracer - Using Show Commands.pka" target="_blank" rel="noopener noreferrer">PT: Uso de los comandos show (pka)</a>
+        </p>
+        <h2>El comando ipconfig</h2>
+        <p>
+            Como se muestra en la figura siguiente, la dirección IP del gateway predeterminado de un host se puede ver emitiendo el comando <strong>ipconfig</strong> en la línea de comandos de una computadora Windows. <br>
+            <img src="images/ipconfig.PNG" alt=""> <br>
+            Como se muestra en la figura posterior, utilice el comando <code> ipconfig /all</code> para ver la dirección MAC junto con varios detalles relacionados con la asignación de direcciones de capa 3 del dispositivo. <br>
+            <img src="images/ipconfig -all.PNG" alt=""> <br>
+            El servicio del cliente DNS en PC con Windows también optimiza el rendimiento de la resolución de nombres DNS al almacenar en la memoria los nombres resueltos previamente. 
+            Como se muestra en la figura, el comando <b> ipconfig /displaydns</b> muestra todas las entradas DNS en caché en un sistema informático Windows. <br>
+            <img src="images/ipconfig -displaydns.PNG" alt=""> <br>
+        </p>
+        <h2>El comando arp</h2>
+        <p>
+            El comando arp se ejecuta desde el símbolo del sistema de Windows, como se muestra en la figura. El comando <b>arp –a</b> enumera todos los dispositivos que se encuentran actualmente en la caché ARP del host, 
+            lo cual incluye la dirección IPv4, la dirección física y el tipo de direccionamiento (estático/dinámico) para cada dispositivo. <br>
+            Se puede borrar la caché mediante el comando <code> arp -d*</code> en caso de que el administrador de red desee volver a llenarla con información  actualizada. <br>
+            <b>Nota:</b> La caché de ARP solo contiene información de los dispositivos a los que se accedió recientemente. Para asegurar que la caché ARP esté cargada, haga ping a un dispositivo de manera tal que tenga una entrada en la tabla ARP. <br>
+            <img src="images/nociones sobre los nodos de la red.PNG" alt="">
+        </p>
+        <h2>El comando show cdp neighbors</h2>
+        <p>
+            Existen otros comandos IOS que son útiles. Por ejemplo, Cisco Discovery Protocol (CDP) es un protocolo exclusivo de Cisco que se ejecuta en la capa de enlace de datos. Debido a que el protocolo CDP funciona en la capa de enlace de datos, 
+            es posible que dos o más dispositivos de red Cisco (como routers que admiten distintos protocolos de la capa de red) obtengan información de los demás incluso si no hay conectividad de capa 3. <br>
+            Examine el resultado de los comandos show cdp neighbors de la figura 1, con la topología de la figura 2. Observe que R3 ha recopilado información detallada acerca de R2 y el switch conectado a la interfaz Fast Ethernet de R3. <br>
+            Cuando arranca un dispositivo Cisco, el CDP se inicia de manera predeterminada. CDP descubre automáticamente los dispositivos Cisco vecinos que ejecutan ese protocolo, independientemente de los protocolos o los conjuntos de aplicaciones de capa 3 en ejecución. 
+            El CDP intercambia información del hardware y software del dispositivo con sus vecinos CDP conectados directamente. <br>
+            <div>
+                <video src="videos/anlisis-de-vecinos-CDP.mp4" autoplay muted loop></video> <br>
+                <img src="images/análisis de vecinos CDP.PNG" alt="">
+            </div>
+            El CDP brinda la siguiente información acerca de cada dispositivo vecino de CDP:
+            <ul>
+                <li>
+                    <b>Identificadores de dispositivos:</b> por ejemplo, el nombre host configurado de un switch.
+                </li>
+                <li>
+                    <b>Lista de direcciones:</b> hasta una dirección de capa de red para cada protocolo admitido.
+                </li>
+                <li>
+                    <b>Identificador de puerto:</b> el nombre del puerto local y remoto en forma de una cadena de caracteres ASCII, como por ejemplo, FatsEthernet 0/0.
+                </li>
+                <li>
+                    <b>Lista de capacidades:</b> por ejemplo, si el dispositivo es un router o un switch.
+                </li>
+                <li>
+                    <b>Plataforma:</b> plataforma de hardware del dispositivo, por ejemplo, un router Cisco serie 1841.
+                </li>
+            </ul>
+            El comando <b>show cdp neighbors detail</b> muestra la dirección IP de un dispositivo vecino. CDP revelará la dirección IP del vecino, independientemente de que se pueda hacer ping en ese vecino o no. Este comando es muy útil cuando dos routers Cisco no pueden enrutarse 
+            a través de su enlace de datos compartido. El comando <i>show cdp neighbors detail</i> lo ayudará a determinar si uno de los vecinos de CDP tiene un error de configuración IP. <br>
+            Pese a que CDP es útil, también puede ser un riesgo de seguridad, ya que puede proporcionar a los atacantes información útil sobre la infraestructura de la red. Por ejemplo, de manera predeterminada muchas versiones de IOS envían anuncios de CDP por todos los puertos habilitados. 
+            Sin embargo, las prácticas recomendadas sugieren que CDP debe habilitarse solamente en las interfaces que se conectan a otros dispositivos Cisco de infraestructura. Los anuncios de CDP se deben deshabilitar en los puertos para el usuario. <br>
+            Debido a que algunas versiones de IOS envían publicaciones CDP de manera predeterminada, es importante que sepa cómo deshabilitar el CDP. <br>
+            Para desactivar CDP globalmente, utilice el comando de configuración <i><b>global no cdp run</b></i>. Para desactivar CDP en una interfaz, utilice el comando de <code>interfaz no cdp enable</code>.
+        </p>
         <hr><hr>
         <section>
             <div>
