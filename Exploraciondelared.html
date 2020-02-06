@@ -8193,6 +8193,34 @@ Switch #
                 Esto verifica que el stack de protocolos funcione correctamente desde la capa de red hasta la capa física y viceversa, sin colocar realmente una señal en los medios.
             </p>
         </p>
+        <h2>Ping extendido</h2>
+        <p>
+            Cisco IOS ofrece un modo “extendido” del comando ping. Se ingresa a este modo escribiendo ping en el modo EXEC privilegiado, sin una dirección IP de destino. Como se muestra en la figura, 
+            a continuación se presenta una serie de peticiones de entrada. Al presionar Intro se aceptan los valores predeterminados indicados. El ejemplo muestra cómo forzar que la dirección de origen 
+            para un ping sea 10.1.1.1 (observe el R2 en la ilustración); la dirección de origen para un ping estándar sería 209.165.200.226. De esta manera, el administrador de red puede verificar desde 
+            el R2 que el R1 tenga la ruta a 10.1.1.0/24. <br>
+            Nota: El comando ping ipv6 se utiliza para pings extendidos IPv6. <br>
+            <img src="images/ping extendido.PNG" alt="">
+        </p>
+        <h2>Línea de base de red</h2>
+        <p>
+            Una de las herramientas más efectivas para controlar y resolver problemas relacionados con el rendimiento de la red es establecer una línea de base de red. La creación de una línea de base efectiva 
+            del rendimiento de la red se logra con el tiempo. La medición del rendimiento en distintos momentos (figuras 1 y 2) y con distintas cargas ayuda a tener una idea más precisa del rendimiento general de la red.
+            <div>
+                <img src="images/rendimiento de la red.PNG" alt=""> <p>Fig.1</p>
+                <br>
+                <img src="images/rendimiento de la red en diferente momento.PNG" alt=""> <p>Fig.2</p>
+            </div>
+            El resultado derivado de los comandos network aporta datos a la línea de base de red. <br>
+            Un método para iniciar una línea de base es copiar y pegar en un archivo de texto los resultados de los comandos ping, trace u otros comandos relevantes. Estos archivos de texto pueden tener grabada
+            la fecha y la hora y pueden guardarse en un archivo para su posterior recuperación y comparación (figura 3). Entre los elementos que se deben considerar se encuentran los mensajes de error y los tiempos 
+            de respuesta de host a host. Si se observa un aumento considerable de los tiempos de respuesta, es posible que exista un problema de latencia para considerar. <br>
+            <div><img src="images/comparacion de valores de línea de base de red.PNG" alt=""> <p>Fig.3</p></div>
+            Las redes corporativas deben tener líneas de base extensas; más extensas de lo que podemos describir en este curso. Existen herramientas de software a nivel profesional para almacenar y mantener 
+            información de línea de base. En este curso, se cubren algunas técnicas básicas y se analiza el propósito de las líneas de base. <br>
+            Las prácticas recomendadas para los procesos de línea de base se pueden encontrar <a href="https://www.cisco.com/c/en/us/support/docs/availability/high-availability/15112-HAS-baseline.html" target="_blank" rel="noopener noreferrer">aquí</a>. 
+        </p>
+        11.3.2.1
         <hr><hr>
         <section>
             <div>
