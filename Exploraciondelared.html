@@ -8346,6 +8346,25 @@ Switch #
             Debido a que algunas versiones de IOS envían publicaciones CDP de manera predeterminada, es importante que sepa cómo deshabilitar el CDP. <br>
             Para desactivar CDP globalmente, utilice el comando de configuración <i><b>global no cdp run</b></i>. Para desactivar CDP en una interfaz, utilice el comando de <code>interfaz no cdp enable</code>.
         </p>
+        <h2>Comando show ip interface brief</h2>
+        <p>
+            De la misma manera que los comandos y las utilidades se utilizan para verificar la configuración de un host, los comandos se pueden utilizar para verificar las interfaces de los dispositivos intermediarios. Cisco IOS proporciona comandos para verificar el funcionamiento de interfaces de router y switch.
+            <h3>Verificación de interfaces del router</h3>
+            <p>
+                Uno de los comandos más utilizados es el comando <code>show ip interface brief</code>. Este comando proporciona un resultado más abreviado que el comando <code>show ip interface</code>. Proporciona un resumen de la información clave para todas las interfaces de red de un router.
+                En la figura, se muestra la topología que se utiliza en este ejemplo. <br>
+                <img src="images/prueba de interfaz ataque de DoS.PNG" alt=""> <br>
+                En la figura, R1. El resultado de show ip interface brief muestra todas las interfaces del router, la dirección IP asignada a cada interfaz (si las hubiera) y el estado de funcionamiento de la interfaz. <br>
+                <img src="images/prueba de interfaz R1.PNG" alt="">
+            </p>
+            <h3>Verificación de las interfaces del switch</h3>
+            <p>
+               En la figura, S1. El comando <code>show ip interface brief</code> también se puede utilizar para verificar el estado de las interfaces del switch. La interfaz VLAN1 recibió la dirección IPv4 192.168.254.250 y está habilitada y en funcionamiento. <br>
+               <img src="images/prueba de interfaz S1.PNG" alt=""> <br>
+               El resultado también muestra que la interfaz FastEthernet0/1 está inactiva. Esto indica que no hay ningún dispositivo conectado a la interfaz o que el dispositivo que está conectado tiene una interfaz de red que no funciona. <br>
+               Por otro lado, el resultado muestra que las interfaces FastEthernet0/2 y FastEthernet0/3 funcionan. Esto lo indica el valor up en las columnas Status y Protocol. 
+            </p>
+        </p>
         <hr><hr>
         <section>
             <div>
