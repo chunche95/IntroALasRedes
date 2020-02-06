@@ -8230,6 +8230,27 @@ Switch #
             <img src="images/seguimiento de la ruta del host 1al 2.PNG" alt="">
         </p>
         <h2>Comando extend traceroute</h2>
+        <p>
+            Diseñado como variante del comando traceroute, el comando traceroute extendido permite que el administrador ajuste los parámetros relacionados con el funcionamiento del comando. Esto es útil para solucionar problemas de bucles de routing, determinar el router de siguiente salto, o ayudar a determinar 
+            dónde los paquetes son descartados por un router o denegados por un firewall. Si bien el comando ping extendido se puede utilizar para determinar el tipo de problema de conectividad, el comando traceroute extendido es útil para localizar el problema. <br>
+            Al igual que con ping, la implementación de Windows de traceroute (tracert) envía solicitudes echo ICMP. A diferencia de ping, el primer paquete IPv4 tiene un valor TTL de uno. Los routers disminuyen los valores TTL por uno antes de reenviar el paquete. Si el valor TTL disminuye a cero, el router 
+            descarta el paquete y envía un mensaje de tiempo superado de ICMP a la fuente. Cada vez que la fuente de traceroute recibe un mensaje de tiempo superado de ICMP, se muestra la dirección IPv4 de origen del mensaje de tiempo superado de ICMP, aumenta el TTL por uno y envía otra solicitud echo ICMP. <br>
+            A medida que se envía una nueva solicitud echo ICMP, llega a un router más que la última solicitud echo antes de recibir otro mensaje de tiempo superado de ICMP. <br>
+            Traceroute utiliza los mensajes de tiempo superado de ICMP devueltos para mostrar una lista de routers que los paquetes de IPv4 atraviesan en su camino hacia al destino final, la dirección de destino IPv4 de traceroute. Cuando el paquete llega al destino final, la fuente devuelve una respuesta de eco ICMP. <br>
+            Cisco IOS utiliza un enfoque ligeramente diferente con traceroute, que no utiliza solicitudes echo ICMP. En cambio, IOS envía una secuencia de datagramas UDP, cada una con valores incrementales TTL y los números de puerto de destino. El número de puerto es un número de puerto no válido 
+            (Cisco utiliza un predeterminado de 33434) y se incrementa junto con el TTL. Al igual que con la implementación para Windows, cuando el router disminuye el TTL a cero, envía un mensaje de tiempo superado de ICMP a la fuente. Esto informa a la fuente la dirección IPv4 de cada router que aparece en el recorrido. <br>
+            Cuando el paquete llega al destino final, dado que estos datagramas intentaron acceder a un puerto no válido en el host de destino, el host responde con un mensaje ICMP tipo 3, código 3 que indica que el puerto fue inalcanzable. Este evento indica a la fuente de traceroute que el programa traceroute ha llegado a destino. <br>
+            Nota: El usuario puede interrumpir el rastreo mediante la secuencia de escape Ctrl+Shift+6 . En Windows, la secuencia de escape se invoca presionando Ctrl+C. <br>
+            Para utilizar el comando traceroute extendido, solo debe escribir traceroute, sin introducir ningún parámetro, y presionar ENTER (Introducir). IOS lo guiará en las opciones de comando presentando varios indicadores relacionados con la configuración de todos los parámetros diferentes. 
+            En la Figura 1, se muestran las opciones de traceroute extendido y sus respectivas descripciones. <br>
+            <div><img src="images/opciones de traceroute extendido.PNG" alt=""><p>Fig.1</p></div>
+            Aunque el comando tracert de Windows permite introducir varios parámetros, no es guiado y se debe ejecutar a través de opciones en la línea de comandos. En la Figura 2, se muestran las opciones disponibles para tracert en Windows. <br>
+            Nota: Traceroute en IPv6 tiene implementaciones similares. La única diferencia en IPv6 es que el nombre del campo de TTL fue cambiado a Hop Limit (Límite de saltos). El router envía los mensajes de tiempo superado de ICMPv6 cuando este campo se reduce a cero. <br>
+            Nota: Los sistemas operativos Unix/Linux utilizan un enfoque similar al Cisco IOS. <br>
+            <div>
+                <img src="images/opciones de tracert de Windows.PNG" alt=""><p>Fig.2</p>
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
