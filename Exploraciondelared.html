@@ -8379,9 +8379,10 @@ Switch #
             El comando debug de IOS permite que el administrador muestre estos mensajes en tiempo real para su análisis. Es una herramienta muy importante para supervisar eventos en un dispositivo Cisco IOS. <br>
             Todos los comandos debug se introducen en el modo EXEC privilegiado. Cisco IOS permite limitar el resultado de debug para incluir solo la característica o la subcaracterística relevante. Esto es importante porque se le asigna 
             alta prioridad al resultado de depuración en el proceso de CPU y puede hacer que el sistema no se pueda utilizar. Por este motivo, use los comandos debug solo para solucionar problemas específicos. Para supervisar el estado de 
-            mensajes de ICMP en un router Cisco, utilice debug ip icmp, como se muestra en la ilustración. <br>
+            mensajes de ICMP en un router Cisco, utilice <code> debug ip icmp</code>, como se muestra en la ilustración. <br>
+            <img src="images/resultado del comando debug ip icmp.PNG" alt=""> <br>
             Para acceder a una breve descripción de todas las opciones del comando de depuración, utilice el comando <code>debug ?</code> en modo EXEC con privilegios, en la línea de comandos. <br>
-            Para desactivar una característica de depuración específica, agregue la palabra clave no delante del comando debug:
+            Para desactivar una característica de depuración específica, agregue la palabra clave <b><i> no </i></b> delante del comando debug:
             <blockquote>
                 <p>Router# no debug ip icmp </p> 
             </blockquote>
@@ -8397,6 +8398,22 @@ Switch #
                     Router# undebug all
                 </code>
             </blockquote>
+            Algunos comandos debug, como debug all y debug ip packet, generan una importante cantidad de resultados y usan una gran porción de recursos del sistema. 
+            El router estaría tan ocupado mostrando mensajes de depuración que no tendría suficiente potencia de procesamiento para realizar las funciones de red, 
+            o incluso escuchar los comandos para desactivar la depuración. Por este motivo, no se recomienda y se debe evitar utilizar estas opciones de comando.
+        </p>
+        <h2>Comando terminal monitor</h2>
+        <p>
+            Las conexiones para otorgar acceso a la interfaz de línea de comandos de IOS se pueden establecer de forma local o remota. <br>
+            Las conexiones locales requieren acceso físico al router o switch; por lo tanto, se requiere una conexión de cable. Esta conexión se establece generalmente mediante la conexión 
+            de una PC al puerto de consola del router o del switch mediante un cable de sustitución. En este curso, nos referimos a una conexión local como conexión de consola. <br>
+            Las conexiones remotas se establecen a través de la red; por lo tanto, requieren un protocolo de red como IP. No se requiere acceso físico directo para las sesiones remotas. 
+            SSH y Telnet son dos protocolos de conexión comunes utilizados para las sesiones remotas. En este curso, usamos el protocolo cuando hablamos de una conexión remota específica, como una conexión Telnet o una conexión SSH. <br>
+            Aunque los mensajes de registro de IOS se envían a la consola de manera predeterminada, estos mismos mensajes de registro no se envían a las líneas virtuales de manera predeterminada. 
+            Debido a que los mensajes de depuración son mensajes de registro, este comportamiento evita que los mensajes se muestren en las líneas VTY. <br>
+            Para mostrar los mensajes de registro en una terminal (consola virtual), utilice el comando modo EXEC privilegiado terminal monitor. <br>
+            Para detener los mensajes de registro en una terminal, utilice el comando modo EXEC privilegiado terminal no monitor. <br>
+            Use el verificador de sintaxis para practicar, con terminal monitor y debug para solucionar problemas.  <br>
         </p>
         <hr><hr>
         <section>
