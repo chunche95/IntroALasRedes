@@ -8434,6 +8434,25 @@ Switch #
             Es probable que el gerente tenga que escalar el problema nuevamente ya que podría necesitar la aprobación del departamento de finanzas antes de comprar un nuevo módulo. <br>
             La política de la empresa debe indicar claramente cuándo y cómo un técnico debe escalar un problema. 
         </p>
+        <h2>Verificación y supervisión de la solución</h2>
+        <p>
+            Cisco IOS incluye herramientas eficaces para la solución de problemas y la verificación. Cuando se ha solucionado el problema y se ha implementado la solución, es importante verificar el funcionamiento 
+            del sistema. Las herramientas de verificación incluyen los comandos <code>ping, traceroute y show</code>. El comando <b>ping</b> se utiliza para verificar si la conectividad de la red es satisfactoria. <br>
+            Si un ping se completa con éxito, como se muestra en la figura 1, puede darse por seguro que los paquetes están llegando desde el origen hasta el destino. <br>
+            <b>Nota:</b> Un ping fallido no suele proporcionar suficiente información para llegar a una conclusión. Puede ser el resultado de una ACL o de un firewall que bloqueaba los paquetes ICMP, 
+            o bien el dispositivo de destino puede estar configurado para no responder los pings. Un ping fallido generalmente indica que se requiere investigación adicional. <br>
+            El comando <b>traceroute</b>, como se muestra en la figura 2, es útil para mostrar la ruta que los paquetes utilizan para llegar a un destino. Aunque el resultado del comando ping muestra si un paquete llegó 
+            al destino, el resultado del comando traceroute muestra qué ruta tomó para llegar allí, o dónde el paquete fue interrumpido a lo largo de la ruta. <br>
+            Los comandos <b>show</b> de Cisco IOS son algunas de las herramientas de corrección y verificación más útiles para solucionar problemas. Al aprovechar una gran variedad de opciones y de subopciones, 
+            el comando show puede utilizarse para filtrar y mostrar información sobre prácticamente cualquier aspecto específico de IOS. <br>
+            En la figura 3, se muestra el resultado del comando <code> show ip interface brief</code>. Observe que las dos interfaces configuradas con las direcciones IPv4 están en “up” y “up”. 
+            Estas interfaces pueden enviar y recibir tráfico. Las otras tres interfaces no tienen ningún direccionamiento IPv4 y están desactivadas. 
+            <div>
+                <img src="images/" alt=""> <p>Fig.1</p>
+                <img src="images/" alt=""> <p>Fig.2</p>
+                <img src="images/" alt=""> <p>Fig.3</p>
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
