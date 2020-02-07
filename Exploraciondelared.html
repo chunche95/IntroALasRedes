@@ -8375,10 +8375,28 @@ Switch #
         </p>
         <h2>Comando debug</h2>
         <p>
-            Los procesos, protocolos, mecanismos y eventos de IOS generan mensajes para comunicar su estado. Estos mensajes pueden proporcionar información valiosa cuando hay que solucionar problemas o verificar las operaciones del sistema. El comando debug de IOS permite que el administrador muestre estos mensajes en tiempo real para su análisis. Es una herramienta muy importante para supervisar eventos en un dispositivo Cisco IOS.
-            Todos los comandos debug se introducen en el modo EXEC privilegiado. Cisco IOS permite limitar el resultado de debug para incluir solo la característica o la subcaracterística relevante. Esto es importante porque se le asigna alta prioridad al resultado de depuración en el proceso de CPU y puede hacer que el sistema no se pueda utilizar. Por este motivo, use los comandos debug solo para solucionar problemas específicos. Para supervisar el estado de mensajes de ICMP en un router Cisco, utilice debug ip icmp, como se muestra en la ilustración.            
-            Para acceder a una breve descripción de todas las opciones del comando de depuración, utilice el comando debug ? en modo EXEC con privilegios, en la línea de comandos.
+            Los procesos, protocolos, mecanismos y eventos de IOS generan mensajes para comunicar su estado. Estos mensajes pueden proporcionar información valiosa cuando hay que solucionar problemas o verificar las operaciones del sistema. 
+            El comando debug de IOS permite que el administrador muestre estos mensajes en tiempo real para su análisis. Es una herramienta muy importante para supervisar eventos en un dispositivo Cisco IOS. <br>
+            Todos los comandos debug se introducen en el modo EXEC privilegiado. Cisco IOS permite limitar el resultado de debug para incluir solo la característica o la subcaracterística relevante. Esto es importante porque se le asigna 
+            alta prioridad al resultado de depuración en el proceso de CPU y puede hacer que el sistema no se pueda utilizar. Por este motivo, use los comandos debug solo para solucionar problemas específicos. Para supervisar el estado de 
+            mensajes de ICMP en un router Cisco, utilice debug ip icmp, como se muestra en la ilustración. <br>
+            Para acceder a una breve descripción de todas las opciones del comando de depuración, utilice el comando <code>debug ?</code> en modo EXEC con privilegios, en la línea de comandos. <br>
             Para desactivar una característica de depuración específica, agregue la palabra clave no delante del comando debug:
+            <blockquote>
+                <p>Router# no debug ip icmp </p> 
+            </blockquote>
+            Alternativamente, ouedo ingresar la forma <i>undebug</i> del comando en modo EXEC privilegiado:
+            <blockquote>
+                <code>
+                    Router# undebug ip icmp
+                </code>
+            </blockquote>
+            Para desactivar todos los comandos debug activos de inmediato, utilice el comando <code>undebug all</code>. 
+            <blockquote>
+                <code>
+                    Router# undebug all
+                </code>
+            </blockquote>
         </p>
         <hr><hr>
         <section>
