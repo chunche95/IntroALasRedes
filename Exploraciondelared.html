@@ -8518,6 +8518,21 @@ Switch #
             En la figura siguiente, se muestra que R2 es la ruta predeterminada para R1, mientras que el resultado de los comandos show ip route muestra que el gateway predeterminado se configuró con una ruta predeterminada de 10.1.0.2.
             <img src="images/verifique la ruta predeterminada del router.PNG" alt="">
         </p>
+        <h2>Solución de problemas de DNS</h2>
+        <p>
+            El Servicio de Nombres de Dominio (DNS) es un servicio automatizado que hace coincidir los nombres, como www.cisco.com, con la dirección IP. Aunque la resolución de DNS no es fundamental para la comunicación del dispositivo, es muy importante para el usuario final.
+            Es común que los usuarios relacionen erróneamente el funcionamiento de un enlace de Internet con la disponibilidad del servicio DNS. Las quejas de los usuarios como “la red está inactiva” o “Internet está inactiva” se deben a menudo a un servidor DNS al que no se puede acceder. Aunque los servicios de routing de paquetes y cualquier 
+            otro tipo de servicios de red estén todavía operativos, los errores de DNS generalmente llevan al usuario a la conclusión incorrecta. Si un usuario escribe un nombre de dominio como www.cisco.com en un navegador web y no se puede acceder al servidor DNS, el nombre no será traducido a una dirección IP y la página web no se mostrará. <br>
+            Las direcciones del servidor DNS pueden asignarse de manera manual o automática. Los administradores de redes a menudo son responsables de asignar manualmente las direcciones del servidor DNS en servidores y otros dispositivos, mientras que el DHCP se usa para asignar automáticamente las direcciones del servidor DNS a los clientes. <br>
+            Si bien es común que las empresas y las organizaciones administren sus propios servidores DNS, cualquier servidor DNS accesible puede utilizarse para solucionar nombres. Los usuarios de oficinas pequeñas y oficinas en el hogar con frecuencia dependen del servidor DNS que mantiene su ISP para la resolución de nombres. 
+            Los servidores DNS mantenidos por un ISP son asignados a los clientes de SOHO mediante DHCP. Por ejemplo, Google mantiene un servidor DNS público que puede ser utilizado por cualquier persona y es muy útil para realizar pruebas. La dirección IPv4 del servidor DNS público de Google es 8.8.8.8 y 2001:4860:4860::8888 para su dirección IPv6 DNS. <br>
+            Use el comando ipconfig /all, como se muestra en la figura 1, para verificar qué servidor DNS utiliza la computadora con Windows. <br>
+            El comando nslookup es otra herramienta útil para la solución de problemas de DNS para PC. Con nslookup un usuario puede configurar manualmente las consultas de DNS y analizar la respuesta de DNS. En la figura 2, se muestra el resultado de nslookup al realizar una consulta para www.cisco.com. <br>
+            <div>
+                <img src="images/informacion del servidor DNS en una PC.PNG" alt=""> <p>Fig.1</p>
+                <img src="images/comando Nslookup.PNG" alt=""> <p>Fig.2</p>
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
