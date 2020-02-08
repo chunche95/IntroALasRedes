@@ -8469,6 +8469,21 @@ Switch #
             dispositivo que realiza la negociación automática con otro que estña configurado manualmente en dúplex completo. Si bien no es común, la discordancia de dúplex también  puede ocurrir debido a la falla de la negociación automática. <br>
             <img src="images/autonegociación dúplex completo satisfactoria.PNG" alt="">
         </p>
+        <h2>Incompatibilidad de dúplex</h2>
+        <p>
+            Las discordancias de dúplex pueden ser difíciles de resolver mientras se produce la comunicación entre dispositivos. Es posible que no sean evidentes, incluso si se usan herramientas como ping. Los pequeños paquetes ndividuales no puedan revelar un problema de discordancia de dúplex. 
+            Una sesión de terminal que envía los datos lentamente (en ráfagas muy cortas) también podría comunicar con éxito a través de una discordancia de dúplex. Aun cuando cualquier extremo de la conexión intente enviar una cantidad significativa de datos y el rendimiento del enlace caiga 
+            considerablemente, la causa puede no ser fácilmente evidente debido a que la red está operativa de otra manera. <br>
+            CDP, el protocolo exclusivo de Cisco, puede detectar fácilmente una discordancia de dúplex entre dos dispositivos Cisco. Vea la topología y los mensajes de registro en la Figura 1, donde la interfaz G0/0 en R1 se ha configurado de forma errónea para funcionar en modo semidúplex. 
+            El CDP muestra los mensajes de registro del enlace con la discordancia de dúplex. Los mensajes también contienen los nombres de los dispositivos y los puertos involucrados en la discordancia de dúplex, lo cual facilita mucho identificar y solucionar el problema. <br>
+            <b>Nota:</b> Debido a que estos son mensajes de registro, de manera predeterminada se muestran únicamente en una sesión de consola. Estos mensajes puede verse en una conexión remota solo si se habilita el comando terminal monitor. <br>
+            En la figura 2, se muestra que la interfaz S1 se configuró correctamente para la operación de dúplex completo. En la figura 3, se muestra que la configuración semidúplex en R1 causó el problema. <br>
+            <div>
+                <img src="images/" alt=""> <p>Fig.1</p>
+                <img src="images/" alt=""> <p>Fig.2</p>
+                <img src="images/" alt=""> <p>Fig.3</p>
+            </div>
+        </p>
         <hr><hr>
         <section>
             <div>
