@@ -204,9 +204,9 @@ input, select, textarea {
 	/* images */
 	
 	img{
-		min-width: 480px;
+		min-width: 48%;
 		max-width: 720px;
-		min-height: 230px;
+		min-height: 45%;
 		max-width: 480px;
 		height: auto;
 		border-radius: 1em;
